@@ -102,14 +102,7 @@ void FormModeSelect::on_toolButton_2_clicked()
     if(box.exec() == QDialog::Accepted)
     {
         g_dialog->fileManager->writeConfig(mode,mem);
-        g_dialog->fileManager->config.vibration[0] = 12;
-        g_dialog->fileManager->config.vibration[1] = 2;
-        g_dialog->fileManager->config.vibration[2] = 33;
-        g_dialog->fileManager->config.vibration[3] = 43;
-        g_dialog->fileManager->config.vibration[4] = 57;
-        g_dialog->fileManager->config.vibration[5] = 85;
-        g_dialog->fileManager->config.vibration[6] = 112;
-        g_dialog->fileManager->configChange();
+        //g_dialog->fileManager->configChange();
     }
 }
 
@@ -179,55 +172,14 @@ void FormModeSelect::on_mode_5_clicked()
 }
 
 void FormModeSelect::on_toolButton_3_clicked()
-{/*
+{
     if(isBeep)beep(50000);
-    if(0 == QMessageBox::warning(this,"提示","是否读取模式参数","确定","取消"))
+    DialogAutoCloseMessageBox box(NULL,"保存","是否读取模式参数","是","否",10,true);
+    if(box.exec() == QDialog::Accepted)
     {
-        switch(mode)
-        {
-        case 1:
-            if(ui->mem_11->isChecked())
-                g_dialog->fileManager->readConfig(1,1);
-            if(ui->mem_12->isChecked())
-                g_dialog->fileManager->readConfig(1,2);
-            if(ui->mem_13->isChecked())
-                g_dialog->fileManager->readConfig(1,3);
-            break;
-        case 2:
-            if(ui->mem_21->isChecked())
-                g_dialog->fileManager->readConfig(2,1);
-            if(ui->mem_22->isChecked())
-                g_dialog->fileManager->readConfig(2,2);
-            if(ui->mem_23->isChecked())
-                g_dialog->fileManager->readConfig(2,3);
-            break;
-        case 3:
-            if(ui->mem_31->isChecked())
-                g_dialog->fileManager->readConfig(3,1);
-            if(ui->mem_32->isChecked())
-                g_dialog->fileManager->readConfig(3,2);
-            if(ui->mem_33->isChecked())
-                g_dialog->fileManager->readConfig(3,3);
-            break;
-        case 4:
-            if(ui->mem_41->isChecked())
-                g_dialog->fileManager->readConfig(4,1);
-            if(ui->mem_42->isChecked())
-                g_dialog->fileManager->readConfig(4,2);
-            if(ui->mem_43->isChecked())
-                g_dialog->fileManager->readConfig(4,3);
-            break;
-        case 5:
-            if(ui->mem_51->isChecked())
-                g_dialog->fileManager->readConfig(5,1);
-            if(ui->mem_52->isChecked())
-                g_dialog->fileManager->readConfig(5,2);
-            if(ui->mem_53->isChecked())
-                g_dialog->fileManager->readConfig(5,3);
-            break;
-        }
-        g_dialog->fileManager->sendCmds();
-    }*/
+        g_dialog->fileManager->readConfig(mode,mem);
+        g_dialog->fileManager->configChange();
+    }
 }
 
 void FormModeSelect::on_mem_11_clicked()

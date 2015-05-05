@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QSlider>
+#include <QTimer>
 
 #define V1 0x01
 #define V2 0x02

@@ -4,6 +4,7 @@
 
 void beep(int);
 extern bool isBeep;
+extern QString stylesheet;
 
 
 FormAccuracyAdjust::FormAccuracyAdjust(QWidget *parent) :
@@ -11,12 +12,13 @@ FormAccuracyAdjust::FormAccuracyAdjust(QWidget *parent) :
     ui(new Ui::FormAccuracyAdjust)
 {
     ui->setupUi(this);
+    setStyleSheet(stylesheet);
     last1 = 0;
     last2 = 0;
     last3 = 0;
-    ui->label1->setText("0");
+    /*ui->label1->setText("0");
     ui->label2->setText("0");
-    ui->label3->setText("0");
+    ui->label3->setText("0");*/
 }
 
 FormAccuracyAdjust::~FormAccuracyAdjust()
@@ -37,9 +39,9 @@ void FormAccuracyAdjust::on_toolButton_clicked()
     last1 = 0;
     last2 = 0;
     last3 = 0;
-    ui->label1->setText("0");
+    /*ui->label1->setText("0");
     ui->label2->setText("0");
-    ui->label3->setText("0");
+    ui->label3->setText("0");*/
     emit switchToPage(2);
 }
 /*

@@ -37,7 +37,7 @@ public:
         int accuracy[14][3];
         double delay[14];
         double pulse_width[14];
-        int vibratorStatus[7];
+        quint8 vibratorStatusU8;
         int vibration[7];
         int ash_delay;
         int ash_mode;

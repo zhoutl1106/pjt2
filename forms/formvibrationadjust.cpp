@@ -96,6 +96,23 @@ void FormVibrationAdjust::updateData()
     ui->verticalSlider5->setValue(g_dialog->fileManager->config.vibration[4]);
     ui->verticalSlider6->setValue(g_dialog->fileManager->config.vibration[5]);
     ui->verticalSlider7->setValue(g_dialog->fileManager->config.vibration[6]);
+
+    for(int i = 0;i<7;i++)
+    {
+        isOpen[i] = g_dialog->fileManager->config.vibratorStatusU8 & (1 << i);
+        lastValue[i] = g_dialog->fileManager->config.vibration[i];
+        qDebug()<<isOpen[i]<<lastValue[i];
+    }
+    ui->pushButton_v1->setStyleSheet(styleSheet[isOpen[0]]);
+    ui->pushButton_v2->setStyleSheet(styleSheet[isOpen[1]]);
+    ui->pushButton_v3->setStyleSheet(styleSheet[isOpen[2]]);
+    ui->pushButton_v4->setStyleSheet(styleSheet[isOpen[3]]);
+    ui->pushButton_v5->setStyleSheet(styleSheet[isOpen[4]]);
+    ui->pushButton_v6->setStyleSheet(styleSheet[isOpen[5]]);
+    ui->pushButton_v7->setStyleSheet(styleSheet[isOpen[6]]);
+
+    status = g_dialog->fileManager->config.vibratorStatusU8;
+
     isBeep = tempBeep;
 }
 
@@ -381,7 +398,9 @@ void FormVibrationAdjust::on_pushButton_v1_clicked()
     else
     {
         status &= ~V1;
-    }/*
+    }
+    g_dialog->fileManager->config.vibratorStatusU8 = status;
+    /*
     char temp[3] = {0x80,0x00,0x00};
     temp[1] = status;
     QByteArray cmd(temp,3);
@@ -400,7 +419,8 @@ void FormVibrationAdjust::on_pushButton_v2_clicked()
     else
     {
         status &= ~V2;
-    }/*
+    }
+    g_dialog->fileManager->config.vibratorStatusU8 = status;/*
     char temp[3] = {0x80,0x00,0x00};
     temp[1] = status;
     QByteArray cmd(temp,3);
@@ -419,7 +439,8 @@ void FormVibrationAdjust::on_pushButton_v3_clicked()
     else
     {
         status &= ~V3;
-    }/*
+    }
+    g_dialog->fileManager->config.vibratorStatusU8 = status;/*
     char temp[3] = {0x80,0x00,0x00};
     temp[1] = status;
     QByteArray cmd(temp,3);
@@ -438,7 +459,8 @@ void FormVibrationAdjust::on_pushButton_v4_clicked()
     else
     {
         status &= ~V4;
-    }/*
+    }
+    g_dialog->fileManager->config.vibratorStatusU8 = status;/*
     char temp[3] = {0x80,0x00,0x00};
     temp[1] = status;
     QByteArray cmd(temp,3);
@@ -457,7 +479,8 @@ void FormVibrationAdjust::on_pushButton_v5_clicked()
     else
     {
         status &= ~V5;
-    }/*
+    }
+    g_dialog->fileManager->config.vibratorStatusU8 = status;/*
     char temp[3] = {0x80,0x00,0x00};
     temp[1] = status;
     QByteArray cmd(temp,3);
@@ -476,7 +499,8 @@ void FormVibrationAdjust::on_pushButton_v6_clicked()
     else
     {
         status &= ~V6;
-    }/*
+    }
+    g_dialog->fileManager->config.vibratorStatusU8 = status;/*
     char temp[3] = {0x80,0x00,0x00};
     temp[1] = status;
     QByteArray cmd(temp,3);
@@ -495,7 +519,8 @@ void FormVibrationAdjust::on_pushButton_v7_clicked()
     else
     {
         status &= ~V7;
-    }/*
+    }
+    g_dialog->fileManager->config.vibratorStatusU8 = status;/*
     char temp[3] = {0x80,0x00,0x00};
     temp[1] = status;
     QByteArray cmd(temp,3);

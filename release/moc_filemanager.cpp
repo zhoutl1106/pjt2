@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_FileManager_t {
-    QByteArrayData data[16];
-    char stringdata[135];
+    QByteArrayData data[11];
+    char stringdata[100];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,26 +30,20 @@ struct qt_meta_stringdata_FileManager_t {
 static const qt_meta_stringdata_FileManager_t qt_meta_stringdata_FileManager = {
     {
 QT_MOC_LITERAL(0, 0, 11), // "FileManager"
-QT_MOC_LITERAL(1, 12, 12), // "updateConfig"
-QT_MOC_LITERAL(2, 25, 0), // ""
-QT_MOC_LITERAL(3, 26, 3), // "str"
-QT_MOC_LITERAL(4, 30, 5), // "index"
-QT_MOC_LITERAL(5, 36, 7), // "sendCmd"
-QT_MOC_LITERAL(6, 44, 4), // "type"
-QT_MOC_LITERAL(7, 49, 3), // "cmd"
-QT_MOC_LITERAL(8, 53, 19), // "updateInitialStatus"
-QT_MOC_LITERAL(9, 73, 4), // "exit"
-QT_MOC_LITERAL(10, 78, 12), // "switchToPage"
-QT_MOC_LITERAL(11, 91, 7), // "bkgShow"
-QT_MOC_LITERAL(12, 99, 9), // "checkDate"
-QT_MOC_LITERAL(13, 109, 16), // "passwardReceived"
-QT_MOC_LITERAL(14, 126, 3), // "ori"
-QT_MOC_LITERAL(15, 130, 4) // "code"
+QT_MOC_LITERAL(1, 12, 19), // "updateInitialStatus"
+QT_MOC_LITERAL(2, 32, 0), // ""
+QT_MOC_LITERAL(3, 33, 4), // "exit"
+QT_MOC_LITERAL(4, 38, 3), // "str"
+QT_MOC_LITERAL(5, 42, 7), // "bkgShow"
+QT_MOC_LITERAL(6, 50, 13), // "configChanged"
+QT_MOC_LITERAL(7, 64, 9), // "checkDate"
+QT_MOC_LITERAL(8, 74, 16), // "passwardReceived"
+QT_MOC_LITERAL(9, 91, 3), // "ori"
+QT_MOC_LITERAL(10, 95, 4) // "code"
 
     },
-    "FileManager\0updateConfig\0\0str\0index\0"
-    "sendCmd\0type\0cmd\0updateInitialStatus\0"
-    "exit\0switchToPage\0bkgShow\0checkDate\0"
+    "FileManager\0updateInitialStatus\0\0exit\0"
+    "str\0bkgShow\0configChanged\0checkDate\0"
     "passwardReceived\0ori\0code"
 };
 #undef QT_MOC_LITERAL
@@ -60,34 +54,30 @@ static const uint qt_meta_data_FileManager[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       5,       // signalCount
+       3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    2,   49,    2, 0x06 /* Public */,
-       5,    2,   54,    2, 0x06 /* Public */,
-       8,    2,   59,    2, 0x06 /* Public */,
-      10,    1,   64,    2, 0x06 /* Public */,
-      11,    0,   67,    2, 0x06 /* Public */,
+       1,    2,   39,    2, 0x06 /* Public */,
+       5,    0,   44,    2, 0x06 /* Public */,
+       6,    0,   45,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      12,    0,   68,    2, 0x0a /* Public */,
-      13,    2,   69,    2, 0x0a /* Public */,
+       7,    0,   46,    2, 0x0a /* Public */,
+       8,    2,   47,    2, 0x0a /* Public */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::QString, QMetaType::Int,    3,    4,
-    QMetaType::Void, QMetaType::Int, QMetaType::QByteArray,    6,    7,
-    QMetaType::Void, QMetaType::Bool, QMetaType::QString,    9,    3,
-    QMetaType::Void, QMetaType::Int,    4,
+    QMetaType::Void, QMetaType::Bool, QMetaType::QString,    3,    4,
+    QMetaType::Void,
     QMetaType::Void,
 
  // slots: parameters
     QMetaType::Bool,
-    QMetaType::Bool, QMetaType::QString, QMetaType::QString,   14,   15,
+    QMetaType::Bool, QMetaType::QString, QMetaType::QString,    9,   10,
 
        0        // eod
 };
@@ -97,14 +87,12 @@ void FileManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
     if (_c == QMetaObject::InvokeMetaMethod) {
         FileManager *_t = static_cast<FileManager *>(_o);
         switch (_id) {
-        case 0: _t->updateConfig((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 1: _t->sendCmd((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QByteArray(*)>(_a[2]))); break;
-        case 2: _t->updateInitialStatus((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
-        case 3: _t->switchToPage((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 4: _t->bkgShow(); break;
-        case 5: { bool _r = _t->checkDate();
+        case 0: _t->updateInitialStatus((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 1: _t->bkgShow(); break;
+        case 2: _t->configChanged(); break;
+        case 3: { bool _r = _t->checkDate();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 6: { bool _r = _t->passwardReceived((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])));
+        case 4: { bool _r = _t->passwardReceived((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
         default: ;
         }
@@ -112,33 +100,21 @@ void FileManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         int *result = reinterpret_cast<int *>(_a[0]);
         void **func = reinterpret_cast<void **>(_a[1]);
         {
-            typedef void (FileManager::*_t)(QString , int );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&FileManager::updateConfig)) {
-                *result = 0;
-            }
-        }
-        {
-            typedef void (FileManager::*_t)(int , QByteArray );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&FileManager::sendCmd)) {
-                *result = 1;
-            }
-        }
-        {
             typedef void (FileManager::*_t)(bool , QString );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&FileManager::updateInitialStatus)) {
-                *result = 2;
-            }
-        }
-        {
-            typedef void (FileManager::*_t)(int );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&FileManager::switchToPage)) {
-                *result = 3;
+                *result = 0;
             }
         }
         {
             typedef void (FileManager::*_t)();
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&FileManager::bkgShow)) {
-                *result = 4;
+                *result = 1;
+            }
+        }
+        {
+            typedef void (FileManager::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&FileManager::configChanged)) {
+                *result = 2;
             }
         }
     }
@@ -169,48 +145,33 @@ int FileManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 5)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 7;
+        _id -= 5;
     }
     return _id;
 }
 
 // SIGNAL 0
-void FileManager::updateConfig(QString _t1, int _t2)
+void FileManager::updateInitialStatus(bool _t1, QString _t2)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1
-void FileManager::sendCmd(int _t1, QByteArray _t2)
+void FileManager::bkgShow()
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
-    QMetaObject::activate(this, &staticMetaObject, 1, _a);
+    QMetaObject::activate(this, &staticMetaObject, 1, Q_NULLPTR);
 }
 
 // SIGNAL 2
-void FileManager::updateInitialStatus(bool _t1, QString _t2)
+void FileManager::configChanged()
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
-    QMetaObject::activate(this, &staticMetaObject, 2, _a);
-}
-
-// SIGNAL 3
-void FileManager::switchToPage(int _t1)
-{
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
-    QMetaObject::activate(this, &staticMetaObject, 3, _a);
-}
-
-// SIGNAL 4
-void FileManager::bkgShow()
-{
-    QMetaObject::activate(this, &staticMetaObject, 4, Q_NULLPTR);
+    QMetaObject::activate(this, &staticMetaObject, 2, Q_NULLPTR);
 }
 QT_END_MOC_NAMESPACE
