@@ -31,54 +31,54 @@ public:
     QGridLayout *gridLayout;
     QLabel *label_6;
     QSlider *verticalSlider12;
-    QToolButton *toolButton_1d_2;
+    QToolButton *toolButton_12d;
     QToolButton *toolButton_13u;
-    QLCDNumber *lcdNumber1_3;
+    QLCDNumber *lcdNumber13;
     QToolButton *toolButton_12u;
-    QToolButton *toolButton_1d_3;
+    QToolButton *toolButton_13d;
     QSlider *verticalSlider13;
     QLabel *label_3;
     QToolButton *toolButton_11u;
-    QToolButton *toolButton_1d;
-    QLCDNumber *lcdNumber1;
-    QLCDNumber *lcdNumber1_2;
+    QToolButton *toolButton_11d;
+    QLCDNumber *lcdNumber11;
+    QLCDNumber *lcdNumber12;
     QLabel *label_4;
     QLabel *label_5;
     QSlider *verticalSlider11;
     QGridLayout *gridLayout_2;
-    QSlider *verticalSlider12_2;
-    QToolButton *toolButton_1d_4;
-    QToolButton *toolButton_13u_2;
-    QLCDNumber *lcdNumber1_4;
-    QToolButton *toolButton_12u_2;
-    QToolButton *toolButton_1d_5;
-    QSlider *verticalSlider13_2;
-    QToolButton *toolButton_11u_2;
-    QToolButton *toolButton_1d_6;
-    QLCDNumber *lcdNumber1_5;
-    QLCDNumber *lcdNumber1_6;
+    QSlider *verticalSlider22;
+    QToolButton *toolButton_22d;
+    QToolButton *toolButton_23u;
+    QLCDNumber *lcdNumber23;
+    QToolButton *toolButton_22u;
+    QToolButton *toolButton_23d;
+    QSlider *verticalSlider23;
+    QToolButton *toolButton_21u;
+    QToolButton *toolButton_21d;
+    QLCDNumber *lcdNumber21;
+    QLCDNumber *lcdNumber22;
     QLabel *label_9;
     QLabel *label_10;
     QLabel *label_7;
     QLabel *label_8;
-    QSlider *verticalSlider11_2;
+    QSlider *verticalSlider21;
     QGridLayout *gridLayout_3;
-    QSlider *verticalSlider12_3;
-    QToolButton *toolButton_1d_7;
-    QToolButton *toolButton_13u_3;
-    QLCDNumber *lcdNumber1_7;
-    QToolButton *toolButton_12u_3;
-    QToolButton *toolButton_1d_8;
-    QSlider *verticalSlider13_3;
-    QToolButton *toolButton_11u_3;
-    QToolButton *toolButton_1d_9;
-    QLCDNumber *lcdNumber1_8;
-    QLCDNumber *lcdNumber1_9;
+    QSlider *verticalSlider32;
+    QToolButton *toolButton_32d;
+    QToolButton *toolButton_33u;
+    QLCDNumber *lcdNumber33;
+    QToolButton *toolButton_32u;
+    QToolButton *toolButton_33d;
+    QSlider *verticalSlider33;
+    QToolButton *toolButton_31u;
+    QToolButton *toolButton_31d;
+    QLCDNumber *lcdNumber31;
+    QLCDNumber *lcdNumber32;
     QLabel *label_13;
     QLabel *label_14;
     QLabel *label_11;
     QLabel *label_12;
-    QSlider *verticalSlider11_3;
+    QSlider *verticalSlider31;
     QVBoxLayout *verticalLayout;
     QToolButton *toolButton_Camera;
     QToolButton *toolButton_2;
@@ -135,15 +135,16 @@ public:
 "     margin: -15px -25px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */\n"
 "     border-radius: 3px;\n"
 " }"));
-        verticalSlider12->setMaximum(100);
+        verticalSlider12->setMinimum(-255);
+        verticalSlider12->setMaximum(255);
         verticalSlider12->setOrientation(Qt::Vertical);
 
         gridLayout->addWidget(verticalSlider12, 2, 3, 1, 1, Qt::AlignHCenter);
 
-        toolButton_1d_2 = new QToolButton(FormAccuracyAdjust);
-        toolButton_1d_2->setObjectName(QStringLiteral("toolButton_1d_2"));
-        toolButton_1d_2->setMinimumSize(QSize(40, 40));
-        toolButton_1d_2->setStyleSheet(QLatin1String("QToolButton\n"
+        toolButton_12d = new QToolButton(FormAccuracyAdjust);
+        toolButton_12d->setObjectName(QStringLiteral("toolButton_12d"));
+        toolButton_12d->setMinimumSize(QSize(40, 40));
+        toolButton_12d->setStyleSheet(QLatin1String("QToolButton\n"
 "{\n"
 "	font-size:20px;\n"
 "    border-image: url(:/image/downG.png);\n"
@@ -155,7 +156,7 @@ public:
 "    border-image: url(:/image/downR.png);\n"
 "}"));
 
-        gridLayout->addWidget(toolButton_1d_2, 3, 3, 1, 1);
+        gridLayout->addWidget(toolButton_12d, 3, 3, 1, 1);
 
         toolButton_13u = new QToolButton(FormAccuracyAdjust);
         toolButton_13u->setObjectName(QStringLiteral("toolButton_13u"));
@@ -174,19 +175,19 @@ public:
 
         gridLayout->addWidget(toolButton_13u, 1, 5, 1, 1);
 
-        lcdNumber1_3 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber1_3->setObjectName(QStringLiteral("lcdNumber1_3"));
+        lcdNumber13 = new QLCDNumber(FormAccuracyAdjust);
+        lcdNumber13->setObjectName(QStringLiteral("lcdNumber13"));
         QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Fixed);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(lcdNumber1_3->sizePolicy().hasHeightForWidth());
-        lcdNumber1_3->setSizePolicy(sizePolicy2);
-        lcdNumber1_3->setMinimumSize(QSize(0, 30));
-        lcdNumber1_3->setSmallDecimalPoint(true);
-        lcdNumber1_3->setDigitCount(3);
-        lcdNumber1_3->setSegmentStyle(QLCDNumber::Filled);
+        sizePolicy2.setHeightForWidth(lcdNumber13->sizePolicy().hasHeightForWidth());
+        lcdNumber13->setSizePolicy(sizePolicy2);
+        lcdNumber13->setMinimumSize(QSize(0, 30));
+        lcdNumber13->setSmallDecimalPoint(true);
+        lcdNumber13->setDigitCount(3);
+        lcdNumber13->setSegmentStyle(QLCDNumber::Filled);
 
-        gridLayout->addWidget(lcdNumber1_3, 2, 6, 1, 1);
+        gridLayout->addWidget(lcdNumber13, 2, 6, 1, 1);
 
         toolButton_12u = new QToolButton(FormAccuracyAdjust);
         toolButton_12u->setObjectName(QStringLiteral("toolButton_12u"));
@@ -205,10 +206,10 @@ public:
 
         gridLayout->addWidget(toolButton_12u, 1, 3, 1, 1);
 
-        toolButton_1d_3 = new QToolButton(FormAccuracyAdjust);
-        toolButton_1d_3->setObjectName(QStringLiteral("toolButton_1d_3"));
-        toolButton_1d_3->setMinimumSize(QSize(40, 40));
-        toolButton_1d_3->setStyleSheet(QLatin1String("QToolButton\n"
+        toolButton_13d = new QToolButton(FormAccuracyAdjust);
+        toolButton_13d->setObjectName(QStringLiteral("toolButton_13d"));
+        toolButton_13d->setMinimumSize(QSize(40, 40));
+        toolButton_13d->setStyleSheet(QLatin1String("QToolButton\n"
 "{\n"
 "	font-size:20px;\n"
 "    border-image: url(:/image/downG.png);\n"
@@ -220,7 +221,7 @@ public:
 "    border-image: url(:/image/downR.png);\n"
 "}"));
 
-        gridLayout->addWidget(toolButton_1d_3, 3, 5, 1, 1);
+        gridLayout->addWidget(toolButton_13d, 3, 5, 1, 1);
 
         verticalSlider13 = new QSlider(FormAccuracyAdjust);
         verticalSlider13->setObjectName(QStringLiteral("verticalSlider13"));
@@ -241,7 +242,8 @@ public:
 "     margin: -15px -25px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */\n"
 "     border-radius: 3px;\n"
 " }"));
-        verticalSlider13->setMaximum(100);
+        verticalSlider13->setMinimum(-5);
+        verticalSlider13->setMaximum(5);
         verticalSlider13->setOrientation(Qt::Vertical);
 
         gridLayout->addWidget(verticalSlider13, 2, 5, 1, 1, Qt::AlignHCenter);
@@ -271,10 +273,10 @@ public:
 
         gridLayout->addWidget(toolButton_11u, 1, 1, 1, 1, Qt::AlignHCenter);
 
-        toolButton_1d = new QToolButton(FormAccuracyAdjust);
-        toolButton_1d->setObjectName(QStringLiteral("toolButton_1d"));
-        toolButton_1d->setMinimumSize(QSize(40, 40));
-        toolButton_1d->setStyleSheet(QLatin1String("QToolButton\n"
+        toolButton_11d = new QToolButton(FormAccuracyAdjust);
+        toolButton_11d->setObjectName(QStringLiteral("toolButton_11d"));
+        toolButton_11d->setMinimumSize(QSize(40, 40));
+        toolButton_11d->setStyleSheet(QLatin1String("QToolButton\n"
 "{\n"
 "	font-size:20px;\n"
 "    border-image: url(:/image/downG.png);\n"
@@ -286,29 +288,29 @@ public:
 "    border-image: url(:/image/downR.png);\n"
 "}"));
 
-        gridLayout->addWidget(toolButton_1d, 3, 1, 1, 1, Qt::AlignHCenter);
+        gridLayout->addWidget(toolButton_11d, 3, 1, 1, 1, Qt::AlignHCenter);
 
-        lcdNumber1 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber1->setObjectName(QStringLiteral("lcdNumber1"));
-        sizePolicy2.setHeightForWidth(lcdNumber1->sizePolicy().hasHeightForWidth());
-        lcdNumber1->setSizePolicy(sizePolicy2);
-        lcdNumber1->setMinimumSize(QSize(0, 30));
-        lcdNumber1->setSmallDecimalPoint(true);
-        lcdNumber1->setDigitCount(3);
-        lcdNumber1->setSegmentStyle(QLCDNumber::Filled);
+        lcdNumber11 = new QLCDNumber(FormAccuracyAdjust);
+        lcdNumber11->setObjectName(QStringLiteral("lcdNumber11"));
+        sizePolicy2.setHeightForWidth(lcdNumber11->sizePolicy().hasHeightForWidth());
+        lcdNumber11->setSizePolicy(sizePolicy2);
+        lcdNumber11->setMinimumSize(QSize(0, 30));
+        lcdNumber11->setSmallDecimalPoint(true);
+        lcdNumber11->setDigitCount(4);
+        lcdNumber11->setSegmentStyle(QLCDNumber::Filled);
 
-        gridLayout->addWidget(lcdNumber1, 2, 2, 1, 1);
+        gridLayout->addWidget(lcdNumber11, 2, 2, 1, 1);
 
-        lcdNumber1_2 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber1_2->setObjectName(QStringLiteral("lcdNumber1_2"));
-        sizePolicy2.setHeightForWidth(lcdNumber1_2->sizePolicy().hasHeightForWidth());
-        lcdNumber1_2->setSizePolicy(sizePolicy2);
-        lcdNumber1_2->setMinimumSize(QSize(0, 30));
-        lcdNumber1_2->setSmallDecimalPoint(true);
-        lcdNumber1_2->setDigitCount(3);
-        lcdNumber1_2->setSegmentStyle(QLCDNumber::Filled);
+        lcdNumber12 = new QLCDNumber(FormAccuracyAdjust);
+        lcdNumber12->setObjectName(QStringLiteral("lcdNumber12"));
+        sizePolicy2.setHeightForWidth(lcdNumber12->sizePolicy().hasHeightForWidth());
+        lcdNumber12->setSizePolicy(sizePolicy2);
+        lcdNumber12->setMinimumSize(QSize(0, 30));
+        lcdNumber12->setSmallDecimalPoint(true);
+        lcdNumber12->setDigitCount(4);
+        lcdNumber12->setSegmentStyle(QLCDNumber::Filled);
 
-        gridLayout->addWidget(lcdNumber1_2, 2, 4, 1, 1);
+        gridLayout->addWidget(lcdNumber12, 2, 4, 1, 1);
 
         label_4 = new QLabel(FormAccuracyAdjust);
         label_4->setObjectName(QStringLiteral("label_4"));
@@ -347,7 +349,8 @@ public:
 "     margin: -15px -25px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */\n"
 "     border-radius: 3px;\n"
 " }"));
-        verticalSlider11->setMaximum(100);
+        verticalSlider11->setMinimum(-255);
+        verticalSlider11->setMaximum(255);
         verticalSlider11->setOrientation(Qt::Vertical);
 
         gridLayout->addWidget(verticalSlider11, 2, 1, 1, 1, Qt::AlignHCenter);
@@ -359,12 +362,12 @@ public:
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         gridLayout_2->setHorizontalSpacing(0);
         gridLayout_2->setVerticalSpacing(10);
-        verticalSlider12_2 = new QSlider(FormAccuracyAdjust);
-        verticalSlider12_2->setObjectName(QStringLiteral("verticalSlider12_2"));
-        sizePolicy1.setHeightForWidth(verticalSlider12_2->sizePolicy().hasHeightForWidth());
-        verticalSlider12_2->setSizePolicy(sizePolicy1);
-        verticalSlider12_2->setMinimumSize(QSize(25, 0));
-        verticalSlider12_2->setStyleSheet(QLatin1String("QSlider::groove {\n"
+        verticalSlider22 = new QSlider(FormAccuracyAdjust);
+        verticalSlider22->setObjectName(QStringLiteral("verticalSlider22"));
+        sizePolicy1.setHeightForWidth(verticalSlider22->sizePolicy().hasHeightForWidth());
+        verticalSlider22->setSizePolicy(sizePolicy1);
+        verticalSlider22->setMinimumSize(QSize(25, 0));
+        verticalSlider22->setStyleSheet(QLatin1String("QSlider::groove {\n"
 "     /*border: 1px solid #999999;\n"
 "     height: 330px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */\n"
 "	width:15px;\n"
@@ -378,15 +381,16 @@ public:
 "     margin: -15px -25px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */\n"
 "     border-radius: 3px;\n"
 " }"));
-        verticalSlider12_2->setMaximum(100);
-        verticalSlider12_2->setOrientation(Qt::Vertical);
+        verticalSlider22->setMinimum(-255);
+        verticalSlider22->setMaximum(255);
+        verticalSlider22->setOrientation(Qt::Vertical);
 
-        gridLayout_2->addWidget(verticalSlider12_2, 2, 2, 1, 1, Qt::AlignHCenter);
+        gridLayout_2->addWidget(verticalSlider22, 2, 2, 1, 1, Qt::AlignHCenter);
 
-        toolButton_1d_4 = new QToolButton(FormAccuracyAdjust);
-        toolButton_1d_4->setObjectName(QStringLiteral("toolButton_1d_4"));
-        toolButton_1d_4->setMinimumSize(QSize(40, 40));
-        toolButton_1d_4->setStyleSheet(QLatin1String("QToolButton\n"
+        toolButton_22d = new QToolButton(FormAccuracyAdjust);
+        toolButton_22d->setObjectName(QStringLiteral("toolButton_22d"));
+        toolButton_22d->setMinimumSize(QSize(40, 40));
+        toolButton_22d->setStyleSheet(QLatin1String("QToolButton\n"
 "{\n"
 "	font-size:20px;\n"
 "    border-image: url(:/image/downG.png);\n"
@@ -398,12 +402,12 @@ public:
 "    border-image: url(:/image/downR.png);\n"
 "}"));
 
-        gridLayout_2->addWidget(toolButton_1d_4, 3, 2, 1, 1);
+        gridLayout_2->addWidget(toolButton_22d, 3, 2, 1, 1);
 
-        toolButton_13u_2 = new QToolButton(FormAccuracyAdjust);
-        toolButton_13u_2->setObjectName(QStringLiteral("toolButton_13u_2"));
-        toolButton_13u_2->setMinimumSize(QSize(40, 40));
-        toolButton_13u_2->setStyleSheet(QLatin1String("QToolButton\n"
+        toolButton_23u = new QToolButton(FormAccuracyAdjust);
+        toolButton_23u->setObjectName(QStringLiteral("toolButton_23u"));
+        toolButton_23u->setMinimumSize(QSize(40, 40));
+        toolButton_23u->setStyleSheet(QLatin1String("QToolButton\n"
 "{\n"
 "	font-size:20px;\n"
 "    border-image: url(:/image/upG.png);\n"
@@ -415,23 +419,23 @@ public:
 "    border-image: url(:/image/upR.png);\n"
 "}"));
 
-        gridLayout_2->addWidget(toolButton_13u_2, 1, 4, 1, 1);
+        gridLayout_2->addWidget(toolButton_23u, 1, 4, 1, 1);
 
-        lcdNumber1_4 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber1_4->setObjectName(QStringLiteral("lcdNumber1_4"));
-        sizePolicy2.setHeightForWidth(lcdNumber1_4->sizePolicy().hasHeightForWidth());
-        lcdNumber1_4->setSizePolicy(sizePolicy2);
-        lcdNumber1_4->setMinimumSize(QSize(0, 30));
-        lcdNumber1_4->setSmallDecimalPoint(true);
-        lcdNumber1_4->setDigitCount(3);
-        lcdNumber1_4->setSegmentStyle(QLCDNumber::Filled);
+        lcdNumber23 = new QLCDNumber(FormAccuracyAdjust);
+        lcdNumber23->setObjectName(QStringLiteral("lcdNumber23"));
+        sizePolicy2.setHeightForWidth(lcdNumber23->sizePolicy().hasHeightForWidth());
+        lcdNumber23->setSizePolicy(sizePolicy2);
+        lcdNumber23->setMinimumSize(QSize(0, 30));
+        lcdNumber23->setSmallDecimalPoint(true);
+        lcdNumber23->setDigitCount(3);
+        lcdNumber23->setSegmentStyle(QLCDNumber::Filled);
 
-        gridLayout_2->addWidget(lcdNumber1_4, 2, 5, 1, 1);
+        gridLayout_2->addWidget(lcdNumber23, 2, 5, 1, 1);
 
-        toolButton_12u_2 = new QToolButton(FormAccuracyAdjust);
-        toolButton_12u_2->setObjectName(QStringLiteral("toolButton_12u_2"));
-        toolButton_12u_2->setMinimumSize(QSize(40, 40));
-        toolButton_12u_2->setStyleSheet(QLatin1String("QToolButton\n"
+        toolButton_22u = new QToolButton(FormAccuracyAdjust);
+        toolButton_22u->setObjectName(QStringLiteral("toolButton_22u"));
+        toolButton_22u->setMinimumSize(QSize(40, 40));
+        toolButton_22u->setStyleSheet(QLatin1String("QToolButton\n"
 "{\n"
 "	font-size:20px;\n"
 "    border-image: url(:/image/upG.png);\n"
@@ -443,12 +447,12 @@ public:
 "    border-image: url(:/image/upR.png);\n"
 "}"));
 
-        gridLayout_2->addWidget(toolButton_12u_2, 1, 2, 1, 1);
+        gridLayout_2->addWidget(toolButton_22u, 1, 2, 1, 1);
 
-        toolButton_1d_5 = new QToolButton(FormAccuracyAdjust);
-        toolButton_1d_5->setObjectName(QStringLiteral("toolButton_1d_5"));
-        toolButton_1d_5->setMinimumSize(QSize(40, 40));
-        toolButton_1d_5->setStyleSheet(QLatin1String("QToolButton\n"
+        toolButton_23d = new QToolButton(FormAccuracyAdjust);
+        toolButton_23d->setObjectName(QStringLiteral("toolButton_23d"));
+        toolButton_23d->setMinimumSize(QSize(40, 40));
+        toolButton_23d->setStyleSheet(QLatin1String("QToolButton\n"
 "{\n"
 "	font-size:20px;\n"
 "    border-image: url(:/image/downG.png);\n"
@@ -460,14 +464,14 @@ public:
 "    border-image: url(:/image/downR.png);\n"
 "}"));
 
-        gridLayout_2->addWidget(toolButton_1d_5, 3, 4, 1, 1);
+        gridLayout_2->addWidget(toolButton_23d, 3, 4, 1, 1);
 
-        verticalSlider13_2 = new QSlider(FormAccuracyAdjust);
-        verticalSlider13_2->setObjectName(QStringLiteral("verticalSlider13_2"));
-        sizePolicy1.setHeightForWidth(verticalSlider13_2->sizePolicy().hasHeightForWidth());
-        verticalSlider13_2->setSizePolicy(sizePolicy1);
-        verticalSlider13_2->setMinimumSize(QSize(25, 0));
-        verticalSlider13_2->setStyleSheet(QLatin1String("QSlider::groove {\n"
+        verticalSlider23 = new QSlider(FormAccuracyAdjust);
+        verticalSlider23->setObjectName(QStringLiteral("verticalSlider23"));
+        sizePolicy1.setHeightForWidth(verticalSlider23->sizePolicy().hasHeightForWidth());
+        verticalSlider23->setSizePolicy(sizePolicy1);
+        verticalSlider23->setMinimumSize(QSize(25, 0));
+        verticalSlider23->setStyleSheet(QLatin1String("QSlider::groove {\n"
 "     /*border: 1px solid #999999;\n"
 "     height: 330px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */\n"
 "	width:15px;\n"
@@ -481,15 +485,16 @@ public:
 "     margin: -15px -25px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */\n"
 "     border-radius: 3px;\n"
 " }"));
-        verticalSlider13_2->setMaximum(100);
-        verticalSlider13_2->setOrientation(Qt::Vertical);
+        verticalSlider23->setMinimum(-5);
+        verticalSlider23->setMaximum(5);
+        verticalSlider23->setOrientation(Qt::Vertical);
 
-        gridLayout_2->addWidget(verticalSlider13_2, 2, 4, 1, 1, Qt::AlignHCenter);
+        gridLayout_2->addWidget(verticalSlider23, 2, 4, 1, 1, Qt::AlignHCenter);
 
-        toolButton_11u_2 = new QToolButton(FormAccuracyAdjust);
-        toolButton_11u_2->setObjectName(QStringLiteral("toolButton_11u_2"));
-        toolButton_11u_2->setMinimumSize(QSize(40, 40));
-        toolButton_11u_2->setStyleSheet(QLatin1String("QToolButton\n"
+        toolButton_21u = new QToolButton(FormAccuracyAdjust);
+        toolButton_21u->setObjectName(QStringLiteral("toolButton_21u"));
+        toolButton_21u->setMinimumSize(QSize(40, 40));
+        toolButton_21u->setStyleSheet(QLatin1String("QToolButton\n"
 "{\n"
 "	font-size:20px;\n"
 "    border-image: url(:/image/upG.png);\n"
@@ -501,12 +506,12 @@ public:
 "    border-image: url(:/image/upR.png);\n"
 "}"));
 
-        gridLayout_2->addWidget(toolButton_11u_2, 1, 0, 1, 1, Qt::AlignHCenter);
+        gridLayout_2->addWidget(toolButton_21u, 1, 0, 1, 1, Qt::AlignHCenter);
 
-        toolButton_1d_6 = new QToolButton(FormAccuracyAdjust);
-        toolButton_1d_6->setObjectName(QStringLiteral("toolButton_1d_6"));
-        toolButton_1d_6->setMinimumSize(QSize(40, 40));
-        toolButton_1d_6->setStyleSheet(QLatin1String("QToolButton\n"
+        toolButton_21d = new QToolButton(FormAccuracyAdjust);
+        toolButton_21d->setObjectName(QStringLiteral("toolButton_21d"));
+        toolButton_21d->setMinimumSize(QSize(40, 40));
+        toolButton_21d->setStyleSheet(QLatin1String("QToolButton\n"
 "{\n"
 "	font-size:20px;\n"
 "    border-image: url(:/image/downG.png);\n"
@@ -518,29 +523,29 @@ public:
 "    border-image: url(:/image/downR.png);\n"
 "}"));
 
-        gridLayout_2->addWidget(toolButton_1d_6, 3, 0, 1, 1, Qt::AlignHCenter);
+        gridLayout_2->addWidget(toolButton_21d, 3, 0, 1, 1, Qt::AlignHCenter);
 
-        lcdNumber1_5 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber1_5->setObjectName(QStringLiteral("lcdNumber1_5"));
-        sizePolicy2.setHeightForWidth(lcdNumber1_5->sizePolicy().hasHeightForWidth());
-        lcdNumber1_5->setSizePolicy(sizePolicy2);
-        lcdNumber1_5->setMinimumSize(QSize(0, 30));
-        lcdNumber1_5->setSmallDecimalPoint(true);
-        lcdNumber1_5->setDigitCount(3);
-        lcdNumber1_5->setSegmentStyle(QLCDNumber::Filled);
+        lcdNumber21 = new QLCDNumber(FormAccuracyAdjust);
+        lcdNumber21->setObjectName(QStringLiteral("lcdNumber21"));
+        sizePolicy2.setHeightForWidth(lcdNumber21->sizePolicy().hasHeightForWidth());
+        lcdNumber21->setSizePolicy(sizePolicy2);
+        lcdNumber21->setMinimumSize(QSize(0, 30));
+        lcdNumber21->setSmallDecimalPoint(true);
+        lcdNumber21->setDigitCount(4);
+        lcdNumber21->setSegmentStyle(QLCDNumber::Filled);
 
-        gridLayout_2->addWidget(lcdNumber1_5, 2, 1, 1, 1);
+        gridLayout_2->addWidget(lcdNumber21, 2, 1, 1, 1);
 
-        lcdNumber1_6 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber1_6->setObjectName(QStringLiteral("lcdNumber1_6"));
-        sizePolicy2.setHeightForWidth(lcdNumber1_6->sizePolicy().hasHeightForWidth());
-        lcdNumber1_6->setSizePolicy(sizePolicy2);
-        lcdNumber1_6->setMinimumSize(QSize(0, 30));
-        lcdNumber1_6->setSmallDecimalPoint(true);
-        lcdNumber1_6->setDigitCount(3);
-        lcdNumber1_6->setSegmentStyle(QLCDNumber::Filled);
+        lcdNumber22 = new QLCDNumber(FormAccuracyAdjust);
+        lcdNumber22->setObjectName(QStringLiteral("lcdNumber22"));
+        sizePolicy2.setHeightForWidth(lcdNumber22->sizePolicy().hasHeightForWidth());
+        lcdNumber22->setSizePolicy(sizePolicy2);
+        lcdNumber22->setMinimumSize(QSize(0, 30));
+        lcdNumber22->setSmallDecimalPoint(true);
+        lcdNumber22->setDigitCount(4);
+        lcdNumber22->setSegmentStyle(QLCDNumber::Filled);
 
-        gridLayout_2->addWidget(lcdNumber1_6, 2, 3, 1, 1);
+        gridLayout_2->addWidget(lcdNumber22, 2, 3, 1, 1);
 
         label_9 = new QLabel(FormAccuracyAdjust);
         label_9->setObjectName(QStringLiteral("label_9"));
@@ -577,12 +582,12 @@ public:
 
         gridLayout_2->addWidget(label_8, 0, 4, 1, 1);
 
-        verticalSlider11_2 = new QSlider(FormAccuracyAdjust);
-        verticalSlider11_2->setObjectName(QStringLiteral("verticalSlider11_2"));
-        sizePolicy1.setHeightForWidth(verticalSlider11_2->sizePolicy().hasHeightForWidth());
-        verticalSlider11_2->setSizePolicy(sizePolicy1);
-        verticalSlider11_2->setMinimumSize(QSize(25, 0));
-        verticalSlider11_2->setStyleSheet(QLatin1String("QSlider::groove {\n"
+        verticalSlider21 = new QSlider(FormAccuracyAdjust);
+        verticalSlider21->setObjectName(QStringLiteral("verticalSlider21"));
+        sizePolicy1.setHeightForWidth(verticalSlider21->sizePolicy().hasHeightForWidth());
+        verticalSlider21->setSizePolicy(sizePolicy1);
+        verticalSlider21->setMinimumSize(QSize(25, 0));
+        verticalSlider21->setStyleSheet(QLatin1String("QSlider::groove {\n"
 "     /*border: 1px solid #999999;\n"
 "     height: 330px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */\n"
 "	width:15px;\n"
@@ -596,10 +601,11 @@ public:
 "     margin: -15px -25px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */\n"
 "     border-radius: 3px;\n"
 " }"));
-        verticalSlider11_2->setMaximum(100);
-        verticalSlider11_2->setOrientation(Qt::Vertical);
+        verticalSlider21->setMinimum(-255);
+        verticalSlider21->setMaximum(255);
+        verticalSlider21->setOrientation(Qt::Vertical);
 
-        gridLayout_2->addWidget(verticalSlider11_2, 2, 0, 1, 1, Qt::AlignHCenter);
+        gridLayout_2->addWidget(verticalSlider21, 2, 0, 1, 1, Qt::AlignHCenter);
 
 
         gridLayout_4->addLayout(gridLayout_2, 1, 1, 1, 1);
@@ -608,12 +614,12 @@ public:
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
         gridLayout_3->setHorizontalSpacing(0);
         gridLayout_3->setVerticalSpacing(10);
-        verticalSlider12_3 = new QSlider(FormAccuracyAdjust);
-        verticalSlider12_3->setObjectName(QStringLiteral("verticalSlider12_3"));
-        sizePolicy1.setHeightForWidth(verticalSlider12_3->sizePolicy().hasHeightForWidth());
-        verticalSlider12_3->setSizePolicy(sizePolicy1);
-        verticalSlider12_3->setMinimumSize(QSize(25, 0));
-        verticalSlider12_3->setStyleSheet(QLatin1String("QSlider::groove {\n"
+        verticalSlider32 = new QSlider(FormAccuracyAdjust);
+        verticalSlider32->setObjectName(QStringLiteral("verticalSlider32"));
+        sizePolicy1.setHeightForWidth(verticalSlider32->sizePolicy().hasHeightForWidth());
+        verticalSlider32->setSizePolicy(sizePolicy1);
+        verticalSlider32->setMinimumSize(QSize(25, 0));
+        verticalSlider32->setStyleSheet(QLatin1String("QSlider::groove {\n"
 "     /*border: 1px solid #999999;\n"
 "     height: 330px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */\n"
 "	width:15px;\n"
@@ -627,15 +633,16 @@ public:
 "     margin: -15px -25px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */\n"
 "     border-radius: 3px;\n"
 " }"));
-        verticalSlider12_3->setMaximum(100);
-        verticalSlider12_3->setOrientation(Qt::Vertical);
+        verticalSlider32->setMinimum(-255);
+        verticalSlider32->setMaximum(255);
+        verticalSlider32->setOrientation(Qt::Vertical);
 
-        gridLayout_3->addWidget(verticalSlider12_3, 2, 2, 1, 1, Qt::AlignHCenter);
+        gridLayout_3->addWidget(verticalSlider32, 2, 2, 1, 1, Qt::AlignHCenter);
 
-        toolButton_1d_7 = new QToolButton(FormAccuracyAdjust);
-        toolButton_1d_7->setObjectName(QStringLiteral("toolButton_1d_7"));
-        toolButton_1d_7->setMinimumSize(QSize(40, 40));
-        toolButton_1d_7->setStyleSheet(QLatin1String("QToolButton\n"
+        toolButton_32d = new QToolButton(FormAccuracyAdjust);
+        toolButton_32d->setObjectName(QStringLiteral("toolButton_32d"));
+        toolButton_32d->setMinimumSize(QSize(40, 40));
+        toolButton_32d->setStyleSheet(QLatin1String("QToolButton\n"
 "{\n"
 "	font-size:20px;\n"
 "    border-image: url(:/image/downG.png);\n"
@@ -647,12 +654,12 @@ public:
 "    border-image: url(:/image/downR.png);\n"
 "}"));
 
-        gridLayout_3->addWidget(toolButton_1d_7, 3, 2, 1, 1);
+        gridLayout_3->addWidget(toolButton_32d, 3, 2, 1, 1);
 
-        toolButton_13u_3 = new QToolButton(FormAccuracyAdjust);
-        toolButton_13u_3->setObjectName(QStringLiteral("toolButton_13u_3"));
-        toolButton_13u_3->setMinimumSize(QSize(40, 40));
-        toolButton_13u_3->setStyleSheet(QLatin1String("QToolButton\n"
+        toolButton_33u = new QToolButton(FormAccuracyAdjust);
+        toolButton_33u->setObjectName(QStringLiteral("toolButton_33u"));
+        toolButton_33u->setMinimumSize(QSize(40, 40));
+        toolButton_33u->setStyleSheet(QLatin1String("QToolButton\n"
 "{\n"
 "	font-size:20px;\n"
 "    border-image: url(:/image/upG.png);\n"
@@ -664,23 +671,23 @@ public:
 "    border-image: url(:/image/upR.png);\n"
 "}"));
 
-        gridLayout_3->addWidget(toolButton_13u_3, 1, 4, 1, 1);
+        gridLayout_3->addWidget(toolButton_33u, 1, 4, 1, 1);
 
-        lcdNumber1_7 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber1_7->setObjectName(QStringLiteral("lcdNumber1_7"));
-        sizePolicy2.setHeightForWidth(lcdNumber1_7->sizePolicy().hasHeightForWidth());
-        lcdNumber1_7->setSizePolicy(sizePolicy2);
-        lcdNumber1_7->setMinimumSize(QSize(0, 30));
-        lcdNumber1_7->setSmallDecimalPoint(true);
-        lcdNumber1_7->setDigitCount(3);
-        lcdNumber1_7->setSegmentStyle(QLCDNumber::Filled);
+        lcdNumber33 = new QLCDNumber(FormAccuracyAdjust);
+        lcdNumber33->setObjectName(QStringLiteral("lcdNumber33"));
+        sizePolicy2.setHeightForWidth(lcdNumber33->sizePolicy().hasHeightForWidth());
+        lcdNumber33->setSizePolicy(sizePolicy2);
+        lcdNumber33->setMinimumSize(QSize(0, 30));
+        lcdNumber33->setSmallDecimalPoint(true);
+        lcdNumber33->setDigitCount(3);
+        lcdNumber33->setSegmentStyle(QLCDNumber::Filled);
 
-        gridLayout_3->addWidget(lcdNumber1_7, 2, 5, 1, 1);
+        gridLayout_3->addWidget(lcdNumber33, 2, 5, 1, 1);
 
-        toolButton_12u_3 = new QToolButton(FormAccuracyAdjust);
-        toolButton_12u_3->setObjectName(QStringLiteral("toolButton_12u_3"));
-        toolButton_12u_3->setMinimumSize(QSize(40, 40));
-        toolButton_12u_3->setStyleSheet(QLatin1String("QToolButton\n"
+        toolButton_32u = new QToolButton(FormAccuracyAdjust);
+        toolButton_32u->setObjectName(QStringLiteral("toolButton_32u"));
+        toolButton_32u->setMinimumSize(QSize(40, 40));
+        toolButton_32u->setStyleSheet(QLatin1String("QToolButton\n"
 "{\n"
 "	font-size:20px;\n"
 "    border-image: url(:/image/upG.png);\n"
@@ -692,12 +699,12 @@ public:
 "    border-image: url(:/image/upR.png);\n"
 "}"));
 
-        gridLayout_3->addWidget(toolButton_12u_3, 1, 2, 1, 1);
+        gridLayout_3->addWidget(toolButton_32u, 1, 2, 1, 1);
 
-        toolButton_1d_8 = new QToolButton(FormAccuracyAdjust);
-        toolButton_1d_8->setObjectName(QStringLiteral("toolButton_1d_8"));
-        toolButton_1d_8->setMinimumSize(QSize(40, 40));
-        toolButton_1d_8->setStyleSheet(QLatin1String("QToolButton\n"
+        toolButton_33d = new QToolButton(FormAccuracyAdjust);
+        toolButton_33d->setObjectName(QStringLiteral("toolButton_33d"));
+        toolButton_33d->setMinimumSize(QSize(40, 40));
+        toolButton_33d->setStyleSheet(QLatin1String("QToolButton\n"
 "{\n"
 "	font-size:20px;\n"
 "    border-image: url(:/image/downG.png);\n"
@@ -709,14 +716,14 @@ public:
 "    border-image: url(:/image/downR.png);\n"
 "}"));
 
-        gridLayout_3->addWidget(toolButton_1d_8, 3, 4, 1, 1);
+        gridLayout_3->addWidget(toolButton_33d, 3, 4, 1, 1);
 
-        verticalSlider13_3 = new QSlider(FormAccuracyAdjust);
-        verticalSlider13_3->setObjectName(QStringLiteral("verticalSlider13_3"));
-        sizePolicy1.setHeightForWidth(verticalSlider13_3->sizePolicy().hasHeightForWidth());
-        verticalSlider13_3->setSizePolicy(sizePolicy1);
-        verticalSlider13_3->setMinimumSize(QSize(25, 0));
-        verticalSlider13_3->setStyleSheet(QLatin1String("QSlider::groove {\n"
+        verticalSlider33 = new QSlider(FormAccuracyAdjust);
+        verticalSlider33->setObjectName(QStringLiteral("verticalSlider33"));
+        sizePolicy1.setHeightForWidth(verticalSlider33->sizePolicy().hasHeightForWidth());
+        verticalSlider33->setSizePolicy(sizePolicy1);
+        verticalSlider33->setMinimumSize(QSize(25, 0));
+        verticalSlider33->setStyleSheet(QLatin1String("QSlider::groove {\n"
 "     /*border: 1px solid #999999;\n"
 "     height: 330px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */\n"
 "	width:15px;\n"
@@ -730,15 +737,16 @@ public:
 "     margin: -15px -25px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */\n"
 "     border-radius: 3px;\n"
 " }"));
-        verticalSlider13_3->setMaximum(100);
-        verticalSlider13_3->setOrientation(Qt::Vertical);
+        verticalSlider33->setMinimum(-5);
+        verticalSlider33->setMaximum(5);
+        verticalSlider33->setOrientation(Qt::Vertical);
 
-        gridLayout_3->addWidget(verticalSlider13_3, 2, 4, 1, 1, Qt::AlignHCenter);
+        gridLayout_3->addWidget(verticalSlider33, 2, 4, 1, 1, Qt::AlignHCenter);
 
-        toolButton_11u_3 = new QToolButton(FormAccuracyAdjust);
-        toolButton_11u_3->setObjectName(QStringLiteral("toolButton_11u_3"));
-        toolButton_11u_3->setMinimumSize(QSize(40, 40));
-        toolButton_11u_3->setStyleSheet(QLatin1String("QToolButton\n"
+        toolButton_31u = new QToolButton(FormAccuracyAdjust);
+        toolButton_31u->setObjectName(QStringLiteral("toolButton_31u"));
+        toolButton_31u->setMinimumSize(QSize(40, 40));
+        toolButton_31u->setStyleSheet(QLatin1String("QToolButton\n"
 "{\n"
 "	font-size:20px;\n"
 "    border-image: url(:/image/upG.png);\n"
@@ -750,12 +758,12 @@ public:
 "    border-image: url(:/image/upR.png);\n"
 "}"));
 
-        gridLayout_3->addWidget(toolButton_11u_3, 1, 0, 1, 1, Qt::AlignHCenter);
+        gridLayout_3->addWidget(toolButton_31u, 1, 0, 1, 1, Qt::AlignHCenter);
 
-        toolButton_1d_9 = new QToolButton(FormAccuracyAdjust);
-        toolButton_1d_9->setObjectName(QStringLiteral("toolButton_1d_9"));
-        toolButton_1d_9->setMinimumSize(QSize(40, 40));
-        toolButton_1d_9->setStyleSheet(QLatin1String("QToolButton\n"
+        toolButton_31d = new QToolButton(FormAccuracyAdjust);
+        toolButton_31d->setObjectName(QStringLiteral("toolButton_31d"));
+        toolButton_31d->setMinimumSize(QSize(40, 40));
+        toolButton_31d->setStyleSheet(QLatin1String("QToolButton\n"
 "{\n"
 "	font-size:20px;\n"
 "    border-image: url(:/image/downG.png);\n"
@@ -767,29 +775,29 @@ public:
 "    border-image: url(:/image/downR.png);\n"
 "}"));
 
-        gridLayout_3->addWidget(toolButton_1d_9, 3, 0, 1, 1, Qt::AlignHCenter);
+        gridLayout_3->addWidget(toolButton_31d, 3, 0, 1, 1, Qt::AlignHCenter);
 
-        lcdNumber1_8 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber1_8->setObjectName(QStringLiteral("lcdNumber1_8"));
-        sizePolicy2.setHeightForWidth(lcdNumber1_8->sizePolicy().hasHeightForWidth());
-        lcdNumber1_8->setSizePolicy(sizePolicy2);
-        lcdNumber1_8->setMinimumSize(QSize(0, 30));
-        lcdNumber1_8->setSmallDecimalPoint(true);
-        lcdNumber1_8->setDigitCount(3);
-        lcdNumber1_8->setSegmentStyle(QLCDNumber::Filled);
+        lcdNumber31 = new QLCDNumber(FormAccuracyAdjust);
+        lcdNumber31->setObjectName(QStringLiteral("lcdNumber31"));
+        sizePolicy2.setHeightForWidth(lcdNumber31->sizePolicy().hasHeightForWidth());
+        lcdNumber31->setSizePolicy(sizePolicy2);
+        lcdNumber31->setMinimumSize(QSize(0, 30));
+        lcdNumber31->setSmallDecimalPoint(true);
+        lcdNumber31->setDigitCount(4);
+        lcdNumber31->setSegmentStyle(QLCDNumber::Filled);
 
-        gridLayout_3->addWidget(lcdNumber1_8, 2, 1, 1, 1);
+        gridLayout_3->addWidget(lcdNumber31, 2, 1, 1, 1);
 
-        lcdNumber1_9 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber1_9->setObjectName(QStringLiteral("lcdNumber1_9"));
-        sizePolicy2.setHeightForWidth(lcdNumber1_9->sizePolicy().hasHeightForWidth());
-        lcdNumber1_9->setSizePolicy(sizePolicy2);
-        lcdNumber1_9->setMinimumSize(QSize(0, 30));
-        lcdNumber1_9->setSmallDecimalPoint(true);
-        lcdNumber1_9->setDigitCount(3);
-        lcdNumber1_9->setSegmentStyle(QLCDNumber::Filled);
+        lcdNumber32 = new QLCDNumber(FormAccuracyAdjust);
+        lcdNumber32->setObjectName(QStringLiteral("lcdNumber32"));
+        sizePolicy2.setHeightForWidth(lcdNumber32->sizePolicy().hasHeightForWidth());
+        lcdNumber32->setSizePolicy(sizePolicy2);
+        lcdNumber32->setMinimumSize(QSize(0, 30));
+        lcdNumber32->setSmallDecimalPoint(true);
+        lcdNumber32->setDigitCount(4);
+        lcdNumber32->setSegmentStyle(QLCDNumber::Filled);
 
-        gridLayout_3->addWidget(lcdNumber1_9, 2, 3, 1, 1);
+        gridLayout_3->addWidget(lcdNumber32, 2, 3, 1, 1);
 
         label_13 = new QLabel(FormAccuracyAdjust);
         label_13->setObjectName(QStringLiteral("label_13"));
@@ -826,12 +834,12 @@ public:
 
         gridLayout_3->addWidget(label_12, 0, 4, 1, 1);
 
-        verticalSlider11_3 = new QSlider(FormAccuracyAdjust);
-        verticalSlider11_3->setObjectName(QStringLiteral("verticalSlider11_3"));
-        sizePolicy1.setHeightForWidth(verticalSlider11_3->sizePolicy().hasHeightForWidth());
-        verticalSlider11_3->setSizePolicy(sizePolicy1);
-        verticalSlider11_3->setMinimumSize(QSize(25, 0));
-        verticalSlider11_3->setStyleSheet(QLatin1String("QSlider::groove {\n"
+        verticalSlider31 = new QSlider(FormAccuracyAdjust);
+        verticalSlider31->setObjectName(QStringLiteral("verticalSlider31"));
+        sizePolicy1.setHeightForWidth(verticalSlider31->sizePolicy().hasHeightForWidth());
+        verticalSlider31->setSizePolicy(sizePolicy1);
+        verticalSlider31->setMinimumSize(QSize(25, 0));
+        verticalSlider31->setStyleSheet(QLatin1String("QSlider::groove {\n"
 "     /*border: 1px solid #999999;\n"
 "     height: 330px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */\n"
 "	width:15px;\n"
@@ -845,10 +853,11 @@ public:
 "     margin: -15px -25px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */\n"
 "     border-radius: 3px;\n"
 " }"));
-        verticalSlider11_3->setMaximum(100);
-        verticalSlider11_3->setOrientation(Qt::Vertical);
+        verticalSlider31->setMinimum(-255);
+        verticalSlider31->setMaximum(255);
+        verticalSlider31->setOrientation(Qt::Vertical);
 
-        gridLayout_3->addWidget(verticalSlider11_3, 2, 0, 1, 1, Qt::AlignHCenter);
+        gridLayout_3->addWidget(verticalSlider31, 2, 0, 1, 1, Qt::AlignHCenter);
 
 
         gridLayout_4->addLayout(gridLayout_3, 1, 2, 1, 1);
@@ -897,33 +906,33 @@ public:
     {
         FormAccuracyAdjust->setWindowTitle(QApplication::translate("FormAccuracyAdjust", "Form", 0));
         label_6->setText(QApplication::translate("FormAccuracyAdjust", "\344\272\256", 0));
-        toolButton_1d_2->setText(QString());
+        toolButton_12d->setText(QString());
         toolButton_13u->setText(QString());
         toolButton_12u->setText(QString());
-        toolButton_1d_3->setText(QString());
+        toolButton_13d->setText(QString());
         label_3->setText(QApplication::translate("FormAccuracyAdjust", "\344\270\200\346\254\241\351\200\211", 0));
         toolButton_11u->setText(QString());
-        toolButton_1d->setText(QString());
+        toolButton_11d->setText(QString());
         label_4->setText(QApplication::translate("FormAccuracyAdjust", "\346\232\227", 0));
         label_5->setText(QApplication::translate("FormAccuracyAdjust", "\346\226\221\347\202\271", 0));
-        toolButton_1d_4->setText(QString());
-        toolButton_13u_2->setText(QString());
-        toolButton_12u_2->setText(QString());
-        toolButton_1d_5->setText(QString());
-        toolButton_11u_2->setText(QString());
-        toolButton_1d_6->setText(QString());
+        toolButton_22d->setText(QString());
+        toolButton_23u->setText(QString());
+        toolButton_22u->setText(QString());
+        toolButton_23d->setText(QString());
+        toolButton_21u->setText(QString());
+        toolButton_21d->setText(QString());
         label_9->setText(QApplication::translate("FormAccuracyAdjust", "\344\272\256", 0));
-        label_10->setText(QApplication::translate("FormAccuracyAdjust", "\344\270\200\346\254\241\351\200\211", 0));
+        label_10->setText(QApplication::translate("FormAccuracyAdjust", "\344\272\214\346\254\241\351\200\211", 0));
         label_7->setText(QApplication::translate("FormAccuracyAdjust", "\346\232\227", 0));
         label_8->setText(QApplication::translate("FormAccuracyAdjust", "\346\226\221\347\202\271", 0));
-        toolButton_1d_7->setText(QString());
-        toolButton_13u_3->setText(QString());
-        toolButton_12u_3->setText(QString());
-        toolButton_1d_8->setText(QString());
-        toolButton_11u_3->setText(QString());
-        toolButton_1d_9->setText(QString());
+        toolButton_32d->setText(QString());
+        toolButton_33u->setText(QString());
+        toolButton_32u->setText(QString());
+        toolButton_33d->setText(QString());
+        toolButton_31u->setText(QString());
+        toolButton_31d->setText(QString());
         label_13->setText(QApplication::translate("FormAccuracyAdjust", "\344\272\256", 0));
-        label_14->setText(QApplication::translate("FormAccuracyAdjust", "\344\270\200\346\254\241\351\200\211", 0));
+        label_14->setText(QApplication::translate("FormAccuracyAdjust", "\344\270\211\346\254\241\351\200\211", 0));
         label_11->setText(QApplication::translate("FormAccuracyAdjust", "\346\232\227", 0));
         label_12->setText(QApplication::translate("FormAccuracyAdjust", "\346\226\221\347\202\271", 0));
         toolButton_Camera->setText(QApplication::translate("FormAccuracyAdjust", "\345\211\215\347\233\270\346\234\272", 0));

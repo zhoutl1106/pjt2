@@ -86,7 +86,6 @@ void FormVibrationAdjust::setVibrator(bool value)
 
 void FormVibrationAdjust::updateData()
 {
-    qDebug()<<"update Data in vib";
     bool tempBeep = isBeep;
     isBeep = false;
     ui->verticalSlider1->setValue(g_dialog->fileManager->config.vibration[0]);

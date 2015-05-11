@@ -91,8 +91,11 @@ QSlider::handle {
      border-radius: 3px;
  }</string>
        </property>
+       <property name="minimum">
+        <number>-255</number>
+       </property>
        <property name="maximum">
-        <number>100</number>
+        <number>255</number>
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -100,7 +103,7 @@ QSlider::handle {
       </widget>
      </item>
      <item row="3" column="3">
-      <widget class="QToolButton" name="toolButton_1d_2">
+      <widget class="QToolButton" name="toolButton_12d">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -152,7 +155,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="2" column="6">
-      <widget class="QLCDNumber" name="lcdNumber1_3">
+      <widget class="QLCDNumber" name="lcdNumber13">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -203,7 +206,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="3" column="5">
-      <widget class="QToolButton" name="toolButton_1d_3">
+      <widget class="QToolButton" name="toolButton_13d">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -258,8 +261,11 @@ QSlider::handle {
      border-radius: 3px;
  }</string>
        </property>
+       <property name="minimum">
+        <number>-5</number>
+       </property>
        <property name="maximum">
-        <number>100</number>
+        <number>5</number>
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -309,7 +315,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="3" column="1" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_1d">
+      <widget class="QToolButton" name="toolButton_11d">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -335,7 +341,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="2" column="2">
-      <widget class="QLCDNumber" name="lcdNumber1">
+      <widget class="QLCDNumber" name="lcdNumber11">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -352,7 +358,7 @@ QToolButton:pressed
         <bool>true</bool>
        </property>
        <property name="digitCount">
-        <number>3</number>
+        <number>4</number>
        </property>
        <property name="segmentStyle">
         <enum>QLCDNumber::Filled</enum>
@@ -360,7 +366,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="2" column="4">
-      <widget class="QLCDNumber" name="lcdNumber1_2">
+      <widget class="QLCDNumber" name="lcdNumber12">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -377,7 +383,7 @@ QToolButton:pressed
         <bool>true</bool>
        </property>
        <property name="digitCount">
-        <number>3</number>
+        <number>4</number>
        </property>
        <property name="segmentStyle">
         <enum>QLCDNumber::Filled</enum>
@@ -456,8 +462,11 @@ QSlider::handle {
      border-radius: 3px;
  }</string>
        </property>
+       <property name="minimum">
+        <number>-255</number>
+       </property>
        <property name="maximum">
-        <number>100</number>
+        <number>255</number>
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -475,7 +484,7 @@ QSlider::handle {
       <number>10</number>
      </property>
      <item row="2" column="2" alignment="Qt::AlignHCenter">
-      <widget class="QSlider" name="verticalSlider12_2">
+      <widget class="QSlider" name="verticalSlider22">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -504,8 +513,11 @@ QSlider::handle {
      border-radius: 3px;
  }</string>
        </property>
+       <property name="minimum">
+        <number>-255</number>
+       </property>
        <property name="maximum">
-        <number>100</number>
+        <number>255</number>
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -513,7 +525,7 @@ QSlider::handle {
       </widget>
      </item>
      <item row="3" column="2">
-      <widget class="QToolButton" name="toolButton_1d_4">
+      <widget class="QToolButton" name="toolButton_22d">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -539,7 +551,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="1" column="4">
-      <widget class="QToolButton" name="toolButton_13u_2">
+      <widget class="QToolButton" name="toolButton_23u">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -565,7 +577,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="2" column="5">
-      <widget class="QLCDNumber" name="lcdNumber1_4">
+      <widget class="QLCDNumber" name="lcdNumber23">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -590,7 +602,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="1" column="2">
-      <widget class="QToolButton" name="toolButton_12u_2">
+      <widget class="QToolButton" name="toolButton_22u">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -616,7 +628,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="3" column="4">
-      <widget class="QToolButton" name="toolButton_1d_5">
+      <widget class="QToolButton" name="toolButton_23d">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -642,7 +654,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="2" column="4" alignment="Qt::AlignHCenter">
-      <widget class="QSlider" name="verticalSlider13_2">
+      <widget class="QSlider" name="verticalSlider23">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -671,8 +683,11 @@ QSlider::handle {
      border-radius: 3px;
  }</string>
        </property>
+       <property name="minimum">
+        <number>-5</number>
+       </property>
        <property name="maximum">
-        <number>100</number>
+        <number>5</number>
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -680,7 +695,7 @@ QSlider::handle {
       </widget>
      </item>
      <item row="1" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_11u_2">
+      <widget class="QToolButton" name="toolButton_21u">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -706,7 +721,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="3" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_1d_6">
+      <widget class="QToolButton" name="toolButton_21d">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -732,7 +747,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLCDNumber" name="lcdNumber1_5">
+      <widget class="QLCDNumber" name="lcdNumber21">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -749,7 +764,7 @@ QToolButton:pressed
         <bool>true</bool>
        </property>
        <property name="digitCount">
-        <number>3</number>
+        <number>4</number>
        </property>
        <property name="segmentStyle">
         <enum>QLCDNumber::Filled</enum>
@@ -757,7 +772,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="2" column="3">
-      <widget class="QLCDNumber" name="lcdNumber1_6">
+      <widget class="QLCDNumber" name="lcdNumber22">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -774,7 +789,7 @@ QToolButton:pressed
         <bool>true</bool>
        </property>
        <property name="digitCount">
-        <number>3</number>
+        <number>4</number>
        </property>
        <property name="segmentStyle">
         <enum>QLCDNumber::Filled</enum>
@@ -861,7 +876,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="2" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QSlider" name="verticalSlider11_2">
+      <widget class="QSlider" name="verticalSlider21">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -890,8 +905,11 @@ QSlider::handle {
      border-radius: 3px;
  }</string>
        </property>
+       <property name="minimum">
+        <number>-255</number>
+       </property>
        <property name="maximum">
-        <number>100</number>
+        <number>255</number>
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -909,7 +927,7 @@ QSlider::handle {
       <number>10</number>
      </property>
      <item row="2" column="2" alignment="Qt::AlignHCenter">
-      <widget class="QSlider" name="verticalSlider12_3">
+      <widget class="QSlider" name="verticalSlider32">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -938,8 +956,11 @@ QSlider::handle {
      border-radius: 3px;
  }</string>
        </property>
+       <property name="minimum">
+        <number>-255</number>
+       </property>
        <property name="maximum">
-        <number>100</number>
+        <number>255</number>
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -947,7 +968,7 @@ QSlider::handle {
       </widget>
      </item>
      <item row="3" column="2">
-      <widget class="QToolButton" name="toolButton_1d_7">
+      <widget class="QToolButton" name="toolButton_32d">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -973,7 +994,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="1" column="4">
-      <widget class="QToolButton" name="toolButton_13u_3">
+      <widget class="QToolButton" name="toolButton_33u">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -999,7 +1020,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="2" column="5">
-      <widget class="QLCDNumber" name="lcdNumber1_7">
+      <widget class="QLCDNumber" name="lcdNumber33">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -1024,7 +1045,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="1" column="2">
-      <widget class="QToolButton" name="toolButton_12u_3">
+      <widget class="QToolButton" name="toolButton_32u">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -1050,7 +1071,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="3" column="4">
-      <widget class="QToolButton" name="toolButton_1d_8">
+      <widget class="QToolButton" name="toolButton_33d">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -1076,7 +1097,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="2" column="4" alignment="Qt::AlignHCenter">
-      <widget class="QSlider" name="verticalSlider13_3">
+      <widget class="QSlider" name="verticalSlider33">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -1105,8 +1126,11 @@ QSlider::handle {
      border-radius: 3px;
  }</string>
        </property>
+       <property name="minimum">
+        <number>-5</number>
+       </property>
        <property name="maximum">
-        <number>100</number>
+        <number>5</number>
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -1114,7 +1138,7 @@ QSlider::handle {
       </widget>
      </item>
      <item row="1" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_11u_3">
+      <widget class="QToolButton" name="toolButton_31u">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -1140,7 +1164,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="3" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_1d_9">
+      <widget class="QToolButton" name="toolButton_31d">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -1166,7 +1190,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLCDNumber" name="lcdNumber1_8">
+      <widget class="QLCDNumber" name="lcdNumber31">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -1183,7 +1207,7 @@ QToolButton:pressed
         <bool>true</bool>
        </property>
        <property name="digitCount">
-        <number>3</number>
+        <number>4</number>
        </property>
        <property name="segmentStyle">
         <enum>QLCDNumber::Filled</enum>
@@ -1191,7 +1215,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="2" column="3">
-      <widget class="QLCDNumber" name="lcdNumber1_9">
+      <widget class="QLCDNumber" name="lcdNumber32">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -1208,7 +1232,7 @@ QToolButton:pressed
         <bool>true</bool>
        </property>
        <property name="digitCount">
-        <number>3</number>
+        <number>4</number>
        </property>
        <property name="segmentStyle">
         <enum>QLCDNumber::Filled</enum>
@@ -1295,7 +1319,7 @@ QToolButton:pressed
       </widget>
      </item>
      <item row="2" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QSlider" name="verticalSlider11_3">
+      <widget class="QSlider" name="verticalSlider31">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -1324,8 +1348,11 @@ QSlider::handle {
      border-radius: 3px;
  }</string>
        </property>
+       <property name="minimum">
+        <number>-255</number>
+       </property>
        <property name="maximum">
-        <number>100</number>
+        <number>255</number>
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>

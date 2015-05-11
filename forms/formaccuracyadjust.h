@@ -23,22 +23,32 @@ public slots:
 
 private slots:
     void on_toolButton_clicked();
-/*
-    void on_toolButton_3_clicked();
+    void on_toolButton_11u_clicked();
+    void on_toolButton_11d_clicked();
+    void on_toolButton_12u_clicked();
+    void on_toolButton_12d_clicked();
+    void on_toolButton_13u_clicked();
+    void on_toolButton_13d_clicked();
+    void on_toolButton_21u_clicked();
+    void on_toolButton_21d_clicked();
+    void on_toolButton_22u_clicked();
+    void on_toolButton_22d_clicked();
+    void on_toolButton_23u_clicked();
+    void on_toolButton_23d_clicked();
+    void on_toolButton_31u_clicked();
+    void on_toolButton_31d_clicked();
+    void on_toolButton_32u_clicked();
+    void on_toolButton_32d_clicked();
+    void on_toolButton_33u_clicked();
+    void on_toolButton_33d_clicked();
 
-    void on_toolButton_5_clicked();
+    void on_toolButton_Camera_clicked();
 
-    void on_toolButton_6_clicked();
-
-    void on_toolButton_8_clicked();
-
-    void on_toolButton_7_clicked();
-
-    void on_toolButton_10_clicked();
-
-    void on_toolButton_9_clicked();*/
 private:
     Ui::FormAccuracyAdjust *ui;
+    bool isEndCamera;
+    QString styleSheetCamera[2];
+    QString textCamera[2];
     int last1;
     int last2;
     int last3;
