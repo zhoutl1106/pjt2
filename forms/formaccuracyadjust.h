@@ -44,8 +44,11 @@ private slots:
 
     void on_toolButton_Camera_clicked();
 
+    void on_toolButton_2_clicked();
+
 private:
     Ui::FormAccuracyAdjust *ui;
+    void checkDataRange(int &v, int min, int max);
     bool isEndCamera;
     QString styleSheetCamera[2];
     QString textCamera[2];

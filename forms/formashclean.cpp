@@ -16,7 +16,7 @@ FormAshClean::FormAshClean(QWidget *parent) :
     ui->setupUi(this);
     setStyleSheet(stylesheet);
     /*dlgAsh = new DlgAsh;
-    dlgAsh->move(312,200);
+    dlgAsh->move(312,200);*/
     singleTimer = new QTimer;
     singleTimer->setInterval(10000);
     singleTimer->setSingleShot(true);
@@ -24,7 +24,7 @@ FormAshClean::FormAshClean(QWidget *parent) :
     autoTimer = new QTimer;
     autoTimer->setInterval(600000);
     connect(autoTimer,SIGNAL(timeout()),this,SLOT(cleanAsh()));
-    setWindowModality(Qt::ApplicationModal);*/
+    setWindowModality(Qt::ApplicationModal);
     //autoTimer->start();
 }
 
@@ -37,24 +37,18 @@ void FormAshClean::updateData()
 {
     bool temp = isBeep;
     isBeep = false;
+
+    ui->spinBox_delay->setValue(g_dialog->fileManager->config.ash_delay);
+    ui->spinBox_interval->setValue(g_dialog->fileManager->config.ash_interval);
+    ui->spinBox_thresholdFront->setValue(g_dialog->fileManager->config.frontLuminanceThreshold);
+    ui->spinBox_thresholdEnd->setValue(g_dialog->fileManager->config.endLuminanceThreshold);
+
     isBeep = temp;
-}
-
-/*
-void FormAshClean::setThreshold(short *dat)
-{
-    ui->spinBox_threshold->setValue(dat[0]);
-}
-
-void FormAshClean::setValue(int delay, int interval)
-{
-    ui->spinBox_delay->setValue(delay);
-    ui->spinBox_interval->setValue(interval);
 }
 
 void FormAshClean::on_toolButton_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000);/*
     char buf3[6]={0x08,0x00};
     QByteArray cmd;
     for(int i = 0;i<14;i++)
@@ -65,7 +59,7 @@ void FormAshClean::on_toolButton_clicked()
         emit sendCmd(1,cmd);
         //usleep(200000);
     }
-    this->close();
+    this->close();*/
     g_widget->fileManager->config.ash_delay = ui->spinBox_delay->value();
     g_widget->fileManager->config.ash_interval = ui->spinBox_interval->value();
     autoTimer->setInterval(ui->spinBox_interval->value() * 60000);
@@ -85,7 +79,7 @@ void FormAshClean::cleanAsh()
 {
     if(isBeep)beep(50000);
     qDebug()<<"clean ash";
-    int delay = 50000;
+    /*int delay = 50000;
 
 //    if(g_widget->motorFlag)
 //        g_widget->on_toolButton_clicked();
@@ -130,7 +124,7 @@ void FormAshClean::cleanAsh()
     emit sendCmd(0,cmd6);
     usleep(delay);
 
-    //g_widget->on_toolButton_2_clicked();
+    //g_widget->on_toolButton_2_clicked();*/
 }
 
 void FormAshClean::on_toolButton_manual_clicked()
@@ -139,33 +133,42 @@ void FormAshClean::on_toolButton_manual_clicked()
     cleanAsh();
 }
 
-void FormAshClean::on_spinBox_threshold_valueChanged(int arg1)
+void FormAshClean::on_spinBox_thresholdFront_valueChanged(int arg1)
 {
     if(isBeep)beep(50000);
-    for(int i =0;i<14;i++)
-        g_widget->fileManager->config.threshold[i] = arg1;
+    g_dialog->fileManager->config.frontLuminanceThreshold = arg1;
+}
+
+void FormAshClean::on_spinBox_thresholdEnd_valueChanged(int arg1)
+{
+    if(isBeep)beep(50000);
+    g_dialog->fileManager->config.endLuminanceThreshold = arg1;
 }
 
 void FormAshClean::on_spinBox_delay_valueChanged(int arg1)
 {
     if(isBeep)beep(50000);
+    g_dialog->fileManager->config.ash_delay = arg1;
 }
 
 void FormAshClean::on_spinBox_interval_valueChanged(int arg1)
 {
     if(isBeep)beep(50000);
+    g_dialog->fileManager->config.ash_interval = arg1;
 }
 
 void FormAshClean::on_radioButtonTiming_clicked()
 {
     if(isBeep)beep(50000);
+    g_dialog->fileManager->config.ash_mode = ASH_MODE_TIME;
 }
 
 void FormAshClean::on_radioButtonAuto_clicked()
 {
     if(isBeep)beep(50000);
+    g_dialog->fileManager->config.ash_mode = ASH_MODE_AUTO;
 }
-*/
+
 
 void FormAshClean::on_toolButton_clicked()
 {

@@ -100,7 +100,7 @@ void FormVibrationAdjust::updateData()
     {
         isOpen[i] = g_dialog->fileManager->config.vibratorStatusU8 & (1 << i);
         lastValue[i] = g_dialog->fileManager->config.vibration[i];
-        qDebug()<<isOpen[i]<<lastValue[i];
+        //qDebug()<<isOpen[i]<<lastValue[i];
     }
     ui->pushButton_v1->setStyleSheet(styleSheet[isOpen[0]]);
     ui->pushButton_v2->setStyleSheet(styleSheet[isOpen[1]]);

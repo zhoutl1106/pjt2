@@ -1,10 +1,12 @@
 #include "formaccuracyadjust.h"
 #include "ui_formaccuracyadjust.h"
 #include <QDebug>
+#include "../dialog.h"
 
 void beep(int);
 extern bool isBeep;
 extern QString stylesheet;
+extern Dialog* g_dialog;
 
 
 FormAccuracyAdjust::FormAccuracyAdjust(QWidget *parent) :
@@ -181,4 +183,60 @@ void FormAccuracyAdjust::on_toolButton_Camera_clicked()
     isEndCamera = !isEndCamera;
     ui->toolButton_Camera->setStyleSheet(styleSheetCamera[isEndCamera]);
     ui->toolButton_Camera->setText(textCamera[isEndCamera]);
+}
+
+void FormAccuracyAdjust::checkDataRange(int &v, int min, int max)
+{
+    if(v > max)v = max;
+    if(v < min)v = min;
+}
+
+void FormAccuracyAdjust::on_toolButton_2_clicked()
+{
+    for(int i = 0 + isEndCamera * 7; i < 7 + isEndCamera * 7;i++)
+    {
+        if(g_dialog->fileManager->config.times[i] == 1)
+        {
+            g_dialog->fileManager->config.accuracy[i][0] += ui->verticalSlider11->value();
+            checkDataRange(g_dialog->fileManager->config.accuracy[i][0],-255,255);
+            g_dialog->fileManager->config.accuracy[i][1] += ui->verticalSlider12->value();
+            checkDataRange(g_dialog->fileManager->config.accuracy[i][1],-255,255);
+            g_dialog->fileManager->config.accuracy[i][2] += ui->verticalSlider13->value();
+            checkDataRange(g_dialog->fileManager->config.accuracy[i][2],-5,5);
+        }
+        if(g_dialog->fileManager->config.times[i] == 2)
+        {
+            g_dialog->fileManager->config.accuracy[i][0] += ui->verticalSlider21->value();
+            checkDataRange(g_dialog->fileManager->config.accuracy[i][0],-255,255);
+            g_dialog->fileManager->config.accuracy[i][1] += ui->verticalSlider22->value();
+            checkDataRange(g_dialog->fileManager->config.accuracy[i][1],-255,255);
+            g_dialog->fileManager->config.accuracy[i][2] += ui->verticalSlider23->value();
+            checkDataRange(g_dialog->fileManager->config.accuracy[i][2],-5,5);
+        }
+        if(g_dialog->fileManager->config.times[i] == 3)
+        {
+            g_dialog->fileManager->config.accuracy[i][0] += ui->verticalSlider31->value();
+            checkDataRange(g_dialog->fileManager->config.accuracy[i][0],-255,255);
+            g_dialog->fileManager->config.accuracy[i][1] += ui->verticalSlider32->value();
+            checkDataRange(g_dialog->fileManager->config.accuracy[i][1],-255,255);
+            g_dialog->fileManager->config.accuracy[i][2] += ui->verticalSlider33->value();
+            checkDataRange(g_dialog->fileManager->config.accuracy[i][2],-5,5);
+        }
+    }
+    ui->verticalSlider11->setValue(0);
+    ui->verticalSlider12->setValue(0);
+    ui->verticalSlider13->setValue(0);
+    ui->verticalSlider21->setValue(0);
+    ui->verticalSlider22->setValue(0);
+    ui->verticalSlider23->setValue(0);
+    ui->verticalSlider31->setValue(0);
+    ui->verticalSlider32->setValue(0);
+    ui->verticalSlider33->setValue(0);
+    /*for(int i = 0;i<14;i++)
+    {
+        qDebug()<<i<<g_dialog->fileManager->config.times[i]
+                  <<g_dialog->fileManager->config.accuracy[i][0]
+                 <<g_dialog->fileManager->config.accuracy[i][1]
+                <<g_dialog->fileManager->config.accuracy[i][2];
+    }*/
 }
