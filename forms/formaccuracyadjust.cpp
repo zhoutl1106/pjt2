@@ -2,6 +2,7 @@
 #include "ui_formaccuracyadjust.h"
 #include <QDebug>
 #include "../dialog.h"
+#include <QVBoxLayout>
 
 void beep(int);
 extern bool isBeep;
@@ -34,15 +35,16 @@ FormAccuracyAdjust::FormAccuracyAdjust(QWidget *parent) :
     ui->verticalSlider32->setValue(0);
     ui->verticalSlider33->setValue(0);
 
-    styleSheetCamera[1] = "font-size:20px;border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);";
-    styleSheetCamera[0] = "font-size:20px;border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);";
-    textCamera[1] = "后相机";
-    textCamera[0] = "前相机";
+    btn = new MultiStatusToolButton(NULL,2,"前相机","font-size:20px;border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);"
+                                    ,"后相机","font-size:20px;border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
 
-    isEndCamera = false;
-    ui->toolButton_Camera->setStyleSheet(styleSheetCamera[isEndCamera]);
-    ui->toolButton_Camera->setText(textCamera[isEndCamera]);
+    connect(btn,SIGNAL(clicked()),this,SLOT(on_toolButton_Camera_clicked()));
+    QVBoxLayout *box = new QVBoxLayout;
+    box->setMargin(0);
+    box->addWidget(btn);
+    ui->widget->setLayout(box);
 }
+
 
 FormAccuracyAdjust::~FormAccuracyAdjust()
 {
@@ -180,9 +182,7 @@ void FormAccuracyAdjust::on_toolButton_33d_clicked()
 
 void FormAccuracyAdjust::on_toolButton_Camera_clicked()
 {
-    isEndCamera = !isEndCamera;
-    ui->toolButton_Camera->setStyleSheet(styleSheetCamera[isEndCamera]);
-    ui->toolButton_Camera->setText(textCamera[isEndCamera]);
+    if(isBeep)beep(50000);
 }
 
 void FormAccuracyAdjust::checkDataRange(int &v, int min, int max)
@@ -193,7 +193,7 @@ void FormAccuracyAdjust::checkDataRange(int &v, int min, int max)
 
 void FormAccuracyAdjust::on_toolButton_2_clicked()
 {
-    for(int i = 0 + isEndCamera * 7; i < 7 + isEndCamera * 7;i++)
+    for(int i = 0 + btn->currentIndex() * 7; i < 7 + btn->currentIndex() * 7;i++)
     {
         if(g_dialog->fileManager->config.times[i] == 1)
         {

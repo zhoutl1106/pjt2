@@ -80,7 +80,7 @@ public:
     QLabel *label_12;
     QSlider *verticalSlider31;
     QVBoxLayout *verticalLayout;
-    QToolButton *toolButton_Camera;
+    QWidget *widget;
     QToolButton *toolButton_2;
     QToolButton *toolButton;
     QLabel *label;
@@ -865,12 +865,15 @@ public:
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(100);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        toolButton_Camera = new QToolButton(FormAccuracyAdjust);
-        toolButton_Camera->setObjectName(QStringLiteral("toolButton_Camera"));
-        sizePolicy.setHeightForWidth(toolButton_Camera->sizePolicy().hasHeightForWidth());
-        toolButton_Camera->setSizePolicy(sizePolicy);
+        widget = new QWidget(FormAccuracyAdjust);
+        widget->setObjectName(QStringLiteral("widget"));
+        QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Preferred);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(widget->sizePolicy().hasHeightForWidth());
+        widget->setSizePolicy(sizePolicy3);
 
-        verticalLayout->addWidget(toolButton_Camera);
+        verticalLayout->addWidget(widget);
 
         toolButton_2 = new QToolButton(FormAccuracyAdjust);
         toolButton_2->setObjectName(QStringLiteral("toolButton_2"));
@@ -935,7 +938,6 @@ public:
         label_14->setText(QApplication::translate("FormAccuracyAdjust", "\344\270\211\346\254\241\351\200\211", 0));
         label_11->setText(QApplication::translate("FormAccuracyAdjust", "\346\232\227", 0));
         label_12->setText(QApplication::translate("FormAccuracyAdjust", "\346\226\221\347\202\271", 0));
-        toolButton_Camera->setText(QApplication::translate("FormAccuracyAdjust", "\345\211\215\347\233\270\346\234\272", 0));
         toolButton_2->setText(QApplication::translate("FormAccuracyAdjust", "\347\241\256\345\256\232", 0));
         toolButton->setText(QApplication::translate("FormAccuracyAdjust", "\350\277\224\345\233\236", 0));
         label->setText(QApplication::translate("FormAccuracyAdjust", "\347\262\276\345\272\246\350\260\203\346\225\264", 0));

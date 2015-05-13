@@ -15,12 +15,11 @@ FormAshClean::FormAshClean(QWidget *parent) :
 {
     ui->setupUi(this);
     setStyleSheet(stylesheet);
-    /*dlgAsh = new DlgAsh;
-    dlgAsh->move(312,200);*/
+    dlgAsh = new DialogAutoCloseMessageBox(NULL,"清灰","清灰工作中……","","",10,false);
     singleTimer = new QTimer;
     singleTimer->setInterval(10000);
     singleTimer->setSingleShot(true);
-    connect(singleTimer,SIGNAL(timeout()),dlgAsh,SLOT(setFinished()));
+    //connect(singleTimer,SIGNAL(timeout()),dlgAsh,SLOT(setFinished()));
     autoTimer = new QTimer;
     autoTimer->setInterval(600000);
     connect(autoTimer,SIGNAL(timeout()),this,SLOT(cleanAsh()));
@@ -42,6 +41,10 @@ void FormAshClean::updateData()
     ui->spinBox_interval->setValue(g_dialog->fileManager->config.ash_interval);
     ui->spinBox_thresholdFront->setValue(g_dialog->fileManager->config.frontLuminanceThreshold);
     ui->spinBox_thresholdEnd->setValue(g_dialog->fileManager->config.endLuminanceThreshold);
+    if(g_dialog->fileManager->config.ash_mode == ASH_MODE_TIME)
+        on_radioButtonTiming_clicked();
+    else
+        on_radioButtonAuto_clicked();
 
     isBeep = temp;
 }
@@ -60,25 +63,28 @@ void FormAshClean::on_toolButton_clicked()
         //usleep(200000);
     }
     this->close();*/
-    g_widget->fileManager->config.ash_delay = ui->spinBox_delay->value();
-    g_widget->fileManager->config.ash_interval = ui->spinBox_interval->value();
+    g_dialog->fileManager->config.ash_delay = ui->spinBox_delay->value();
+    g_dialog->fileManager->config.ash_interval = ui->spinBox_interval->value();
     autoTimer->setInterval(ui->spinBox_interval->value() * 60000);
-    if(ui->radioButtonTiming->isChecked())
+    /*if(ui->radioButtonTiming->isChecked())
     {
         autoTimer->start();
-        g_widget->serialManager->isAshAccept = false;
+        g_dialog->serialManager->isAshAccept = false;
     }
     else
     {
         autoTimer->stop();
-        g_widget->serialManager->isAshAccept = true;
-    }
+        g_dialog->serialManager->isAshAccept = true;
+    }*/
+    emit switchToPage(6);
 }
 
 void FormAshClean::cleanAsh()
 {
     if(isBeep)beep(50000);
     qDebug()<<"clean ash";
+    dlgAsh->setDelay(10);
+    qDebug()<<dlgAsh->exec();
     /*int delay = 50000;
 
 //    if(g_widget->motorFlag)
@@ -167,11 +173,4 @@ void FormAshClean::on_radioButtonAuto_clicked()
 {
     if(isBeep)beep(50000);
     g_dialog->fileManager->config.ash_mode = ASH_MODE_AUTO;
-}
-
-
-void FormAshClean::on_toolButton_clicked()
-{
-    if(isBeep)beep(50000);
-    emit switchToPage(6);
 }

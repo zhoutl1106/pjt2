@@ -2,9 +2,8 @@
 #define FORMASHCLEAN_H
 
 #include <QWidget>
-//#include "formkeyboard.h"
 #include <QTimer>
-//#include "dlgash.h"
+#include "../dialogautoclosemessagebox.h"
 
 namespace Ui {
 class FormAshClean;
@@ -17,6 +16,7 @@ class FormAshClean : public QWidget
 public:
     explicit FormAshClean(QWidget *parent = 0);
     ~FormAshClean();
+    DialogAutoCloseMessageBox *dlgAsh;
 
 public slots:
     void updateData();
@@ -44,14 +44,10 @@ private slots:
 
     void on_radioButtonAuto_clicked();
 
-private slots:
-    void on_toolButton_clicked();
-
 private:
     Ui::FormAshClean *ui;
     QTimer *singleTimer;
     QTimer *autoTimer;
-    /*DlgAsh *dlgAsh;*/
 };
 
 #endif // FORMASHCLEAN_H

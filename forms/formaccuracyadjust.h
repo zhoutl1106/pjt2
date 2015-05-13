@@ -2,6 +2,7 @@
 #define FORMACCURACYADJUST_H
 
 #include <QWidget>
+#include "../multistatustoolbutton.h"
 
 namespace Ui {
 class FormAccuracyAdjust;
@@ -49,12 +50,7 @@ private slots:
 private:
     Ui::FormAccuracyAdjust *ui;
     void checkDataRange(int &v, int min, int max);
-    bool isEndCamera;
-    QString styleSheetCamera[2];
-    QString textCamera[2];
-    int last1;
-    int last2;
-    int last3;
+    MultiStatusToolButton *btn;
 };
 
 #endif // FORMACCURACYADJUST_H

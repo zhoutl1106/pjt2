@@ -26,5 +26,6 @@
         <file>image/downArrow.png</file>
         <file>image/upArrow.png</file>
         <file>image/licenseBkg.png</file>
+        <file>image/radio_check.png</file>
     </qresource>
 </RCC>

@@ -33,7 +33,9 @@ SOURCES += main.cpp\
     forms/formwholesetting.cpp \
     forms/formcntcheck.cpp \
     forms/formadmin.cpp \
-    filemanager.cpp
+    filemanager.cpp \
+    longclicktoolbutton.cpp \
+    multistatustoolbutton.cpp
 
 HEADERS  += \
     dialogautoclosemessagebox.h \
@@ -56,7 +58,9 @@ HEADERS  += \
     forms/formwholesetting.h \
     forms/formcntcheck.h \
     forms/formadmin.h \
-    filemanager.h
+    filemanager.h \
+    longclicktoolbutton.h \
+    multistatustoolbutton.h
 
 FORMS    += \
     dialogautoclosemessagebox.ui \

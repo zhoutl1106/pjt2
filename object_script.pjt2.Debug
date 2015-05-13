@@ -21,6 +21,8 @@ INPUT(
 ./debug\formcntcheck.o
 ./debug\formadmin.o
 ./debug\filemanager.o
+./debug\longclicktoolbutton.o
+./debug\multistatustoolbutton.o
 ./debug\qrc_resource.o
 ./debug\moc_dialogautoclosemessagebox.o
 ./debug\moc_encryption.o
@@ -43,4 +45,6 @@ INPUT(
 ./debug\moc_formcntcheck.o
 ./debug\moc_formadmin.o
 ./debug\moc_filemanager.o
+./debug\moc_longclicktoolbutton.o
+./debug\moc_multistatustoolbutton.o
 );

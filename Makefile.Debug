@@ -64,7 +64,9 @@ SOURCES       = main.cpp \
 		forms\formwholesetting.cpp \
 		forms\formcntcheck.cpp \
 		forms\formadmin.cpp \
-		filemanager.cpp debug\qrc_resource.cpp \
+		filemanager.cpp \
+		longclicktoolbutton.cpp \
+		multistatustoolbutton.cpp debug\qrc_resource.cpp \
 		debug\moc_dialogautoclosemessagebox.cpp \
 		debug\moc_encryption.cpp \
 		debug\moc_dialog.cpp \
@@ -85,7 +87,9 @@ SOURCES       = main.cpp \
 		debug\moc_formwholesetting.cpp \
 		debug\moc_formcntcheck.cpp \
 		debug\moc_formadmin.cpp \
-		debug\moc_filemanager.cpp
+		debug\moc_filemanager.cpp \
+		debug\moc_longclicktoolbutton.cpp \
+		debug\moc_multistatustoolbutton.cpp
 OBJECTS       = debug/main.o \
 		debug/dialogautoclosemessagebox.o \
 		debug/encryption.o \
@@ -108,6 +112,8 @@ OBJECTS       = debug/main.o \
 		debug/formcntcheck.o \
 		debug/formadmin.o \
 		debug/filemanager.o \
+		debug/longclicktoolbutton.o \
+		debug/multistatustoolbutton.o \
 		debug/qrc_resource.o \
 		debug/moc_dialogautoclosemessagebox.o \
 		debug/moc_encryption.o \
@@ -129,7 +135,9 @@ OBJECTS       = debug/main.o \
 		debug/moc_formwholesetting.o \
 		debug/moc_formcntcheck.o \
 		debug/moc_formadmin.o \
-		debug/moc_filemanager.o
+		debug/moc_filemanager.o \
+		debug/moc_longclicktoolbutton.o \
+		debug/moc_multistatustoolbutton.o
 
 DIST          =  dialogautoclosemessagebox.h \
 		encryption.h \
@@ -151,7 +159,9 @@ DIST          =  dialogautoclosemessagebox.h \
 		forms\formwholesetting.h \
 		forms\formcntcheck.h \
 		forms\formadmin.h \
-		filemanager.h main.cpp \
+		filemanager.h \
+		longclicktoolbutton.h \
+		multistatustoolbutton.h main.cpp \
 		dialogautoclosemessagebox.cpp \
 		encryption.cpp \
 		dialog.cpp \
@@ -172,7 +182,9 @@ DIST          =  dialogautoclosemessagebox.h \
 		forms\formwholesetting.cpp \
 		forms\formcntcheck.cpp \
 		forms\formadmin.cpp \
-		filemanager.cpp
+		filemanager.cpp \
+		longclicktoolbutton.cpp \
+		multistatustoolbutton.cpp
 QMAKE_TARGET  = pjt2
 DESTDIR        = debug\ #avoid trailing-slash linebreak
 TARGET         = pjt2.exe
@@ -211,7 +223,7 @@ dist:
 	$(ZIP) pjt2.zip $(SOURCES) $(DIST) pjt2.pro D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\spec_pre.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\qdevice.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\device_config.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\common\shell-win32.conf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\qconfig.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_axbase.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_axbase_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_axcontainer.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_axcontainer_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_axserver.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_axserver_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_bluetooth.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_bluetooth_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_bootstrap_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_clucene_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_concurrent.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_concurrent_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_core.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_core_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_dbus.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_dbus_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_declarative.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_declarative_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_designer.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_designer_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_designercomponents_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_enginio.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_enginio_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_gui.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_gui_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_help.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_help_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_location.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_location_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_multimedia.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_multimedia_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_multimediawidgets.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_network.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_network_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_nfc.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_nfc_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_opengl.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_opengl_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_openglextensions.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_openglextensions_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_platformsupport_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_positioning.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_positioning_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_printsupport.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_printsupport_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_qml.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_qml_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_qmltest.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_qmltest_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_quick.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_quick_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_quickparticles_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_quickwidgets.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_script.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_script_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_scripttools.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_scripttools_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_sensors.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_sensors_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_serialport.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_serialport_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_sql.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_sql_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_svg.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_svg_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_testlib.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_testlib_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_uitools.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_uitools_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_webchannel.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_webchannel_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_webkit.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_webkit_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_webkitwidgets.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_webkitwidgets_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_websockets.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_websockets_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_webview.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_webview_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_widgets.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_widgets_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_winextras.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_winextras_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_xml.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_xml_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_xmlpatterns.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\qt_functions.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\qt_config.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\win32\qt_config.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\win32-g++\qmake.conf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\spec_post.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\exclusive_builds.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\default_pre.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\win32\default_pre.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\resolve_config.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\exclusive_builds_post.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\default_post.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\build_pass.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\win32\rtti.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\precompile_header.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\warn_on.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\qt.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\resources.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\moc.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\win32\opengl.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\uic.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\win32\windows.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\testcase_targets.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\exceptions.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\yacc.prf D:\Qt\Qt5.4.1\5.4\mingw491_32\mkspecs\features\lex.prf pjt2.pro resource.qrc D:/Qt/Qt5.4.1/5.4/mingw491_32/lib/qtmaind.prl D:/Qt/Qt5.4.1/5.4/mingw491_32/lib/Qt5Cored.prl D:/Qt/Qt5.4.1/5.4/mingw491_32/lib/Qt5Widgetsd.prl D:/Qt/Qt5.4.1/5.4/mingw491_32/lib/Qt5Guid.prl D:/Qt/Qt5.4.1/5.4/mingw491_32/lib/Qt5Networkd.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-	-$(DEL_FILE) debug\main.o debug\dialogautoclosemessagebox.o debug\encryption.o debug\dialog.o debug\formkeyboard.o debug\formvibrationadjust.o debug\formwelcome.o debug\formlicense.o debug\formmain.o debug\formshutdown.o debug\dialogdisplayrange.o debug\formaccuracyadjust.o debug\formaccuracydetailadjust.o debug\formashclean.o debug\formccdcurve.o debug\formmodeselect.o debug\formsystem.o debug\formvalvetest.o debug\formwholesetting.o debug\formcntcheck.o debug\formadmin.o debug\filemanager.o debug\qrc_resource.o debug\moc_dialogautoclosemessagebox.o debug\moc_encryption.o debug\moc_dialog.o debug\moc_formkeyboard.o debug\moc_formvibrationadjust.o debug\moc_formwelcome.o debug\moc_formlicense.o debug\moc_formmain.o debug\moc_formshutdown.o debug\moc_dialogdisplayrange.o debug\moc_formaccuracyadjust.o debug\moc_formaccuracydetailadjust.o debug\moc_formashclean.o debug\moc_formccdcurve.o debug\moc_formmodeselect.o debug\moc_formsystem.o debug\moc_formvalvetest.o debug\moc_formwholesetting.o debug\moc_formcntcheck.o debug\moc_formadmin.o debug\moc_filemanager.o
+	-$(DEL_FILE) debug\main.o debug\dialogautoclosemessagebox.o debug\encryption.o debug\dialog.o debug\formkeyboard.o debug\formvibrationadjust.o debug\formwelcome.o debug\formlicense.o debug\formmain.o debug\formshutdown.o debug\dialogdisplayrange.o debug\formaccuracyadjust.o debug\formaccuracydetailadjust.o debug\formashclean.o debug\formccdcurve.o debug\formmodeselect.o debug\formsystem.o debug\formvalvetest.o debug\formwholesetting.o debug\formcntcheck.o debug\formadmin.o debug\filemanager.o debug\longclicktoolbutton.o debug\multistatustoolbutton.o debug\qrc_resource.o debug\moc_dialogautoclosemessagebox.o debug\moc_encryption.o debug\moc_dialog.o debug\moc_formkeyboard.o debug\moc_formvibrationadjust.o debug\moc_formwelcome.o debug\moc_formlicense.o debug\moc_formmain.o debug\moc_formshutdown.o debug\moc_dialogdisplayrange.o debug\moc_formaccuracyadjust.o debug\moc_formaccuracydetailadjust.o debug\moc_formashclean.o debug\moc_formccdcurve.o debug\moc_formmodeselect.o debug\moc_formsystem.o debug\moc_formvalvetest.o debug\moc_formwholesetting.o debug\moc_formcntcheck.o debug\moc_formadmin.o debug\moc_filemanager.o debug\moc_longclicktoolbutton.o debug\moc_multistatustoolbutton.o
 
 distclean: clean 
 	-$(DEL_FILE) $(DESTDIR_TARGET)
@@ -257,9 +269,9 @@ debug/qrc_resource.cpp: resource.qrc \
 		image/backspace.png
 	D:\Qt\Qt5.4.1\5.4\mingw491_32\bin\rcc.exe -name resource resource.qrc -o debug\qrc_resource.cpp
 
-compiler_moc_header_make_all: debug/moc_dialogautoclosemessagebox.cpp debug/moc_encryption.cpp debug/moc_dialog.cpp debug/moc_formkeyboard.cpp debug/moc_formvibrationadjust.cpp debug/moc_formwelcome.cpp debug/moc_formlicense.cpp debug/moc_formmain.cpp debug/moc_formshutdown.cpp debug/moc_dialogdisplayrange.cpp debug/moc_formaccuracyadjust.cpp debug/moc_formaccuracydetailadjust.cpp debug/moc_formashclean.cpp debug/moc_formccdcurve.cpp debug/moc_formmodeselect.cpp debug/moc_formsystem.cpp debug/moc_formvalvetest.cpp debug/moc_formwholesetting.cpp debug/moc_formcntcheck.cpp debug/moc_formadmin.cpp debug/moc_filemanager.cpp
+compiler_moc_header_make_all: debug/moc_dialogautoclosemessagebox.cpp debug/moc_encryption.cpp debug/moc_dialog.cpp debug/moc_formkeyboard.cpp debug/moc_formvibrationadjust.cpp debug/moc_formwelcome.cpp debug/moc_formlicense.cpp debug/moc_formmain.cpp debug/moc_formshutdown.cpp debug/moc_dialogdisplayrange.cpp debug/moc_formaccuracyadjust.cpp debug/moc_formaccuracydetailadjust.cpp debug/moc_formashclean.cpp debug/moc_formccdcurve.cpp debug/moc_formmodeselect.cpp debug/moc_formsystem.cpp debug/moc_formvalvetest.cpp debug/moc_formwholesetting.cpp debug/moc_formcntcheck.cpp debug/moc_formadmin.cpp debug/moc_filemanager.cpp debug/moc_longclicktoolbutton.cpp debug/moc_multistatustoolbutton.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) debug\moc_dialogautoclosemessagebox.cpp debug\moc_encryption.cpp debug\moc_dialog.cpp debug\moc_formkeyboard.cpp debug\moc_formvibrationadjust.cpp debug\moc_formwelcome.cpp debug\moc_formlicense.cpp debug\moc_formmain.cpp debug\moc_formshutdown.cpp debug\moc_dialogdisplayrange.cpp debug\moc_formaccuracyadjust.cpp debug\moc_formaccuracydetailadjust.cpp debug\moc_formashclean.cpp debug\moc_formccdcurve.cpp debug\moc_formmodeselect.cpp debug\moc_formsystem.cpp debug\moc_formvalvetest.cpp debug\moc_formwholesetting.cpp debug\moc_formcntcheck.cpp debug\moc_formadmin.cpp debug\moc_filemanager.cpp
+	-$(DEL_FILE) debug\moc_dialogautoclosemessagebox.cpp debug\moc_encryption.cpp debug\moc_dialog.cpp debug\moc_formkeyboard.cpp debug\moc_formvibrationadjust.cpp debug\moc_formwelcome.cpp debug\moc_formlicense.cpp debug\moc_formmain.cpp debug\moc_formshutdown.cpp debug\moc_dialogdisplayrange.cpp debug\moc_formaccuracyadjust.cpp debug\moc_formaccuracydetailadjust.cpp debug\moc_formashclean.cpp debug\moc_formccdcurve.cpp debug\moc_formmodeselect.cpp debug\moc_formsystem.cpp debug\moc_formvalvetest.cpp debug\moc_formwholesetting.cpp debug\moc_formcntcheck.cpp debug\moc_formadmin.cpp debug\moc_filemanager.cpp debug\moc_longclicktoolbutton.cpp debug\moc_multistatustoolbutton.cpp
 debug/moc_dialogautoclosemessagebox.cpp: D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdialog.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qwidget.h \
@@ -547,10 +559,18 @@ debug/moc_dialog.cpp: D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
 		forms/formlicense.h \
 		forms/formmain.h \
 		forms/formvibrationadjust.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
 		forms/formmodeselect.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
 		forms/formaccuracyadjust.h \
+		multistatustoolbutton.h \
 		forms/formsystem.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
 		forms/formshutdown.h \
@@ -775,6 +795,12 @@ debug/moc_formvibrationadjust.cpp: D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidge
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfiledevice.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTimer \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
 		forms/formvibrationadjust.h
 	D:\Qt\Qt5.4.1\5.4\mingw491_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/mkspecs/win32-g++ -IE:/pjt2 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore forms\formvibrationadjust.h -o debug\moc_formvibrationadjust.cpp
 
@@ -1415,6 +1441,11 @@ debug/moc_formaccuracyadjust.cpp: D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidget
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfiledevice.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
+		multistatustoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
 		forms/formaccuracyadjust.h
 	D:\Qt\Qt5.4.1\5.4\mingw491_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/mkspecs/win32-g++ -IE:/pjt2 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore forms\formaccuracyadjust.h -o debug\moc_formaccuracyadjust.cpp
 
@@ -1844,6 +1875,10 @@ debug/moc_formmodeselect.cpp: D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QW
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
 		forms/formmodeselect.h
 	D:\Qt\Qt5.4.1\5.4\mingw491_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/mkspecs/win32-g++ -IE:/pjt2 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore forms\formmodeselect.h -o debug\moc_formmodeselect.cpp
 
@@ -2377,6 +2412,9 @@ debug/moc_formadmin.cpp: D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QWidget
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfiledevice.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
+		formkeyboard.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdialog.h \
 		forms/formadmin.h
 	D:\Qt\Qt5.4.1\5.4\mingw491_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/mkspecs/win32-g++ -IE:/pjt2 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore forms\formadmin.h -o debug\moc_formadmin.cpp
 
@@ -2435,6 +2473,227 @@ debug/moc_filemanager.cpp: D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject 
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
 		filemanager.h
 	D:\Qt\Qt5.4.1\5.4\mingw491_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/mkspecs/win32-g++ -IE:/pjt2 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore filemanager.h -o debug\moc_filemanager.cpp
+
+debug/moc_longclicktoolbutton.cpp: D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qobject.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qobjectdefs.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qnamespace.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qglobal.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qconfig.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfeatures.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsystemdetection.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qprocessordetection.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcompilerdetection.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtypeinfo.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtypetraits.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsysinfo.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qlogging.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qflags.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasicatomic.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_bootstrap.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qgenericatomic.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_msvc.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_armv7.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_armv6.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_armv5.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_ia64.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_mips.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_x86.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_cxx11.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_gcc.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_unix.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qglobalstatic.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmutex.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qnumeric.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qobjectdefs_impl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstring.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qchar.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbytearray.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qrefcount.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qarraydata.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringbuilder.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qlist.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qalgorithms.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qiterator.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbytearraylist.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreevent.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qscopedpointer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmetatype.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvarlengtharray.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcontainerfwd.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qisenum.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qobject_impl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QWidget \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qwidget.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qwindowdefs.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qwindowdefs_win.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmargins.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpaintdevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qrect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsize.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qpoint.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpalette.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qcolor.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qrgb.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringlist.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdatastream.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qiodevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qpair.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregexp.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringmatcher.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qbrush.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvector.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qmatrix.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpolygon.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qregion.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qline.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtransform.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpainterpath.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qimage.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpixelformat.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpixmap.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsharedpointer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qshareddata.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qhash.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsharedpointer_impl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfont.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfontmetrics.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfontinfo.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qsizepolicy.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qcursor.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qkeysequence.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qevent.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvariant.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmap.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdebug.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtextstream.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qlocale.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qset.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcontiguouscache.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qurl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qurlquery.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfile.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfiledevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTimer \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		longclicktoolbutton.h
+	D:\Qt\Qt5.4.1\5.4\mingw491_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/mkspecs/win32-g++ -IE:/pjt2 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore longclicktoolbutton.h -o debug\moc_longclicktoolbutton.cpp
+
+debug/moc_multistatustoolbutton.cpp: D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qglobal.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qconfig.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfeatures.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsystemdetection.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qprocessordetection.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcompilerdetection.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtypeinfo.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtypetraits.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsysinfo.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qlogging.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qflags.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasicatomic.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_bootstrap.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qgenericatomic.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_msvc.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_armv7.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_armv6.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_armv5.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_ia64.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_mips.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_x86.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_cxx11.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_gcc.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_unix.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qglobalstatic.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmutex.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qnumeric.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsize.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qnamespace.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qlist.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qalgorithms.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qiterator.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qrefcount.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qarraydata.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbytearraylist.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbytearray.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstring.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qchar.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringbuilder.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpixmap.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpaintdevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qwindowdefs.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qobjectdefs.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qobjectdefs_impl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qwindowdefs_win.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qrect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmargins.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qpoint.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qcolor.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qrgb.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringlist.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdatastream.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qscopedpointer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qiodevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qobject.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreevent.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmetatype.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvarlengtharray.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcontainerfwd.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qisenum.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qobject_impl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qpair.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregexp.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringmatcher.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsharedpointer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qshareddata.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qhash.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsharedpointer_impl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qimage.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtransform.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qmatrix.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpolygon.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvector.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qregion.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qline.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpainterpath.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpixelformat.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qkeysequence.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qwidget.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpalette.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qbrush.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfont.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfontmetrics.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfontinfo.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qsizepolicy.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qcursor.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qevent.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvariant.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmap.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdebug.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtextstream.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qlocale.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qset.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcontiguouscache.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qurl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qurlquery.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfile.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfiledevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
+		multistatustoolbutton.h
+	D:\Qt\Qt5.4.1\5.4\mingw491_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/mkspecs/win32-g++ -IE:/pjt2 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore multistatustoolbutton.h -o debug\moc_multistatustoolbutton.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -2631,10 +2890,18 @@ debug/main.o: main.cpp dialog.h \
 		forms/formlicense.h \
 		forms/formmain.h \
 		forms/formvibrationadjust.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
 		forms/formmodeselect.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
 		forms/formaccuracyadjust.h \
+		multistatustoolbutton.h \
 		forms/formsystem.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
 		forms/formshutdown.h \
@@ -2765,50 +3032,7 @@ debug/dialogautoclosemessagebox.o: dialogautoclosemessagebox.cpp dialogautoclose
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTimer \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
-		ui_dialogautoclosemessagebox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QGridLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QPushButton \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qpushbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QVBoxLayout
+		ui_dialogautoclosemessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\dialogautoclosemessagebox.o dialogautoclosemessagebox.cpp
 
 debug/encryption.o: encryption.cpp encryption.h \
@@ -3005,10 +3229,18 @@ debug/dialog.o: dialog.cpp dialog.h \
 		forms/formlicense.h \
 		forms/formmain.h \
 		forms/formvibrationadjust.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
 		forms/formmodeselect.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
 		forms/formaccuracyadjust.h \
+		multistatustoolbutton.h \
 		forms/formsystem.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
 		forms/formshutdown.h \
@@ -3023,40 +3255,6 @@ debug/dialog.o: dialog.cpp dialog.h \
 		forms/formwholesetting.h \
 		forms/formcntcheck.h \
 		ui_dialog.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QStackedWidget \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstackedwidget.h \
 		dialogautoclosemessagebox.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTime \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdatetime.h \
@@ -3174,54 +3372,6 @@ debug/formkeyboard.o: formkeyboard.cpp formkeyboard.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
 		ui_formkeyboard.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QGridLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLineEdit \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlineedit.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtextcursor.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtextformat.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpen.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtextoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QPushButton \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qpushbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QWidget \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\formkeyboard.o formkeyboard.cpp
 
@@ -3328,55 +3478,50 @@ debug/formvibrationadjust.o: forms/formvibrationadjust.cpp forms/formvibrationad
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfiledevice.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
-		ui_formvibrationadjust.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHBoxLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLCDNumber \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlcdnumber.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QPushButton \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qpushbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTimer \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
+		ui_formvibrationadjust.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
+		dialog.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdialog.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QFile \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/QUdpSocket \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qudpsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qabstractsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
+		filemanager.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		formkeyboard.h \
+		forms/formwelcome.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QShowEvent \
+		forms/formlicense.h \
+		forms/formmain.h \
+		forms/formmodeselect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		forms/formaccuracyadjust.h \
+		multistatustoolbutton.h \
+		forms/formsystem.h \
+		forms/formshutdown.h \
+		forms/formadmin.h \
+		forms/formashclean.h \
+		forms/formccdcurve.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
+		forms/formvalvetest.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QMessageBox \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qmessagebox.h \
+		forms/formaccuracydetailadjust.h \
+		forms/formwholesetting.h \
+		forms/formcntcheck.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\formvibrationadjust.o forms\formvibrationadjust.cpp
 
 debug/formwelcome.o: forms/formwelcome.cpp forms/formwelcome.h \
@@ -3487,45 +3632,6 @@ debug/formwelcome.o: forms/formwelcome.cpp forms/formwelcome.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
 		ui_formwelcome.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
 		dialogautoclosemessagebox.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdialog.h \
@@ -3541,8 +3647,18 @@ debug/formwelcome.o: forms/formwelcome.cpp forms/formwelcome.h \
 		forms/formlicense.h \
 		forms/formmain.h \
 		forms/formvibrationadjust.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
 		forms/formmodeselect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
 		forms/formaccuracyadjust.h \
+		multistatustoolbutton.h \
 		forms/formsystem.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
 		forms/formshutdown.h \
@@ -3664,53 +3780,11 @@ debug/formlicense.o: forms/formlicense.cpp forms/formlicense.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
 		formkeyboard.h \
 		ui_formlicense.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QGridLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLineEdit \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlineedit.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtextcursor.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtextformat.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpen.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtextoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QWidget \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
 		dialog.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTimer \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
@@ -3723,11 +3797,22 @@ debug/formlicense.o: forms/formlicense.cpp forms/formlicense.h \
 		filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
 		forms/formwelcome.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QWidget \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QShowEvent \
 		forms/formmain.h \
 		forms/formvibrationadjust.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
 		forms/formmodeselect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
 		forms/formaccuracyadjust.h \
+		multistatustoolbutton.h \
 		forms/formsystem.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
 		forms/formshutdown.h \
@@ -3851,50 +3936,7 @@ debug/formmain.o: forms/formmain.cpp forms/formmain.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTimer \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
-		ui_formmain.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QGridLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHBoxLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSpacerItem \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QVBoxLayout
+		ui_formmain.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\formmain.o forms\formmain.cpp
 
 debug/formshutdown.o: forms/formshutdown.cpp forms/formshutdown.h \
@@ -4000,46 +4042,7 @@ debug/formshutdown.o: forms/formshutdown.cpp forms/formshutdown.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfiledevice.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
-		ui_formshutdown.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h
+		ui_formshutdown.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\formshutdown.o forms\formshutdown.cpp
 
 debug/dialogdisplayrange.o: forms/dialogdisplayrange.cpp forms/dialogdisplayrange.h \
@@ -4146,51 +4149,7 @@ debug/dialogdisplayrange.o: forms/dialogdisplayrange.cpp forms/dialogdisplayrang
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfiledevice.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
-		ui_dialogdisplayrange.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QGridLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QPushButton \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qpushbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSpinBox \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qspinbox.h
+		ui_dialogdisplayrange.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\dialogdisplayrange.o forms\dialogdisplayrange.cpp
 
 debug/formaccuracyadjust.o: forms/formaccuracyadjust.cpp forms/formaccuracyadjust.h \
@@ -4296,51 +4255,55 @@ debug/formaccuracyadjust.o: forms/formaccuracyadjust.cpp forms/formaccuracyadjus
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfiledevice.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
-		ui_formaccuracyadjust.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QGridLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHBoxLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
+		multistatustoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		ui_formaccuracyadjust.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
+		dialog.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdialog.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTimer \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QFile \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/QUdpSocket \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qudpsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qabstractsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
+		filemanager.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		formkeyboard.h \
+		forms/formwelcome.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QShowEvent \
+		forms/formlicense.h \
+		forms/formmain.h \
+		forms/formvibrationadjust.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
+		forms/formmodeselect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		forms/formsystem.h \
+		forms/formshutdown.h \
+		forms/formadmin.h \
+		forms/formashclean.h \
+		forms/formccdcurve.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
+		forms/formvalvetest.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QMessageBox \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qmessagebox.h \
+		forms/formaccuracydetailadjust.h \
+		forms/formwholesetting.h \
+		forms/formcntcheck.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\formaccuracyadjust.o forms\formaccuracyadjust.cpp
 
 debug/formaccuracydetailadjust.o: forms/formaccuracydetailadjust.cpp forms/formaccuracydetailadjust.h \
@@ -4447,57 +4410,49 @@ debug/formaccuracydetailadjust.o: forms/formaccuracydetailadjust.cpp forms/forma
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
 		ui_formaccuracydetailadjust.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QComboBox \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qcombobox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
+		dialog.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdialog.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTimer \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QFile \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/QUdpSocket \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qudpsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qabstractsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
+		filemanager.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		formkeyboard.h \
+		forms/formwelcome.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QShowEvent \
+		forms/formlicense.h \
+		forms/formmain.h \
+		forms/formvibrationadjust.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHBoxLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLCDNumber \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlcdnumber.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QScrollBar \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qscrollbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSpinBox \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qspinbox.h \
+		forms/formmodeselect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		forms/formaccuracyadjust.h \
+		multistatustoolbutton.h \
+		forms/formsystem.h \
+		forms/formshutdown.h \
+		forms/formadmin.h \
+		forms/formashclean.h \
+		forms/formccdcurve.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
+		forms/formvalvetest.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QMessageBox \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qmessagebox.h \
+		forms/formwholesetting.h \
+		forms/formcntcheck.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\formaccuracydetailadjust.o forms\formaccuracydetailadjust.cpp
 
 debug/formashclean.o: forms/formashclean.cpp forms/formashclean.h \
@@ -4607,57 +4562,48 @@ debug/formashclean.o: forms/formashclean.cpp forms/formashclean.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
 		ui_formashclean.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QGridLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QGroupBox \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgroupbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QRadioButton \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qradiobutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSpinBox \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QElapsedTimer \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qelapsedtimer.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
+		dialog.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdialog.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QFile \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/QUdpSocket \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qudpsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qabstractsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
+		filemanager.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		formkeyboard.h \
+		forms/formwelcome.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QShowEvent \
+		forms/formlicense.h \
+		forms/formmain.h \
+		forms/formvibrationadjust.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
+		forms/formmodeselect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		forms/formaccuracyadjust.h \
+		multistatustoolbutton.h \
+		forms/formsystem.h \
+		forms/formshutdown.h \
+		forms/formadmin.h \
+		forms/formccdcurve.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
+		forms/formvalvetest.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QMessageBox \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qmessagebox.h \
+		forms/formaccuracydetailadjust.h \
+		forms/formwholesetting.h \
+		forms/formcntcheck.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\formashclean.o forms\formashclean.cpp
 
 debug/formccdcurve.o: forms/formccdcurve.cpp forms/formccdcurve.h \
@@ -4768,51 +4714,6 @@ debug/formccdcurve.o: forms/formccdcurve.cpp forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
 		ui_formccdcurve.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QComboBox \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qcombobox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QRadioButton \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qradiobutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QScrollBar \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qscrollbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSpinBox \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QPainter \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpainter.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtextoption.h \
@@ -4820,7 +4721,43 @@ debug/formccdcurve.o: forms/formccdcurve.cpp forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QMessageBox \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qmessagebox.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdialog.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QMouseEvent
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QMouseEvent \
+		dialog.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QFile \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/QUdpSocket \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qudpsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qabstractsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
+		filemanager.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		formkeyboard.h \
+		forms/formwelcome.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QShowEvent \
+		forms/formlicense.h \
+		forms/formmain.h \
+		forms/formvibrationadjust.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
+		forms/formmodeselect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		forms/formaccuracyadjust.h \
+		multistatustoolbutton.h \
+		forms/formsystem.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
+		forms/formshutdown.h \
+		forms/formadmin.h \
+		forms/formashclean.h \
+		forms/formvalvetest.h \
+		forms/formaccuracydetailadjust.h \
+		forms/formwholesetting.h \
+		forms/formcntcheck.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\formccdcurve.o forms\formccdcurve.cpp
 
 debug/formmodeselect.o: forms/formmodeselect.cpp forms/formmodeselect.h \
@@ -4928,59 +4865,49 @@ debug/formmodeselect.o: forms/formmodeselect.cpp forms/formmodeselect.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		ui_formmodeselect.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QCheckBox \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qcheckbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QFrame \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QGridLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHBoxLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QPushButton \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qpushbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QRadioButton \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qradiobutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		ui_formmodeselect.h \
+		dialogautoclosemessagebox.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdialog.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTimer \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QFile \
+		dialog.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/QUdpSocket \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qudpsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qabstractsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
+		filemanager.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		formkeyboard.h \
+		forms/formwelcome.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QShowEvent \
+		forms/formlicense.h \
+		forms/formmain.h \
+		forms/formvibrationadjust.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
+		forms/formaccuracyadjust.h \
+		multistatustoolbutton.h \
+		forms/formsystem.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
+		forms/formshutdown.h \
+		forms/formadmin.h \
+		forms/formashclean.h \
+		forms/formccdcurve.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
+		forms/formvalvetest.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QMessageBox \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qmessagebox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdialog.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QFile
+		forms/formaccuracydetailadjust.h \
+		forms/formwholesetting.h \
+		forms/formcntcheck.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\formmodeselect.o forms\formmodeselect.cpp
 
 debug/formsystem.o: forms/formsystem.cpp forms/formsystem.h \
@@ -5087,50 +5014,7 @@ debug/formsystem.o: forms/formsystem.cpp forms/formsystem.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
-		ui_formsystem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QGridLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHBoxLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h
+		ui_formsystem.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\formsystem.o forms\formsystem.cpp
 
 debug/formvalvetest.o: forms/formvalvetest.cpp forms/formvalvetest.h \
@@ -5243,57 +5127,43 @@ debug/formvalvetest.o: forms/formvalvetest.cpp forms/formvalvetest.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qmessagebox.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdialog.h \
 		ui_formvalvetest.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QComboBox \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qcombobox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
+		dialog.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QFile \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/QUdpSocket \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qudpsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qabstractsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
+		filemanager.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		formkeyboard.h \
+		forms/formwelcome.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QShowEvent \
+		forms/formlicense.h \
+		forms/formmain.h \
+		forms/formvibrationadjust.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDoubleSpinBox \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QGridLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QGroupBox \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgroupbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHBoxLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSpinBox \
+		forms/formmodeselect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QVBoxLayout
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		forms/formaccuracyadjust.h \
+		multistatustoolbutton.h \
+		forms/formsystem.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
+		forms/formshutdown.h \
+		forms/formadmin.h \
+		forms/formashclean.h \
+		forms/formccdcurve.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
+		forms/formaccuracydetailadjust.h \
+		forms/formwholesetting.h \
+		forms/formcntcheck.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\formvalvetest.o forms\formvalvetest.cpp
 
 debug/formwholesetting.o: forms/formwholesetting.cpp forms/formwholesetting.h \
@@ -5399,52 +5269,7 @@ debug/formwholesetting.o: forms/formwholesetting.cpp forms/formwholesetting.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfiledevice.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
-		ui_formwholesetting.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QComboBox \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qcombobox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QGridLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHBoxLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h
+		ui_formwholesetting.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\formwholesetting.o forms\formwholesetting.cpp
 
 debug/formcntcheck.o: forms/formcntcheck.cpp forms/formcntcheck.h \
@@ -5552,51 +5377,6 @@ debug/formcntcheck.o: forms/formcntcheck.cpp forms/formcntcheck.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
 		ui_formcntcheck.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHBoxLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSpacerItem \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QWidget \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QPainter \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpainter.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtextoption.h \
@@ -5713,39 +5493,55 @@ debug/formadmin.o: forms/formadmin.cpp forms/formadmin.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfiledevice.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
+		formkeyboard.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdialog.h \
 		ui_formadmin.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
+		dialog.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTimer \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QFile \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/QUdpSocket \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qudpsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qabstractsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
+		filemanager.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		forms/formwelcome.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QShowEvent \
+		forms/formlicense.h \
+		forms/formmain.h \
+		forms/formvibrationadjust.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h
+		forms/formmodeselect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		forms/formaccuracyadjust.h \
+		multistatustoolbutton.h \
+		forms/formsystem.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
+		forms/formshutdown.h \
+		forms/formashclean.h \
+		forms/formccdcurve.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
+		forms/formvalvetest.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QMessageBox \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qmessagebox.h \
+		forms/formaccuracydetailadjust.h \
+		forms/formwholesetting.h \
+		forms/formcntcheck.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\formadmin.o forms\formadmin.cpp
 
 debug/filemanager.o: filemanager.cpp filemanager.h \
@@ -5861,8 +5657,266 @@ debug/filemanager.o: filemanager.cpp filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qurlquery.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
-		encryption.h
+		encryption.h \
+		dialog.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/QUdpSocket \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qudpsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qabstractsocket.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
+		formkeyboard.h \
+		forms/formwelcome.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QWidget \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QShowEvent \
+		forms/formlicense.h \
+		forms/formmain.h \
+		forms/formvibrationadjust.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
+		forms/formmodeselect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		forms/formaccuracyadjust.h \
+		multistatustoolbutton.h \
+		forms/formsystem.h \
+		forms/formshutdown.h \
+		forms/formadmin.h \
+		forms/formashclean.h \
+		forms/formccdcurve.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
+		forms/formvalvetest.h \
+		forms/formaccuracydetailadjust.h \
+		forms/formwholesetting.h \
+		forms/formcntcheck.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\filemanager.o filemanager.cpp
+
+debug/longclicktoolbutton.o: longclicktoolbutton.cpp longclicktoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qobject.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qobjectdefs.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qnamespace.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qglobal.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qconfig.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfeatures.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsystemdetection.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qprocessordetection.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcompilerdetection.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtypeinfo.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtypetraits.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsysinfo.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qlogging.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qflags.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasicatomic.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_bootstrap.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qgenericatomic.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_msvc.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_armv7.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_armv6.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_armv5.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_ia64.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_mips.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_x86.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_cxx11.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_gcc.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_unix.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qglobalstatic.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmutex.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qnumeric.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qobjectdefs_impl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstring.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qchar.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbytearray.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qrefcount.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qarraydata.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringbuilder.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qlist.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qalgorithms.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qiterator.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbytearraylist.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreevent.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qscopedpointer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmetatype.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvarlengtharray.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcontainerfwd.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qisenum.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qobject_impl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QWidget \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qwidget.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qwindowdefs.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qwindowdefs_win.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmargins.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpaintdevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qrect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsize.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qpoint.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpalette.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qcolor.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qrgb.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringlist.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdatastream.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qiodevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qpair.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregexp.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringmatcher.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qbrush.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvector.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qmatrix.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpolygon.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qregion.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qline.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtransform.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpainterpath.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qimage.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpixelformat.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpixmap.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsharedpointer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qshareddata.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qhash.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsharedpointer_impl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfont.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfontmetrics.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfontinfo.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qsizepolicy.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qcursor.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qkeysequence.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qevent.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvariant.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmap.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdebug.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtextstream.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qlocale.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qset.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcontiguouscache.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qurl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qurlquery.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfile.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfiledevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTimer \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\longclicktoolbutton.o longclicktoolbutton.cpp
+
+debug/multistatustoolbutton.o: multistatustoolbutton.cpp multistatustoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qglobal.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qconfig.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfeatures.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsystemdetection.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qprocessordetection.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcompilerdetection.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtypeinfo.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtypetraits.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsysinfo.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qlogging.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qflags.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasicatomic.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_bootstrap.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qgenericatomic.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_msvc.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_armv7.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_armv6.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_armv5.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_ia64.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_mips.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_x86.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_cxx11.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_gcc.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qatomic_unix.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qglobalstatic.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmutex.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qnumeric.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsize.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qnamespace.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qlist.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qalgorithms.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qiterator.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qrefcount.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qarraydata.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbytearraylist.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbytearray.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstring.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qchar.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringbuilder.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpixmap.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpaintdevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qwindowdefs.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qobjectdefs.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qobjectdefs_impl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qwindowdefs_win.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qrect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmargins.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qpoint.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qcolor.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qrgb.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringlist.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdatastream.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qscopedpointer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qiodevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qobject.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreevent.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmetatype.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvarlengtharray.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcontainerfwd.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qisenum.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qobject_impl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qpair.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregexp.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringmatcher.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsharedpointer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qshareddata.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qhash.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsharedpointer_impl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qimage.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtransform.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qmatrix.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpolygon.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvector.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qregion.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qline.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpainterpath.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpixelformat.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qkeysequence.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qwidget.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpalette.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qbrush.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfont.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfontmetrics.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfontinfo.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qsizepolicy.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qcursor.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qevent.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvariant.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmap.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdebug.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtextstream.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qlocale.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qset.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcontiguouscache.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qurl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qurlquery.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfile.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfiledevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\multistatustoolbutton.o multistatustoolbutton.cpp
 
 debug/qrc_resource.o: debug/qrc_resource.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\qrc_resource.o debug\qrc_resource.cpp
@@ -5929,6 +5983,12 @@ debug/moc_formadmin.o: debug/moc_formadmin.cpp
 
 debug/moc_filemanager.o: debug/moc_filemanager.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_filemanager.o debug\moc_filemanager.cpp
+
+debug/moc_longclicktoolbutton.o: debug/moc_longclicktoolbutton.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_longclicktoolbutton.o debug\moc_longclicktoolbutton.cpp
+
+debug/moc_multistatustoolbutton.o: debug/moc_multistatustoolbutton.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_multistatustoolbutton.o debug\moc_multistatustoolbutton.cpp
 
 ####### Install
 

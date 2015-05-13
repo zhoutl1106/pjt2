@@ -30,14 +30,16 @@ public:
     QGridLayout *gridLayout_3;
     QGroupBox *groupBox;
     QGridLayout *gridLayout;
+    QLabel *label_7;
     QRadioButton *radioButtonTiming;
     QLabel *label_2;
-    QSpinBox *spinBox_interval;
-    QLabel *label_4;
     QRadioButton *radioButtonAuto;
     QLabel *label_3;
-    QSpinBox *spinBox_threshold;
+    QSpinBox *spinBox_thresholdFront;
     QLabel *label_5;
+    QSpinBox *spinBox_thresholdEnd;
+    QLabel *label_4;
+    QSpinBox *spinBox_interval;
     QToolButton *toolButton_manual;
     QToolButton *toolButton;
     QGroupBox *groupBox_2;
@@ -67,6 +69,14 @@ public:
         groupBox->setStyleSheet(QStringLiteral(""));
         gridLayout = new QGridLayout(groupBox);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        label_7 = new QLabel(groupBox);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        sizePolicy.setHeightForWidth(label_7->sizePolicy().hasHeightForWidth());
+        label_7->setSizePolicy(sizePolicy);
+        label_7->setMinimumSize(QSize(0, 0));
+
+        gridLayout->addWidget(label_7, 1, 3, 1, 1);
+
         radioButtonTiming = new QRadioButton(groupBox);
         radioButtonTiming->setObjectName(QStringLiteral("radioButtonTiming"));
         QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Preferred);
@@ -94,28 +104,6 @@ public:
 
         gridLayout->addWidget(label_2, 0, 1, 1, 1);
 
-        spinBox_interval = new QSpinBox(groupBox);
-        spinBox_interval->setObjectName(QStringLiteral("spinBox_interval"));
-        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(spinBox_interval->sizePolicy().hasHeightForWidth());
-        spinBox_interval->setSizePolicy(sizePolicy2);
-        spinBox_interval->setMinimumSize(QSize(150, 50));
-        spinBox_interval->setMinimum(1);
-        spinBox_interval->setMaximum(120);
-        spinBox_interval->setValue(30);
-
-        gridLayout->addWidget(spinBox_interval, 0, 2, 1, 1);
-
-        label_4 = new QLabel(groupBox);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        sizePolicy1.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
-        label_4->setSizePolicy(sizePolicy1);
-        label_4->setMinimumSize(QSize(200, 0));
-
-        gridLayout->addWidget(label_4, 0, 3, 1, 1);
-
         radioButtonAuto = new QRadioButton(groupBox);
         radioButtonAuto->setObjectName(QStringLiteral("radioButtonAuto"));
         sizePolicy1.setHeightForWidth(radioButtonAuto->sizePolicy().hasHeightForWidth());
@@ -139,15 +127,18 @@ public:
 
         gridLayout->addWidget(label_3, 1, 1, 1, 1);
 
-        spinBox_threshold = new QSpinBox(groupBox);
-        spinBox_threshold->setObjectName(QStringLiteral("spinBox_threshold"));
-        sizePolicy2.setHeightForWidth(spinBox_threshold->sizePolicy().hasHeightForWidth());
-        spinBox_threshold->setSizePolicy(sizePolicy2);
-        spinBox_threshold->setMinimumSize(QSize(150, 50));
-        spinBox_threshold->setMinimum(1);
-        spinBox_threshold->setMaximum(255);
+        spinBox_thresholdFront = new QSpinBox(groupBox);
+        spinBox_thresholdFront->setObjectName(QStringLiteral("spinBox_thresholdFront"));
+        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(spinBox_thresholdFront->sizePolicy().hasHeightForWidth());
+        spinBox_thresholdFront->setSizePolicy(sizePolicy2);
+        spinBox_thresholdFront->setMinimumSize(QSize(150, 50));
+        spinBox_thresholdFront->setMinimum(0);
+        spinBox_thresholdFront->setMaximum(255);
 
-        gridLayout->addWidget(spinBox_threshold, 1, 2, 1, 1);
+        gridLayout->addWidget(spinBox_thresholdFront, 1, 2, 1, 1);
 
         label_5 = new QLabel(groupBox);
         label_5->setObjectName(QStringLiteral("label_5"));
@@ -155,7 +146,39 @@ public:
         label_5->setSizePolicy(sizePolicy1);
         label_5->setMinimumSize(QSize(200, 0));
 
-        gridLayout->addWidget(label_5, 1, 3, 1, 1);
+        gridLayout->addWidget(label_5, 1, 5, 1, 1);
+
+        spinBox_thresholdEnd = new QSpinBox(groupBox);
+        spinBox_thresholdEnd->setObjectName(QStringLiteral("spinBox_thresholdEnd"));
+        sizePolicy2.setHeightForWidth(spinBox_thresholdEnd->sizePolicy().hasHeightForWidth());
+        spinBox_thresholdEnd->setSizePolicy(sizePolicy2);
+        spinBox_thresholdEnd->setMinimumSize(QSize(150, 50));
+        spinBox_thresholdEnd->setMinimum(0);
+        spinBox_thresholdEnd->setMaximum(255);
+
+        gridLayout->addWidget(spinBox_thresholdEnd, 1, 4, 1, 1);
+
+        label_4 = new QLabel(groupBox);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        sizePolicy1.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
+        label_4->setSizePolicy(sizePolicy1);
+        label_4->setMinimumSize(QSize(200, 0));
+
+        gridLayout->addWidget(label_4, 0, 4, 1, 2);
+
+        spinBox_interval = new QSpinBox(groupBox);
+        spinBox_interval->setObjectName(QStringLiteral("spinBox_interval"));
+        QSizePolicy sizePolicy3(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(spinBox_interval->sizePolicy().hasHeightForWidth());
+        spinBox_interval->setSizePolicy(sizePolicy3);
+        spinBox_interval->setMinimumSize(QSize(150, 50));
+        spinBox_interval->setMinimum(1);
+        spinBox_interval->setMaximum(120);
+        spinBox_interval->setValue(30);
+
+        gridLayout->addWidget(spinBox_interval, 0, 2, 1, 2);
 
 
         gridLayout_3->addWidget(groupBox, 2, 0, 1, 2);
@@ -170,9 +193,6 @@ public:
 
         toolButton = new QToolButton(FormAshClean);
         toolButton->setObjectName(QStringLiteral("toolButton"));
-        QSizePolicy sizePolicy3(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
         sizePolicy3.setHeightForWidth(toolButton->sizePolicy().hasHeightForWidth());
         toolButton->setSizePolicy(sizePolicy3);
         toolButton->setMinimumSize(QSize(0, 40));
@@ -214,7 +234,7 @@ public:
         spinBox_delay->setMinimumSize(QSize(150, 50));
         spinBox_delay->setStyleSheet(QStringLiteral(""));
         spinBox_delay->setMinimum(5);
-        spinBox_delay->setMaximum(60);
+        spinBox_delay->setMaximum(99);
         spinBox_delay->setValue(30);
 
         gridLayout_2->addWidget(spinBox_delay, 0, 2, 1, 1);
@@ -241,12 +261,13 @@ public:
     {
         FormAshClean->setWindowTitle(QApplication::translate("FormAshClean", "Form", 0));
         groupBox->setTitle(QApplication::translate("FormAshClean", "\346\270\205\347\201\260\346\250\241\345\274\217", 0));
+        label_7->setText(QApplication::translate("FormAshClean", "\345\220\216", 0));
         radioButtonTiming->setText(QApplication::translate("FormAshClean", "\345\256\232\346\227\266\346\270\205\347\201\260", 0));
         label_2->setText(QApplication::translate("FormAshClean", "\343\200\220\346\227\266\351\227\264\351\227\264\351\232\224", 0));
-        label_4->setText(QApplication::translate("FormAshClean", "\357\274\210\345\210\206\357\274\211\343\200\221", 0));
         radioButtonAuto->setText(QApplication::translate("FormAshClean", "\345\205\250\350\207\252\345\212\250\346\270\205\347\201\260", 0));
-        label_3->setText(QApplication::translate("FormAshClean", "\343\200\220\344\272\256\345\272\246\351\230\210\345\200\274", 0));
+        label_3->setText(QApplication::translate("FormAshClean", "\343\200\220\344\272\256\345\272\246\351\230\210\345\200\274 \345\211\215", 0));
         label_5->setText(QApplication::translate("FormAshClean", "\357\274\210\345\215\225\344\275\215\357\274\211\343\200\221", 0));
+        label_4->setText(QApplication::translate("FormAshClean", "\357\274\210\345\210\206\357\274\211\343\200\221", 0));
         toolButton_manual->setText(QApplication::translate("FormAshClean", "\346\211\213\345\212\250\346\270\205\347\201\260", 0));
         toolButton->setText(QApplication::translate("FormAshClean", "\347\241\256\345\256\232", 0));
         groupBox_2->setTitle(QApplication::translate("FormAshClean", "\346\270\205\347\201\260\346\250\241\345\274\217", 0));

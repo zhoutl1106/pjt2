@@ -1,6 +1,9 @@
 #ifndef DIALOG_H
 #define DIALOG_H
 
+#define VERSION 0
+#define SUBVERSION 1
+
 #include <QDialog>
 #include <QTimer>
 #include <QFile>
@@ -55,14 +58,16 @@ public:
     FormCntCheck                *form14_monitor;
 
 private slots:
-    void onUdpRead();
+    void onUpdateUdpRead();
+    void onCmdUdpRead();
     void onDisplayTime();
 
 private:
     Ui::Dialog *ui;
     QTimer *displayTimer;
     QFile file;
-    QUdpSocket *s;
+    QUdpSocket *updateSocket;
+    QUdpSocket *cmdSocket;
 };
 
 #endif // DIALOG_H

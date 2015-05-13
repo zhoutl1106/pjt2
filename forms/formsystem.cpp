@@ -1,5 +1,6 @@
 #include "formsystem.h"
 #include "ui_formsystem.h"
+#include "../dialog.h"
 
 void beep(int);
 extern bool isBeep;
@@ -11,6 +12,7 @@ FormSystem::FormSystem(QWidget *parent) :
 {
     ui->setupUi(this);
     setStyleSheet(stylesheet);
+    ui->labelVersion->setText("工控机软件版本：" + QString::number(VERSION) + '.' + QString::number(SUBVERSION));
 }
 
 FormSystem::~FormSystem()
