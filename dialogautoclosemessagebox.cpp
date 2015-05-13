@@ -55,10 +55,24 @@ void DialogAutoCloseMessageBox::on_pushButtonOK_clicked()
 {
     beep(50000);
     accept();
+    timer->stop();
 }
 
 void DialogAutoCloseMessageBox::on_pushButtonCancel_clicked()
 {
     beep(50000);
     reject();
+    timer->stop();
+}
+
+void DialogAutoCloseMessageBox::setDelay(int s)
+{
+    m_delay_s = s;
+    ui->labelCntDown->setText(QString::number(m_delay_s) + " s");
+}
+
+int DialogAutoCloseMessageBox::exec()
+{
+    timer->start();
+    return QDialog::exec();
 }

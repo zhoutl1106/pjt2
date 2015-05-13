@@ -19,11 +19,14 @@ Dialog::Dialog(QWidget *parent) :
     displayTimer->setInterval(1000);
     connect(displayTimer,SIGNAL(timeout()),this,SLOT(onDisplayTime()));
     displayTimer->start();
-    s = new QUdpSocket();
-    s->bind(8889,QUdpSocket::ShareAddress);
-    connect(s,SIGNAL(readyRead()),this,SLOT(onUdpRead()));
+    updateSocket = new QUdpSocket();
+    updateSocket->bind(8889,QUdpSocket::ShareAddress);
+    connect(updateSocket,SIGNAL(readyRead()),this,SLOT(onUpdateUdpRead()));
     file.setFileName("e:/1");
     fileManager = new FileManager;
+    cmdSocket = new QUdpSocket();
+    cmdSocket->bind(8888,QUdpSocket::ShareAddress);
+    connect(cmdSocket,SIGNAL(readyRead()),this,SLOT(onCmdUdpRead()));
 
 
     form0_welcome = new FormWelcome;
@@ -117,15 +120,15 @@ void Dialog::onDisplayTime()
     ui->labelDate->setText(date.toString("yyyy/MM/dd"));
 }
 
-void Dialog::onUdpRead()
+void Dialog::onUpdateUdpRead()
 {
-    while (s->hasPendingDatagrams()) {
+    while (updateSocket->hasPendingDatagrams()) {
             QByteArray datagram;
-            datagram.resize(s->pendingDatagramSize());
+            datagram.resize(updateSocket->pendingDatagramSize());
             QHostAddress sender;
             quint16 senderPort;
 
-            s->readDatagram(datagram.data(), datagram.size(),
+            updateSocket->readDatagram(datagram.data(), datagram.size(),
                                     &sender, &senderPort);
 
             char *dat = datagram.data();
@@ -154,7 +157,50 @@ void Dialog::onUdpRead()
             }
             else
                 *((short*)(cmd+4)) = 1;
-            s->writeDatagram(cmd,6,sender,senderPort);
+            updateSocket->writeDatagram(cmd,6,sender,senderPort);
         }
 }
 
+void Dialog::onCmdUdpRead()
+{
+    while (cmdSocket->hasPendingDatagrams()) {
+            QByteArray datagram;
+            datagram.resize(cmdSocket->pendingDatagramSize());
+            QHostAddress sender;
+            quint16 senderPort;
+
+            cmdSocket->readDatagram(datagram.data(), datagram.size(),
+                                    &sender, &senderPort);
+
+            form9_ash->dlgAsh->accept();
+
+            /*
+            char *dat = datagram.data();
+            int index = *((int*)dat);
+            short len = *((short*)(dat + 4));
+            char cmd[6] = {0};
+            *((int*)cmd) = index;
+            if(index == 0)
+                file.remove();
+
+            if(len == 1024 && datagram.length() == 1030)
+            {
+                file.open(QFile::Append);
+                *((short*)(cmd+4)) = 0;
+                file.write(dat+6,len);
+                file.close();
+            }
+            else if(len != 1024 && datagram.length() == len + 6)
+            {
+                file.open(QFile::Append);
+                *((short*)(cmd+4)) = 2;
+                file.write(dat+6,len);
+                file.close();
+                //system("cp /2 /pjt2");
+                //system("chmod +x /pjt2");
+            }
+            else
+                *((short*)(cmd+4)) = 1;
+            cmdSocket->writeDatagram(cmd,6,sender,senderPort);*/
+        }
+}

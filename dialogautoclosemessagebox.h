@@ -17,6 +17,8 @@ public:
     DialogAutoCloseMessageBox(QWidget *parent, QString title, QString text,
                               QString acceptText, QString rejectText, int delay_s, bool isTimeShow);
     ~DialogAutoCloseMessageBox();
+    void setDelay(int s);
+    int exec();
 
 private slots:
     void on_pushButtonOK_clicked();
