@@ -7,419 +7,366 @@
     <x>0</x>
     <y>0</y>
     <width>1024</width>
-    <height>600</height>
+    <height>520</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QScrollBar" name="horizontalScrollBar">
-   <property name="geometry">
-    <rect>
-     <x>-1</x>
-     <y>425</y>
-     <width>1021</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="maximum">
-    <number>1024</number>
-   </property>
-   <property name="singleStep">
-    <number>0</number>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-  </widget>
-  <widget class="QLabel" name="labelPos">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>271</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>128</width>
-     <height>30</height>
-    </size>
-   </property>
-   <property name="text">
-    <string>*</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>0</y>
-     <width>261</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>30</height>
-    </size>
-   </property>
-   <property name="text">
-    <string>背景板调整</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="toolButton_clockwise_f">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>480</y>
-     <width>101</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>文泉驿微米黑</family>
-     <pointsize>16</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
-   </property>
-   <property name="text">
-    <string>顺时针</string>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="spinBox_f">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>480</y>
-     <width>150</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>150</width>
-     <height>50</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="toolButton_Clear">
-   <property name="geometry">
-    <rect>
-     <x>901</x>
-     <y>481</y>
-     <width>100</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>清除</string>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="toolButton">
-   <property name="geometry">
-    <rect>
-     <x>900</x>
-     <y>540</y>
-     <width>100</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>返回</string>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="toolButton_anticlockwise_f">
-   <property name="geometry">
-    <rect>
-     <x>410</x>
-     <y>480</y>
-     <width>101</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>文泉驿微米黑</family>
-     <pointsize>16</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
-   </property>
-   <property name="text">
-    <string>逆时针</string>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="spinBox_channel">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>540</y>
-     <width>150</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>150</width>
-     <height>50</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="minimum">
-    <number>1</number>
-   </property>
-   <property name="maximum">
-    <number>7</number>
-   </property>
-   <property name="value">
-    <number>1</number>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="toolButton_Clear_8">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>540</y>
-     <width>101</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
-   </property>
-   <property name="text">
-    <string>传输数据</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>540</y>
-     <width>71</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>通道</string>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="toolButton_Clear_4">
-   <property name="geometry">
-    <rect>
-     <x>410</x>
-     <y>540</y>
-     <width>100</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>文泉驿微米黑</family>
-     <pointsize>16</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
-   </property>
-   <property name="text">
-    <string>连续传输</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_Clear_5">
-   <property name="geometry">
-    <rect>
-     <x>670</x>
-     <y>540</y>
-     <width>100</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>文泉驿微米黑</family>
-     <pointsize>16</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
-   </property>
-   <property name="text">
-    <string>全部显示</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_Clear_7">
-   <property name="geometry">
-    <rect>
-     <x>780</x>
-     <y>540</y>
-     <width>100</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>文泉驿微米黑</family>
-     <pointsize>16</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
-   </property>
-   <property name="text">
-    <string>隔点显示</string>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="toolButton_SetRange">
-   <property name="geometry">
-    <rect>
-     <x>859</x>
-     <y>10</y>
-     <width>151</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>设置范围</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="camera">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>480</y>
-     <width>141</width>
-     <height>49</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <property name="text">
-     <string>前背景板</string>
-    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="labelPos">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>128</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>*</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>背景板调整</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolButton_SetRange">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>128</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>设置范围</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
-    <property name="text">
-     <string>后背景板</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QComboBox" name="camera_2">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>540</y>
-     <width>51</width>
-     <height>49</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <item>
-    <property name="text">
-     <string>前</string>
-    </property>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>325</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item>
-    <property name="text">
-     <string>后</string>
-    </property>
+    <widget class="QScrollBar" name="horizontalScrollBar">
+     <property name="maximum">
+      <number>1024</number>
+     </property>
+     <property name="singleStep">
+      <number>0</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
    </item>
-  </widget>
-  <widget class="QToolButton" name="toolButton_anticlockwise_f_2">
-   <property name="geometry">
-    <rect>
-     <x>540</x>
-     <y>480</y>
-     <width>101</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>文泉驿微米黑</family>
-     <pointsize>16</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
-   </property>
-   <property name="text">
-    <string>保存角度</string>
-   </property>
-  </widget>
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="2">
+      <widget class="QSpinBox" name="spinBox_f">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QSpinBox" name="spinBox_channel">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>7</number>
+       </property>
+       <property name="value">
+        <number>1</number>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QToolButton" name="toolButton_clockwis">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>文泉驿微米黑</family>
+         <pointsize>16</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
+       </property>
+       <property name="text">
+        <string>顺时针</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>通道</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <widget class="QToolButton" name="toolButton_anticlockwise">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>文泉驿微米黑</family>
+         <pointsize>16</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
+       </property>
+       <property name="text">
+        <string>逆时针</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="6">
+      <widget class="QToolButton" name="toolButton_saveangle">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>文泉驿微米黑</family>
+         <pointsize>16</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
+       </property>
+       <property name="text">
+        <string>保存角度</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QToolButton" name="toolButton_continue">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>文泉驿微米黑</family>
+         <pointsize>16</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
+       </property>
+       <property name="text">
+        <string>连续传输</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QToolButton" name="toolButton_transmit">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
+       </property>
+       <property name="text">
+        <string>传输数据</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="8">
+      <widget class="QToolButton" name="toolButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>返回</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="8">
+      <widget class="QToolButton" name="toolButton_Clear">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>清除</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QWidget" name="widgetBkg" native="true"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QWidget" name="widgetCamera" native="true"/>
+     </item>
+     <item row="1" column="6">
+      <widget class="QToolButton" name="toolButton_all">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>文泉驿微米黑</family>
+         <pointsize>16</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
+       </property>
+       <property name="text">
+        <string>全部显示</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="7">
+      <widget class="QToolButton" name="toolButton_seperate">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>文泉驿微米黑</family>
+         <pointsize>16</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
+       </property>
+       <property name="text">
+        <string>隔点显示</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections>

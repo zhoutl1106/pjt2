@@ -20,8 +20,8 @@ MultiStatusToolButton::MultiStatusToolButton(QWidget *parent, int statusCnt, ...
         statusCnt--;
     }
     va_end(args);
-    for(int i = 0;i<textList.length();i++)
-        qDebug()<<textList.at(i);
+    /*for(int i = 0;i<textList.length();i++)
+        qDebug()<<textList.at(i);*/
     setText(textList.at(0));
     setStyleSheet(styleSheetList.at(0));
     setSizePolicy(QSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred));
@@ -34,7 +34,7 @@ MultiStatusToolButton::~MultiStatusToolButton()
 
 void MultiStatusToolButton::onclick()
 {
-    qDebug()<<"click";
+    //qDebug()<<"click";
     m_index ++;
     if(m_index >= textList.length())
         m_index = 0;
@@ -45,4 +45,13 @@ void MultiStatusToolButton::onclick()
 int MultiStatusToolButton::currentIndex()
 {
     return m_index;
+}
+
+void MultiStatusToolButton::setCurrentIndex(int v)
+{
+    m_index = v;
+    if(m_index >= textList.length() || m_index < 0)
+        m_index = 0;
+    setText(textList.at(m_index));
+    setStyleSheet(styleSheetList.at(m_index));
 }

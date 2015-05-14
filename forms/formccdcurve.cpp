@@ -4,17 +4,37 @@
 #include <QMessageBox>
 #include <QMouseEvent>
 #include "../dialog.h"
+#include <QVBoxLayout>
 
 extern Dialog* g_dialog;
 void beep(int);
 extern bool isBeep;
-
+extern QString stylesheet;
 
 FormCCDCurve::FormCCDCurve(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::FormCCDCurve)
 {
     ui->setupUi(this);
+    setStyleSheet(stylesheet);
+    btnBkg = new MultiStatusToolButton(NULL,2,"前背景板","font-size:20px;border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);"
+                                    ,"后背景板","font-size:20px;border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
+
+    QVBoxLayout *box = new QVBoxLayout;
+    box->setMargin(0);
+    box->addWidget(btnBkg);
+    ui->widgetBkg->setLayout(box);
+
+    btnCamera = new MultiStatusToolButton(NULL,2,"前相机","font-size:20px;border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);"
+                                    ,"后相机","font-size:20px;border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
+
+    QVBoxLayout *box1 = new QVBoxLayout;
+    box1->setMargin(0);
+    box1->addWidget(btnCamera);
+    ui->widgetCamera->setLayout(box1);
+    mode = 2;
+    ui->toolButton_seperate->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
+
     /*setMouseTracking(true);
     setWindowModality(Qt::ApplicationModal);
     isMousePressed = false;
@@ -28,11 +48,11 @@ FormCCDCurve::FormCCDCurve(QWidget *parent) :
     savePosTimer = new QTimer(this);
     savePosTimer->setInterval(30000);
     connect(savePosTimer,SIGNAL(timeout()),this,SLOT(onSavePosTimeOut()));
-    mode = 2;
+*/
     upperbound = 2100;
     lowerbound = 0;
-    range = new DialogDisplayRange(this);
-    connect(range,SIGNAL(displayRange(int,int)),this,SLOT(updateRange(int,int)));*/
+    range = new DialogDisplayRange;
+    connect(range,SIGNAL(displayRange(int,int)),this,SLOT(updateRange(int,int)));
 }
 
 
@@ -270,38 +290,23 @@ void FormCCDCurve::on_toolButton_Clear_4_clicked()
         ui->toolButton_Clear_4->setText("停止传输");
         periodTimer->start();
     }
-}
-
-void FormCCDCurve::on_radioButton_Clear_5_clicked()
-{
-    if(isBeep)beep(50000);
-    mode = 0;
-    ui->horizontalScrollBar->setEnabled(true);
-    update();
-}
-
-void FormCCDCurve::on_radioButton_Clear_7_clicked()
-{
-    if(isBeep)beep(50000);
-    mode = 2;
-    ui->horizontalScrollBar->setEnabled(false);
-    update();
-}
+}*/
 
 void FormCCDCurve::on_toolButton_SetRange_clicked()
 {
     if(isBeep)beep(50000);
-    range->exec();
+    range->show();
 }
 
 void FormCCDCurve::updateRange(int upper, int lower)
 {
     upperbound = upper;
     lowerbound = lower;
+    //qDebug()<<upperbound<<lowerbound;
     update();
-    g_widget->fileManager->config.showUpper = upper;
-    g_widget->fileManager->config.showLower = lower;
-}*/
+    g_dialog->fileManager->config.showUpper = upper;
+    g_dialog->fileManager->config.showLower = lower;
+}
 
 void FormCCDCurve::on_toolButton_clicked()
 {
@@ -379,3 +384,23 @@ void FormCCDCurve::on_camera_2_currentIndexChanged(int index)
     isBeep = true;
 }
 */
+
+void FormCCDCurve::on_toolButton_seperate_clicked()
+{
+    if(isBeep)beep(50000);
+    mode = 2;
+    ui->toolButton_seperate->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
+    ui->toolButton_all->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
+    ui->horizontalScrollBar->setEnabled(false);
+    update();
+}
+
+void FormCCDCurve::on_toolButton_all_clicked()
+{
+    if(isBeep)beep(50000);
+    mode = 0;
+    ui->toolButton_seperate->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
+    ui->toolButton_all->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
+    ui->horizontalScrollBar->setEnabled(true);
+    update();
+}

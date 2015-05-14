@@ -4,7 +4,8 @@
 #include <QWidget>
 #include <QBrush>
 #include <QTimer>
-//#include "dialogdisplayrange.h"
+#include "dialogdisplayrange.h"
+#include "../multistatustoolbutton.h"
 
 namespace Ui {
 class FormCCDCurve;
@@ -17,9 +18,11 @@ class FormCCDCurve : public QWidget
 public:
     explicit FormCCDCurve(QWidget *parent = 0);
     ~FormCCDCurve();
+    DialogDisplayRange *range;
 
 public slots:
     void updateData();
+    void updateRange(int upper, int lower);
 
 signals:
     void switchToPage(int index);
@@ -28,16 +31,9 @@ signals:
     void mousePressEvent(QMouseEvent *e);
     void mouseReleaseEvent(QMouseEvent *e);
     void setMode(QString str);
-    void setMem(int index);
-    DialogDisplayRange *range;
+    void setMem(int index);*/
 
-public slots:
-    void updateRange(int upper, int lower);
-
-signals:
-    void sendCmd(int type, QByteArray cmd);
-
-public slots:
+/*
     void updateCCD(QByteArray array);
     void getPos(int motor, int angle);*/
 private slots:/*
@@ -58,22 +54,26 @@ private slots:/*
     void onSavePosTimeOut();
 
     void on_toolButton_Clear_4_clicked();
-
-    void on_radioButton_Clear_5_clicked();
-
-    void on_radioButton_Clear_7_clicked();
-
+*/
     void on_toolButton_SetRange_clicked();
 
-*/
+
     void on_toolButton_clicked();
 /*
     void on_toolButton_anticlockwise_f_2_clicked();
 
     void on_camera_2_currentIndexChanged(int index);*/
 
+    void on_toolButton_seperate_clicked();
+
+    void on_toolButton_all_clicked();
+
 private:
     Ui::FormCCDCurve *ui;
+    MultiStatusToolButton* btnBkg;
+    MultiStatusToolButton* btnCamera;
+
+
     QByteArray m_array;
     bool isMousePressed;
     QPoint lastPos;

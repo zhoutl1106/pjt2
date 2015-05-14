@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include "../multistatustoolbutton.h"
+#include "../longclicktoolbutton.h"
+#include <QSlider>
 
 namespace Ui {
 class FormAccuracyAdjust;
@@ -19,29 +21,9 @@ public:
 signals:
     void switchToPage(int index);
 
-public slots:
-    void updateData();
-
 private slots:
     void on_toolButton_clicked();
-    void on_toolButton_11u_clicked();
-    void on_toolButton_11d_clicked();
-    void on_toolButton_12u_clicked();
-    void on_toolButton_12d_clicked();
-    void on_toolButton_13u_clicked();
-    void on_toolButton_13d_clicked();
-    void on_toolButton_21u_clicked();
-    void on_toolButton_21d_clicked();
-    void on_toolButton_22u_clicked();
-    void on_toolButton_22d_clicked();
-    void on_toolButton_23u_clicked();
-    void on_toolButton_23d_clicked();
-    void on_toolButton_31u_clicked();
-    void on_toolButton_31d_clicked();
-    void on_toolButton_32u_clicked();
-    void on_toolButton_32d_clicked();
-    void on_toolButton_33u_clicked();
-    void on_toolButton_33d_clicked();
+    void lbtnValue(int index, int value);
 
     void on_toolButton_Camera_clicked();
 
@@ -51,6 +33,9 @@ private:
     Ui::FormAccuracyAdjust *ui;
     void checkDataRange(int &v, int min, int max);
     MultiStatusToolButton *btn;
+    QList<QWidget*> listWidget;
+    QList<QSlider*> listSlider;
+    LongClickToolButton *lbtn[18];
 };
 
 #endif // FORMACCURACYADJUST_H

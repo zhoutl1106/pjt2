@@ -25,6 +25,9 @@
      <height>51</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;微软雅黑&quot;;</string>
+   </property>
    <property name="text">
     <string>当前模式/</string>
    </property>

@@ -90,11 +90,12 @@ QSpinBox::down-button
         image: url(:/image/downArrow.png);
 }
 
+
 QDoubleSpinBox
 {
         text-align:center;
         color:rgb(255,255,255);
-        border-image: url(:/icons/spinBkg.png) no-repeat;
+        border-image: url(:/image/btnR.png) no-repeat;
 }
 
 QDoubleSpinBox::up-button
@@ -102,7 +103,7 @@ QDoubleSpinBox::up-button
         subcontrol-position:right;
         width:50px;
         height:50px;
-        image: url(:/icons/upArrow.png);
+        image: url(:/image/upArrow.png);
 }
 
 QDoubleSpinBox::down-button
@@ -110,7 +111,7 @@ QDoubleSpinBox::down-button
         subcontrol-position:left;
         width:50px;
         height:50px;
-        image: url(:/icons/downArrow.png);
+        image: url(:/image/downArrow.png);
 }
 
 QScrollBar:horizontal

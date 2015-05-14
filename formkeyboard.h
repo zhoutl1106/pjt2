@@ -14,7 +14,6 @@ class FormKeyboard : public QDialog
 public:
     explicit FormKeyboard(QWidget *parent = 0);
     ~FormKeyboard();
-    void showEvent(QShowEvent *);
     QString getString();
 signals:
     void sendText(QString);

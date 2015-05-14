@@ -12,6 +12,7 @@ public:
     MultiStatusToolButton(QWidget* parent, int statusCnt, ...);
     ~MultiStatusToolButton();
     int currentIndex();
+    void setCurrentIndex(int v);
 
 public slots:
     void onclick();

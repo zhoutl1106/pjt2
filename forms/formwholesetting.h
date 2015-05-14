@@ -2,6 +2,7 @@
 #define FORMWHOLESETTING_H
 
 #include <QWidget>
+#include "../multistatustoolbutton.h"
 
 namespace Ui {
 class FormWholeSetting;
@@ -26,6 +27,8 @@ private slots:
     
 private:
     Ui::FormWholeSetting *ui;
+    MultiStatusToolButton *btn[7];
+    QList<QWidget*> list;
 };
 
 #endif // FORMWHOLESETTING_H

@@ -177,7 +177,7 @@ void FormCntCheck::cntUpload(int channel, int pos, int value)
 void FormCntCheck::on_toolButton_clicked()
 {
     if(isBeep)beep(50000);
-    emit switchToPage(6);
+    emit switchToPage(11);
 }
 
 void FormCntCheck::on_toolButton_2_clicked()

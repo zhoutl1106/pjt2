@@ -34,6 +34,34 @@ FormAccuracyAdjust::FormAccuracyAdjust(QWidget *parent) :
     ui->verticalSlider31->setValue(0);
     ui->verticalSlider32->setValue(0);
     ui->verticalSlider33->setValue(0);
+    listSlider.append(ui->verticalSlider11);
+    listSlider.append(ui->verticalSlider12);
+    listSlider.append(ui->verticalSlider13);
+    listSlider.append(ui->verticalSlider21);
+    listSlider.append(ui->verticalSlider22);
+    listSlider.append(ui->verticalSlider23);
+    listSlider.append(ui->verticalSlider31);
+    listSlider.append(ui->verticalSlider32);
+    listSlider.append(ui->verticalSlider33);
+
+    listWidget.append(ui->widget_11u);
+    listWidget.append(ui->widget_11d);
+    listWidget.append(ui->widget_12u);
+    listWidget.append(ui->widget_12d);
+    listWidget.append(ui->widget_13u);
+    listWidget.append(ui->widget_13d);
+    listWidget.append(ui->widget_21u);
+    listWidget.append(ui->widget_21d);
+    listWidget.append(ui->widget_22u);
+    listWidget.append(ui->widget_22d);
+    listWidget.append(ui->widget_23u);
+    listWidget.append(ui->widget_23d);
+    listWidget.append(ui->widget_31u);
+    listWidget.append(ui->widget_31d);
+    listWidget.append(ui->widget_32u);
+    listWidget.append(ui->widget_32d);
+    listWidget.append(ui->widget_33u);
+    listWidget.append(ui->widget_33d);
 
     btn = new MultiStatusToolButton(NULL,2,"前相机","font-size:20px;border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);"
                                     ,"后相机","font-size:20px;border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
@@ -43,6 +71,16 @@ FormAccuracyAdjust::FormAccuracyAdjust(QWidget *parent) :
     box->setMargin(0);
     box->addWidget(btn);
     ui->widget->setLayout(box);
+
+    for(int i = 0;i<18;i++)
+    {
+        lbtn[i] = new LongClickToolButton(NULL,i/2,i%2==0?1:-1);
+        connect(lbtn[i],SIGNAL(longClick(int,int)),this,SLOT(lbtnValue(int,int)));
+        QVBoxLayout *layout = new QVBoxLayout;
+        layout->setMargin(0);
+        layout->addWidget(lbtn[i]);
+        listWidget.at(i)->setLayout(layout);
+    }
 }
 
 
@@ -51,133 +89,15 @@ FormAccuracyAdjust::~FormAccuracyAdjust()
     delete ui;
 }
 
-void FormAccuracyAdjust::updateData()
+void FormAccuracyAdjust::lbtnValue(int index, int value)
 {
-    bool temp = isBeep;
-    isBeep = false;
-    isBeep = temp;
+    listSlider.at(index)->setValue(listSlider.at(index)->value()+value);
 }
 
 void FormAccuracyAdjust::on_toolButton_clicked()
 {
     if(isBeep)beep(50000);
     emit switchToPage(2);
-}
-
-void FormAccuracyAdjust::on_toolButton_11u_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider11->setValue(ui->verticalSlider11->value() + 1);
-}
-
-void FormAccuracyAdjust::on_toolButton_11d_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider11->setValue(ui->verticalSlider11->value() - 1);
-}
-
-
-void FormAccuracyAdjust::on_toolButton_12u_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider12->setValue(ui->verticalSlider12->value() + 1);
-}
-
-void FormAccuracyAdjust::on_toolButton_12d_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider12->setValue(ui->verticalSlider12->value() - 1);
-}
-
-
-void FormAccuracyAdjust::on_toolButton_13u_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider13->setValue(ui->verticalSlider13->value() + 1);
-}
-
-void FormAccuracyAdjust::on_toolButton_13d_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider13->setValue(ui->verticalSlider13->value() - 1);
-}
-
-
-void FormAccuracyAdjust::on_toolButton_21u_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider21->setValue(ui->verticalSlider21->value() + 1);
-}
-
-void FormAccuracyAdjust::on_toolButton_21d_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider21->setValue(ui->verticalSlider21->value() - 1);
-}
-
-
-void FormAccuracyAdjust::on_toolButton_22u_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider22->setValue(ui->verticalSlider22->value() + 1);
-}
-
-void FormAccuracyAdjust::on_toolButton_22d_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider22->setValue(ui->verticalSlider22->value() - 1);
-}
-
-
-void FormAccuracyAdjust::on_toolButton_23u_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider23->setValue(ui->verticalSlider23->value() + 1);
-}
-
-void FormAccuracyAdjust::on_toolButton_23d_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider23->setValue(ui->verticalSlider23->value() - 1);
-}
-
-
-void FormAccuracyAdjust::on_toolButton_31u_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider31->setValue(ui->verticalSlider31->value() + 1);
-}
-
-void FormAccuracyAdjust::on_toolButton_31d_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider31->setValue(ui->verticalSlider31->value() - 1);
-}
-
-
-void FormAccuracyAdjust::on_toolButton_32u_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider32->setValue(ui->verticalSlider32->value() + 1);
-}
-
-void FormAccuracyAdjust::on_toolButton_32d_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider32->setValue(ui->verticalSlider32->value() - 1);
-}
-
-
-void FormAccuracyAdjust::on_toolButton_33u_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider33->setValue(ui->verticalSlider33->value() + 1);
-}
-
-void FormAccuracyAdjust::on_toolButton_33d_clicked()
-{
-    if(isBeep)beep(50000);
-    ui->verticalSlider33->setValue(ui->verticalSlider33->value() - 1);
 }
 
 void FormAccuracyAdjust::on_toolButton_Camera_clicked()
@@ -232,6 +152,7 @@ void FormAccuracyAdjust::on_toolButton_2_clicked()
     ui->verticalSlider31->setValue(0);
     ui->verticalSlider32->setValue(0);
     ui->verticalSlider33->setValue(0);
+    g_dialog->fileManager->configChange();
     /*for(int i = 0;i<14;i++)
     {
         qDebug()<<i<<g_dialog->fileManager->config.times[i]

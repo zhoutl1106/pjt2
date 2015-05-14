@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_FormAccuracyDetailAdjust_t {
-    QByteArrayData data[6];
-    char stringdata[78];
+    QByteArrayData data[14];
+    char stringdata[258];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,11 +34,25 @@ QT_MOC_LITERAL(1, 25, 12), // "switchToPage"
 QT_MOC_LITERAL(2, 38, 0), // ""
 QT_MOC_LITERAL(3, 39, 5), // "index"
 QT_MOC_LITERAL(4, 45, 10), // "updateData"
-QT_MOC_LITERAL(5, 56, 21) // "on_toolButton_clicked"
+QT_MOC_LITERAL(5, 56, 9), // "lbtnValue"
+QT_MOC_LITERAL(6, 66, 5), // "value"
+QT_MOC_LITERAL(7, 72, 21), // "on_toolButton_clicked"
+QT_MOC_LITERAL(8, 94, 8), // "onCamera"
+QT_MOC_LITERAL(9, 103, 31), // "on_comboBox_currentIndexChanged"
+QT_MOC_LITERAL(10, 135, 23), // "on_toolButton_2_clicked"
+QT_MOC_LITERAL(11, 159, 32), // "on_verticalSlider11_valueChanged"
+QT_MOC_LITERAL(12, 192, 32), // "on_verticalSlider12_valueChanged"
+QT_MOC_LITERAL(13, 225, 32) // "on_verticalSlider13_valueChanged"
 
     },
     "FormAccuracyDetailAdjust\0switchToPage\0"
-    "\0index\0updateData\0on_toolButton_clicked"
+    "\0index\0updateData\0lbtnValue\0value\0"
+    "on_toolButton_clicked\0onCamera\0"
+    "on_comboBox_currentIndexChanged\0"
+    "on_toolButton_2_clicked\0"
+    "on_verticalSlider11_valueChanged\0"
+    "on_verticalSlider12_valueChanged\0"
+    "on_verticalSlider13_valueChanged"
 };
 #undef QT_MOC_LITERAL
 
@@ -48,7 +62,7 @@ static const uint qt_meta_data_FormAccuracyDetailAdjust[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -56,18 +70,32 @@ static const uint qt_meta_data_FormAccuracyDetailAdjust[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   29,    2, 0x06 /* Public */,
+       1,    1,   64,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,   32,    2, 0x0a /* Public */,
-       5,    0,   33,    2, 0x08 /* Private */,
+       4,    0,   67,    2, 0x0a /* Public */,
+       5,    2,   68,    2, 0x0a /* Public */,
+       7,    0,   73,    2, 0x08 /* Private */,
+       8,    0,   74,    2, 0x08 /* Private */,
+       9,    1,   75,    2, 0x08 /* Private */,
+      10,    0,   78,    2, 0x08 /* Private */,
+      11,    1,   79,    2, 0x08 /* Private */,
+      12,    1,   82,    2, 0x08 /* Private */,
+      13,    1,   85,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    3,
 
  // slots: parameters
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,    3,    6,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    3,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    6,
+    QMetaType::Void, QMetaType::Int,    6,
+    QMetaType::Void, QMetaType::Int,    6,
 
        0        // eod
 };
@@ -79,7 +107,14 @@ void FormAccuracyDetailAdjust::qt_static_metacall(QObject *_o, QMetaObject::Call
         switch (_id) {
         case 0: _t->switchToPage((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 1: _t->updateData(); break;
-        case 2: _t->on_toolButton_clicked(); break;
+        case 2: _t->lbtnValue((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 3: _t->on_toolButton_clicked(); break;
+        case 4: _t->onCamera(); break;
+        case 5: _t->on_comboBox_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 6: _t->on_toolButton_2_clicked(); break;
+        case 7: _t->on_verticalSlider11_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 8: _t->on_verticalSlider12_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 9: _t->on_verticalSlider13_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -119,13 +154,13 @@ int FormAccuracyDetailAdjust::qt_metacall(QMetaObject::Call _c, int _id, void **
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 10)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 3;
+        _id -= 10;
     }
     return _id;
 }

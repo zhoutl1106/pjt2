@@ -38,6 +38,7 @@ public:
         label = new QLabel(Dialog);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(30, 20, 381, 51));
+        label->setStyleSheet(QString::fromUtf8("font: 14pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         labelDate = new QLabel(Dialog);
         labelDate->setObjectName(QStringLiteral("labelDate"));
         labelDate->setGeometry(QRect(560, 40, 171, 31));

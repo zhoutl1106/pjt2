@@ -62,7 +62,7 @@ QString Encryption::genPasscode(QString s, QDate dat, QString op)
 
 QDate Encryption::checkPasscode(QString s, const QString code, int &op)
 {
-    qDebug()<<"checkPasscode"<<s<<s.length();
+    //qDebug()<<"checkPasscode"<<s<<s.length();
     if(s.length() != 18)
         return QDate(0,0,0);
     char str[18];
@@ -95,6 +95,6 @@ QDate Encryption::checkPasscode(QString s, const QString code, int &op)
     QDate ret = QDate(2000 + str[8]*10+str[9],str[10]*10+str[11],str[12]*10+str[13]);
     if(ret <= QDate::currentDate())
         return QDate(3,3,3);
-    qDebug()<<ret;
+    //qDebug()<<ret;
     return ret;
 }

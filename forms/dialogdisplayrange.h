@@ -17,12 +17,16 @@ public:
     void setRange(int upper, int lower);
 
 signals:
-    void displayRange(int upper, int lower);
+    void displayRange(int,int);
 
 private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_clicked();
+
+    void on_toolButton_clicked();
+
+    void on_toolButton_2_clicked();
 
 private:
     Ui::DialogDisplayRange *ui;
