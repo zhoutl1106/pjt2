@@ -14,7 +14,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QDialog {border-image: url(:/image/bkg.png);}</string>
+   <string notr="true"/>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -65,6 +65,10 @@
      <pointsize>31</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/image/timebkg.png);
+font: 31pt &quot;微软雅黑&quot;;</string>
+   </property>
    <property name="text">
     <string>00</string>
    </property>
@@ -83,6 +87,10 @@
      <family>微软雅黑</family>
      <pointsize>31</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/image/timebkg.png);
+font: 31pt &quot;微软雅黑&quot;;</string>
    </property>
    <property name="text">
     <string>00</string>

@@ -29,5 +29,7 @@
         <file>image/radio_check.png</file>
         <file>image/btnB.png</file>
         <file>image/combo.png</file>
+        <file>image/circleG.png</file>
+        <file>image/timebkg.png</file>
     </qresource>
 </RCC>

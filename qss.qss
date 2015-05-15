@@ -1,3 +1,5 @@
+QDialog#Dialog{border-image: url(:/image/bkg.png);}
+
 QWidget
 {
     font-size:30px;
@@ -33,7 +35,7 @@ QComboBox
 
 QToolButton
 {
-	font-size:20px;
+    font-size:30px;
     border-image: url(:/image/btnG.png);
     color: rgb(255, 255, 255);
 }

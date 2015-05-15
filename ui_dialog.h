@@ -34,7 +34,7 @@ public:
         if (Dialog->objectName().isEmpty())
             Dialog->setObjectName(QStringLiteral("Dialog"));
         Dialog->resize(1024, 600);
-        Dialog->setStyleSheet(QStringLiteral("QDialog {border-image: url(:/image/bkg.png);}"));
+        Dialog->setStyleSheet(QStringLiteral(""));
         label = new QLabel(Dialog);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(30, 20, 381, 51));
@@ -52,10 +52,14 @@ public:
         font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font1.setPointSize(31);
         labelHour->setFont(font1);
+        labelHour->setStyleSheet(QString::fromUtf8("border-image: url(:/image/timebkg.png);\n"
+"font: 31pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         labelMinute = new QLabel(Dialog);
         labelMinute->setObjectName(QStringLiteral("labelMinute"));
         labelMinute->setGeometry(QRect(500, 25, 49, 41));
         labelMinute->setFont(font1);
+        labelMinute->setStyleSheet(QString::fromUtf8("border-image: url(:/image/timebkg.png);\n"
+"font: 31pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         stackedWidget = new QStackedWidget(Dialog);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
         stackedWidget->setGeometry(QRect(0, 80, 1024, 520));

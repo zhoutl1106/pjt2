@@ -40,7 +40,8 @@ public:
         if (FormCntCheck->objectName().isEmpty())
             FormCntCheck->setObjectName(QStringLiteral("FormCntCheck"));
         FormCntCheck->setWindowModality(Qt::NonModal);
-        FormCntCheck->resize(400, 300);
+        FormCntCheck->resize(1024, 520);
+        FormCntCheck->setStyleSheet(QStringLiteral("border-image: url(:/image/lowerBkg.png);"));
         verticalLayout = new QVBoxLayout(FormCntCheck);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         horizontalLayout = new QHBoxLayout();

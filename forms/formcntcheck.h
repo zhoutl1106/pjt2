@@ -7,6 +7,9 @@
 #define STATE_GOOD      1
 #define STATE_BAD       2
 
+#define MAX_GROUP_CNT     28
+#define MAX_NUMBER_CNT    16
+
 namespace Ui {
 class FormCntCheck;
 }
@@ -26,7 +29,6 @@ public slots:
     void cntUpload(int channel, int pos, int value);
 
 signals:
-    void sendCmd(int i, QByteArray array);
     void switchToPage(int index);
 
 private slots:
@@ -38,14 +40,15 @@ private slots:
 
 private:
     Ui::FormCntCheck *ui;
-    char data_state[7][64];
-    int data[7][64];
+    char data_state[MAX_GROUP_CNT][MAX_NUMBER_CNT];
+    int data[MAX_GROUP_CNT][MAX_NUMBER_CNT];
     int threshold;
     int currentChannel;
     int currentPos;
     bool isOver;
     int targetX;
     int targetY;
+    QPixmap pic[3];
 };
 
 #endif // FORMCNTCHECK_H

@@ -9,25 +9,35 @@
 
 void beep(int);
 extern bool isBeep;
+extern QString stylesheet;
 
 FormCntCheck::FormCntCheck(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::FormCntCheck)
 {
     ui->setupUi(this);
-    memset(data_state,STATE_UNKNOWN,14*64);
+    memset(data_state,STATE_UNKNOWN,MAX_GROUP_CNT*MAX_NUMBER_CNT);
     currentChannel = 1;
     currentPos = 0;
-    //write threshold file
+    //read threshold file
     QFile file("/dat/zt_threshold");
-    file.open(QFile::ReadOnly);
+    if(file.exists())
+    {
+        file.open(QFile::ReadOnly);
     file.read((char*)&threshold,4);
     file.close();
+    }
+    else
+        threshold = 1000000000;
     qDebug()<<"get threadhold "<<threshold;
     setMouseTracking(true);
     isOver = false;
     targetX = -1;
     targetY = -1;
+    pic[0] = QPixmap(":/image/circleW.png");
+    pic[1] = QPixmap(":/image/circleG.png");
+    pic[2] = QPixmap(":/image/circleR.png");
+    setStyleSheet(stylesheet);
 }
 
 void FormCntCheck::showEvent(QShowEvent *e)
@@ -40,7 +50,7 @@ void FormCntCheck::showEvent(QShowEvent *e)
 }
 
 void FormCntCheck::askCnt()
-{
+{/*
     if(isBeep)beep(50000);
     QByteArray cmd;
     cmd.append((char)0x04);
@@ -50,7 +60,7 @@ void FormCntCheck::askCnt()
     cmd.append((char)0x00);
     cmd.append((char)0x00);
     cmd.append((char)0x00);
-    emit sendCmd(2,cmd);
+    emit sendCmd(2,cmd);*/
 }
 
 FormCntCheck::~FormCntCheck()
@@ -76,7 +86,8 @@ void FormCntCheck::paintEvent(QPaintEvent *e)
         for(int j = 0;j<32;j++)
         {
             //qDebug()<<startX + j * 6<<startY + i * subHeight<<(int)p[i*128+j];
-            switch(data_state[i][j])
+            //painter.drawPixmap(startX + j * drawDistance, startY + 2 * i * subHeight, radius, radius,pic[data_state[i][j]]);
+            /*switch(data_state[i][j])
             {
             case 0:
                 painter.setBrush(Qt::gray);
@@ -105,7 +116,7 @@ void FormCntCheck::paintEvent(QPaintEvent *e)
                 painter.setBrush(Qt::red);
                 painter.drawEllipse(startX + j * drawDistance, startY + (2 * i+1) * subHeight, radius, radius);
                 break;
-            }
+            }*/
         }
     }
     painter.setPen(QPen(QBrush(QColor(255,0,0)),3));
@@ -114,7 +125,7 @@ void FormCntCheck::paintEvent(QPaintEvent *e)
 }
 
 void FormCntCheck::mouseMoveEvent(QMouseEvent *e)
-{
+{/*
     int startX = 55;
     int startY = ui->verticalSpacer->geometry().y() + 20;
     int subHeight = 35;
@@ -138,11 +149,11 @@ void FormCntCheck::mouseMoveEvent(QMouseEvent *e)
         targetX = i;
         targetY = j;
     }
-    update();
+    update();*/
 }
 
 void FormCntCheck::cntUpload(int channel, int pos, int value)
-{
+{/*
     //qDebug()<<channel<<pos<<value;
     data[channel-1][pos] = value;
     if(data[channel-1][pos] > threshold)
@@ -171,7 +182,7 @@ void FormCntCheck::cntUpload(int channel, int pos, int value)
         currentPos = 0;
         currentChannel ++;
     }
-    askCnt();
+    askCnt();*/
 }
 
 void FormCntCheck::on_toolButton_clicked()
