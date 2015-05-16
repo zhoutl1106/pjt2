@@ -61,15 +61,13 @@ Dialog::Dialog(QWidget *parent) :
     connect(form13_whole,SIGNAL(switchToPage(int)),ui->stackedWidget,SLOT(setCurrentIndex(int)));
     connect(form14_monitor,SIGNAL(switchToPage(int)),ui->stackedWidget,SLOT(setCurrentIndex(int)));
 
-    connect(fileManager,SIGNAL(configChanged()),form3_vibrationAdjust,SLOT(updateData()));
-    connect(fileManager,SIGNAL(configChanged()),form4_mode,SLOT(updateData()));
-    connect(fileManager,SIGNAL(configChanged()),form5_accuracy,SLOT(updateData()));
-    connect(fileManager,SIGNAL(configChanged()),form9_ash,SLOT(updateData()));
-    connect(fileManager,SIGNAL(configChanged()),form10_bkg,SLOT(updateData()));
-    connect(fileManager,SIGNAL(configChanged()),form11_valve,SLOT(updateData()));
-    connect(fileManager,SIGNAL(configChanged()),form12_accuracyDetail,SLOT(updateData()));
-    connect(fileManager,SIGNAL(configChanged()),form13_whole,SLOT(updateData()));
-    connect(fileManager,SIGNAL(configChanged()),form14_monitor,SLOT(updateData()));
+    connect(fileManager,SIGNAL(sigConfigChanged()),form3_vibrationAdjust,SLOT(updateData()));
+    connect(fileManager,SIGNAL(sigConfigChanged()),form4_mode,SLOT(updateData()));
+    connect(fileManager,SIGNAL(sigConfigChanged()),form9_ash,SLOT(updateData()));
+    connect(fileManager,SIGNAL(sigConfigChanged()),form10_bkg,SLOT(updateData()));
+    connect(fileManager,SIGNAL(sigConfigChanged()),form11_valve,SLOT(updateData()));
+    connect(fileManager,SIGNAL(sigConfigChanged()),form12_accuracyDetail,SLOT(updateData()));
+    connect(fileManager,SIGNAL(sigConfigChanged()),form13_whole,SLOT(updateData()));
 
     ui->stackedWidget->insertWidget(0,form14_monitor);
     ui->stackedWidget->insertWidget(0,form13_whole);

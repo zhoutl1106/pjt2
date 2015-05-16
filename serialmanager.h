@@ -2,7 +2,9 @@
 #define SERIALMANAGER_H
 
 #include <QObject>
-//#include "posix_qextserialport.h"
+#ifdef linux
+#include "posix_qextserialport.h"
+#endif
 #include <QTimer>
 #include <QDebug>
 #include <QMessageBox>
@@ -28,9 +30,11 @@ public slots:
     void writeCmd(int type,QByteArray cmd);
 
 private:
-    /*Posix_QextSerialPort *myCom232;
+#ifdef linux
+    Posix_QextSerialPort *myCom232;
     Posix_QextSerialPort *myCom485_1;
-    Posix_QextSerialPort *myCom485_2;*/
+    Posix_QextSerialPort *myCom485_2;
+#endif
     QTimer *comTimer;
     QMessageBox *lowPresureMsg;
 };

@@ -1,3 +1,4 @@
+#ifdef linux
 #ifndef _POSIX_QEXTSERIALPORT_H_
 #define _POSIX_QEXTSERIALPORT_H_
 
@@ -60,4 +61,5 @@ class Posix_QextSerialPort:public QextSerialBase
 
 };
 
+#endif
 #endif

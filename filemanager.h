@@ -61,7 +61,7 @@ signals:
     void updateInitialStatus(bool exit, QString str);
     //void switchToPage(int index);
     void bkgShow();
-    void configChanged();
+    void sigConfigChanged();
 
 public slots:
     bool checkDate();

@@ -26,7 +26,7 @@ signals:
 private slots:
     void onTimer();
     void on_toolButton_clicked();
-    void on_Camera_clicked();
+    void onCameraClicked();
 
     void on_toolButton_singleTest_clicked();
 

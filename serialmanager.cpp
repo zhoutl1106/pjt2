@@ -1,11 +1,11 @@
 #include "serialmanager.h"
 #include <QMessageBox>
-#include "widget.h"
 #include <QDebug>
 
 SerialManager::SerialManager(QObject *parent) :
     QObject(parent)
 {
+#ifdef linux
     myCom232 = new Posix_QextSerialPort("/dev/ttyO1",QextSerialBase::Polling);
     myCom232 ->open(QIODevice::ReadWrite);
     myCom232->setBaudRate(BAUD9600);
@@ -29,7 +29,7 @@ SerialManager::SerialManager(QObject *parent) :
     myCom485_2->setParity(PAR_NONE);
     myCom485_2->setStopBits(STOP_1);
     myCom485_2->setFlowControl(FLOW_OFF);
-
+#endif
     comTimer = new QTimer(this);
     comTimer->setInterval(100);
     connect(comTimer,SIGNAL(timeout()),this,SLOT(comTimeOut()));
@@ -53,8 +53,10 @@ quint8 SerialManager::checkSum(char *data, int len)
 
 void SerialManager::writeCmd(int type, QByteArray cmd)
 {
+    qDebug()<<type<<cmd.toHex();
     buf485_1.clear();
     char temp = (char)0xaa;
+#ifdef linux
     switch(type)
     {
     case 0:
@@ -72,10 +74,12 @@ void SerialManager::writeCmd(int type, QByteArray cmd)
         myCom485_2->write(cmd);
         break;
     }
+#endif
 }
 
 void SerialManager::comTimeOut()
 {
+#ifdef linux
     QByteArray temp0 = myCom232->readAll();
     QByteArray temp1 = myCom485_1->readAll();
     QByteArray temp2 = myCom485_2->readAll();
@@ -156,4 +160,5 @@ void SerialManager::comTimeOut()
             }
         }
     }
+#endif
 }

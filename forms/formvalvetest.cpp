@@ -17,7 +17,7 @@ FormValveTest::FormValveTest(QWidget *parent) :
     btn = new MultiStatusToolButton(NULL,2,"前相机","font-size:20px;border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);"
                                     ,"后相机","font-size:20px;border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
 
-    connect(btn,SIGNAL(clicked()),this,SLOT(on_Camera_clicked()));
+    connect(btn,SIGNAL(clicked()),this,SLOT(onCameraClicked()));
     QVBoxLayout *box = new QVBoxLayout;
     box->setMargin(0);
     box->addWidget(btn);
@@ -56,7 +56,7 @@ void FormValveTest::on_toolButton_clicked()
     emit switchToPage(6);
 }
 
-void FormValveTest::on_Camera_clicked()
+void FormValveTest::onCameraClicked()
 {
     if(isBeep)beep(50000);
 

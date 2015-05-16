@@ -25,7 +25,7 @@ private slots:
     void on_toolButton_clicked();
     void lbtnValue(int index, int value);
 
-    void on_toolButton_Camera_clicked();
+    void onCameraClicked();
 
     void on_toolButton_2_clicked();
 

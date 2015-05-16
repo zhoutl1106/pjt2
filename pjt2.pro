@@ -35,7 +35,10 @@ SOURCES += main.cpp\
     forms/formadmin.cpp \
     filemanager.cpp \
     longclicktoolbutton.cpp \
-    multistatustoolbutton.cpp
+    multistatustoolbutton.cpp \
+    posix_qextserialport.cpp \
+    qextserialbase.cpp \
+    serialmanager.cpp
 
 HEADERS  += \
     dialogautoclosemessagebox.h \
@@ -60,7 +63,10 @@ HEADERS  += \
     forms/formadmin.h \
     filemanager.h \
     longclicktoolbutton.h \
-    multistatustoolbutton.h
+    multistatustoolbutton.h \
+    posix_qextserialport.h \
+    qextserialbase.h \
+    serialmanager.h
 
 FORMS    += \
     dialogautoclosemessagebox.ui \

@@ -34,6 +34,7 @@ FormCCDCurve::FormCCDCurve(QWidget *parent) :
     ui->widgetCamera->setLayout(box1);
     mode = 2;
     ui->toolButton_seperate->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
+    ui->toolButton_all->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
 
     /*setMouseTracking(true);
     setWindowModality(Qt::ApplicationModal);

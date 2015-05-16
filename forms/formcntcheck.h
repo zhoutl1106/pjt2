@@ -2,6 +2,7 @@
 #define FORMCNTCHECK_H
 
 #include <QDialog>
+#include "../multistatustoolbutton.h"
 
 #define STATE_UNKNOWN   0
 #define STATE_GOOD      1
@@ -36,7 +37,7 @@ private slots:
 
     void on_toolButton_clicked();
 
-    void on_toolButton_2_clicked();
+    void onAllClicked();
 
 private:
     Ui::FormCntCheck *ui;
@@ -49,6 +50,14 @@ private:
     int targetX;
     int targetY;
     QPixmap pic[3];
+    MultiStatusToolButton *btn;
+    int startX ;
+    int startY;
+    double subHeight;
+    double drawDistance;
+    int radius;
+    int drawRow;
+    int drawColumn;
 };
 
 #endif // FORMCNTCHECK_H

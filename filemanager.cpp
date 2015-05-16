@@ -20,7 +20,7 @@ FileManager::FileManager(QObject *parent) :
 void FileManager::configChange()
 {
     qDebug()<<"emit config changed";
-    emit configChanged();
+    emit sigConfigChanged();
 }
 
 bool FileManager::passwardReceived(QString ori, QString code)
@@ -188,7 +188,7 @@ void FileManager::readConfig(int mode1, int index)
         configFile.open(QFile::ReadOnly);
         configFile.read((char*)&config,sizeof(config_t));
         configFile.close();
-        emit configChanged();
+        emit sigConfigChanged();
     }
     else
     {
