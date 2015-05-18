@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_FormCntCheck_t {
     QByteArrayData data[11];
-    char stringdata[114];
+    char stringdata[103];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,12 +39,12 @@ QT_MOC_LITERAL(6, 51, 3), // "pos"
 QT_MOC_LITERAL(7, 55, 5), // "value"
 QT_MOC_LITERAL(8, 61, 6), // "askCnt"
 QT_MOC_LITERAL(9, 68, 21), // "on_toolButton_clicked"
-QT_MOC_LITERAL(10, 90, 23) // "on_toolButton_2_clicked"
+QT_MOC_LITERAL(10, 90, 12) // "onAllClicked"
 
     },
     "FormCntCheck\0switchToPage\0\0index\0"
     "cntUpload\0channel\0pos\0value\0askCnt\0"
-    "on_toolButton_clicked\0on_toolButton_2_clicked"
+    "on_toolButton_clicked\0onAllClicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -91,7 +91,7 @@ void FormCntCheck::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 1: _t->cntUpload((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         case 2: _t->askCnt(); break;
         case 3: _t->on_toolButton_clicked(); break;
-        case 4: _t->on_toolButton_2_clicked(); break;
+        case 4: _t->onAllClicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

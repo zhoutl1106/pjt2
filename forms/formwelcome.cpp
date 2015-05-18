@@ -37,10 +37,10 @@ void FormWelcome::checkLicense()
         switch(g_dialog->fileManager->m_lastMode)
         {
         case 1:str = "选异色";break;
-        case 2:str = "黄白同选";break;
-        case 3:str = "选黑米";break;
-        case 4:str = "选腹白";break;
-        case 5:str = "选糯米";break;
+        case 3:str = "黄白同选";break;
+        case 5:str = "选黑米";break;
+        case 2:str = "选腹白";break;
+        case 4:str = "选糯米";break;
         default:
             emit switchToPage(4);
             return;

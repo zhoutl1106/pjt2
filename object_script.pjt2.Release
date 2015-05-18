@@ -23,6 +23,9 @@ INPUT(
 ./release\filemanager.o
 ./release\longclicktoolbutton.o
 ./release\multistatustoolbutton.o
+./release\posix_qextserialport.o
+./release\qextserialbase.o
+./release\serialmanager.o
 ./release\qrc_resource.o
 ./release\moc_dialogautoclosemessagebox.o
 ./release\moc_encryption.o
@@ -47,4 +50,6 @@ INPUT(
 ./release\moc_filemanager.o
 ./release\moc_longclicktoolbutton.o
 ./release\moc_multistatustoolbutton.o
+./release\moc_qextserialbase.o
+./release\moc_serialmanager.o
 );

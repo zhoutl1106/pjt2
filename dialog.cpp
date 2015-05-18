@@ -28,6 +28,7 @@ Dialog::Dialog(QWidget *parent) :
     cmdSocket->bind(8888,QUdpSocket::ShareAddress);
     connect(cmdSocket,SIGNAL(readyRead()),this,SLOT(onCmdUdpRead()));
 
+    serialManager = new SerialManager;
 
     form0_welcome = new FormWelcome;
     form1_account = new FormLicense;
@@ -98,10 +99,10 @@ void Dialog::setModeAndMem(int mode, int mem)
     switch(mode)
     {
     case 1:str = "当前模式/ 选异色";break;
-    case 2:str = "当前模式/ 黄白同选";break;
-    case 3:str = "当前模式/ 选黑米";break;
-    case 4:str = "当前模式/ 选腹白";break;
-    case 5:str = "当前模式/ 选糯米";break;
+    case 3:str = "当前模式/ 黄白同选";break;
+    case 5:str = "当前模式/ 选黑米";break;
+    case 2:str = "当前模式/ 选腹白";break;
+    case 4:str = "当前模式/ 选糯米";break;
     default:
         return;
     }

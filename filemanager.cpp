@@ -330,105 +330,68 @@ void FileManager::sendCmds()
 }
 
 void FileManager::setLights()
-{/*
+{
     QByteArray cmd;
-    int delay = 50000;
     //lights
     char temp4[3]={0x02,0x00,0x00};
     char temp5[3]={0x04,0x00,0x00};
     char temp6[3]={0x06,0x00,0x00};
-    char temp7[3]={0x08,0x00,0x00};
-    switch(config.mode)
+    switch(mode)
     {
-    case 0:
+    case 1:
         temp4[0] = 0x01;
         cmd = QByteArray(temp4,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
+        g_dialog->serialManager->writeCmd(0,cmd);
         temp5[0] = 0x03;
         cmd = QByteArray(temp5,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
+        g_dialog->serialManager->writeCmd(0,cmd);
         temp6[0] = 0x05;
         cmd = QByteArray(temp6,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
-        temp7[0] = 0x07;
-        cmd = QByteArray(temp7,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
-        break;
-    case 1:
-        temp4[0] = 0x02;
-        cmd = QByteArray(temp4,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
-        temp5[0] = 0x03;
-        cmd = QByteArray(temp5,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
-        temp6[0] = 0x05;
-        cmd = QByteArray(temp6,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
-        temp7[0] = 0x08;
-        cmd = QByteArray(temp7,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
+        g_dialog->serialManager->writeCmd(0,cmd);
         break;
     case 2:
-        temp4[0] = 0x01;
-        cmd = QByteArray(temp4,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
-        temp5[0] = 0x03;
-        cmd = QByteArray(temp5,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
-        temp6[0] = 0x05;
-        cmd = QByteArray(temp6,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
-        temp7[0] = 0x07;
-        cmd = QByteArray(temp7,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
-        break;
-    case 3:
         temp4[0] = 0x02;
         cmd = QByteArray(temp4,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
+        g_dialog->serialManager->writeCmd(0,cmd);
         temp5[0] = 0x03;
         cmd = QByteArray(temp5,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
+        g_dialog->serialManager->writeCmd(0,cmd);
         temp6[0] = 0x06;
         cmd = QByteArray(temp6,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
-        temp7[0] = 0x08;
-        cmd = QByteArray(temp7,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
+        g_dialog->serialManager->writeCmd(0,cmd);
+        break;
+    case 3:
+        temp4[0] = 0x01;
+        cmd = QByteArray(temp4,3);
+        g_dialog->serialManager->writeCmd(0,cmd);
+        temp5[0] = 0x03;
+        cmd = QByteArray(temp5,3);
+        g_dialog->serialManager->writeCmd(0,cmd);
+        temp6[0] = 0x06;
+        cmd = QByteArray(temp6,3);
+        g_dialog->serialManager->writeCmd(0,cmd);
         break;
     case 4:
         temp4[0] = 0x01;
         cmd = QByteArray(temp4,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
+        g_dialog->serialManager->writeCmd(0,cmd);
         temp5[0] = 0x03;
         cmd = QByteArray(temp5,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
+        g_dialog->serialManager->writeCmd(0,cmd);
+        temp6[0] = 0x06;
+        cmd = QByteArray(temp6,3);
+        g_dialog->serialManager->writeCmd(0,cmd);
+        break;
+    case 5:
+        temp4[0] = 0x01;
+        cmd = QByteArray(temp4,3);
+        g_dialog->serialManager->writeCmd(0,cmd);
+        temp5[0] = 0x03;
+        cmd = QByteArray(temp5,3);
+        g_dialog->serialManager->writeCmd(0,cmd);
         temp6[0] = 0x05;
         cmd = QByteArray(temp6,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
-        temp7[0] = 0x07;
-        cmd = QByteArray(temp7,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
+        g_dialog->serialManager->writeCmd(0,cmd);
         break;
-    }*/
+    }
 }

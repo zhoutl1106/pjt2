@@ -10,6 +10,7 @@
 #include <QUdpSocket>
 #include "filemanager.h"
 #include "formkeyboard.h"
+#include "serialmanager.h"
 #include "forms/formwelcome.h"
 #include "forms/formlicense.h"
 #include "forms/formmain.h"
@@ -39,7 +40,9 @@ public:
     explicit Dialog(QWidget *parent = 0);
     ~Dialog();
     FileManager *fileManager;
+    SerialManager *serialManager;
     void setModeAndMem(int mode, int mem);
+
 
     FormWelcome                 *form0_welcome;
     FormLicense                 *form1_account;

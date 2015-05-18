@@ -55,7 +55,6 @@ void SerialManager::writeCmd(int type, QByteArray cmd)
 {
     qDebug()<<type<<cmd.toHex();
     buf485_1.clear();
-    char temp = (char)0xaa;
 #ifdef linux
     switch(type)
     {
@@ -66,6 +65,7 @@ void SerialManager::writeCmd(int type, QByteArray cmd)
         myCom232->write(cmd);
         break;
     case 1:
+        cmd.insert(0,0xaa);
         myCom485_1->write(&temp,1);
         myCom485_1->write(cmd);
         break;
@@ -74,6 +74,7 @@ void SerialManager::writeCmd(int type, QByteArray cmd)
         myCom485_2->write(cmd);
         break;
     }
+    usleep(50000);
 #endif
 }
 

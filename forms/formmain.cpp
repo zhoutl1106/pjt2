@@ -1,10 +1,12 @@
 #include "formmain.h"
 #include "ui_formmain.h"
+#include "../dialog.h"
 
 extern bool isBeep;
 void beep(int);
 void g_setValve();
 void g_setVibrator();
+extern Dialog* g_dialog;
 
 FormMain::FormMain(QWidget *parent) :
     QWidget(parent),
@@ -65,6 +67,24 @@ void FormMain::onLongPressTimer()
     //*** ask whether to save the parameters
 
     //*** send cmd to close all devices
+    char tmp[3] = {0x02,0x00};
+    QByteArray tmp1(tmp,3);
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x04;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x06;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x08;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x0a;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x0c;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x0e;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x12;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+
     emit switchToPage(7);
 }
 

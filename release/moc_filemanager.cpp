@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_FileManager_t {
     QByteArrayData data[11];
-    char stringdata[100];
+    char stringdata[103];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,15 +35,15 @@ QT_MOC_LITERAL(2, 32, 0), // ""
 QT_MOC_LITERAL(3, 33, 4), // "exit"
 QT_MOC_LITERAL(4, 38, 3), // "str"
 QT_MOC_LITERAL(5, 42, 7), // "bkgShow"
-QT_MOC_LITERAL(6, 50, 13), // "configChanged"
-QT_MOC_LITERAL(7, 64, 9), // "checkDate"
-QT_MOC_LITERAL(8, 74, 16), // "passwardReceived"
-QT_MOC_LITERAL(9, 91, 3), // "ori"
-QT_MOC_LITERAL(10, 95, 4) // "code"
+QT_MOC_LITERAL(6, 50, 16), // "sigConfigChanged"
+QT_MOC_LITERAL(7, 67, 9), // "checkDate"
+QT_MOC_LITERAL(8, 77, 16), // "passwardReceived"
+QT_MOC_LITERAL(9, 94, 3), // "ori"
+QT_MOC_LITERAL(10, 98, 4) // "code"
 
     },
     "FileManager\0updateInitialStatus\0\0exit\0"
-    "str\0bkgShow\0configChanged\0checkDate\0"
+    "str\0bkgShow\0sigConfigChanged\0checkDate\0"
     "passwardReceived\0ori\0code"
 };
 #undef QT_MOC_LITERAL
@@ -89,7 +89,7 @@ void FileManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         switch (_id) {
         case 0: _t->updateInitialStatus((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
         case 1: _t->bkgShow(); break;
-        case 2: _t->configChanged(); break;
+        case 2: _t->sigConfigChanged(); break;
         case 3: { bool _r = _t->checkDate();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
         case 4: { bool _r = _t->passwardReceived((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])));
@@ -113,7 +113,7 @@ void FileManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         }
         {
             typedef void (FileManager::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&FileManager::configChanged)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&FileManager::sigConfigChanged)) {
                 *result = 2;
             }
         }
@@ -170,7 +170,7 @@ void FileManager::bkgShow()
 }
 
 // SIGNAL 2
-void FileManager::configChanged()
+void FileManager::sigConfigChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 2, Q_NULLPTR);
 }

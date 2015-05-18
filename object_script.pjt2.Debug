@@ -23,6 +23,9 @@ INPUT(
 ./debug\filemanager.o
 ./debug\longclicktoolbutton.o
 ./debug\multistatustoolbutton.o
+./debug\posix_qextserialport.o
+./debug\qextserialbase.o
+./debug\serialmanager.o
 ./debug\qrc_resource.o
 ./debug\moc_dialogautoclosemessagebox.o
 ./debug\moc_encryption.o
@@ -47,4 +50,6 @@ INPUT(
 ./debug\moc_filemanager.o
 ./debug\moc_longclicktoolbutton.o
 ./debug\moc_multistatustoolbutton.o
+./debug\moc_qextserialbase.o
+./debug\moc_serialmanager.o
 );

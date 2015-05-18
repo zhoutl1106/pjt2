@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_FormAccuracyAdjust_t {
     QByteArrayData data[9];
-    char stringdata[130];
+    char stringdata[117];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,14 +36,13 @@ QT_MOC_LITERAL(3, 33, 5), // "index"
 QT_MOC_LITERAL(4, 39, 21), // "on_toolButton_clicked"
 QT_MOC_LITERAL(5, 61, 9), // "lbtnValue"
 QT_MOC_LITERAL(6, 71, 5), // "value"
-QT_MOC_LITERAL(7, 77, 28), // "on_toolButton_Camera_clicked"
-QT_MOC_LITERAL(8, 106, 23) // "on_toolButton_2_clicked"
+QT_MOC_LITERAL(7, 77, 15), // "onCameraClicked"
+QT_MOC_LITERAL(8, 93, 23) // "on_toolButton_2_clicked"
 
     },
     "FormAccuracyAdjust\0switchToPage\0\0index\0"
     "on_toolButton_clicked\0lbtnValue\0value\0"
-    "on_toolButton_Camera_clicked\0"
-    "on_toolButton_2_clicked"
+    "onCameraClicked\0on_toolButton_2_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -89,7 +88,7 @@ void FormAccuracyAdjust::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 0: _t->switchToPage((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 1: _t->on_toolButton_clicked(); break;
         case 2: _t->lbtnValue((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 3: _t->on_toolButton_Camera_clicked(); break;
+        case 3: _t->onCameraClicked(); break;
         case 4: _t->on_toolButton_2_clicked(); break;
         default: ;
         }

@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_FormValveTest_t {
     QByteArrayData data[19];
-    char stringdata[409];
+    char stringdata[407];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,23 +36,23 @@ QT_MOC_LITERAL(3, 28, 5), // "index"
 QT_MOC_LITERAL(4, 34, 10), // "updateData"
 QT_MOC_LITERAL(5, 45, 7), // "onTimer"
 QT_MOC_LITERAL(6, 53, 21), // "on_toolButton_clicked"
-QT_MOC_LITERAL(7, 75, 17), // "on_Camera_clicked"
-QT_MOC_LITERAL(8, 93, 32), // "on_toolButton_singleTest_clicked"
-QT_MOC_LITERAL(9, 126, 30), // "on_toolButton_autoTest_clicked"
-QT_MOC_LITERAL(10, 157, 29), // "on_toolButton_valveOn_clicked"
-QT_MOC_LITERAL(11, 187, 24), // "on_toolButton_OK_clicked"
-QT_MOC_LITERAL(12, 212, 27), // "on_toolButton_reset_clicked"
-QT_MOC_LITERAL(13, 240, 35), // "on_doubleSpinBox_delay_valueC..."
-QT_MOC_LITERAL(14, 276, 4), // "arg1"
-QT_MOC_LITERAL(15, 281, 40), // "on_doubleSpinBox_pulseWidth_v..."
-QT_MOC_LITERAL(16, 322, 30), // "on_spinBoxChannel_valueChanged"
-QT_MOC_LITERAL(17, 353, 28), // "on_spinBoxGroup_valueChanged"
-QT_MOC_LITERAL(18, 382, 26) // "on_spinBoxPos_valueChanged"
+QT_MOC_LITERAL(7, 75, 15), // "onCameraClicked"
+QT_MOC_LITERAL(8, 91, 32), // "on_toolButton_singleTest_clicked"
+QT_MOC_LITERAL(9, 124, 30), // "on_toolButton_autoTest_clicked"
+QT_MOC_LITERAL(10, 155, 29), // "on_toolButton_valveOn_clicked"
+QT_MOC_LITERAL(11, 185, 24), // "on_toolButton_OK_clicked"
+QT_MOC_LITERAL(12, 210, 27), // "on_toolButton_reset_clicked"
+QT_MOC_LITERAL(13, 238, 35), // "on_doubleSpinBox_delay_valueC..."
+QT_MOC_LITERAL(14, 274, 4), // "arg1"
+QT_MOC_LITERAL(15, 279, 40), // "on_doubleSpinBox_pulseWidth_v..."
+QT_MOC_LITERAL(16, 320, 30), // "on_spinBoxChannel_valueChanged"
+QT_MOC_LITERAL(17, 351, 28), // "on_spinBoxGroup_valueChanged"
+QT_MOC_LITERAL(18, 380, 26) // "on_spinBoxPos_valueChanged"
 
     },
     "FormValveTest\0switchToPage\0\0index\0"
     "updateData\0onTimer\0on_toolButton_clicked\0"
-    "on_Camera_clicked\0on_toolButton_singleTest_clicked\0"
+    "onCameraClicked\0on_toolButton_singleTest_clicked\0"
     "on_toolButton_autoTest_clicked\0"
     "on_toolButton_valveOn_clicked\0"
     "on_toolButton_OK_clicked\0"
@@ -128,7 +128,7 @@ void FormValveTest::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 1: _t->updateData(); break;
         case 2: _t->onTimer(); break;
         case 3: _t->on_toolButton_clicked(); break;
-        case 4: _t->on_Camera_clicked(); break;
+        case 4: _t->onCameraClicked(); break;
         case 5: _t->on_toolButton_singleTest_clicked(); break;
         case 6: _t->on_toolButton_autoTest_clicked(); break;
         case 7: _t->on_toolButton_valveOn_clicked(); break;
