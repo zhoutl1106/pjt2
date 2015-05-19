@@ -9,6 +9,7 @@
 #include <QVBoxLayout>
 
 extern QString styleSheet;
+extern DialogAutoCloseMessageBox *bkgMsgBox;
 
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
@@ -61,6 +62,7 @@ Dialog::Dialog(QWidget *parent) :
     connect(form12_accuracyDetail,SIGNAL(switchToPage(int)),ui->stackedWidget,SLOT(setCurrentIndex(int)));
     connect(form13_whole,SIGNAL(switchToPage(int)),ui->stackedWidget,SLOT(setCurrentIndex(int)));
     connect(form14_monitor,SIGNAL(switchToPage(int)),ui->stackedWidget,SLOT(setCurrentIndex(int)));
+    connect(fileManager,SIGNAL(switchToPage(int)),ui->stackedWidget,SLOT(setCurrentIndex(int)));
 
     connect(fileManager,SIGNAL(sigConfigChanged()),form3_vibrationAdjust,SLOT(updateData()));
     connect(fileManager,SIGNAL(sigConfigChanged()),form4_mode,SLOT(updateData()));
@@ -172,6 +174,7 @@ void Dialog::onCmdUdpRead()
                                     &sender, &senderPort);
 
             form9_ash->dlgAsh->accept();
+            bkgMsgBox->accept();
 
             /*
             char *dat = datagram.data();

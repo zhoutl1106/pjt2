@@ -53,24 +53,21 @@ quint8 SerialManager::checkSum(char *data, int len)
 
 void SerialManager::writeCmd(int type, QByteArray cmd)
 {
+    cmd.insert(0,0xaa);
     qDebug()<<type<<cmd.toHex();
     buf485_1.clear();
 #ifdef linux
     switch(type)
     {
     case 0:
-        cmd.insert(0,0xaa);
         cmd.append(checkSum(cmd.data(),4));
         cmd.append(0x0d);
         myCom232->write(cmd);
         break;
     case 1:
-        cmd.insert(0,0xaa);
-        myCom485_1->write(&temp,1);
         myCom485_1->write(cmd);
         break;
     case 2:
-        //myCom485_2->write(&temp,1);
         myCom485_2->write(cmd);
         break;
     }

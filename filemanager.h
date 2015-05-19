@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QTimer>
+#include "dialogautoclosemessagebox.h"
 
 #ifdef _WIN32
 #define UNLOCK_FILENAME "E:/dat/zt_license"
@@ -27,7 +28,7 @@ public:
     void writeConfig(int mode, int index);
     void writeLastConfig();
     void readConfig(int mode, int index);
-    void getConfig();
+    void getLastConfigIndex();
     void sendCmds();
     void setLights();
     void configChange();
@@ -59,7 +60,7 @@ signals:
     //void updateConfig(QString str,int index);
     //void sendCmd(int type,QByteArray cmd);
     void updateInitialStatus(bool exit, QString str);
-    //void switchToPage(int index);
+    void switchToPage(int index);
     void bkgShow();
     void sigConfigChanged();
 
@@ -69,6 +70,7 @@ public slots:
 
 private:
     QTimer *timer;
+    DialogAutoCloseMessageBox *dlg;
 };
 
 #endif // FILEMANAGER_H

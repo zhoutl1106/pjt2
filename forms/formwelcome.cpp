@@ -31,7 +31,7 @@ void FormWelcome::checkLicense()
     bool ret = g_dialog->fileManager->checkDate();;    //*****check from file
     if(ret)
     {
-        g_dialog->fileManager->getConfig();
+        g_dialog->fileManager->getLastConfigIndex();
         QString str;
         qDebug()<<"in welcome"<<g_dialog->fileManager->m_lastMode;
         switch(g_dialog->fileManager->m_lastMode)
@@ -49,8 +49,8 @@ void FormWelcome::checkLicense()
         if(box.exec() == QDialog::Accepted)
         {
             //******send cmds
-            g_dialog->fileManager->readConfig(g_dialog->fileManager->m_lastMode,g_dialog->fileManager->m_lastIndex);
             emit switchToPage(2);
+            g_dialog->fileManager->readConfig(g_dialog->fileManager->m_lastMode,g_dialog->fileManager->m_lastIndex);
         }
         else
             emit switchToPage(4);

@@ -38,6 +38,11 @@ public:
         if (DialogAutoCloseMessageBox->objectName().isEmpty())
             DialogAutoCloseMessageBox->setObjectName(QStringLiteral("DialogAutoCloseMessageBox"));
         DialogAutoCloseMessageBox->resize(400, 300);
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(DialogAutoCloseMessageBox->sizePolicy().hasHeightForWidth());
+        DialogAutoCloseMessageBox->setSizePolicy(sizePolicy);
         DialogAutoCloseMessageBox->setStyleSheet(QLatin1String("QDialog{border-image: url(:/image/tipsBkg.png);}\n"
 "QPushButton\n"
 "{\n"
@@ -56,11 +61,11 @@ public:
         verticalLayout->setContentsMargins(20, 0, 20, 0);
         labelTitle = new QLabel(DialogAutoCloseMessageBox);
         labelTitle->setObjectName(QStringLiteral("labelTitle"));
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(labelTitle->sizePolicy().hasHeightForWidth());
-        labelTitle->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(labelTitle->sizePolicy().hasHeightForWidth());
+        labelTitle->setSizePolicy(sizePolicy1);
         labelTitle->setMinimumSize(QSize(0, 52));
         labelTitle->setStyleSheet(QStringLiteral("color: rgb(255, 255, 255);"));
         labelTitle->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
@@ -73,41 +78,41 @@ public:
         gridLayout->setContentsMargins(6, 6, 6, 6);
         pushButtonOK = new QPushButton(DialogAutoCloseMessageBox);
         pushButtonOK->setObjectName(QStringLiteral("pushButtonOK"));
-        QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(pushButtonOK->sizePolicy().hasHeightForWidth());
-        pushButtonOK->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(pushButtonOK->sizePolicy().hasHeightForWidth());
+        pushButtonOK->setSizePolicy(sizePolicy2);
         pushButtonOK->setMinimumSize(QSize(0, 40));
 
         gridLayout->addWidget(pushButtonOK, 2, 0, 1, 1);
 
         pushButtonCancel = new QPushButton(DialogAutoCloseMessageBox);
         pushButtonCancel->setObjectName(QStringLiteral("pushButtonCancel"));
-        sizePolicy1.setHeightForWidth(pushButtonCancel->sizePolicy().hasHeightForWidth());
-        pushButtonCancel->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(pushButtonCancel->sizePolicy().hasHeightForWidth());
+        pushButtonCancel->setSizePolicy(sizePolicy2);
         pushButtonCancel->setMinimumSize(QSize(0, 40));
 
         gridLayout->addWidget(pushButtonCancel, 2, 1, 1, 1);
 
         label = new QLabel(DialogAutoCloseMessageBox);
         label->setObjectName(QStringLiteral("label"));
-        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Minimum);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
-        label->setSizePolicy(sizePolicy2);
+        sizePolicy.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
+        label->setSizePolicy(sizePolicy);
+        label->setMinimumSize(QSize(348, 96));
         QFont font;
         font.setPointSize(40);
         label->setFont(font);
+        label->setScaledContents(false);
         label->setAlignment(Qt::AlignCenter);
+        label->setWordWrap(false);
 
         gridLayout->addWidget(label, 0, 0, 1, 2);
 
         labelCntDown = new QLabel(DialogAutoCloseMessageBox);
         labelCntDown->setObjectName(QStringLiteral("labelCntDown"));
-        sizePolicy.setHeightForWidth(labelCntDown->sizePolicy().hasHeightForWidth());
-        labelCntDown->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(labelCntDown->sizePolicy().hasHeightForWidth());
+        labelCntDown->setSizePolicy(sizePolicy1);
         labelCntDown->setMinimumSize(QSize(60, 60));
         labelCntDown->setAlignment(Qt::AlignCenter);
 

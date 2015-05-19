@@ -4,13 +4,6 @@
 extern bool isBeep;
 void beep(int);
 
-DialogAutoCloseMessageBox::DialogAutoCloseMessageBox(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::DialogAutoCloseMessageBox)
-{
-    ui->setupUi(this);
-}
-
 DialogAutoCloseMessageBox::DialogAutoCloseMessageBox(QWidget *parent, QString title, QString text,
                                                      QString acceptText, QString rejectText, int delay_s, bool isTimeShow) :
 
@@ -23,18 +16,40 @@ DialogAutoCloseMessageBox::DialogAutoCloseMessageBox(QWidget *parent, QString ti
     ui->labelTitle->setText(title);
     ui->label->setText(text);
     ui->labelCntDown->setText(QString::number(m_delay_s) + " s");
-    ui->pushButtonOK->setText(acceptText);
-    ui->pushButtonCancel->setText(rejectText);
+    if(acceptText.isEmpty())
+        ui->pushButtonOK->setVisible(false);
+    else
+    {
+        ui->pushButtonOK->setText(acceptText);
+        ui->pushButtonOK->setVisible(true);
+    }
+    if(rejectText.isEmpty())
+        ui->pushButtonCancel->setVisible(false);
+    else
+    {
+        ui->pushButtonCancel->setText(rejectText);
+        ui->pushButtonCancel->setVisible(true);
+    }
     timer = new QTimer;
     timer->setInterval(1000);
     connect(timer,SIGNAL(timeout()),this,SLOT(onTimer()));
-    timer->start();
+    if(delay_s > 0)
+        timer->start();
     if(!isTimeShow)
     {
         ui->labelCntDown->setVisible(false);
         ui->pushButtonOK->setVisible(false);
         ui->pushButtonCancel->setVisible(false);
     }
+    setWindowModality(Qt::ApplicationModal);
+}
+
+void DialogAutoCloseMessageBox::setText(QString text)
+{
+    ui->label->setText(text);
+    ui->label->adjustSize();
+    ui->label->setWordWrap(true);
+    ui->label->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
 }
 
 DialogAutoCloseMessageBox::~DialogAutoCloseMessageBox()

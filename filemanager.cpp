@@ -5,8 +5,12 @@
 #include <QMessageBox>
 #include "encryption.h"
 #include "dialog.h"
+#include <QCoreApplication>
+#include <QEvent>
 
 extern Dialog* g_dialog;
+extern Sleep(int);
+extern DialogAutoCloseMessageBox *bkgMsgBox;
 
 FileManager::FileManager(QObject *parent) :
     QObject(parent)
@@ -15,6 +19,7 @@ FileManager::FileManager(QObject *parent) :
     timer->setInterval(3600000);
     connect(timer,SIGNAL(timeout()),this,SLOT(checkDate()));
     timer->start();
+    dlg = new DialogAutoCloseMessageBox(NULL,"读取","...","","",0,false);
 }
 
 void FileManager::configChange()
@@ -188,6 +193,11 @@ void FileManager::readConfig(int mode1, int index)
         configFile.open(QFile::ReadOnly);
         configFile.read((char*)&config,sizeof(config_t));
         configFile.close();
+        dlg->show();
+        dlg->setText("正在设置灯光……");
+        setLights();
+        Sleep(2000);
+        sendCmds();
         emit sigConfigChanged();
     }
     else
@@ -197,11 +207,11 @@ void FileManager::readConfig(int mode1, int index)
         memset(&config,0,sizeof(config_t));
     }
 
-    qDebug()<<"read config, Smode:" << mode << mem;
+    qDebug()<<"read config, mode:" << mode << mem;
     g_dialog->setModeAndMem(mode, mem);
 }
 
-void FileManager::getConfig()
+void FileManager::getLastConfigIndex()
 {
     QFile lastIndexFile(LAST_INDEX_FILENAME);
 
@@ -222,111 +232,151 @@ void FileManager::getConfig()
 
 void FileManager::sendCmds()
 {
-    int delay = 50000;
-    QByteArray cmd;
+    char buf232[3] = {0x00};
+    char buf485[6] = {0x00};
+    QByteArray cmd232 = QByteArray(buf232,3);
+    QByteArray cmd485 = QByteArray(buf485,6);
+    char* p232 = cmd232.data();
+    char* p485 = cmd485.data();
 
-    //send motor
-    char buf6[3] = {0x00};
-//    buf6[0]=0x1b;
-//    buf6[1]=config.angle_front & 0xff;
-//    buf6[2]=(config.angle_front>>8) & 0xff;
-//    cmd = QByteArray(buf6,3);
-//    emit sendCmd(0,cmd);
-//    usleep(delay);
+    //unstandard ash clean;
+    memset(p232,0,3);
+    dlg->setText("正在清灰");
+    cmd232.data()[0] = 0x09;
+    g_dialog->serialManager->writeCmd(0,cmd232);
+    Sleep(5000);
+    memset(p232,0,3);
+    cmd232.data()[0] = 0x0a;
+    g_dialog->serialManager->writeCmd(0,cmd232);
 
-//    buf6[0]=0x1c;
-//    buf6[1]=config.angle_back & 0xff;
-//    buf6[2]=(config.angle_back>>8) & 0xff;
-//    cmd = QByteArray(buf6,3);
-//    emit sendCmd(0,cmd);
-//    usleep(delay);
-//    emit bkgShow();
-
-//    qDebug()<<"end wait background";
-/*
-    //clean ash
-    char buf7[3] = {0x00};
-    buf7[0]=0x09;
-    cmd = QByteArray(buf7,3);
-    emit sendCmd(0,cmd);
-    usleep(delay);
-
-    //send 1
-    char buf1[6]={0};
-    buf1[0] = 0x02;
-    for(int i = 0;i<14;i++)
+    //front bkg borad
+    dlg->close();
+    bkgMsgBox->setText("前背景板调整中");
+    bkgMsgBox->setDelay(30);
+    memset(p232,0,3);
+    cmd232.data()[0] = 0x1b;
+    *((short*)(cmd232.data() + 1)) = (short)(config.frontMotorVoltage);
+    g_dialog->serialManager->writeCmd(0,cmd232);
+    if(bkgMsgBox->exec() == QDialog::Rejected)
     {
-        buf1[1] = i+1;
-        buf1[2] = config.accuracy[i][0];
-        buf1[3] = config.accuracy[i][1];
-        buf1[4] = config.accuracy[i][2];
-        cmd = QByteArray(buf1,6);
-        emit sendCmd(1,cmd);
-        usleep(delay);
+        DialogAutoCloseMessageBox box(NULL,"警告","前背景板通信失败，请关机检查","确定","",10,true);
+        box.exec();
+        char tmp[3] = {0x02,0x00};
+        QByteArray tmp1(tmp,3);
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x04;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x06;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x08;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x0a;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x0c;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x0e;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x12;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        emit switchToPage(7);
+        return;
+    }
+    bkgMsgBox->setText("后背景板调整中");
+    bkgMsgBox->setDelay(30);
+    memset(p232,0,3);
+    cmd232.data()[0] = 0x1c;
+    *((short*)(cmd232.data() + 1)) = (short)(config.endMotorVoltage);
+    g_dialog->serialManager->writeCmd(0,cmd232);
+    if(bkgMsgBox->exec() == QDialog::Rejected)
+    {
+        DialogAutoCloseMessageBox box(NULL,"警告","后背景板通信失败，请关机检查","确定","",10,true);
+        box.exec();
+        char tmp[3] = {0x02,0x00};
+        QByteArray tmp1(tmp,3);
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x04;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x06;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x08;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x0a;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x0c;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x0e;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x12;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        emit switchToPage(7);
+        return;
     }
 
-    //send 2
-    char buf2[6]={0x03,0xaa};
-    buf2[2]=config.mode+1;
-    buf2[3]=config.mode_detail;
-    cmd = QByteArray(buf2,6);
-    emit sendCmd(1,cmd);
-
-    //send 3
-    char buf3[6]={0x08,0x00};
+    //send accuracy
+    dlg->setText("正在设定精度");
+    dlg->show();
+    p485[0] = 0x02;
     for(int i = 0;i<14;i++)
     {
-        buf3[1] = i + 1;
-        *((short*)(buf3+2)) = config.threshold[i];
-        cmd = QByteArray(buf3,6);
-        emit sendCmd(1,cmd);
-        usleep(delay);
+        memset(p485,0,6);
+        p485[1] = i+1;
+        p485[2] = config.accuracy[i][0];
+        p485[3] = config.accuracy[i][1];
+        p485[4] = config.accuracy[i][2];
+        g_dialog->serialManager->writeCmd(1,cmd485);
     }
+    Sleep(2000);
 
-    //send 4
-    char buf4[6]={0x09};
+    //luminate threshold
+    dlg->setText("正在设定亮度阈值");
+    memset(p485,0,6);
+    p485[0] = 0x08;
+    p485[1] = 0xf0;
+    *((short*)(p485+2)) = short(config.frontLuminanceThreshold);
+    g_dialog->serialManager->writeCmd(1,cmd485);
+    memset(p485,0,6);
+    p485[0] = 0x08;
+    p485[1] = 0xff;
+    *((short*)(p485+2)) = short(config.endLuminanceThreshold);
+    g_dialog->serialManager->writeCmd(1,cmd485);
+    Sleep(2000);
+
+    //valve delay and pulse width
+    dlg->setText("正在设定通道延时和开阀时间");
+    p485[0] = 0x09;
     for(int i = 0;i<14;i++)
     {
-        buf4[1] = i + 1;
-        *((short*)(buf4+2)) = config.delay[i];
-        *((short*)(buf4+4)) = config.pulse_width[i];
-        cmd = QByteArray(buf4,6);
-        emit sendCmd(1,cmd);
-        usleep(delay);
+        memset(p485,0,6);
+        p485[1] = i+1;
+        *((short*)(p485+2)) = short(config.delay[i]);
+        *((short*)(p485+4)) = short(config.pulse_width[i]);
+        g_dialog->serialManager->writeCmd(1,cmd485);
     }
+    Sleep(2000);
 
-    //send 5
-    char buf5[6]={0x0b};
-    for(int i = 0;i<14;i++)
-    {
-        buf5[1] = i + 1;
-        *((short*)(buf5+2)) = config.start[i];
-        *((short*)(buf5+4)) = config.end[i];
-        cmd = QByteArray(buf5,6);
-        emit sendCmd(1,cmd);
-        usleep(delay);
-    }
+    // motor status
+    dlg->setText("正在设定振动器开关状态");
+    memset(p232,0,3);
+    p232[0] = 0x80;
+    p232[1] = config.vibratorStatusU8;
+    g_dialog->serialManager->writeCmd(0,cmd232);
+    Sleep(2000);
 
-    //send 6
+    // vibration
+    dlg->setText("正在设定振动器流量");
     for(int i = 0;i<7;i++)
     {
-        buf6[0]=0x82+i;
-        buf6[1]=config.vibration[i];
-        cmd = QByteArray(buf6,3);
-        emit sendCmd(0,cmd);
-        usleep(delay);
+        memset(p232,0,3);
+        p232[0] = 0x82 + i;
+        p485[1] = config.vibration[i];
+        g_dialog->serialManager->writeCmd(0,cmd232);
     }
+    Sleep(2000);
 
-    setLights();
-
-    //clean ash
-    sleep(20);
-    char buf8[3] = {0x00};
-    buf8[0]=0x0a;
-    cmd = QByteArray(buf8,3);
-    emit sendCmd(0,cmd);
-
-    qDebug()<<"finish send commands";*/
+    dlg->setText("参数读取完毕");
+    Sleep(2000);
+    dlg->accept();
+    qDebug()<<"finish send commands";
 }
 
 void FileManager::setLights()

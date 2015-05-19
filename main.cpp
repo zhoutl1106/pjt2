@@ -3,10 +3,12 @@
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
-#include <QDebug>
+#include <QTime>
+#include "dialogautoclosemessagebox.h"
 
 Dialog *g_dialog;
 QString stylesheet;
+DialogAutoCloseMessageBox *bkgMsgBox;
 
 bool isBeep;
 
@@ -36,6 +38,15 @@ void g_setVibrator()
     g_dialog->form3_vibrationAdjust->setVibrator(vibratorStatus);
 }
 
+void Sleep(int ms)
+{
+    QTime time = QTime::currentTime().addMSecs(ms);
+    while(QTime::currentTime() < time)
+    {
+        QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+    }
+}
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -44,6 +55,7 @@ int main(int argc, char *argv[])
     QTextStream filetext(&file);
     stylesheet = filetext.readAll();
     file.close();
+    bkgMsgBox = new DialogAutoCloseMessageBox(NULL,"背景板","...","","",30,true);
     Dialog w;
     g_dialog = &w;
     w.setStyleSheet(stylesheet);

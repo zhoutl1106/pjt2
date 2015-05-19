@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_DialogAutoCloseMessageBox_t {
-    QByteArrayData data[5];
-    char stringdata[87];
+    QByteArrayData data[7];
+    char stringdata[100];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,14 +30,16 @@ struct qt_meta_stringdata_DialogAutoCloseMessageBox_t {
 static const qt_meta_stringdata_DialogAutoCloseMessageBox_t qt_meta_stringdata_DialogAutoCloseMessageBox = {
     {
 QT_MOC_LITERAL(0, 0, 25), // "DialogAutoCloseMessageBox"
-QT_MOC_LITERAL(1, 26, 23), // "on_pushButtonOK_clicked"
-QT_MOC_LITERAL(2, 50, 0), // ""
-QT_MOC_LITERAL(3, 51, 27), // "on_pushButtonCancel_clicked"
-QT_MOC_LITERAL(4, 79, 7) // "onTimer"
+QT_MOC_LITERAL(1, 26, 7), // "setText"
+QT_MOC_LITERAL(2, 34, 0), // ""
+QT_MOC_LITERAL(3, 35, 4), // "text"
+QT_MOC_LITERAL(4, 40, 23), // "on_pushButtonOK_clicked"
+QT_MOC_LITERAL(5, 64, 27), // "on_pushButtonCancel_clicked"
+QT_MOC_LITERAL(6, 92, 7) // "onTimer"
 
     },
-    "DialogAutoCloseMessageBox\0"
-    "on_pushButtonOK_clicked\0\0"
+    "DialogAutoCloseMessageBox\0setText\0\0"
+    "text\0on_pushButtonOK_clicked\0"
     "on_pushButtonCancel_clicked\0onTimer"
 };
 #undef QT_MOC_LITERAL
@@ -48,7 +50,7 @@ static const uint qt_meta_data_DialogAutoCloseMessageBox[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -56,11 +58,13 @@ static const uint qt_meta_data_DialogAutoCloseMessageBox[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   29,    2, 0x08 /* Private */,
-       3,    0,   30,    2, 0x08 /* Private */,
-       4,    0,   31,    2, 0x08 /* Private */,
+       1,    1,   34,    2, 0x0a /* Public */,
+       4,    0,   37,    2, 0x08 /* Private */,
+       5,    0,   38,    2, 0x08 /* Private */,
+       6,    0,   39,    2, 0x08 /* Private */,
 
  // slots: parameters
+    QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -73,13 +77,13 @@ void DialogAutoCloseMessageBox::qt_static_metacall(QObject *_o, QMetaObject::Cal
     if (_c == QMetaObject::InvokeMetaMethod) {
         DialogAutoCloseMessageBox *_t = static_cast<DialogAutoCloseMessageBox *>(_o);
         switch (_id) {
-        case 0: _t->on_pushButtonOK_clicked(); break;
-        case 1: _t->on_pushButtonCancel_clicked(); break;
-        case 2: _t->onTimer(); break;
+        case 0: _t->setText((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 1: _t->on_pushButtonOK_clicked(); break;
+        case 2: _t->on_pushButtonCancel_clicked(); break;
+        case 3: _t->onTimer(); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject DialogAutoCloseMessageBox::staticMetaObject = {
@@ -107,13 +111,13 @@ int DialogAutoCloseMessageBox::qt_metacall(QMetaObject::Call _c, int _id, void *
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 4)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 3;
+        _id -= 4;
     }
     return _id;
 }
