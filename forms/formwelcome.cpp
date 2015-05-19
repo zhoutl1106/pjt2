@@ -4,6 +4,7 @@
 
 #include "../dialog.h"
 extern Dialog *g_dialog;
+extern void Sleep(int);
 
 FormWelcome::FormWelcome(QWidget *parent) :
     QWidget(parent),
@@ -31,6 +32,22 @@ void FormWelcome::checkLicense()
     bool ret = g_dialog->fileManager->checkDate();;    //*****check from file
     if(ret)
     {
+        //unstandard ash clean;
+        char tmp[3] = {0};
+        QByteArray cmd232 = QByteArray(tmp,3);
+        char* p232 = cmd232.data();
+        memset(p232,0,3);
+        DialogAutoCloseMessageBox dlg(NULL,"清灰","...","","",0,false);
+        dlg.setText("正在清灰");
+        dlg.show();
+        cmd232.data()[0] = 0x09;
+        g_dialog->serialManager->writeCmd(0,cmd232);
+        Sleep(5000);
+        memset(p232,0,3);
+        cmd232.data()[0] = 0x0a;
+        g_dialog->serialManager->writeCmd(0,cmd232);
+        dlg.close();
+
         g_dialog->fileManager->getLastConfigIndex();
         QString str;
         qDebug()<<"in welcome"<<g_dialog->fileManager->m_lastMode;

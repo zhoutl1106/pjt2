@@ -194,7 +194,7 @@ void FileManager::readConfig(int mode1, int index)
         configFile.read((char*)&config,sizeof(config_t));
         configFile.close();
         dlg->show();
-        dlg->setText("正在设置灯光……");
+        dlg->setText("正在设置灯光");
         setLights();
         Sleep(2000);
         sendCmds();
@@ -238,16 +238,6 @@ void FileManager::sendCmds()
     QByteArray cmd485 = QByteArray(buf485,6);
     char* p232 = cmd232.data();
     char* p485 = cmd485.data();
-
-    //unstandard ash clean;
-    memset(p232,0,3);
-    dlg->setText("正在清灰");
-    cmd232.data()[0] = 0x09;
-    g_dialog->serialManager->writeCmd(0,cmd232);
-    Sleep(5000);
-    memset(p232,0,3);
-    cmd232.data()[0] = 0x0a;
-    g_dialog->serialManager->writeCmd(0,cmd232);
 
     //front bkg borad
     dlg->close();
@@ -363,7 +353,7 @@ void FileManager::sendCmds()
     Sleep(2000);
 
     // vibration
-    dlg->setText("正在设定振动器流量");
+    dlg->setText("正在设定流量");
     for(int i = 0;i<7;i++)
     {
         memset(p232,0,3);

@@ -37,7 +37,7 @@ public:
     {
         if (DialogAutoCloseMessageBox->objectName().isEmpty())
             DialogAutoCloseMessageBox->setObjectName(QStringLiteral("DialogAutoCloseMessageBox"));
-        DialogAutoCloseMessageBox->resize(400, 300);
+        DialogAutoCloseMessageBox->resize(500, 300);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
