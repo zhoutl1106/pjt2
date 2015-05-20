@@ -38,16 +38,16 @@ void LongClickToolButton::released()
 {
     //qDebug()<<"release";
     timer->stop();
+    emit released(m_index,m_delta);
 }
 
 void LongClickToolButton::onclick()
 {
     //qDebug()<<"click";
-    emit longClick(m_index,m_delta);
 }
 
 void LongClickToolButton::onTimer()
 {
     timer->setInterval(100);
-    onclick();
+    emit longClick(m_index,m_delta);
 }

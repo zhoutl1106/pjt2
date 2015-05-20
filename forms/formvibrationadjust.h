@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QSlider>
 #include <QTimer>
+#include "../longclicktoolbutton.h"
 
 #define V1 0x01
 #define V2 0x02
@@ -29,6 +30,8 @@ public:
 
 public slots:
     void updateData();
+    void lbtnValue(int index, int value);
+    void lbtnRelease(int index,int);
 
 signals:
     void switchToPage(int index);
@@ -71,21 +74,6 @@ private slots:
     void on_pushButton_v6_clicked();
     void on_pushButton_v7_clicked();
 
-    void on_toolButton_1u_clicked();
-    void on_toolButton_1d_clicked();
-    void on_toolButton_2u_clicked();
-    void on_toolButton_2d_clicked();
-    void on_toolButton_3u_clicked();
-    void on_toolButton_3d_clicked();
-    void on_toolButton_4u_clicked();
-    void on_toolButton_4d_clicked();
-    void on_toolButton_5u_clicked();
-    void on_toolButton_5d_clicked();
-    void on_toolButton_6u_clicked();
-    void on_toolButton_6d_clicked();
-    void on_toolButton_7u_clicked();
-    void on_toolButton_7d_clicked();
-
     void on_toolButton_Single_clicked();
 
     void on_toolButton_All_clicked();
@@ -97,12 +85,15 @@ private slots:
 private:
     Ui::FormVibrationAdjust *ui;
     void deltaSlider(int index, int delta);
-    QList<QSlider*> list;
+    void sendVibrationValue(int index);
+    QList<QSlider*> listSlider;
     int lastValue[7];
     bool isAll;
     bool isOpen[7];
     QString styleSheet[2];
     quint8 status;
+    LongClickToolButton *btn[14];
+    QList<QWidget*> listWidget;
 };
 
 #endif // FORMVIBRATIONADJUST_H

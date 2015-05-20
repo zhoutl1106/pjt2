@@ -18,6 +18,7 @@ public:
 
 signals:
     void longClick(int index, int delta);
+    void released(int index, int delta);
 
 public slots:
     void onclick();

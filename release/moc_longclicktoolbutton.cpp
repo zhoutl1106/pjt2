@@ -34,14 +34,14 @@ QT_MOC_LITERAL(1, 20, 9), // "longClick"
 QT_MOC_LITERAL(2, 30, 0), // ""
 QT_MOC_LITERAL(3, 31, 5), // "index"
 QT_MOC_LITERAL(4, 37, 5), // "delta"
-QT_MOC_LITERAL(5, 43, 7), // "onclick"
-QT_MOC_LITERAL(6, 51, 7), // "pressed"
-QT_MOC_LITERAL(7, 59, 8), // "released"
+QT_MOC_LITERAL(5, 43, 8), // "released"
+QT_MOC_LITERAL(6, 52, 7), // "onclick"
+QT_MOC_LITERAL(7, 60, 7), // "pressed"
 QT_MOC_LITERAL(8, 68, 7) // "onTimer"
 
     },
     "LongClickToolButton\0longClick\0\0index\0"
-    "delta\0onclick\0pressed\0released\0onTimer"
+    "delta\0released\0onclick\0pressed\0onTimer"
 };
 #undef QT_MOC_LITERAL
 
@@ -51,23 +51,25 @@ static const uint qt_meta_data_LongClickToolButton[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    2,   39,    2, 0x06 /* Public */,
+       1,    2,   44,    2, 0x06 /* Public */,
+       5,    2,   49,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    0,   44,    2, 0x0a /* Public */,
-       6,    0,   45,    2, 0x08 /* Private */,
-       7,    0,   46,    2, 0x08 /* Private */,
-       8,    0,   47,    2, 0x08 /* Private */,
+       6,    0,   54,    2, 0x0a /* Public */,
+       7,    0,   55,    2, 0x08 /* Private */,
+       5,    0,   56,    2, 0x08 /* Private */,
+       8,    0,   57,    2, 0x08 /* Private */,
 
  // signals: parameters
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,    3,    4,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    3,    4,
 
  // slots: parameters
@@ -85,10 +87,11 @@ void LongClickToolButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         LongClickToolButton *_t = static_cast<LongClickToolButton *>(_o);
         switch (_id) {
         case 0: _t->longClick((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 1: _t->onclick(); break;
-        case 2: _t->pressed(); break;
-        case 3: _t->released(); break;
-        case 4: _t->onTimer(); break;
+        case 1: _t->released((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 2: _t->onclick(); break;
+        case 3: _t->pressed(); break;
+        case 4: _t->released(); break;
+        case 5: _t->onTimer(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -98,6 +101,12 @@ void LongClickToolButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
             typedef void (LongClickToolButton::*_t)(int , int );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&LongClickToolButton::longClick)) {
                 *result = 0;
+            }
+        }
+        {
+            typedef void (LongClickToolButton::*_t)(int , int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&LongClickToolButton::released)) {
+                *result = 1;
             }
         }
     }
@@ -128,13 +137,13 @@ int LongClickToolButton::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 6)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 5;
+        _id -= 6;
     }
     return _id;
 }
@@ -144,5 +153,12 @@ void LongClickToolButton::longClick(int _t1, int _t2)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void LongClickToolButton::released(int _t1, int _t2)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 QT_END_MOC_NAMESPACE

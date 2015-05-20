@@ -75,61 +75,15 @@ QSlider::handle {
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
+         <property name="tickPosition">
+          <enum>QSlider::TicksBelow</enum>
+         </property>
+         <property name="tickInterval">
+          <number>10</number>
+         </property>
         </widget>
        </item>
       </layout>
-     </item>
-     <item row="0" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_1u">
-       <property name="minimumSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QToolButton
-{
-	font-size:20px;
-    border-image: url(:/image/upG.png);
-    color: rgb(255, 255, 255);
-}
-
-QToolButton:pressed
-{
-    border-image: url(:/image/upR.png);
-}</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_1d">
-       <property name="minimumSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QToolButton
-{
-	font-size:20px;
-    border-image: url(:/image/downG.png);
-    color: rgb(255, 255, 255);
-}
-
-QToolButton:pressed
-{
-    border-image: url(:/image/downR.png);
-}</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
      </item>
      <item row="1" column="1">
       <widget class="QLCDNumber" name="lcdNumber1">
@@ -178,6 +132,38 @@ QToolButton:pressed
        </property>
       </widget>
      </item>
+     <item row="0" column="0" alignment="Qt::AlignHCenter">
+      <widget class="QWidget" name="widget_1u" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" alignment="Qt::AlignHCenter">
+      <widget class="QWidget" name="widget_1d" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item row="1" column="1">
@@ -188,55 +174,19 @@ QToolButton:pressed
      <property name="verticalSpacing">
       <number>10</number>
      </property>
-     <item row="2" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_2d">
-       <property name="minimumSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QToolButton
-{
-	font-size:20px;
-    border-image: url(:/image/downG.png);
-    color: rgb(255, 255, 255);
-}
-
-QToolButton:pressed
-{
-    border-image: url(:/image/downR.png);
-}</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_2u">
+      <widget class="QWidget" name="widget_2u" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
          <width>40</width>
          <height>40</height>
         </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QToolButton
-{
-	font-size:20px;
-    border-image: url(:/image/upG.png);
-    color: rgb(255, 255, 255);
-}
-
-QToolButton:pressed
-{
-    border-image: url(:/image/upR.png);
-}</string>
-       </property>
-       <property name="text">
-        <string/>
        </property>
       </widget>
      </item>
@@ -275,6 +225,12 @@ QSlider::handle {
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBelow</enum>
+       </property>
+       <property name="tickInterval">
+        <number>10</number>
        </property>
       </widget>
      </item>
@@ -322,6 +278,22 @@ QSlider::handle {
        </property>
       </widget>
      </item>
+     <item row="2" column="0" alignment="Qt::AlignHCenter">
+      <widget class="QWidget" name="widget_2d" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item row="1" column="2">
@@ -333,54 +305,18 @@ QSlider::handle {
       <number>10</number>
      </property>
      <item row="0" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_3u">
+      <widget class="QWidget" name="widget_3u" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
          <width>40</width>
          <height>40</height>
         </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QToolButton
-{
-	font-size:20px;
-    border-image: url(:/image/upG.png);
-    color: rgb(255, 255, 255);
-}
-
-QToolButton:pressed
-{
-    border-image: url(:/image/upR.png);
-}</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_3d">
-       <property name="minimumSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QToolButton
-{
-	font-size:20px;
-    border-image: url(:/image/downG.png);
-    color: rgb(255, 255, 255);
-}
-
-QToolButton:pressed
-{
-    border-image: url(:/image/downR.png);
-}</string>
-       </property>
-       <property name="text">
-        <string/>
        </property>
       </widget>
      </item>
@@ -419,6 +355,12 @@ QSlider::handle {
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBelow</enum>
+       </property>
+       <property name="tickInterval">
+        <number>10</number>
        </property>
       </widget>
      </item>
@@ -466,6 +408,22 @@ QSlider::handle {
        </property>
       </widget>
      </item>
+     <item row="2" column="0" alignment="Qt::AlignHCenter">
+      <widget class="QWidget" name="widget_3d" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item row="1" column="3">
@@ -477,54 +435,40 @@ QSlider::handle {
       <number>10</number>
      </property>
      <item row="0" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_4u">
+      <widget class="QWidget" name="widget_4u" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
          <width>40</width>
          <height>40</height>
         </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QToolButton
-{
-	font-size:20px;
-    border-image: url(:/image/upG.png);
-    color: rgb(255, 255, 255);
-}
-
-QToolButton:pressed
-{
-    border-image: url(:/image/upR.png);
-}</string>
-       </property>
-       <property name="text">
-        <string/>
        </property>
       </widget>
      </item>
-     <item row="2" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_4d">
+     <item row="1" column="1">
+      <widget class="QLCDNumber" name="lcdNumber4">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>0</width>
+         <height>30</height>
         </size>
        </property>
-       <property name="styleSheet">
-        <string notr="true">QToolButton
-{
-	font-size:20px;
-    border-image: url(:/image/downG.png);
-    color: rgb(255, 255, 255);
-}
-
-QToolButton:pressed
-{
-    border-image: url(:/image/downR.png);
-}</string>
+       <property name="smallDecimalPoint">
+        <bool>true</bool>
        </property>
-       <property name="text">
-        <string/>
+       <property name="digitCount">
+        <number>3</number>
        </property>
       </widget>
      </item>
@@ -551,27 +495,11 @@ QToolButton:pressed
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLCDNumber" name="lcdNumber4">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBelow</enum>
        </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="smallDecimalPoint">
-        <bool>true</bool>
-       </property>
-       <property name="digitCount">
-        <number>3</number>
+       <property name="tickInterval">
+        <number>10</number>
        </property>
       </widget>
      </item>
@@ -597,6 +525,22 @@ QToolButton:pressed
        </property>
       </widget>
      </item>
+     <item row="2" column="0" alignment="Qt::AlignHCenter">
+      <widget class="QWidget" name="widget_4d" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item row="1" column="4">
@@ -608,54 +552,18 @@ QToolButton:pressed
       <number>10</number>
      </property>
      <item row="0" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_5u">
+      <widget class="QWidget" name="widget_5u" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
          <width>40</width>
          <height>40</height>
         </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QToolButton
-{
-	font-size:20px;
-    border-image: url(:/image/upG.png);
-    color: rgb(255, 255, 255);
-}
-
-QToolButton:pressed
-{
-    border-image: url(:/image/upR.png);
-}</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_5d">
-       <property name="minimumSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QToolButton
-{
-	font-size:20px;
-    border-image: url(:/image/downG.png);
-    color: rgb(255, 255, 255);
-}
-
-QToolButton:pressed
-{
-    border-image: url(:/image/downR.png);
-}</string>
-       </property>
-       <property name="text">
-        <string/>
        </property>
       </widget>
      </item>
@@ -681,6 +589,12 @@ QToolButton:pressed
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBelow</enum>
+       </property>
+       <property name="tickInterval">
+        <number>10</number>
        </property>
       </widget>
      </item>
@@ -728,6 +642,22 @@ QToolButton:pressed
        </property>
       </widget>
      </item>
+     <item row="2" column="0" alignment="Qt::AlignHCenter">
+      <widget class="QWidget" name="widget_5d" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item row="1" column="5">
@@ -738,55 +668,19 @@ QToolButton:pressed
      <property name="verticalSpacing">
       <number>10</number>
      </property>
-     <item row="2" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_6d">
-       <property name="minimumSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QToolButton
-{
-	font-size:20px;
-    border-image: url(:/image/downG.png);
-    color: rgb(255, 255, 255);
-}
-
-QToolButton:pressed
-{
-    border-image: url(:/image/downR.png);
-}</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_6u">
+      <widget class="QWidget" name="widget_6u" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
          <width>40</width>
          <height>40</height>
         </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QToolButton
-{
-	font-size:20px;
-    border-image: url(:/image/upG.png);
-    color: rgb(255, 255, 255);
-}
-
-QToolButton:pressed
-{
-    border-image: url(:/image/upR.png);
-}</string>
-       </property>
-       <property name="text">
-        <string/>
        </property>
       </widget>
      </item>
@@ -812,6 +706,12 @@ QToolButton:pressed
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBelow</enum>
+       </property>
+       <property name="tickInterval">
+        <number>10</number>
        </property>
       </widget>
      </item>
@@ -859,6 +759,22 @@ QToolButton:pressed
        </property>
       </widget>
      </item>
+     <item row="2" column="0" alignment="Qt::AlignHCenter">
+      <widget class="QWidget" name="widget_6d" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item row="1" column="6">
@@ -869,55 +785,19 @@ QToolButton:pressed
      <property name="verticalSpacing">
       <number>10</number>
      </property>
-     <item row="2" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_7d">
-       <property name="minimumSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QToolButton
-{
-	font-size:20px;
-    border-image: url(:/image/downG.png);
-    color: rgb(255, 255, 255);
-}
-
-QToolButton:pressed
-{
-    border-image: url(:/image/downR.png);
-}</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QToolButton" name="toolButton_7u">
+      <widget class="QWidget" name="widget_7u" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
          <width>40</width>
          <height>40</height>
         </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QToolButton
-{
-	font-size:20px;
-    border-image: url(:/image/upG.png);
-    color: rgb(255, 255, 255);
-}
-
-QToolButton:pressed
-{
-    border-image: url(:/image/upR.png);
-}</string>
-       </property>
-       <property name="text">
-        <string/>
        </property>
       </widget>
      </item>
@@ -943,6 +823,12 @@ QToolButton:pressed
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBelow</enum>
+       </property>
+       <property name="tickInterval">
+        <number>10</number>
        </property>
       </widget>
      </item>
@@ -987,6 +873,22 @@ QToolButton:pressed
        </property>
        <property name="text">
         <string>振动器7</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" alignment="Qt::AlignHCenter">
+      <widget class="QWidget" name="widget_7d" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
        </property>
       </widget>
      </item>

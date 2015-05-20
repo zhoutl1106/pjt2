@@ -2,6 +2,7 @@
 #include "ui_formvibrationadjust.h"
 #include <QDebug>
 #include "../dialog.h"
+#include <QVBoxLayout>
 
 extern Dialog* g_dialog;
 void beep(int);
@@ -17,13 +18,6 @@ FormVibrationAdjust::FormVibrationAdjust(QWidget *parent) :
     ui->setupUi(this);
     isAll = false;
     memset(isOpen,0,7*sizeof(bool));
-    connect(ui->verticalSlider1,SIGNAL(valueChanged(int)),ui->lcdNumber1,SLOT(display(int)));
-    connect(ui->verticalSlider2,SIGNAL(valueChanged(int)),ui->lcdNumber2,SLOT(display(int)));
-    connect(ui->verticalSlider3,SIGNAL(valueChanged(int)),ui->lcdNumber3,SLOT(display(int)));
-    connect(ui->verticalSlider4,SIGNAL(valueChanged(int)),ui->lcdNumber4,SLOT(display(int)));
-    connect(ui->verticalSlider5,SIGNAL(valueChanged(int)),ui->lcdNumber5,SLOT(display(int)));
-    connect(ui->verticalSlider6,SIGNAL(valueChanged(int)),ui->lcdNumber6,SLOT(display(int)));
-    connect(ui->verticalSlider7,SIGNAL(valueChanged(int)),ui->lcdNumber7,SLOT(display(int)));
 
     setStyleSheet(stylesheet);
 
@@ -38,16 +32,41 @@ FormVibrationAdjust::FormVibrationAdjust(QWidget *parent) :
     ui->pushButton_v5->setStyleSheet(styleSheet[0]);
     ui->pushButton_v6->setStyleSheet(styleSheet[0]);
     ui->pushButton_v7->setStyleSheet(styleSheet[0]);
-    list.append(ui->verticalSlider1);
-    list.append(ui->verticalSlider2);
-    list.append(ui->verticalSlider3);
-    list.append(ui->verticalSlider4);
-    list.append(ui->verticalSlider5);
-    list.append(ui->verticalSlider6);
-    list.append(ui->verticalSlider7);
+    listSlider.append(ui->verticalSlider1);
+    listSlider.append(ui->verticalSlider2);
+    listSlider.append(ui->verticalSlider3);
+    listSlider.append(ui->verticalSlider4);
+    listSlider.append(ui->verticalSlider5);
+    listSlider.append(ui->verticalSlider6);
+    listSlider.append(ui->verticalSlider7);
     status = 0;
     memset(lastValue,0,7*sizeof(int));
     isAll = false;
+    listWidget.append(ui->widget_1u);
+    listWidget.append(ui->widget_1d);
+    listWidget.append(ui->widget_2u);
+    listWidget.append(ui->widget_2d);
+    listWidget.append(ui->widget_3u);
+    listWidget.append(ui->widget_3d);
+    listWidget.append(ui->widget_4u);
+    listWidget.append(ui->widget_4d);
+    listWidget.append(ui->widget_5u);
+    listWidget.append(ui->widget_5d);
+    listWidget.append(ui->widget_6u);
+    listWidget.append(ui->widget_6d);
+    listWidget.append(ui->widget_7u);
+    listWidget.append(ui->widget_7d);
+
+    for(int i = 0;i<14;i++)
+    {
+        btn[i] = new LongClickToolButton(NULL,i/2,i%2==0?1:-1);
+        connect(btn[i],SIGNAL(longClick(int,int)),this,SLOT(lbtnValue(int,int)));
+        connect(btn[i],SIGNAL(released(int,int)),this,SLOT(lbtnRelease(int,int)));
+        QVBoxLayout *layout = new QVBoxLayout;
+        layout->setMargin(0);
+        layout->addWidget(btn[i]);
+        listWidget.at(i)->setLayout(layout);
+    }
 }
 
 FormVibrationAdjust::~FormVibrationAdjust()
@@ -55,6 +74,37 @@ FormVibrationAdjust::~FormVibrationAdjust()
     delete ui;
 }
 
+void FormVibrationAdjust::lbtnValue(int index, int value)
+{
+    listSlider.at(index)->setValue(listSlider.at(index)->value()+value);
+}
+
+void FormVibrationAdjust::lbtnRelease(int index, int delta)
+{
+    listSlider.at(index)->setValue(listSlider.at(index)->value()+delta);
+    sendVibrationValue(index);
+}
+
+void FormVibrationAdjust::sendVibrationValue(int index)
+{
+    char tmp[3] = {0x82,0x00};
+    QByteArray temp = QByteArray(tmp,3);
+    if(!isAll)
+    {
+        temp.data()[0] = 0x82 + index;
+        temp.data()[1] = listSlider.at(index)->value();
+        g_dialog->serialManager->writeCmd(0,temp);
+    }
+    else
+    {
+        for(int i = 0;i<7;i++)
+        {
+            temp.data()[0] = 0x82 + i;
+            temp.data()[1] = listSlider.at(i)->value();
+            g_dialog->serialManager->writeCmd(0,temp);
+        }
+    }
+}
 
 void FormVibrationAdjust::setValve(bool value)
 {
@@ -125,7 +175,15 @@ void FormVibrationAdjust::on_verticalSlider1_valueChanged(int value)
 {
     if(isBeep)beep(50000);
     int delta = value - lastValue[0];
+    ui->lcdNumber1->display(value);
+    if(delta == 10 || delta == -10)
+    {
+        ui->verticalSlider1->setValue(lastValue[0]);
+        ui->lcdNumber1->display(lastValue[0]);
+        return;
+    }
     lastValue[0] = value;
+
     if(isAll)
         deltaSlider(1,delta);
 
@@ -136,6 +194,13 @@ void FormVibrationAdjust::on_verticalSlider2_valueChanged(int value)
 {
     if(isBeep)beep(50000);
     int delta = value - lastValue[1];
+    ui->lcdNumber2->display(value);
+    if(delta == 10 || delta == -10)
+    {
+        ui->verticalSlider2->setValue(lastValue[1]);
+        ui->lcdNumber2->display(lastValue[1]);
+        return;
+    }
     lastValue[1] = value;
 
     if(isAll)
@@ -148,6 +213,13 @@ void FormVibrationAdjust::on_verticalSlider3_valueChanged(int value)
 {
     if(isBeep)beep(50000);
     int delta = value - lastValue[2];
+    ui->lcdNumber3->display(value);
+    if(delta == 10 || delta == -10)
+    {
+        ui->verticalSlider3->setValue(lastValue[2]);
+        ui->lcdNumber3->display(lastValue[2]);
+        return;
+    }
     lastValue[2] = value;
 
     if(isAll)
@@ -160,6 +232,13 @@ void FormVibrationAdjust::on_verticalSlider4_valueChanged(int value)
 {
     if(isBeep)beep(50000);
     int delta = value - lastValue[3];
+    ui->lcdNumber4->display(value);
+    if(delta == 10 || delta == -10)
+    {
+        ui->verticalSlider4->setValue(lastValue[3]);
+        ui->lcdNumber4->display(lastValue[3]);
+        return;
+    }
     lastValue[3] = value;
 
     if(isAll)
@@ -172,6 +251,13 @@ void FormVibrationAdjust::on_verticalSlider5_valueChanged(int value)
 {
     if(isBeep)beep(50000);
     int delta = value - lastValue[4];
+    ui->lcdNumber5->display(value);
+    if(delta == 10 || delta == -10)
+    {
+        ui->verticalSlider5->setValue(lastValue[4]);
+        ui->lcdNumber5->display(lastValue[4]);
+        return;
+    }
     lastValue[4] = value;
 
     if(isAll)
@@ -184,6 +270,13 @@ void FormVibrationAdjust::on_verticalSlider6_valueChanged(int value)
 {
     if(isBeep)beep(50000);
     int delta = value - lastValue[5];
+    ui->lcdNumber6->display(value);
+    if(delta == 10 || delta == -10)
+    {
+        ui->verticalSlider6->setValue(lastValue[5]);
+        ui->lcdNumber6->display(lastValue[5]);
+        return;
+    }
     lastValue[5] = value;
 
     if(isAll)
@@ -196,6 +289,13 @@ void FormVibrationAdjust::on_verticalSlider7_valueChanged(int value)
 {
     if(isBeep)beep(50000);
     int delta = value - lastValue[6];
+    ui->lcdNumber7->display(value);
+    if(delta == 10 || delta == -10)
+    {
+        ui->verticalSlider7->setValue(lastValue[6]);
+        ui->lcdNumber7->display(lastValue[6]);
+        return;
+    }
     lastValue[6] = value;
 
     if(isAll)
@@ -207,141 +307,50 @@ void FormVibrationAdjust::on_verticalSlider7_valueChanged(int value)
 void FormVibrationAdjust::on_verticalSlider1_sliderReleased()
 {
     isBeep = true;
-    if(isBeep)beep(50000);/*
-    QByteArray cmd;
-    if(!isAll)
-    {
-        cmd.append((char)0x82);
-        cmd.append((char)ui->verticalSlider1->value());
-        cmd.append((char)0x00);
-    }
-    else
-    {
-        cmd.append((char)0x89);
-        cmd.append((char)ui->verticalSlider1->value());
-        cmd.append((char)0x00);
-    }
-    emit sendCmd(0,cmd);*/
+    if(isBeep)beep(50000);
+    sendVibrationValue(0);
 }
 
 void FormVibrationAdjust::on_verticalSlider2_sliderReleased()
 {
     isBeep = true;
-    if(isBeep)beep(50000);/*
-    QByteArray cmd;
-    if(!isAll)
-    {
-        cmd.append((char)0x83);
-        cmd.append((char)ui->verticalSlider2->value());
-        cmd.append((char)0x00);
-    }
-    else
-    {
-        cmd.append((char)0x89);
-        cmd.append((char)ui->verticalSlider2->value());
-        cmd.append((char)0x00);
-    }
-    emit sendCmd(0,cmd);*/
+    if(isBeep)beep(50000);
+    sendVibrationValue(1);
 }
 
 void FormVibrationAdjust::on_verticalSlider3_sliderReleased()
 {
     isBeep = true;
-    if(isBeep)beep(50000);/*
-    QByteArray cmd;
-    if(!isAll)
-    {
-        cmd.append((char)0x84);
-        cmd.append((char)ui->verticalSlider3->value());
-        cmd.append((char)0x00);
-    }
-    else
-    {
-        cmd.append((char)0x89);
-        cmd.append((char)ui->verticalSlider3->value());
-        cmd.append((char)0x00);
-    }
-    emit sendCmd(0,cmd);*/
+    if(isBeep)beep(50000);
+    sendVibrationValue(2);
 }
 
 void FormVibrationAdjust::on_verticalSlider4_sliderReleased()
 {
     isBeep = true;
-    if(isBeep)beep(50000);/*
-    QByteArray cmd;
-    if(!isAll)
-    {
-        cmd.append((char)0x85);
-        cmd.append((char)ui->verticalSlider4->value());
-        cmd.append((char)0x00);
-    }
-    else
-    {
-        cmd.append((char)0x89);
-        cmd.append((char)ui->verticalSlider4->value());
-        cmd.append((char)0x00);
-    }
-    emit sendCmd(0,cmd);*/
+    if(isBeep)beep(50000);
+    sendVibrationValue(3);
 }
 
 void FormVibrationAdjust::on_verticalSlider5_sliderReleased()
 {
     isBeep = true;
-    if(isBeep)beep(50000);/*
-    QByteArray cmd;
-    if(!isAll)
-    {
-        cmd.append((char)0x86);
-        cmd.append((char)ui->verticalSlider5->value());
-        cmd.append((char)0x00);
-    }
-    else
-    {
-        cmd.append((char)0x89);
-        cmd.append((char)ui->verticalSlider5->value());
-        cmd.append((char)0x00);
-    }
-    emit sendCmd(0,cmd);*/
+    if(isBeep)beep(50000);
+    sendVibrationValue(4);
 }
 
 void FormVibrationAdjust::on_verticalSlider6_sliderReleased()
 {
     isBeep = true;
-    if(isBeep)beep(50000);/*
-    QByteArray cmd;
-    if(!isAll)
-    {
-        cmd.append((char)0x87);
-        cmd.append((char)ui->verticalSlider6->value());
-        cmd.append((char)0x00);
-    }
-    else
-    {
-        cmd.append((char)0x89);
-        cmd.append((char)ui->verticalSlider6->value());
-        cmd.append((char)0x00);
-    }
-    emit sendCmd(0,cmd);*/
+    if(isBeep)beep(50000);
+    sendVibrationValue(5);
 }
 
 void FormVibrationAdjust::on_verticalSlider7_sliderReleased()
 {
     isBeep = true;
-    if(isBeep)beep(50000);/*
-    QByteArray cmd;
-    if(!isAll)
-    {
-        cmd.append((char)0x88);
-        cmd.append((char)ui->verticalSlider7->value());
-        cmd.append((char)0x00);
-    }
-    else
-    {
-        cmd.append((char)0x89);
-        cmd.append((char)ui->verticalSlider7->value());
-        cmd.append((char)0x00);
-    }
-    emit sendCmd(0,cmd);*/
+    if(isBeep)beep(50000);
+    sendVibrationValue(6);
 }
 
 void FormVibrationAdjust::on_verticalSlider1_sliderPressed()
@@ -399,11 +408,11 @@ void FormVibrationAdjust::on_pushButton_v1_clicked()
         status &= ~V1;
     }
     g_dialog->fileManager->config.vibratorStatusU8 = status;
-    /*
+
     char temp[3] = {0x80,0x00,0x00};
     temp[1] = status;
     QByteArray cmd(temp,3);
-    emit sendCmd(0,cmd);*/
+    g_dialog->serialManager->writeCmd(0,cmd);
     ui->pushButton_v1->setStyleSheet(styleSheet[isOpen[0]]);
 }
 
@@ -419,11 +428,11 @@ void FormVibrationAdjust::on_pushButton_v2_clicked()
     {
         status &= ~V2;
     }
-    g_dialog->fileManager->config.vibratorStatusU8 = status;/*
+    g_dialog->fileManager->config.vibratorStatusU8 = status;
     char temp[3] = {0x80,0x00,0x00};
     temp[1] = status;
     QByteArray cmd(temp,3);
-    emit sendCmd(0,cmd);*/
+    g_dialog->serialManager->writeCmd(0,cmd);
     ui->pushButton_v2->setStyleSheet(styleSheet[isOpen[1]]);
 }
 
@@ -439,11 +448,11 @@ void FormVibrationAdjust::on_pushButton_v3_clicked()
     {
         status &= ~V3;
     }
-    g_dialog->fileManager->config.vibratorStatusU8 = status;/*
+    g_dialog->fileManager->config.vibratorStatusU8 = status;
     char temp[3] = {0x80,0x00,0x00};
     temp[1] = status;
     QByteArray cmd(temp,3);
-    emit sendCmd(0,cmd);*/
+    g_dialog->serialManager->writeCmd(0,cmd);
     ui->pushButton_v3->setStyleSheet(styleSheet[isOpen[2]]);
 }
 
@@ -459,11 +468,11 @@ void FormVibrationAdjust::on_pushButton_v4_clicked()
     {
         status &= ~V4;
     }
-    g_dialog->fileManager->config.vibratorStatusU8 = status;/*
+    g_dialog->fileManager->config.vibratorStatusU8 = status;
     char temp[3] = {0x80,0x00,0x00};
     temp[1] = status;
     QByteArray cmd(temp,3);
-    emit sendCmd(0,cmd);*/
+    g_dialog->serialManager->writeCmd(0,cmd);
     ui->pushButton_v4->setStyleSheet(styleSheet[isOpen[3]]);
 }
 
@@ -479,11 +488,11 @@ void FormVibrationAdjust::on_pushButton_v5_clicked()
     {
         status &= ~V5;
     }
-    g_dialog->fileManager->config.vibratorStatusU8 = status;/*
+    g_dialog->fileManager->config.vibratorStatusU8 = status;
     char temp[3] = {0x80,0x00,0x00};
     temp[1] = status;
     QByteArray cmd(temp,3);
-    emit sendCmd(0,cmd);*/
+    g_dialog->serialManager->writeCmd(0,cmd);
     ui->pushButton_v5->setStyleSheet(styleSheet[isOpen[4]]);
 }
 
@@ -499,11 +508,11 @@ void FormVibrationAdjust::on_pushButton_v6_clicked()
     {
         status &= ~V6;
     }
-    g_dialog->fileManager->config.vibratorStatusU8 = status;/*
+    g_dialog->fileManager->config.vibratorStatusU8 = status;
     char temp[3] = {0x80,0x00,0x00};
     temp[1] = status;
     QByteArray cmd(temp,3);
-    emit sendCmd(0,cmd);*/
+    g_dialog->serialManager->writeCmd(0,cmd);
     ui->pushButton_v6->setStyleSheet(styleSheet[isOpen[5]]);
 }
 
@@ -519,11 +528,11 @@ void FormVibrationAdjust::on_pushButton_v7_clicked()
     {
         status &= ~V7;
     }
-    g_dialog->fileManager->config.vibratorStatusU8 = status;/*
+    g_dialog->fileManager->config.vibratorStatusU8 = status;
     char temp[3] = {0x80,0x00,0x00};
     temp[1] = status;
     QByteArray cmd(temp,3);
-    emit sendCmd(0,cmd);*/
+    g_dialog->serialManager->writeCmd(0,cmd);
     ui->pushButton_v7->setStyleSheet(styleSheet[isOpen[6]]);
 }
 
@@ -536,7 +545,7 @@ void FormVibrationAdjust::deltaSlider(int index, int delta)
     isAll = false;
     for(int i = 0;i<7;i++)
         if(i != index - 1)
-            list.at(i)->setValue(list.at(i)->value()+delta);
+            listSlider.at(i)->setValue(listSlider.at(i)->value()+delta);
 
     lastValue[0] = ui->verticalSlider1->value();
     lastValue[1] = ui->verticalSlider2->value();
@@ -547,94 +556,6 @@ void FormVibrationAdjust::deltaSlider(int index, int delta)
     lastValue[6] = ui->verticalSlider7->value();
     isBeep = tempBeep;
     isAll = tempIsAll;
-}
-
-void FormVibrationAdjust::on_toolButton_1u_clicked()
-{
-    beep(50000);
-    ui->verticalSlider1->setValue(ui->verticalSlider1->value() + 1);
-}
-
-void FormVibrationAdjust::on_toolButton_1d_clicked()
-{
-    beep(50000);
-    ui->verticalSlider1->setValue(ui->verticalSlider1->value() - 1);
-}
-
-void FormVibrationAdjust::on_toolButton_2u_clicked()
-{
-    beep(50000);
-    ui->verticalSlider2->setValue(ui->verticalSlider2->value() + 1);
-}
-
-void FormVibrationAdjust::on_toolButton_2d_clicked()
-{
-    beep(50000);
-    ui->verticalSlider2->setValue(ui->verticalSlider2->value() - 1);
-}
-
-void FormVibrationAdjust::on_toolButton_3u_clicked()
-{
-    beep(50000);
-    ui->verticalSlider3->setValue(ui->verticalSlider3->value() + 1);
-}
-
-void FormVibrationAdjust::on_toolButton_3d_clicked()
-{
-    beep(50000);
-    ui->verticalSlider3->setValue(ui->verticalSlider3->value() - 1);
-}
-
-void FormVibrationAdjust::on_toolButton_4u_clicked()
-{
-    beep(50000);
-    ui->verticalSlider4->setValue(ui->verticalSlider4->value() + 1);
-}
-
-void FormVibrationAdjust::on_toolButton_4d_clicked()
-{
-    beep(50000);
-    ui->verticalSlider4->setValue(ui->verticalSlider4->value() - 1);
-}
-
-void FormVibrationAdjust::on_toolButton_5u_clicked()
-{
-    beep(50000);
-    ui->verticalSlider5->setValue(ui->verticalSlider5->value() + 1);
-}
-
-void FormVibrationAdjust::on_toolButton_5d_clicked()
-{
-    beep(50000);
-    ui->verticalSlider5->setValue(ui->verticalSlider5->value() - 1);
-}
-
-void FormVibrationAdjust::on_toolButton_6u_clicked()
-{
-    beep(50000);
-    ui->verticalSlider6->setValue(ui->verticalSlider6->value() + 1);
-}
-
-void FormVibrationAdjust::on_toolButton_6d_clicked()
-{
-    beep(50000);
-    ui->verticalSlider6->setValue(ui->verticalSlider6->value() - 1);
-}
-
-void FormVibrationAdjust::on_toolButton_7u_clicked()
-{
-    beep(50000);
-    isBeep = false;
-    ui->verticalSlider7->setValue(ui->verticalSlider7->value() + 1);
-    isBeep = true;
-}
-
-void FormVibrationAdjust::on_toolButton_7d_clicked()
-{
-    beep(50000);
-    isBeep = false;
-    ui->verticalSlider7->setValue(ui->verticalSlider7->value() + 1);
-    isBeep = true;
 }
 
 void FormVibrationAdjust::on_toolButton_Single_clicked()
