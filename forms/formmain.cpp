@@ -65,7 +65,12 @@ void FormMain::onLongPressTimer()
 {
     longPressTimer->stop();
     //*** ask whether to save the parameters
-
+    if(isBeep)beep(50000);
+    DialogAutoCloseMessageBox box(NULL,"保存","是否保存模式参数","是","否",10,true);
+    if(box.exec() == QDialog::Accepted)
+    {
+        g_dialog->fileManager->writeConfig(g_dialog->fileManager->mode, g_dialog->fileManager->mem);
+    }
     //*** send cmd to close all devices
     char tmp[3] = {0x02,0x00};
     QByteArray tmp1(tmp,3);

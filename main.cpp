@@ -29,6 +29,22 @@ void g_setValve()
     valveStatus = !valveStatus;
     g_dialog->form2_main->setValve(valveStatus);
     g_dialog->form3_vibrationAdjust->setValve(valveStatus);
+    char tmp[3] = {0x02,0x00};
+    QByteArray tmp1(tmp,3);
+    if(valveStatus)
+    {
+        tmp1.data()[0] = 0x0b;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x11;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+    }
+    else
+    {
+        tmp1.data()[0] = 0x0c;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x12;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+    }
 }
 
 void g_setVibrator()
@@ -36,6 +52,24 @@ void g_setVibrator()
     vibratorStatus = !vibratorStatus;
     g_dialog->form2_main->setVibrator(vibratorStatus);
     g_dialog->form3_vibrationAdjust->setVibrator(vibratorStatus);
+    char tmp[3] = {0x02,0x00};
+    QByteArray tmp1(tmp,3);
+    char tmp3[6] = {0x06,0xaa};
+    QByteArray tmp2(tmp3,6);
+    if(valveStatus)
+    {
+        tmp1.data()[0] = 0x0d;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp2.data()[0] = 0x06;
+        g_dialog->serialManager->writeCmd(1,tmp2);
+    }
+    else
+    {
+        tmp1.data()[0] = 0x0e;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp2.data()[0] = 0x07;
+        g_dialog->serialManager->writeCmd(1,tmp2);
+    }
 }
 
 void Sleep(int ms)
