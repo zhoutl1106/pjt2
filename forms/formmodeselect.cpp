@@ -5,7 +5,7 @@
 #include "../dialog.h"
 
 extern Dialog* g_dialog;
-void beep(int);
+void beep(int length_us, int index = 0);
 extern bool isBeep;
 extern QString stylesheet;
 

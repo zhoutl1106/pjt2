@@ -573,6 +573,7 @@ debug/moc_dialog.cpp: D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
 		filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		dialogautoclosemessagebox.h \
 		formkeyboard.h \
 		serialmanager.h \
 		posix_qextserialport.h \
@@ -593,21 +594,20 @@ debug/moc_dialog.cpp: D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		forms/formmodeselect.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		longclicktoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		forms/formmodeselect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
 		forms/formaccuracyadjust.h \
 		multistatustoolbutton.h \
-		longclicktoolbutton.h \
 		forms/formsystem.h \
 		forms/formshutdown.h \
 		forms/formadmin.h \
 		forms/formashclean.h \
-		dialogautoclosemessagebox.h \
 		forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
 		forms/dialogdisplayrange.h \
@@ -832,6 +832,12 @@ debug/moc_formvibrationadjust.cpp: D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidge
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTimer \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
+		longclicktoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
 		forms/formvibrationadjust.h
 	D:\Qt\Qt5.4.1\5.4\mingw491_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/mkspecs/win32-g++ -IE:/pjt2 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore forms\formvibrationadjust.h -o debug\moc_formvibrationadjust.cpp
 
@@ -2543,6 +2549,61 @@ debug/moc_filemanager.cpp: D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject 
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTimer \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
+		dialogautoclosemessagebox.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdialog.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qwidget.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qwindowdefs.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qwindowdefs_win.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmargins.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpaintdevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qrect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsize.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qpoint.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpalette.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qcolor.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qrgb.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringlist.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdatastream.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qiodevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qpair.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregexp.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringmatcher.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qbrush.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvector.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qmatrix.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpolygon.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qregion.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qline.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtransform.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpainterpath.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qimage.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpixelformat.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpixmap.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsharedpointer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qshareddata.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qhash.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsharedpointer_impl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfont.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfontmetrics.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfontinfo.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qsizepolicy.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qcursor.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qkeysequence.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qevent.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvariant.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmap.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdebug.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtextstream.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qlocale.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qset.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcontiguouscache.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qurl.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qurlquery.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfile.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfiledevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
 		filemanager.h
 	D:\Qt\Qt5.4.1\5.4\mingw491_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/mkspecs/win32-g++ -IE:/pjt2 -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork -ID:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore filemanager.h -o debug\moc_filemanager.cpp
 
@@ -3134,6 +3195,7 @@ debug/main.o: main.cpp dialog.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
 		filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		dialogautoclosemessagebox.h \
 		formkeyboard.h \
 		serialmanager.h \
 		posix_qextserialport.h \
@@ -3154,21 +3216,20 @@ debug/main.o: main.cpp dialog.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		forms/formmodeselect.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		longclicktoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		forms/formmodeselect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
 		forms/formaccuracyadjust.h \
 		multistatustoolbutton.h \
-		longclicktoolbutton.h \
 		forms/formsystem.h \
 		forms/formshutdown.h \
 		forms/formadmin.h \
 		forms/formashclean.h \
-		dialogautoclosemessagebox.h \
 		forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
 		forms/dialogdisplayrange.h \
@@ -3183,7 +3244,9 @@ debug/main.o: main.cpp dialog.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTextStream
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTextStream \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTime \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdatetime.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o main.cpp
 
 debug/dialogautoclosemessagebox.o: dialogautoclosemessagebox.cpp dialogautoclosemessagebox.h \
@@ -3526,6 +3589,7 @@ debug/dialog.o: dialog.cpp dialog.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
 		filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		dialogautoclosemessagebox.h \
 		formkeyboard.h \
 		serialmanager.h \
 		posix_qextserialport.h \
@@ -3546,21 +3610,20 @@ debug/dialog.o: dialog.cpp dialog.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		forms/formmodeselect.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		longclicktoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		forms/formmodeselect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
 		forms/formaccuracyadjust.h \
 		multistatustoolbutton.h \
-		longclicktoolbutton.h \
 		forms/formsystem.h \
 		forms/formshutdown.h \
 		forms/formadmin.h \
 		forms/formashclean.h \
-		dialogautoclosemessagebox.h \
 		forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
 		forms/dialogdisplayrange.h \
@@ -3876,11 +3939,16 @@ debug/formvibrationadjust.o: forms/formvibrationadjust.cpp forms/formvibrationad
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTimer \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
+		longclicktoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
 		ui_formvibrationadjust.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
@@ -3919,9 +3987,6 @@ debug/formvibrationadjust.o: forms/formvibrationadjust.cpp forms/formvibrationad
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QPushButton \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qpushbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
 		dialog.h \
@@ -3933,7 +3998,7 @@ debug/formvibrationadjust.o: forms/formvibrationadjust.cpp forms/formvibrationad
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qabstractsocket.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
 		filemanager.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		dialogautoclosemessagebox.h \
 		formkeyboard.h \
 		serialmanager.h \
 		posix_qextserialport.h \
@@ -3951,12 +4016,10 @@ debug/formvibrationadjust.o: forms/formvibrationadjust.cpp forms/formvibrationad
 		forms/formmodeselect.h \
 		forms/formaccuracyadjust.h \
 		multistatustoolbutton.h \
-		longclicktoolbutton.h \
 		forms/formsystem.h \
 		forms/formshutdown.h \
 		forms/formadmin.h \
 		forms/formashclean.h \
-		dialogautoclosemessagebox.h \
 		forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
 		forms/dialogdisplayrange.h \
@@ -4139,13 +4202,13 @@ debug/formwelcome.o: forms/formwelcome.cpp forms/formwelcome.h \
 		forms/formmain.h \
 		forms/formvibrationadjust.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
-		forms/formmodeselect.h \
+		longclicktoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		forms/formmodeselect.h \
 		forms/formaccuracyadjust.h \
 		multistatustoolbutton.h \
-		longclicktoolbutton.h \
 		forms/formsystem.h \
 		forms/formshutdown.h \
 		forms/formadmin.h \
@@ -4323,6 +4386,7 @@ debug/formlicense.o: forms/formlicense.cpp forms/formlicense.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
 		filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		dialogautoclosemessagebox.h \
 		serialmanager.h \
 		posix_qextserialport.h \
 		qextserialbase.h \
@@ -4338,18 +4402,17 @@ debug/formlicense.o: forms/formlicense.cpp forms/formlicense.h \
 		forms/formmain.h \
 		forms/formvibrationadjust.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
-		forms/formmodeselect.h \
+		longclicktoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		forms/formmodeselect.h \
 		forms/formaccuracyadjust.h \
 		multistatustoolbutton.h \
-		longclicktoolbutton.h \
 		forms/formsystem.h \
 		forms/formshutdown.h \
 		forms/formadmin.h \
 		forms/formashclean.h \
-		dialogautoclosemessagebox.h \
 		forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
 		forms/dialogdisplayrange.h \
@@ -4521,6 +4584,7 @@ debug/formmain.o: forms/formmain.cpp forms/formmain.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
 		filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		dialogautoclosemessagebox.h \
 		formkeyboard.h \
 		serialmanager.h \
 		posix_qextserialport.h \
@@ -4537,15 +4601,14 @@ debug/formmain.o: forms/formmain.cpp forms/formmain.h \
 		forms/formlicense.h \
 		forms/formvibrationadjust.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		longclicktoolbutton.h \
 		forms/formmodeselect.h \
 		forms/formaccuracyadjust.h \
 		multistatustoolbutton.h \
-		longclicktoolbutton.h \
 		forms/formsystem.h \
 		forms/formshutdown.h \
 		forms/formadmin.h \
 		forms/formashclean.h \
-		dialogautoclosemessagebox.h \
 		forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
 		forms/dialogdisplayrange.h \
@@ -5021,6 +5084,7 @@ debug/formaccuracyadjust.o: forms/formaccuracyadjust.cpp forms/formaccuracyadjus
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qabstractsocket.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
 		filemanager.h \
+		dialogautoclosemessagebox.h \
 		formkeyboard.h \
 		serialmanager.h \
 		posix_qextserialport.h \
@@ -5041,7 +5105,6 @@ debug/formaccuracyadjust.o: forms/formaccuracyadjust.cpp forms/formaccuracyadjus
 		forms/formshutdown.h \
 		forms/formadmin.h \
 		forms/formashclean.h \
-		dialogautoclosemessagebox.h \
 		forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
 		forms/dialogdisplayrange.h \
@@ -5218,6 +5281,7 @@ debug/formaccuracydetailadjust.o: forms/formaccuracydetailadjust.cpp forms/forma
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qabstractsocket.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
 		filemanager.h \
+		dialogautoclosemessagebox.h \
 		formkeyboard.h \
 		serialmanager.h \
 		posix_qextserialport.h \
@@ -5239,7 +5303,6 @@ debug/formaccuracydetailadjust.o: forms/formaccuracydetailadjust.cpp forms/forma
 		forms/formshutdown.h \
 		forms/formadmin.h \
 		forms/formashclean.h \
-		dialogautoclosemessagebox.h \
 		forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
 		forms/dialogdisplayrange.h \
@@ -5434,10 +5497,10 @@ debug/formashclean.o: forms/formashclean.cpp forms/formashclean.h \
 		forms/formmain.h \
 		forms/formvibrationadjust.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		longclicktoolbutton.h \
 		forms/formmodeselect.h \
 		forms/formaccuracyadjust.h \
 		multistatustoolbutton.h \
-		longclicktoolbutton.h \
 		forms/formsystem.h \
 		forms/formshutdown.h \
 		forms/formadmin.h \
@@ -5626,6 +5689,7 @@ debug/formccdcurve.o: forms/formccdcurve.cpp forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
 		filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		dialogautoclosemessagebox.h \
 		formkeyboard.h \
 		serialmanager.h \
 		posix_qextserialport.h \
@@ -5641,14 +5705,13 @@ debug/formccdcurve.o: forms/formccdcurve.cpp forms/formccdcurve.h \
 		forms/formmain.h \
 		forms/formvibrationadjust.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		longclicktoolbutton.h \
 		forms/formmodeselect.h \
 		forms/formaccuracyadjust.h \
-		longclicktoolbutton.h \
 		forms/formsystem.h \
 		forms/formshutdown.h \
 		forms/formadmin.h \
 		forms/formashclean.h \
-		dialogautoclosemessagebox.h \
 		forms/formvalvetest.h \
 		forms/formaccuracydetailadjust.h \
 		forms/formwholesetting.h \
@@ -5836,9 +5899,9 @@ debug/formmodeselect.o: forms/formmodeselect.cpp forms/formmodeselect.h \
 		forms/formmain.h \
 		forms/formvibrationadjust.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		longclicktoolbutton.h \
 		forms/formaccuracyadjust.h \
 		multistatustoolbutton.h \
-		longclicktoolbutton.h \
 		forms/formsystem.h \
 		forms/formshutdown.h \
 		forms/formadmin.h \
@@ -6012,6 +6075,7 @@ debug/formsystem.o: forms/formsystem.cpp forms/formsystem.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
 		filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		dialogautoclosemessagebox.h \
 		formkeyboard.h \
 		serialmanager.h \
 		posix_qextserialport.h \
@@ -6028,14 +6092,13 @@ debug/formsystem.o: forms/formsystem.cpp forms/formsystem.h \
 		forms/formmain.h \
 		forms/formvibrationadjust.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		longclicktoolbutton.h \
 		forms/formmodeselect.h \
 		forms/formaccuracyadjust.h \
 		multistatustoolbutton.h \
-		longclicktoolbutton.h \
 		forms/formshutdown.h \
 		forms/formadmin.h \
 		forms/formashclean.h \
-		dialogautoclosemessagebox.h \
 		forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
 		forms/dialogdisplayrange.h \
@@ -6212,6 +6275,7 @@ debug/formvalvetest.o: forms/formvalvetest.cpp forms/formvalvetest.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
 		filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		dialogautoclosemessagebox.h \
 		formkeyboard.h \
 		serialmanager.h \
 		posix_qextserialport.h \
@@ -6229,14 +6293,13 @@ debug/formvalvetest.o: forms/formvalvetest.cpp forms/formvalvetest.h \
 		forms/formmain.h \
 		forms/formvibrationadjust.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		longclicktoolbutton.h \
 		forms/formmodeselect.h \
 		forms/formaccuracyadjust.h \
-		longclicktoolbutton.h \
 		forms/formsystem.h \
 		forms/formshutdown.h \
 		forms/formadmin.h \
 		forms/formashclean.h \
-		dialogautoclosemessagebox.h \
 		forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
 		forms/dialogdisplayrange.h \
@@ -6406,6 +6469,7 @@ debug/formwholesetting.o: forms/formwholesetting.cpp forms/formwholesetting.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
 		filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		dialogautoclosemessagebox.h \
 		formkeyboard.h \
 		serialmanager.h \
 		posix_qextserialport.h \
@@ -6423,14 +6487,13 @@ debug/formwholesetting.o: forms/formwholesetting.cpp forms/formwholesetting.h \
 		forms/formmain.h \
 		forms/formvibrationadjust.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
+		longclicktoolbutton.h \
 		forms/formmodeselect.h \
 		forms/formaccuracyadjust.h \
-		longclicktoolbutton.h \
 		forms/formsystem.h \
 		forms/formshutdown.h \
 		forms/formadmin.h \
 		forms/formashclean.h \
-		dialogautoclosemessagebox.h \
 		forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
 		forms/dialogdisplayrange.h \
@@ -6549,10 +6612,57 @@ debug/formcntcheck.o: forms/formcntcheck.cpp forms/formcntcheck.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
 		ui_formcntcheck.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QVariant \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QAction \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qaction.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QApplication \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qapplication.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qguiapplication.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qinputmethod.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHBoxLayout \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QHeaderView \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qframe.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvalidator.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregularexpression.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qstyle.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLabel \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlabel.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QLineEdit \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlineedit.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtextcursor.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtextformat.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpen.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtextoption.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSpacerItem \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSpinBox \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qspinbox.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QWidget \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QPainter \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpainter.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtextoption.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpen.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QElapsedTimer \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qelapsedtimer.h \
@@ -6560,11 +6670,6 @@ debug/formcntcheck.o: forms/formcntcheck.cpp forms/formcntcheck.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QMessageBox \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qmessagebox.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QFile \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayout.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
 		dialog.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTimer \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
@@ -6575,6 +6680,7 @@ debug/formcntcheck.o: forms/formcntcheck.cpp forms/formcntcheck.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
 		filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		dialogautoclosemessagebox.h \
 		formkeyboard.h \
 		serialmanager.h \
 		posix_qextserialport.h \
@@ -6584,24 +6690,18 @@ debug/formcntcheck.o: forms/formcntcheck.cpp forms/formcntcheck.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qthread.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QMutex \
 		forms/formwelcome.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QWidget \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QShowEvent \
 		forms/formlicense.h \
 		forms/formmain.h \
 		forms/formvibrationadjust.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		forms/formmodeselect.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		forms/formaccuracyadjust.h \
 		longclicktoolbutton.h \
+		forms/formmodeselect.h \
+		forms/formaccuracyadjust.h \
 		forms/formsystem.h \
 		forms/formshutdown.h \
 		forms/formadmin.h \
 		forms/formashclean.h \
-		dialogautoclosemessagebox.h \
 		forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
 		forms/dialogdisplayrange.h \
@@ -6768,6 +6868,7 @@ debug/formadmin.o: forms/formadmin.cpp forms/formadmin.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qhostaddress.h \
 		filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QObject \
+		dialogautoclosemessagebox.h \
 		serialmanager.h \
 		posix_qextserialport.h \
 		qextserialbase.h \
@@ -6784,17 +6885,16 @@ debug/formadmin.o: forms/formadmin.cpp forms/formadmin.h \
 		forms/formmain.h \
 		forms/formvibrationadjust.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
-		forms/formmodeselect.h \
+		longclicktoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
+		forms/formmodeselect.h \
 		forms/formaccuracyadjust.h \
 		multistatustoolbutton.h \
-		longclicktoolbutton.h \
 		forms/formsystem.h \
 		forms/formshutdown.h \
 		forms/formashclean.h \
-		dialogautoclosemessagebox.h \
 		forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
 		forms/dialogdisplayrange.h \
@@ -6858,31 +6958,8 @@ debug/filemanager.o: filemanager.cpp filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QTimer \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtimer.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qbasictimer.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QFile \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfile.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfiledevice.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qiodevice.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdebug.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qhash.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qpair.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmap.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtextstream.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qlocale.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvariant.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringlist.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdatastream.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregexp.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringmatcher.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qshareddata.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvector.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qpoint.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qset.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcontiguouscache.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDate \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdatetime.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QMessageBox \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qmessagebox.h \
+		dialogautoclosemessagebox.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qdialog.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qwidget.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qwindowdefs.h \
@@ -6891,10 +6968,18 @@ debug/filemanager.o: filemanager.cpp filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpaintdevice.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qrect.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsize.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qpoint.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpalette.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qcolor.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qrgb.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringlist.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdatastream.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qiodevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qpair.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qregexp.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qstringmatcher.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qbrush.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvector.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qmatrix.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpolygon.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qregion.h \
@@ -6905,6 +6990,8 @@ debug/filemanager.o: filemanager.cpp filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpixelformat.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qpixmap.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsharedpointer.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qshareddata.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qhash.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qsharedpointer_impl.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfont.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qfontmetrics.h \
@@ -6913,13 +7000,27 @@ debug/filemanager.o: filemanager.cpp filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qcursor.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qkeysequence.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qevent.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qvariant.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qmap.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdebug.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qtextstream.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qlocale.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qset.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcontiguouscache.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qurl.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qurlquery.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfile.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qfiledevice.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QFile \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDebug \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QDate \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qdatetime.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QMessageBox \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qmessagebox.h \
 		encryption.h \
 		dialog.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QDialog \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/QUdpSocket \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qudpsocket.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtNetwork/qabstractsocket.h \
@@ -6941,28 +7042,31 @@ debug/filemanager.o: filemanager.cpp filemanager.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QSlider \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qslider.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
-		forms/formmodeselect.h \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		longclicktoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QToolButton \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qtoolbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/qicon.h \
+		forms/formmodeselect.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
 		forms/formaccuracyadjust.h \
 		multistatustoolbutton.h \
-		longclicktoolbutton.h \
 		forms/formsystem.h \
 		forms/formshutdown.h \
 		forms/formadmin.h \
 		forms/formashclean.h \
-		dialogautoclosemessagebox.h \
 		forms/formccdcurve.h \
 		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtGui/QBrush \
 		forms/dialogdisplayrange.h \
 		forms/formvalvetest.h \
 		forms/formaccuracydetailadjust.h \
 		forms/formwholesetting.h \
-		forms/formcntcheck.h
+		forms/formcntcheck.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QCoreApplication \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/qeventloop.h \
+		D:/Qt/Qt5.4.1/5.4/mingw491_32/include/QtCore/QEvent
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\filemanager.o filemanager.cpp
 
 debug/longclicktoolbutton.o: longclicktoolbutton.cpp longclicktoolbutton.h \

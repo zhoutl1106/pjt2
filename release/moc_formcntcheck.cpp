@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_FormCntCheck_t {
-    QByteArrayData data[11];
-    char stringdata[103];
+    QByteArrayData data[15];
+    char stringdata[195];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,14 +37,21 @@ QT_MOC_LITERAL(4, 33, 9), // "cntUpload"
 QT_MOC_LITERAL(5, 43, 7), // "channel"
 QT_MOC_LITERAL(6, 51, 3), // "pos"
 QT_MOC_LITERAL(7, 55, 5), // "value"
-QT_MOC_LITERAL(8, 61, 6), // "askCnt"
-QT_MOC_LITERAL(9, 68, 21), // "on_toolButton_clicked"
-QT_MOC_LITERAL(10, 90, 12) // "onAllClicked"
+QT_MOC_LITERAL(8, 61, 12), // "resetSuccess"
+QT_MOC_LITERAL(9, 74, 6), // "askCnt"
+QT_MOC_LITERAL(10, 81, 21), // "on_toolButton_clicked"
+QT_MOC_LITERAL(11, 103, 12), // "onAllClicked"
+QT_MOC_LITERAL(12, 116, 22), // "onSingleRequestTimeout"
+QT_MOC_LITERAL(13, 139, 27), // "on_toolButton_reset_clicked"
+QT_MOC_LITERAL(14, 167, 27) // "on_toolButton_query_clicked"
 
     },
     "FormCntCheck\0switchToPage\0\0index\0"
-    "cntUpload\0channel\0pos\0value\0askCnt\0"
-    "on_toolButton_clicked\0onAllClicked"
+    "cntUpload\0channel\0pos\0value\0resetSuccess\0"
+    "askCnt\0on_toolButton_clicked\0onAllClicked\0"
+    "onSingleRequestTimeout\0"
+    "on_toolButton_reset_clicked\0"
+    "on_toolButton_query_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -54,7 +61,7 @@ static const uint qt_meta_data_FormCntCheck[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -62,19 +69,27 @@ static const uint qt_meta_data_FormCntCheck[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   39,    2, 0x06 /* Public */,
+       1,    1,   59,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    3,   42,    2, 0x0a /* Public */,
-       8,    0,   49,    2, 0x08 /* Private */,
-       9,    0,   50,    2, 0x08 /* Private */,
-      10,    0,   51,    2, 0x08 /* Private */,
+       4,    3,   62,    2, 0x0a /* Public */,
+       8,    0,   69,    2, 0x0a /* Public */,
+       9,    0,   70,    2, 0x08 /* Private */,
+      10,    0,   71,    2, 0x08 /* Private */,
+      11,    0,   72,    2, 0x08 /* Private */,
+      12,    0,   73,    2, 0x08 /* Private */,
+      13,    0,   74,    2, 0x08 /* Private */,
+      14,    0,   75,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    3,
 
  // slots: parameters
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,    5,    6,    7,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -89,9 +104,13 @@ void FormCntCheck::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         switch (_id) {
         case 0: _t->switchToPage((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 1: _t->cntUpload((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 2: _t->askCnt(); break;
-        case 3: _t->on_toolButton_clicked(); break;
-        case 4: _t->onAllClicked(); break;
+        case 2: _t->resetSuccess(); break;
+        case 3: _t->askCnt(); break;
+        case 4: _t->on_toolButton_clicked(); break;
+        case 5: _t->onAllClicked(); break;
+        case 6: _t->onSingleRequestTimeout(); break;
+        case 7: _t->on_toolButton_reset_clicked(); break;
+        case 8: _t->on_toolButton_query_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -131,13 +150,13 @@ int FormCntCheck::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 9)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 5;
+        _id -= 9;
     }
     return _id;
 }

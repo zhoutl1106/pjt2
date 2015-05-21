@@ -13,13 +13,15 @@ DialogAutoCloseMessageBox *bkgMsgBoxE;
 
 bool isBeep;
 
-void beep(int length_us)
+void beep(int length_us, int index = 0)
 {
-    qDebug()<<"beep";
-    /*
+    qDebug()<<"beep"<<index;
+
+#ifdef linux
     system("echo 1 > /sys/class/gpio/gpio117/value");
     usleep(length_us);
-    system("echo 0 > /sys/class/gpio/gpio117/value");*/
+    system("echo 0 > /sys/class/gpio/gpio117/value");
+#endif
 }
 
 bool valveStatus = false;
@@ -57,12 +59,13 @@ void g_setVibrator()
     QByteArray tmp1(tmp,3);
     char tmp3[6] = {0x06,0xaa};
     QByteArray tmp2(tmp3,6);
-    if(valveStatus)
+    if(vibratorStatus)
     {
         tmp1.data()[0] = 0x0d;
         g_dialog->serialManager->writeCmd(0,tmp1);
         tmp2.data()[0] = 0x06;
         g_dialog->serialManager->writeCmd(1,tmp2);
+        g_dialog->form9_ash->autoTimer->start();
     }
     else
     {
@@ -70,6 +73,7 @@ void g_setVibrator()
         g_dialog->serialManager->writeCmd(0,tmp1);
         tmp2.data()[0] = 0x07;
         g_dialog->serialManager->writeCmd(1,tmp2);
+        g_dialog->form9_ash->autoTimer->stop();
     }
 }
 

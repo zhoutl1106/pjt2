@@ -106,6 +106,7 @@ public:
         doubleSpinBox_delay->setMinimumSize(QSize(150, 50));
         doubleSpinBox_delay->setStyleSheet(QStringLiteral(""));
         doubleSpinBox_delay->setDecimals(1);
+        doubleSpinBox_delay->setMaximum(99.9);
         doubleSpinBox_delay->setSingleStep(0.1);
         doubleSpinBox_delay->setValue(1);
 
@@ -136,6 +137,7 @@ public:
         doubleSpinBox_pulseWidth->setStyleSheet(QStringLiteral(""));
         doubleSpinBox_pulseWidth->setDecimals(1);
         doubleSpinBox_pulseWidth->setMinimum(0.1);
+        doubleSpinBox_pulseWidth->setMaximum(99.9);
         doubleSpinBox_pulseWidth->setSingleStep(0.1);
         doubleSpinBox_pulseWidth->setValue(1);
 

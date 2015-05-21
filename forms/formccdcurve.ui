@@ -96,6 +96,19 @@
    </item>
    <item>
     <widget class="QScrollBar" name="horizontalScrollBar">
+     <property name="styleSheet">
+      <string notr="true">QScrollBar:horizontal
+{
+	image: url(:/image/scrollBkg.png);
+	height:50px;
+}
+
+QScrollBar::handle:horizontal {
+	
+	border-image: url(:/image/scrollHandle.png);
+     min-width: 500px;
+}</string>
+     </property>
      <property name="maximum">
       <number>1024</number>
      </property>
@@ -157,7 +170,7 @@
       </widget>
      </item>
      <item row="0" column="3">
-      <widget class="QToolButton" name="toolButton_clockwis">
+      <widget class="QToolButton" name="toolButton_clockwise">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -213,31 +226,6 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="6">
-      <widget class="QToolButton" name="toolButton_saveangle">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <family>文泉驿微米黑</family>
-         <pointsize>16</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
-       </property>
-       <property name="text">
-        <string>保存角度</string>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="4">
       <widget class="QToolButton" name="toolButton_continue">
        <property name="sizePolicy">
@@ -275,7 +263,7 @@
         <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
        </property>
        <property name="text">
-        <string>传输数据</string>
+        <string>单次传输</string>
        </property>
       </widget>
      </item>

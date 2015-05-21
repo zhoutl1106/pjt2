@@ -2,7 +2,7 @@
 #include "ui_dialogautoclosemessagebox.h"
 
 extern bool isBeep;
-void beep(int);
+void beep(int length_us, int index = 0);
 
 DialogAutoCloseMessageBox::DialogAutoCloseMessageBox(QWidget *parent, QString title, QString text,
                                                      QString acceptText, QString rejectText, int delay_s, bool isTimeShow) :

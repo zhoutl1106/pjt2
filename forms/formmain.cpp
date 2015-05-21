@@ -3,7 +3,7 @@
 #include "../dialog.h"
 
 extern bool isBeep;
-void beep(int);
+void beep(int length_us, int index = 0);
 void g_setValve();
 void g_setVibrator();
 extern Dialog* g_dialog;

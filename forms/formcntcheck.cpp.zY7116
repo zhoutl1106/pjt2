@@ -9,7 +9,7 @@
 #include <QVBoxLayout>
 #include "../dialog.h"
 
-void beep(int length_us, int index = 0);
+void beep(int);
 extern bool isBeep;
 extern QString stylesheet;
 extern Dialog* g_dialog;
@@ -34,6 +34,7 @@ FormCntCheck::FormCntCheck(QWidget *parent) :
         threshold = 1000000000;
     qDebug()<<"get threadhold "<<threshold;
     setMouseTracking(true);
+    isOver = false;
     targetX = -1;
     targetY = -1;
     pic[0] = QPixmap(":/image/circleW.png");
@@ -132,7 +133,7 @@ void FormCntCheck::askCnt()
     cmd.append((char)0x00);
     cmd.append((char)0x00);
     cmd.append((char)0x00);
-    g_dialog->serialManager->writeCmd(2,cmd);
+    emit sendCmd(2,cmd);
 }
 
 FormCntCheck::~FormCntCheck()

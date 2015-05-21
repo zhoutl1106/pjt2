@@ -31,5 +31,7 @@
         <file>image/combo.png</file>
         <file>image/circleG.png</file>
         <file>image/timebkg.png</file>
+        <file>image/scrollBkg.png</file>
+        <file>image/scrollHandle.png</file>
     </qresource>
 </RCC>

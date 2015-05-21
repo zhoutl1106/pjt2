@@ -23,6 +23,7 @@ signals:
     void finishBkg(int);
     void cleanAshRequire();
     void cntUpload(int channel, int pos, int value);
+    void resetSuccess();
     void getMotor(int motor, int angle);
 
 public slots:

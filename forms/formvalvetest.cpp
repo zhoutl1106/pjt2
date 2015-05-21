@@ -4,9 +4,10 @@
 #include <QVBoxLayout>
 
 extern Dialog* g_dialog;
-void beep(int);
+void beep(int length_us, int index = 0);
 extern bool isBeep;
 extern QString stylesheet;
+extern void Sleep(int ms);
 
 FormValveTest::FormValveTest(QWidget *parent) :
     QWidget(parent),
@@ -22,16 +23,12 @@ FormValveTest::FormValveTest(QWidget *parent) :
     box->setMargin(0);
     box->addWidget(btn);
     ui->widgetCamera->setLayout(box);
-   /* timer = new QTimer;
-    timer->setInterval(2000);
+    ui->spinBoxGroup->setMaximum(MAX_GROUP_CNT);
+    ui->spinBoxPos->setMaximum(MAX_NUMBER_CNT);
+    timer = new QTimer;
+    timer->setInterval(300);
     connect(timer,SIGNAL(timeout()),this,SLOT(onTimer()));
     autoTest = false;
-    autoMsg = new QMessageBox;
-    autoMsg->setWindowTitle("通知");
-    autoMsg->setText("喷阀自动测试中……");
-    autoMsg->addButton("退出", QMessageBox::ActionRole);
-    formValveMonitor = new FormValveMonitor;
-    setWindowModality(Qt::ApplicationModal);*/
 }
 
 FormValveTest::~FormValveTest()
@@ -66,48 +63,57 @@ void FormValveTest::onCameraClicked()
 
 
 void FormValveTest::on_toolButton_singleTest_clicked()
-{/*
+{
     if(isBeep)beep(50000);
-    QByteArray cmd;
-    cmd.append((char)0x01);
-    cmd.append((char)ui->spinBoxGroup->value());
-    cmd.append((char)ui->spinBoxPos->value());
-    cmd.append((char)0x00);
-    cmd.append((char)0x00);
-    cmd.append((char)0x00);
+    char temp[6]={0x01,0x00};
+    QByteArray cmd = QByteArray(temp,6);
+    cmd.data()[1] = ui->spinBoxGroup->value();
+    cmd.data()[2] = ui->spinBoxPos->value();
     for(int i = 0;i<5;i++)
     {
-        emit sendCmd(1,cmd);
-        usleep(10000);
-    }*/
+        g_dialog->serialManager->writeCmd(1,cmd);
+        Sleep(2);
+    }
 }
 
 void FormValveTest::onTimer()
 {
-    on_toolButton_singleTest_clicked();/*
-    if(ui->spinBoxPos->value() == 64)
+    isBeep = false;
+    on_toolButton_singleTest_clicked();
+    int group = ui->spinBoxGroup->value();
+    if(ui->spinBoxPos->value() == MAX_NUMBER_CNT)
     {
         ui->spinBoxPos->setValue(1);
-        if(ui->spinBoxGroup->value() == 14 && autoMsg->isVisible())
+        group ++;
+        if(group > MAX_GROUP_CNT)
         {
-            timer->stop();
-            autoMsg->close();
-            QMessageBox::information(this,"通知","喷阀自动测试结束");
+            on_toolButton_autoTest_clicked();
             return;
         }
         else
-            ui->spinBoxGroup->setValue(ui->spinBoxGroup->value()+1);
+            ui->spinBoxGroup->setValue(group);
     }
     else
-        ui->spinBoxPos->setValue(ui->spinBoxPos->value() + 1);*/
+        ui->spinBoxPos->setValue(ui->spinBoxPos->value() + 1);
+    isBeep = true;
 }
 
 void FormValveTest::on_toolButton_autoTest_clicked()
 {
     if(isBeep)beep(50000);
-    timer->start();
-    //autoMsg->exec();
-    timer->stop();
+    autoTest = !autoTest;
+    if(autoTest)
+    {
+        ui->toolButton_autoTest->setStyleSheet("border-image: url(:/image/btnR.png); color: rgb(255, 255, 255);");
+        ui->spinBoxGroup->setValue(1);
+        ui->spinBoxPos->setValue(1);
+        timer->start();
+    }
+    else
+    {
+        ui->toolButton_autoTest->setStyleSheet("border-image: url(:/image/btnG.png); color: rgb(255, 255, 255);");
+        timer->stop();
+    }
 }
 
 void FormValveTest::on_toolButton_valveOn_clicked()
@@ -119,18 +125,16 @@ void FormValveTest::on_toolButton_valveOn_clicked()
 void FormValveTest::on_toolButton_OK_clicked()
 {
     if(isBeep)beep(50000);
-    /*g_dialog->fileManager->config.delay[btn->currentIndex()*7 + ui->spinBoxChannel->value()-1] = ui->doubleSpinBox_delay->value();
-    g_dialog->fileManager->config.pulse_width[btncurrentIndex()*7 + ui->spinBoxChannel->value()-1] = ui->doubleSpinBox_pulseWidth->value();*/
-/*
+
     char temp[6]={0x09,0x00};
-    short tempDelay = g_widget->fileManager->config.delay[ui->camera->currentIndex()*7 + ui->spinBox->value()-1]*20.0;
-    short tempPulseWidth = g_widget->fileManager->config.pulse_width[ui->camera->currentIndex()*7 + ui->spinBox->value()-1]*20.0;
-    temp[1] = ui->camera->currentIndex()*7 + ui->spinBox->value();
+    short tempDelay = g_dialog->fileManager->config.delay[btn->currentIndex()*7 + ui->spinBoxChannel->value()-1]*20.0;
+    short tempPulseWidth = g_dialog->fileManager->config.pulse_width[btn->currentIndex()*7 + ui->spinBoxChannel->value()-1]*20.0;
+    temp[1] = btn->currentIndex()*7 + ui->spinBoxChannel->value();
     *((short*)(temp+2)) = tempDelay;
     *((short*)(temp+4)) = tempPulseWidth;
 
     QByteArray cmd(temp,6);
-    emit sendCmd(1,cmd);*/
+    g_dialog->serialManager->writeCmd(1,cmd);
 }
 
 void FormValveTest::on_toolButton_reset_clicked()

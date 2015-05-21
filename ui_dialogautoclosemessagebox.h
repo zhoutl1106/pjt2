@@ -14,7 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
@@ -27,11 +27,12 @@ class Ui_DialogAutoCloseMessageBox
 public:
     QVBoxLayout *verticalLayout;
     QLabel *labelTitle;
-    QGridLayout *gridLayout;
-    QPushButton *pushButtonOK;
-    QPushButton *pushButtonCancel;
+    QVBoxLayout *verticalLayout_2;
     QLabel *label;
     QLabel *labelCntDown;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *pushButtonOK;
+    QPushButton *pushButtonCancel;
 
     void setupUi(QDialog *DialogAutoCloseMessageBox)
     {
@@ -72,29 +73,10 @@ public:
 
         verticalLayout->addWidget(labelTitle);
 
-        gridLayout = new QGridLayout();
-        gridLayout->setSpacing(20);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        gridLayout->setContentsMargins(6, 6, 6, 6);
-        pushButtonOK = new QPushButton(DialogAutoCloseMessageBox);
-        pushButtonOK->setObjectName(QStringLiteral("pushButtonOK"));
-        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(pushButtonOK->sizePolicy().hasHeightForWidth());
-        pushButtonOK->setSizePolicy(sizePolicy2);
-        pushButtonOK->setMinimumSize(QSize(0, 40));
-
-        gridLayout->addWidget(pushButtonOK, 2, 0, 1, 1);
-
-        pushButtonCancel = new QPushButton(DialogAutoCloseMessageBox);
-        pushButtonCancel->setObjectName(QStringLiteral("pushButtonCancel"));
-        sizePolicy2.setHeightForWidth(pushButtonCancel->sizePolicy().hasHeightForWidth());
-        pushButtonCancel->setSizePolicy(sizePolicy2);
-        pushButtonCancel->setMinimumSize(QSize(0, 40));
-
-        gridLayout->addWidget(pushButtonCancel, 2, 1, 1, 1);
-
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setSpacing(20);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(6, 6, 6, 6);
         label = new QLabel(DialogAutoCloseMessageBox);
         label->setObjectName(QStringLiteral("label"));
         sizePolicy.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
@@ -107,7 +89,7 @@ public:
         label->setAlignment(Qt::AlignCenter);
         label->setWordWrap(false);
 
-        gridLayout->addWidget(label, 0, 0, 1, 2);
+        verticalLayout_2->addWidget(label);
 
         labelCntDown = new QLabel(DialogAutoCloseMessageBox);
         labelCntDown->setObjectName(QStringLiteral("labelCntDown"));
@@ -116,10 +98,34 @@ public:
         labelCntDown->setMinimumSize(QSize(60, 60));
         labelCntDown->setAlignment(Qt::AlignCenter);
 
-        gridLayout->addWidget(labelCntDown, 1, 0, 1, 2);
+        verticalLayout_2->addWidget(labelCntDown);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        pushButtonOK = new QPushButton(DialogAutoCloseMessageBox);
+        pushButtonOK->setObjectName(QStringLiteral("pushButtonOK"));
+        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(pushButtonOK->sizePolicy().hasHeightForWidth());
+        pushButtonOK->setSizePolicy(sizePolicy2);
+        pushButtonOK->setMinimumSize(QSize(0, 40));
+
+        horizontalLayout->addWidget(pushButtonOK);
+
+        pushButtonCancel = new QPushButton(DialogAutoCloseMessageBox);
+        pushButtonCancel->setObjectName(QStringLiteral("pushButtonCancel"));
+        sizePolicy2.setHeightForWidth(pushButtonCancel->sizePolicy().hasHeightForWidth());
+        pushButtonCancel->setSizePolicy(sizePolicy2);
+        pushButtonCancel->setMinimumSize(QSize(0, 40));
+
+        horizontalLayout->addWidget(pushButtonCancel);
 
 
-        verticalLayout->addLayout(gridLayout);
+        verticalLayout_2->addLayout(horizontalLayout);
+
+
+        verticalLayout->addLayout(verticalLayout_2);
 
 
         retranslateUi(DialogAutoCloseMessageBox);
@@ -131,10 +137,10 @@ public:
     {
         DialogAutoCloseMessageBox->setWindowTitle(QApplication::translate("DialogAutoCloseMessageBox", "Dialog", 0));
         labelTitle->setText(QApplication::translate("DialogAutoCloseMessageBox", "TextLabel", 0));
-        pushButtonOK->setText(QApplication::translate("DialogAutoCloseMessageBox", "\347\241\256\345\256\232", 0));
-        pushButtonCancel->setText(QApplication::translate("DialogAutoCloseMessageBox", "\345\217\226\346\266\210", 0));
         label->setText(QApplication::translate("DialogAutoCloseMessageBox", "TextLabel", 0));
         labelCntDown->setText(QApplication::translate("DialogAutoCloseMessageBox", "TextLabel", 0));
+        pushButtonOK->setText(QApplication::translate("DialogAutoCloseMessageBox", "\347\241\256\345\256\232", 0));
+        pushButtonCancel->setText(QApplication::translate("DialogAutoCloseMessageBox", "\345\217\226\346\266\210", 0));
     } // retranslateUi
 
 };

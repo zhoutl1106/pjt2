@@ -72,6 +72,8 @@ Dialog::Dialog(QWidget *parent) :
     connect(fileManager,SIGNAL(sigConfigChanged()),form12_accuracyDetail,SLOT(updateData()));
     connect(fileManager,SIGNAL(sigConfigChanged()),form13_whole,SLOT(updateData()));
 
+    connect(serialManager,SIGNAL(cleanAshRequire()),form9_ash,SLOT(cleanAsh()));
+
     ui->stackedWidget->insertWidget(0,form14_monitor);
     ui->stackedWidget->insertWidget(0,form13_whole);
     ui->stackedWidget->insertWidget(0,form12_accuracyDetail);

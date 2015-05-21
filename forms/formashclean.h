@@ -17,15 +17,14 @@ public:
     explicit FormAshClean(QWidget *parent = 0);
     ~FormAshClean();
     DialogAutoCloseMessageBox *dlgAsh;
+    QTimer *autoTimer;
 
 public slots:
     void updateData();
+    void cleanAsh();
 
 signals:
     void switchToPage(int index);
-
-public slots:
-    void cleanAsh();
 
 private slots:
     void on_toolButton_clicked();
@@ -44,10 +43,11 @@ private slots:
 
     void on_radioButtonAuto_clicked();
 
+    void autoAshClean();
+
 private:
     Ui::FormAshClean *ui;
     QTimer *singleTimer;
-    QTimer *autoTimer;
 };
 
 #endif // FORMASHCLEAN_H

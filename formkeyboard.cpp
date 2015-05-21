@@ -2,7 +2,7 @@
 #include "ui_formkeyboard.h"
 #include <QDebug>
 
-void beep(int);
+void beep(int length_us, int index = 0);
 extern bool isBeep;
 extern QString stylesheet;
 

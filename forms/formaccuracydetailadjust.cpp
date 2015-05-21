@@ -5,7 +5,7 @@
 #include <QVBoxLayout>
 
 extern Dialog* g_dialog;
-void beep(int);
+void beep(int length_us, int index = 0);
 extern bool isBeep;
 extern QString stylesheet;
 
@@ -111,12 +111,31 @@ void FormAccuracyDetailAdjust::onCamera()
 void FormAccuracyDetailAdjust::on_toolButton_2_clicked()
 {
     //g_dialog->fileManager->configChange();
-    for(int i = 0;i<7;i++)
+    char tmp[6] = {0x00};
+    QByteArray temp = QByteArray(tmp,6);
+    if(ui->comboBox->currentIndex() == 7)
     {
-        qDebug()<<i<<g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][0]
-                <<g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][1]
-                <<g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][2];
+        temp.data()[0] = 0x02;
+        temp.data()[1] = 0xf0 + btn->currentIndex() * 0x0f;
+        temp.data()[2] = ui->verticalSlider11->value();
+        temp.data()[3] = ui->verticalSlider12->value();
+        temp.data()[4] = ui->verticalSlider13->value();
     }
+    else
+    {
+        temp.data()[0] = 0x02;
+        temp.data()[1] = btn->currentIndex() *7 + ui->comboBox->currentIndex() + 1;
+        temp.data()[2] = ui->verticalSlider11->value();
+        temp.data()[3] = ui->verticalSlider12->value();
+        temp.data()[4] = ui->verticalSlider13->value();
+    }
+    g_dialog->serialManager->writeCmd(1,temp);
+//    for(int i = 0;i<7;i++)
+//    {
+//        qDebug()<<i<<g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][0]
+//                <<g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][1]
+//                <<g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][2];
+//    }
 }
 
 void FormAccuracyDetailAdjust::on_verticalSlider11_valueChanged(int value)

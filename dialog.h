@@ -27,7 +27,6 @@
 #include "forms/formwholesetting.h"
 #include "forms/formcntcheck.h"
 
-
 namespace Ui {
 class Dialog;
 }

@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_FormAshClean_t {
-    QByteArrayData data[15];
-    char stringdata[304];
+    QByteArrayData data[16];
+    char stringdata[317];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,7 +43,8 @@ QT_MOC_LITERAL(10, 148, 36), // "on_spinBox_thresholdEnd_value..."
 QT_MOC_LITERAL(11, 185, 29), // "on_spinBox_delay_valueChanged"
 QT_MOC_LITERAL(12, 215, 32), // "on_spinBox_interval_valueChanged"
 QT_MOC_LITERAL(13, 248, 28), // "on_radioButtonTiming_clicked"
-QT_MOC_LITERAL(14, 277, 26) // "on_radioButtonAuto_clicked"
+QT_MOC_LITERAL(14, 277, 26), // "on_radioButtonAuto_clicked"
+QT_MOC_LITERAL(15, 304, 12) // "autoAshClean"
 
     },
     "FormAshClean\0switchToPage\0\0index\0"
@@ -54,7 +55,7 @@ QT_MOC_LITERAL(14, 277, 26) // "on_radioButtonAuto_clicked"
     "on_spinBox_delay_valueChanged\0"
     "on_spinBox_interval_valueChanged\0"
     "on_radioButtonTiming_clicked\0"
-    "on_radioButtonAuto_clicked"
+    "on_radioButtonAuto_clicked\0autoAshClean"
 };
 #undef QT_MOC_LITERAL
 
@@ -64,7 +65,7 @@ static const uint qt_meta_data_FormAshClean[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -72,19 +73,20 @@ static const uint qt_meta_data_FormAshClean[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   69,    2, 0x06 /* Public */,
+       1,    1,   74,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,   72,    2, 0x0a /* Public */,
-       5,    0,   73,    2, 0x0a /* Public */,
-       6,    0,   74,    2, 0x08 /* Private */,
-       7,    0,   75,    2, 0x08 /* Private */,
-       8,    1,   76,    2, 0x08 /* Private */,
-      10,    1,   79,    2, 0x08 /* Private */,
-      11,    1,   82,    2, 0x08 /* Private */,
-      12,    1,   85,    2, 0x08 /* Private */,
-      13,    0,   88,    2, 0x08 /* Private */,
-      14,    0,   89,    2, 0x08 /* Private */,
+       4,    0,   77,    2, 0x0a /* Public */,
+       5,    0,   78,    2, 0x0a /* Public */,
+       6,    0,   79,    2, 0x08 /* Private */,
+       7,    0,   80,    2, 0x08 /* Private */,
+       8,    1,   81,    2, 0x08 /* Private */,
+      10,    1,   84,    2, 0x08 /* Private */,
+      11,    1,   87,    2, 0x08 /* Private */,
+      12,    1,   90,    2, 0x08 /* Private */,
+      13,    0,   93,    2, 0x08 /* Private */,
+      14,    0,   94,    2, 0x08 /* Private */,
+      15,    0,   95,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    3,
@@ -98,6 +100,7 @@ static const uint qt_meta_data_FormAshClean[] = {
     QMetaType::Void, QMetaType::Int,    9,
     QMetaType::Void, QMetaType::Int,    9,
     QMetaType::Void, QMetaType::Int,    9,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -120,6 +123,7 @@ void FormAshClean::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 8: _t->on_spinBox_interval_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 9: _t->on_radioButtonTiming_clicked(); break;
         case 10: _t->on_radioButtonAuto_clicked(); break;
+        case 11: _t->autoAshClean(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -159,13 +163,13 @@ int FormAshClean::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 12)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 11;
+        _id -= 12;
     }
     return _id;
 }

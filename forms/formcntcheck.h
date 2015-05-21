@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include "../multistatustoolbutton.h"
+#include <QTimer>
+#include "../dialogautoclosemessagebox.h"
 
 #define STATE_UNKNOWN   0
 #define STATE_GOOD      1
@@ -10,6 +12,9 @@
 
 #define MAX_GROUP_CNT     28
 #define MAX_NUMBER_CNT    16
+
+#define LAST_QUERY_RESET    1
+#define LAST_QUERY_ASK      2
 
 namespace Ui {
 class FormCntCheck;
@@ -28,6 +33,7 @@ public:
 
 public slots:
     void cntUpload(int channel, int pos, int value);
+    void resetSuccess();
 
 signals:
     void switchToPage(int index);
@@ -39,6 +45,12 @@ private slots:
 
     void onAllClicked();
 
+    void onSingleRequestTimeout();
+
+    void on_toolButton_reset_clicked();
+
+    void on_toolButton_query_clicked();
+
 private:
     Ui::FormCntCheck *ui;
     char data_state[MAX_GROUP_CNT][MAX_NUMBER_CNT];
@@ -46,7 +58,6 @@ private:
     int threshold;
     int currentChannel;
     int currentPos;
-    bool isOver;
     int targetX;
     int targetY;
     QPixmap pic[3];
@@ -58,6 +69,10 @@ private:
     int radius;
     int drawRow;
     int drawColumn;
+    QTimer *timer;
+    int singleRequestRetry;
+    int lastQueryType;
+    DialogAutoCloseMessageBox *msg;
 };
 
 #endif // FORMCNTCHECK_H

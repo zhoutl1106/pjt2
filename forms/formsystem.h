@@ -3,11 +3,6 @@
 
 #include <QWidget>
 #include <QDebug>
-/*#include "formashclean.h"
-#include "formvalvetest.h"
-#include "formwholesetting.h"
-#include "formccdcurve.h"
-#include "formpixeldivide.h"*/
 
 namespace Ui {
 class FormSystem;

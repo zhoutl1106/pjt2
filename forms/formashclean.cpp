@@ -5,9 +5,10 @@
 #include "../dialog.h"
 
 extern Dialog* g_dialog;
-void beep(int);
+void beep(int length_us, int index = 0);
 extern bool isBeep;
 extern QString stylesheet;
+extern bool vibratorStatus;
 
 FormAshClean::FormAshClean(QWidget *parent) :
     QWidget(parent),
@@ -19,12 +20,11 @@ FormAshClean::FormAshClean(QWidget *parent) :
     singleTimer = new QTimer;
     singleTimer->setInterval(10000);
     singleTimer->setSingleShot(true);
-    //connect(singleTimer,SIGNAL(timeout()),dlgAsh,SLOT(setFinished()));
+    connect(singleTimer,SIGNAL(timeout()),dlgAsh,SLOT(setFinished()));
     autoTimer = new QTimer;
     autoTimer->setInterval(600000);
-    connect(autoTimer,SIGNAL(timeout()),this,SLOT(cleanAsh()));
+    connect(autoTimer,SIGNAL(timeout()),this,SLOT(autoAshClean()));
     setWindowModality(Qt::ApplicationModal);
-    //autoTimer->start();
 }
 
 FormAshClean::~FormAshClean()
@@ -39,6 +39,7 @@ void FormAshClean::updateData()
 
     ui->spinBox_delay->setValue(g_dialog->fileManager->config.ash_delay);
     ui->spinBox_interval->setValue(g_dialog->fileManager->config.ash_interval);
+    autoTimer->setInterval(g_dialog->fileManager->config.ash_interval * 1000 * 60);
     ui->spinBox_thresholdFront->setValue(g_dialog->fileManager->config.frontLuminanceThreshold);
     ui->spinBox_thresholdEnd->setValue(g_dialog->fileManager->config.endLuminanceThreshold);
     if(g_dialog->fileManager->config.ash_mode == ASH_MODE_TIME)
@@ -49,88 +50,51 @@ void FormAshClean::updateData()
     isBeep = temp;
 }
 
+void FormAshClean::autoAshClean()
+{
+    if(vibratorStatus && g_dialog->fileManager->config.ash_mode == ASH_MODE_TIME)
+        cleanAsh();
+}
+
 void FormAshClean::on_toolButton_clicked()
 {
-    if(isBeep)beep(50000);/*
-    char buf3[6]={0x08,0x00};
-    QByteArray cmd;
-    for(int i = 0;i<14;i++)
-    {
-        buf3[1] = i + 1;
-        *((short*)(buf3+2)) = ui->spinBox_threshold->value();
-        cmd = QByteArray(buf3,6);
-        emit sendCmd(1,cmd);
-        //usleep(200000);
-    }
-    this->close();*/
-    g_dialog->fileManager->config.ash_delay = ui->spinBox_delay->value();
-    g_dialog->fileManager->config.ash_interval = ui->spinBox_interval->value();
-    autoTimer->setInterval(ui->spinBox_interval->value() * 60000);
-    /*if(ui->radioButtonTiming->isChecked())
-    {
-        autoTimer->start();
-        g_dialog->serialManager->isAshAccept = false;
-    }
-    else
-    {
-        autoTimer->stop();
-        g_dialog->serialManager->isAshAccept = true;
-    }*/
+    if(isBeep)beep(50000);
+    autoTimer->setInterval(g_dialog->fileManager->config.ash_interval * 1000 * 60);
     emit switchToPage(6);
 }
 
 void FormAshClean::cleanAsh()
 {
-    if(isBeep)beep(50000);
     qDebug()<<"clean ash";
-    dlgAsh->setDelay(10);
-    qDebug()<<dlgAsh->exec();
-    /*int delay = 50000;
 
-//    if(g_widget->motorFlag)
-//        g_widget->on_toolButton_clicked();
+    char tmp[3] = {0x0c,0x00};
+    QByteArray tmp1(tmp,3);
 
-    char data2[] = {0X0e,0X00,0x00};
-    QByteArray cmd2(data2,3);
-    emit sendCmd(0,cmd2);
-    usleep(delay);
+    char tmp3[6] = {0x07,0xaa,0x00};
+    QByteArray tmp2(tmp3,6);
 
-    temp[0] = 0x07;
-    temp[1] = 0xaa;
-    memset(temp+2,0,4);
-    QByteArray cmd1(temp,6);
-    emit sendCmd(1,cmd1);
-    qDebug()<<cmd1.toHex();
-    usleep(delay);
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x12;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x0e;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    g_dialog->serialManager->writeCmd(1,tmp2);
+    tmp1.data()[0] = 0x09;
+    g_dialog->serialManager->writeCmd(0,tmp1);
 
-    char data3[] = {0X09,0X00,0x00};
-    QByteArray cmd3(data3,3);
-    emit sendCmd(0,cmd3);
-    usleep(delay);
-
-    singleTimer->setInterval(ui->spinBox_delay->value() * 1000);
-    singleTimer->start();
+    dlgAsh->setDelay(ui->spinBox_delay->value());
     dlgAsh->exec();
 
-    char data4[] = {0X0a,0X00,0x00};
-    QByteArray cmd4(data4,3);
-    emit sendCmd(0,cmd4);
-    usleep(delay);
-
-    temp[0] = 0x06;
-    temp[1] = 0xaa;
-    memset(temp+2,0,4);
-    QByteArray cmd5(temp,6);
-    emit sendCmd(1,cmd5);
-    qDebug()<<cmd5.toHex();
-    usleep(delay);
-
-    char data6[] = {0X0d,0X00,0x00};
-    QByteArray cmd6(data6,3);
-    emit sendCmd(0,cmd6);
-    usleep(delay);
-
-    //g_widget->on_toolButton_2_clicked();*/
+    tmp1.data()[0] = 0x0a;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x0b;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x11;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x0d;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp2.data()[0] = 0x06;
+    g_dialog->serialManager->writeCmd(1,tmp2);
 }
 
 void FormAshClean::on_toolButton_manual_clicked()
