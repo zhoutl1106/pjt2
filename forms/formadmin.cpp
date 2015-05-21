@@ -23,7 +23,7 @@ FormAdmin::~FormAdmin()
 
 void FormAdmin::getLicenseString(QString str)
 {
-    if(str.compare("1") == 0)
+    if(str.compare("1024") == 0)
         emit switchToPage(6);
     else
         emit switchToPage(2);

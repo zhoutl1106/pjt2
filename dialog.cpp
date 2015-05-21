@@ -9,7 +9,7 @@
 #include <QVBoxLayout>
 
 extern QString styleSheet;
-extern DialogAutoCloseMessageBox *bkgMsgBox;
+extern DialogAutoCloseMessageBox *bkgMsgBoxF;
 
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
@@ -174,7 +174,7 @@ void Dialog::onCmdUdpRead()
                                     &sender, &senderPort);
 
             form9_ash->dlgAsh->accept();
-            bkgMsgBox->accept();
+            bkgMsgBoxF->accept();
 
             /*
             char *dat = datagram.data();

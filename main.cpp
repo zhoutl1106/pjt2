@@ -8,7 +8,8 @@
 
 Dialog *g_dialog;
 QString stylesheet;
-DialogAutoCloseMessageBox *bkgMsgBox;
+DialogAutoCloseMessageBox *bkgMsgBoxF;
+DialogAutoCloseMessageBox *bkgMsgBoxE;
 
 bool isBeep;
 
@@ -89,7 +90,8 @@ int main(int argc, char *argv[])
     QTextStream filetext(&file);
     stylesheet = filetext.readAll();
     file.close();
-    bkgMsgBox = new DialogAutoCloseMessageBox(NULL,"背景板","...","","",30,true);
+    bkgMsgBoxF = new DialogAutoCloseMessageBox(NULL,"背景板","...","","",30,true);
+    bkgMsgBoxE = new DialogAutoCloseMessageBox(NULL,"背景板","...","","",30,true);
     Dialog w;
     g_dialog = &w;
     w.setStyleSheet(stylesheet);

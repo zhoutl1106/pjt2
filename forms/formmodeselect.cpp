@@ -64,13 +64,15 @@ void FormModeSelect::updateData()
     case 4:on_mode_4_clicked();break;
     case 5:on_mode_5_clicked();break;
     }
-
+    qDebug()<<g_dialog->fileManager->mode<<g_dialog->fileManager->mem;
     setSelect(g_dialog->fileManager->mode,g_dialog->fileManager->mem);
     isBeep = temp;
 }
 
 void FormModeSelect::setSelect(int mode, int mem)
 {
+    if(mode > 5 || mode < 1 || mem > 3 || mem < 1)
+        return;
     ui->mem_11->setStyleSheet(memBkgUnChecked);
     ui->mem_12->setStyleSheet(memBkgUnChecked);
     ui->mem_13->setStyleSheet(memBkgUnChecked);

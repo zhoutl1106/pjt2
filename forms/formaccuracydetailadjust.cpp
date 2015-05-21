@@ -40,6 +40,7 @@ FormAccuracyDetailAdjust::FormAccuracyDetailAdjust(QWidget *parent) :
         layout->addWidget(lbtn[i]);
         list.at(i)->setLayout(layout);
         connect(lbtn[i],SIGNAL(longClick(int,int)),this,SLOT(lbtnValue(int,int)));
+        connect(lbtn[i],SIGNAL(released(int,int)),this,SLOT(lbtnValue(int,int)));
     }
 }
 
@@ -50,7 +51,7 @@ FormAccuracyDetailAdjust::~FormAccuracyDetailAdjust()
 
 void FormAccuracyDetailAdjust::lbtnValue(int index, int value)
 {
-    qDebug()<<index<<value;
+//    qDebug()<<index<<value;
     switch(index)
     {
     case 0:ui->verticalSlider11->setValue(ui->verticalSlider11->value()+value);break;

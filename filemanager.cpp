@@ -10,7 +10,8 @@
 
 extern Dialog* g_dialog;
 extern Sleep(int);
-extern DialogAutoCloseMessageBox *bkgMsgBox;
+extern DialogAutoCloseMessageBox *bkgMsgBoxF;
+extern DialogAutoCloseMessageBox *bkgMsgBoxE;
 
 FileManager::FileManager(QObject *parent) :
     QObject(parent)
@@ -241,13 +242,13 @@ void FileManager::sendCmds()
 
     //front bkg borad
     dlg->close();
-    bkgMsgBox->setText("前背景板调整中");
-    bkgMsgBox->setDelay(30);
+    bkgMsgBoxF->setText("前背景板调整中");
+    bkgMsgBoxF->setDelay(30);
     memset(p232,0,3);
     cmd232.data()[0] = 0x1b;
     *((short*)(cmd232.data() + 1)) = (short)(config.frontMotorVoltage);
     g_dialog->serialManager->writeCmd(0,cmd232);
-    if(bkgMsgBox->exec() == QDialog::Rejected)
+    if(bkgMsgBoxF->exec() == QDialog::Rejected)
     {
         DialogAutoCloseMessageBox box(NULL,"警告","前背景板通信失败，请关机检查","确定","",10,true);
         box.exec();
@@ -271,13 +272,13 @@ void FileManager::sendCmds()
         emit switchToPage(7);
         return;
     }
-    bkgMsgBox->setText("后背景板调整中");
-    bkgMsgBox->setDelay(30);
+    bkgMsgBoxE->setText("后背景板调整中");
+    bkgMsgBoxE->setDelay(30);
     memset(p232,0,3);
     cmd232.data()[0] = 0x1c;
     *((short*)(cmd232.data() + 1)) = (short)(config.endMotorVoltage);
     g_dialog->serialManager->writeCmd(0,cmd232);
-    if(bkgMsgBox->exec() == QDialog::Rejected)
+    if(bkgMsgBoxE->exec() == QDialog::Rejected)
     {
         DialogAutoCloseMessageBox box(NULL,"警告","后背景板通信失败，请关机检查","确定","",10,true);
         box.exec();
