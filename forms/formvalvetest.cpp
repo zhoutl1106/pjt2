@@ -69,11 +69,7 @@ void FormValveTest::on_toolButton_singleTest_clicked()
     QByteArray cmd = QByteArray(temp,6);
     cmd.data()[1] = ui->spinBoxGroup->value();
     cmd.data()[2] = ui->spinBoxPos->value();
-    for(int i = 0;i<5;i++)
-    {
-        g_dialog->serialManager->writeCmd(1,cmd);
-        Sleep(2);
-    }
+    g_dialog->serialManager->writeCmd(1,cmd);
 }
 
 void FormValveTest::onTimer()

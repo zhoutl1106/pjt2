@@ -97,17 +97,24 @@
    <item>
     <widget class="QScrollBar" name="horizontalScrollBar">
      <property name="styleSheet">
-      <string notr="true">QScrollBar:horizontal
-{
-	image: url(:/image/scrollBkg.png);
-	height:50px;
-}
-
-QScrollBar::handle:horizontal {
+      <string notr="true">QScrollBar::handle:horizontal {
 	
 	border-image: url(:/image/scrollHandle.png);
      min-width: 500px;
-}</string>
+}
+
+QScrollBar::add-page:horizontal
+{
+	border-image: url(:/image/scrollBkg.png);
+}
+
+QScrollBar:horizontal
+{
+	border-image: url(:/image/scrollBkg.png);
+	height:30px;
+}
+
+</string>
      </property>
      <property name="maximum">
       <number>1024</number>
