@@ -199,7 +199,7 @@ void FormCntCheck::cntUpload(int channel, int pos, int value)
         DialogAutoCloseMessageBox box(NULL,"警告","喷阀工作次数超过设定值\n组号" + QString::number(channel)
                                       + "  孔位" + QString::number(pos)
                                       + "\n工作次数" + QString::number(value)
-                                      ,"确定","",5,true);
+                                      ,"已处理","下次处理",10,true);
         box.exec();
         update();
         return;

@@ -4,6 +4,13 @@
 #define VERSION 0
 #define SUBVERSION 1
 
+#define UDP_CMD_LINSTEN_PORT    8000
+#define UDP_CMD_WRITE_PORT    8001
+#define UDP_UPDATE_LINSTEN_PORT    9000
+#define UDP_UPDATE_WRITE_PORT    9001
+
+
+
 #include <QDialog>
 #include <QTimer>
 #include <QFile>

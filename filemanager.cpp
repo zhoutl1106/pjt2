@@ -9,7 +9,7 @@
 #include <QEvent>
 
 extern Dialog* g_dialog;
-extern Sleep(int);
+extern void Sleep(int);
 extern DialogAutoCloseMessageBox *bkgMsgBoxF;
 extern DialogAutoCloseMessageBox *bkgMsgBoxE;
 

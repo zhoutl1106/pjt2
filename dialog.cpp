@@ -21,12 +21,12 @@ Dialog::Dialog(QWidget *parent) :
     connect(displayTimer,SIGNAL(timeout()),this,SLOT(onDisplayTime()));
     displayTimer->start();
     updateSocket = new QUdpSocket();
-    updateSocket->bind(8889,QUdpSocket::ShareAddress);
+    updateSocket->bind(UDP_UPDATE_LINSTEN_PORT,QUdpSocket::ShareAddress);
     connect(updateSocket,SIGNAL(readyRead()),this,SLOT(onUpdateUdpRead()));
     file.setFileName("e:/1");
     fileManager = new FileManager;
     cmdSocket = new QUdpSocket();
-    cmdSocket->bind(8888,QUdpSocket::ShareAddress);
+    cmdSocket->bind(UDP_CMD_LINSTEN_PORT,QUdpSocket::ShareAddress);
     connect(cmdSocket,SIGNAL(readyRead()),this,SLOT(onCmdUdpRead()));
 
     serialManager = new SerialManager;
@@ -160,7 +160,7 @@ void Dialog::onUpdateUdpRead()
             }
             else
                 *((short*)(cmd+4)) = 1;
-            updateSocket->writeDatagram(cmd,6,sender,senderPort);
+            updateSocket->writeDatagram(cmd,6,sender,UDP_UPDATE_WRITE_PORT);
         }
 }
 
@@ -171,40 +171,24 @@ void Dialog::onCmdUdpRead()
             datagram.resize(cmdSocket->pendingDatagramSize());
             QHostAddress sender;
             quint16 senderPort;
+            QByteArray answer;
 
             cmdSocket->readDatagram(datagram.data(), datagram.size(),
                                     &sender, &senderPort);
 
-            form9_ash->dlgAsh->accept();
-            bkgMsgBoxF->accept();
-
-            /*
-            char *dat = datagram.data();
-            int index = *((int*)dat);
-            short len = *((short*)(dat + 4));
-            char cmd[6] = {0};
-            *((int*)cmd) = index;
-            if(index == 0)
-                file.remove();
-
-            if(len == 1024 && datagram.length() == 1030)
-            {
-                file.open(QFile::Append);
-                *((short*)(cmd+4)) = 0;
-                file.write(dat+6,len);
-                file.close();
+            qDebug()<<datagram.toHex();
+            char* p = datagram.data();
+            switch (p[0]) {
+            case (char)0x01:
+                answer.append((char)0x01);
+                answer.append((char)0x02);
+                answer.append((char)VERSION);
+                answer.append((char)SUBVERSION);
+                break;
+            default:
+                break;
             }
-            else if(len != 1024 && datagram.length() == len + 6)
-            {
-                file.open(QFile::Append);
-                *((short*)(cmd+4)) = 2;
-                file.write(dat+6,len);
-                file.close();
-                //system("cp /2 /pjt2");
-                //system("chmod +x /pjt2");
-            }
-            else
-                *((short*)(cmd+4)) = 1;
-            cmdSocket->writeDatagram(cmd,6,sender,senderPort);*/
-        }
+            qDebug()<<answer.toHex()<<sender.toString();
+            cmdSocket->writeDatagram(answer,sender,UDP_CMD_WRITE_PORT);
+    }
 }
