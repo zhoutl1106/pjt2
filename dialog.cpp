@@ -23,7 +23,7 @@ Dialog::Dialog(QWidget *parent) :
     updateSocket = new QUdpSocket();
     updateSocket->bind(UDP_UPDATE_LINSTEN_PORT,QUdpSocket::ShareAddress);
     connect(updateSocket,SIGNAL(readyRead()),this,SLOT(onUpdateUdpRead()));
-    file.setFileName("e:/1");
+    file.setFileName(UPDATE_TEMP_FILE_NAME);
     fileManager = new FileManager;
     cmdSocket = new QUdpSocket();
     cmdSocket->bind(UDP_CMD_LINSTEN_PORT,QUdpSocket::ShareAddress);
@@ -140,23 +140,45 @@ void Dialog::onUpdateUdpRead()
             char cmd[6] = {0};
             *((int*)cmd) = index;
             if(index == 0)
+            {
                 file.remove();
-
-            if(len == 1024 && datagram.length() == 1030)
+                m_lastIndex = -1;
+            }
+            if(index == m_lastIndex)
+            {
+                updateSocket->writeDatagram(cmd,6,sender,UDP_UPDATE_WRITE_PORT);
+                return;
+            }
+            else if(index != m_lastIndex + 1)
+            {
+                char tmp[10];
+                *((int*)tmp) = index;
+                *((short*)(tmp+4)) = 3;
+                *((int*)(tmp+6)) = m_lastIndex;
+                updateSocket->writeDatagram(tmp,10,sender,UDP_UPDATE_WRITE_PORT);
+                return;
+            }
+            else if(len == 1024 && datagram.length() == 1030)
             {
                 file.open(QFile::Append);
                 *((short*)(cmd+4)) = 0;
                 file.write(dat+6,len);
                 file.close();
+                m_lastIndex = index;
+                qDebug()<<"get "<<m_lastIndex;
             }
             else if(len != 1024 && datagram.length() == len + 6)
             {
+                m_lastIndex = index;
                 file.open(QFile::Append);
                 *((short*)(cmd+4)) = 2;
                 file.write(dat+6,len);
                 file.close();
-                //system("cp /2 /pjt2");
-                //system("chmod +x /pjt2");
+                qDebug()<<"get "<<m_lastIndex;
+#ifdef linux
+                system("cp /2 /pjt2");
+                system("chmod +x /pjt2");
+#endif
             }
             else
                 *((short*)(cmd+4)) = 1;

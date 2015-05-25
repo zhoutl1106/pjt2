@@ -22,37 +22,37 @@ FormSystem::~FormSystem()
 
 void FormSystem::on_toolButton_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,52);
     emit switchToPage(2);
 }
 
 void FormSystem::on_toolButton_7_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,53);
     emit switchToPage(9);
 }
 
 void FormSystem::on_toolButton_5_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,54);
     emit switchToPage(11);
 }
 
 void FormSystem::on_toolButton_8_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,55);
     emit switchToPage(13);
 }
 
 void FormSystem::on_toolButton_4_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,56);
     emit switchToPage(10);
 }
 
 void FormSystem::on_toolButton_9_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,57);
     emit switchToPage(12);
 }
 

@@ -12,3 +12,8 @@ FormShutdown::~FormShutdown()
 {
     delete ui;
 }
+
+void FormShutdown::mouseDoubleClickEvent(QMouseEvent *e)
+{
+    exit(0);
+}

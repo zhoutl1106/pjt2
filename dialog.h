@@ -2,14 +2,14 @@
 #define DIALOG_H
 
 #define VERSION 0
-#define SUBVERSION 1
+#define SUBVERSION 3
 
 #define UDP_CMD_LINSTEN_PORT    8000
 #define UDP_CMD_WRITE_PORT    8001
 #define UDP_UPDATE_LINSTEN_PORT    9000
 #define UDP_UPDATE_WRITE_PORT    9001
 
-
+#define UPDATE_TEMP_FILE_NAME   "/2"
 
 #include <QDialog>
 #include <QTimer>
@@ -77,6 +77,7 @@ private:
     QFile file;
     QUdpSocket *updateSocket;
     QUdpSocket *cmdSocket;
+    int m_lastIndex;
 };
 
 #endif // DIALOG_H

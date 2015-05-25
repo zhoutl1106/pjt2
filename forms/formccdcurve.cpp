@@ -187,7 +187,7 @@ void FormCCDCurve::mouseMoveEvent(QMouseEvent *e)
 
 void FormCCDCurve::on_toolButton_Clear_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,11);
     m_array.clear();
     g_dialog->serialManager->buf485_1.clear();
     update();
@@ -200,7 +200,7 @@ void FormCCDCurve::on_horizontalScrollBar_valueChanged(int value)
 
 void FormCCDCurve::on_spinBox_f_valueChanged(int arg1)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,12);
 }
 
 void FormCCDCurve::on_spinBox_channel_valueChanged(int arg1)
@@ -217,7 +217,7 @@ void FormCCDCurve::onPeriod()
 
 void FormCCDCurve::on_toolButton_SetRange_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,13);
     range->show();
 }
 
@@ -233,13 +233,13 @@ void FormCCDCurve::updateRange(int upper, int lower)
 
 void FormCCDCurve::on_toolButton_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,14);
     emit switchToPage(6);
 }
 
 void FormCCDCurve::on_toolButton_seperate_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,15);
     mode = 2;
     ui->toolButton_seperate->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
     ui->toolButton_all->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
@@ -249,7 +249,7 @@ void FormCCDCurve::on_toolButton_seperate_clicked()
 
 void FormCCDCurve::on_toolButton_all_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,16);
     mode = 0;
     ui->toolButton_seperate->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
     ui->toolButton_all->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
@@ -259,7 +259,7 @@ void FormCCDCurve::on_toolButton_all_clicked()
 
 void FormCCDCurve::on_toolButton_clockwise_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,17);
     char temp[3]={0x15,0x00};
     temp[1] = ui->spinBox_f->value();
     QByteArray cmd(temp,3);
@@ -308,7 +308,7 @@ void FormCCDCurve::on_toolButton_clockwise_clicked()
 
 void FormCCDCurve::on_toolButton_anticlockwise_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,18);
     char temp[3]={0x16,0x00};
     temp[1] = ui->spinBox_f->value();
     QByteArray cmd(temp,3);
@@ -357,7 +357,7 @@ void FormCCDCurve::on_toolButton_anticlockwise_clicked()
 
 void FormCCDCurve::on_toolButton_transmit_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,19);
     char temp[6]={0x0a,0x00};
     temp[1] = ui->spinBox_channel->value() + btnCamera->currentIndex() * 7;
     QByteArray cmd(temp,6);
@@ -366,7 +366,7 @@ void FormCCDCurve::on_toolButton_transmit_clicked()
 
 void FormCCDCurve::on_toolButton_continue_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,20);
     if(periodTimer->isActive())
     {
         ui->toolButton_continue->setText("连续传输");

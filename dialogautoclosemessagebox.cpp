@@ -68,14 +68,14 @@ void DialogAutoCloseMessageBox::onTimer()
 
 void DialogAutoCloseMessageBox::on_pushButtonOK_clicked()
 {
-    beep(50000);
+    beep(50000,103);
     accept();
     timer->stop();
 }
 
 void DialogAutoCloseMessageBox::on_pushButtonCancel_clicked()
 {
-    beep(50000);
+    beep(50000,104);
     reject();
     timer->stop();
 }

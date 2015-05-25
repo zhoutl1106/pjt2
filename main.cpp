@@ -1,6 +1,8 @@
 #include "dialog.h"
 #include <QApplication>
 #include <QFile>
+#include <QTextCodec>
+#include <QFont>
 #include <QTextStream>
 #include <QDebug>
 #include <QTime>
@@ -31,7 +33,7 @@ bool vibratorStatus = false;
 void g_setValve()
 {
     valveStatus = !valveStatus;
-    g_dialog->form2_main->setValve(va2lveStatus);
+    g_dialog->form2_main->setValve(valveStatus);
     g_dialog->form3_vibrationAdjust->setValve(valveStatus);
     char tmp[3] = {0x02,0x00};
     QByteArray tmp1(tmp,3);
@@ -90,6 +92,12 @@ void Sleep(int ms)
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    QTextCodec *codec = QTextCodec::codecForName("UTF-8");
+    QTextCodec::setCodecForLocale(codec);
+    QTextCodec::setCodecForCStrings(codec);
+    QTextCodec::setCodecForTr(codec);
+    QFont font("WenQuanYi Micro Hei");
+    a.setFont(font);
     QFile file(":/qss.qss");
     file.open(QFile::ReadOnly);
     QTextStream filetext(&file);
@@ -101,7 +109,7 @@ int main(int argc, char *argv[])
     Dialog w;
     g_dialog = &w;
     w.setStyleSheet(stylesheet);
-    w.show();
+    w.showFullScreen();
 
     return a.exec();
 }

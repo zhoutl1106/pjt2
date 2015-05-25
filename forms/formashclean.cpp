@@ -58,7 +58,7 @@ void FormAshClean::autoAshClean()
 
 void FormAshClean::on_toolButton_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,3);
     autoTimer->setInterval(g_dialog->fileManager->config.ash_interval * 1000 * 60);
     emit switchToPage(6);
 }
@@ -99,42 +99,42 @@ void FormAshClean::cleanAsh()
 
 void FormAshClean::on_toolButton_manual_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,4);
     cleanAsh();
 }
 
 void FormAshClean::on_spinBox_thresholdFront_valueChanged(int arg1)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,5);
     g_dialog->fileManager->config.frontLuminanceThreshold = arg1;
 }
 
 void FormAshClean::on_spinBox_thresholdEnd_valueChanged(int arg1)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,6);
     g_dialog->fileManager->config.endLuminanceThreshold = arg1;
 }
 
 void FormAshClean::on_spinBox_delay_valueChanged(int arg1)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,7);
     g_dialog->fileManager->config.ash_delay = arg1;
 }
 
 void FormAshClean::on_spinBox_interval_valueChanged(int arg1)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,8);
     g_dialog->fileManager->config.ash_interval = arg1;
 }
 
 void FormAshClean::on_radioButtonTiming_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,9);
     g_dialog->fileManager->config.ash_mode = ASH_MODE_TIME;
 }
 
 void FormAshClean::on_radioButtonAuto_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,10);
     g_dialog->fileManager->config.ash_mode = ASH_MODE_AUTO;
 }

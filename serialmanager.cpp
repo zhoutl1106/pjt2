@@ -96,11 +96,27 @@ void SerialManager::comTimeOut()
         //quint16 cmd_data = p[3]+p[4]*256;
         if(p[1] == 0x01 && p[2] == 0x00)
         {
-            lowPresureMsg->show();
+            if(vibratorStatus)
+                g_setVibrator();
+            else
+            {
+                char tmp11[3] = {0x0e,0x00};
+                QByteArray tmp111(tmp11,3);
+                char tmp31[6] = {0x07,0xaa};
+                QByteArray tmp21(tmp31,6);
+                g_dialog->serialManager->writeCmd(0,tmp111);
+                g_dialog->serialManager->writeCmd(1,tmp21);
+            }
             system("aplay /dat/2.wav &");
-            Widget *p = (Widget*)(this->parent());
-            //if(p->motorFlag)
-            //p->on_toolButton_2_clicked();
+            char tmp123[3] = {0x1e,0x00};
+            QByteArray temp123(tmp123,3);
+            g_dialog->serialManager->writeCmd(0,temp123);
+            msgLowPressure->setDelay(30);
+            if(msgLowPressure->exec() == QDialog::Accepted)
+            {
+                temp123.data()[0] = 0x1d;
+                g_dialog->serialManager->writeCmd(0,temp123);
+            }
         }
         if(p[1] == 0x02 && p[2] == 0x00)
         {

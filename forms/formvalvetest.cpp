@@ -49,13 +49,13 @@ void FormValveTest::updateData()
 
 void FormValveTest::on_toolButton_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,58);
     emit switchToPage(6);
 }
 
 void FormValveTest::onCameraClicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,59);
 
     ui->doubleSpinBox_delay->setValue(g_dialog->fileManager->config.delay[btn->currentIndex()*7 + ui->spinBoxChannel->value() - 1]);
     ui->doubleSpinBox_pulseWidth->setValue(g_dialog->fileManager->config.pulse_width[btn->currentIndex()*7 + ui->spinBoxChannel->value() - 1]);
@@ -64,7 +64,7 @@ void FormValveTest::onCameraClicked()
 
 void FormValveTest::on_toolButton_singleTest_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,60);
     char temp[6]={0x01,0x00};
     QByteArray cmd = QByteArray(temp,6);
     cmd.data()[1] = ui->spinBoxGroup->value();
@@ -96,7 +96,7 @@ void FormValveTest::onTimer()
 
 void FormValveTest::on_toolButton_autoTest_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,61);
     autoTest = !autoTest;
     if(autoTest)
     {
@@ -114,13 +114,13 @@ void FormValveTest::on_toolButton_autoTest_clicked()
 
 void FormValveTest::on_toolButton_valveOn_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,62);
     emit switchToPage(14);
 }
 
 void FormValveTest::on_toolButton_OK_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,63);
 
     char temp[6]={0x09,0x00};
     short tempDelay = g_dialog->fileManager->config.delay[btn->currentIndex()*7 + ui->spinBoxChannel->value()-1]*20.0;
@@ -135,25 +135,25 @@ void FormValveTest::on_toolButton_OK_clicked()
 
 void FormValveTest::on_toolButton_reset_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,64);
     ui->spinBoxPos->setValue(1);
 }
 
 void FormValveTest::on_doubleSpinBox_delay_valueChanged(double arg1)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,65);
     g_dialog->fileManager->config.delay[btn->currentIndex()*7 + ui->spinBoxChannel->value()-1] = ui->doubleSpinBox_delay->value();
 }
 
 void FormValveTest::on_doubleSpinBox_pulseWidth_valueChanged(double arg1)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,66);
     g_dialog->fileManager->config.pulse_width[btn->currentIndex()*7 + ui->spinBoxChannel->value()-1] = ui->doubleSpinBox_pulseWidth->value();
 }
 
 void FormValveTest::on_spinBoxChannel_valueChanged(int arg1)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,67);
     ui->doubleSpinBox_delay->setValue(g_dialog->fileManager->
                                       config.delay[btn->currentIndex()*7+ui->spinBoxChannel->value()-1]);
     ui->doubleSpinBox_pulseWidth->setValue(g_dialog->fileManager->
@@ -162,11 +162,11 @@ void FormValveTest::on_spinBoxChannel_valueChanged(int arg1)
 
 void FormValveTest::on_spinBoxGroup_valueChanged(int arg1)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,68);
 }
 
 void FormValveTest::on_spinBoxPos_valueChanged(int arg1)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,69);
 }
 

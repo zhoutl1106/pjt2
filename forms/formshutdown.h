@@ -14,6 +14,10 @@ class FormShutdown : public QWidget
 public:
     explicit FormShutdown(QWidget *parent = 0);
     ~FormShutdown();
+
+protected:
+    void mouseDoubleClickEvent(QMouseEvent *);
+
 signals:
     void switchToPage(int index);
 

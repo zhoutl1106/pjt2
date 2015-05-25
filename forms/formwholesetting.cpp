@@ -55,7 +55,7 @@ void FormWholeSetting::updateData()
 
 void FormWholeSetting::on_toolButton_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,101);
 
     for(int i = 0;i<7;i++)
     {

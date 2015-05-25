@@ -72,7 +72,7 @@ void FormAccuracyDetailAdjust::updateData()
 
 void FormAccuracyDetailAdjust::on_toolButton_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,2);
     emit switchToPage(6);
 }
 

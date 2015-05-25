@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formcntcheck.ui'
 **
-** Created by: Qt User Interface Compiler version 5.4.1
+** Created by: Qt User Interface Compiler version 4.8.5
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,18 +10,18 @@
 #define UI_FORMCNTCHECK_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
-#include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QSpinBox>
-#include <QtWidgets/QToolButton>
-#include <QtWidgets/QVBoxLayout>
-#include <QtWidgets/QWidget>
+#include <QtGui/QAction>
+#include <QtGui/QApplication>
+#include <QtGui/QButtonGroup>
+#include <QtGui/QHBoxLayout>
+#include <QtGui/QHeaderView>
+#include <QtGui/QLabel>
+#include <QtGui/QLineEdit>
+#include <QtGui/QSpacerItem>
+#include <QtGui/QSpinBox>
+#include <QtGui/QToolButton>
+#include <QtGui/QVBoxLayout>
+#include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -55,15 +55,15 @@ public:
     void setupUi(QWidget *FormCntCheck)
     {
         if (FormCntCheck->objectName().isEmpty())
-            FormCntCheck->setObjectName(QStringLiteral("FormCntCheck"));
+            FormCntCheck->setObjectName(QString::fromUtf8("FormCntCheck"));
         FormCntCheck->setWindowModality(Qt::NonModal);
         FormCntCheck->resize(1024, 520);
-        FormCntCheck->setStyleSheet(QStringLiteral(""));
+        FormCntCheck->setStyleSheet(QString::fromUtf8(""));
         verticalLayout_2 = new QVBoxLayout(FormCntCheck);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         label_3 = new QLabel(FormCntCheck);
-        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setMinimumSize(QSize(0, 50));
         label_3->setAlignment(Qt::AlignCenter);
 
@@ -71,35 +71,34 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(50);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         label = new QLabel(FormCntCheck);
-        label->setObjectName(QStringLiteral("label"));
+        label->setObjectName(QString::fromUtf8("label"));
         label->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_3->addWidget(label);
 
         lineEditCnt = new QLineEdit(FormCntCheck);
-        lineEditCnt->setObjectName(QStringLiteral("lineEditCnt"));
+        lineEditCnt->setObjectName(QString::fromUtf8("lineEditCnt"));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(lineEditCnt->sizePolicy().hasHeightForWidth());
         lineEditCnt->setSizePolicy(sizePolicy);
-        lineEditCnt->setStyleSheet(QStringLiteral(""));
+        lineEditCnt->setStyleSheet(QString::fromUtf8(""));
         lineEditCnt->setFrame(true);
         lineEditCnt->setReadOnly(true);
-        lineEditCnt->setClearButtonEnabled(false);
 
         horizontalLayout_3->addWidget(lineEditCnt);
 
         label_4 = new QLabel(FormCntCheck);
-        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_3->addWidget(label_4);
 
         lineEditGroup = new QLineEdit(FormCntCheck);
-        lineEditGroup->setObjectName(QStringLiteral("lineEditGroup"));
+        lineEditGroup->setObjectName(QString::fromUtf8("lineEditGroup"));
         QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Preferred);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
@@ -112,13 +111,13 @@ public:
         horizontalLayout_3->addWidget(lineEditGroup);
 
         label_5 = new QLabel(FormCntCheck);
-        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_3->addWidget(label_5);
 
         lineEditNum = new QLineEdit(FormCntCheck);
-        lineEditNum->setObjectName(QStringLiteral("lineEditNum"));
+        lineEditNum->setObjectName(QString::fromUtf8("lineEditNum"));
         QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(0);
@@ -130,7 +129,7 @@ public:
         horizontalLayout_3->addWidget(lineEditNum);
 
         label_6 = new QLabel(FormCntCheck);
-        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_3->addWidget(label_6);
@@ -140,7 +139,7 @@ public:
         horizontalLayout_3->addItem(horizontalSpacer);
 
         toolButton_reset = new QToolButton(FormCntCheck);
-        toolButton_reset->setObjectName(QStringLiteral("toolButton_reset"));
+        toolButton_reset->setObjectName(QString::fromUtf8("toolButton_reset"));
         sizePolicy2.setHeightForWidth(toolButton_reset->sizePolicy().hasHeightForWidth());
         toolButton_reset->setSizePolicy(sizePolicy2);
         toolButton_reset->setMinimumSize(QSize(80, 30));
@@ -151,20 +150,20 @@ public:
         verticalLayout_2->addLayout(horizontalLayout_3);
 
         horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         toolButton_query = new QToolButton(FormCntCheck);
-        toolButton_query->setObjectName(QStringLiteral("toolButton_query"));
+        toolButton_query->setObjectName(QString::fromUtf8("toolButton_query"));
 
         horizontalLayout->addWidget(toolButton_query);
 
         label_7 = new QLabel(FormCntCheck);
-        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         horizontalLayout->addWidget(label_7);
 
         spinBoxGroup = new QSpinBox(FormCntCheck);
-        spinBoxGroup->setObjectName(QStringLiteral("spinBoxGroup"));
+        spinBoxGroup->setObjectName(QString::fromUtf8("spinBoxGroup"));
         QSizePolicy sizePolicy3(QSizePolicy::Minimum, QSizePolicy::Maximum);
         sizePolicy3.setHorizontalStretch(0);
         sizePolicy3.setVerticalStretch(0);
@@ -176,24 +175,24 @@ public:
         horizontalLayout->addWidget(spinBoxGroup);
 
         label_8 = new QLabel(FormCntCheck);
-        label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         horizontalLayout->addWidget(label_8);
 
         widget = new QWidget(FormCntCheck);
-        widget->setObjectName(QStringLiteral("widget"));
+        widget->setObjectName(QString::fromUtf8("widget"));
 
         horizontalLayout->addWidget(widget);
 
         label_9 = new QLabel(FormCntCheck);
-        label_9->setObjectName(QStringLiteral("label_9"));
+        label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         horizontalLayout->addWidget(label_9);
 
         spinBoxNum = new QSpinBox(FormCntCheck);
-        spinBoxNum->setObjectName(QStringLiteral("spinBoxNum"));
+        spinBoxNum->setObjectName(QString::fromUtf8("spinBoxNum"));
         QSizePolicy sizePolicy4(QSizePolicy::Minimum, QSizePolicy::Preferred);
         sizePolicy4.setHorizontalStretch(0);
         sizePolicy4.setVerticalStretch(0);
@@ -205,20 +204,20 @@ public:
         horizontalLayout->addWidget(spinBoxNum);
 
         label_10 = new QLabel(FormCntCheck);
-        label_10->setObjectName(QStringLiteral("label_10"));
+        label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         horizontalLayout->addWidget(label_10);
 
         toolButton = new QToolButton(FormCntCheck);
-        toolButton->setObjectName(QStringLiteral("toolButton"));
+        toolButton->setObjectName(QString::fromUtf8("toolButton"));
         QSizePolicy sizePolicy5(QSizePolicy::Maximum, QSizePolicy::Preferred);
         sizePolicy5.setHorizontalStretch(0);
         sizePolicy5.setVerticalStretch(0);
         sizePolicy5.setHeightForWidth(toolButton->sizePolicy().hasHeightForWidth());
         toolButton->setSizePolicy(sizePolicy5);
         toolButton->setMinimumSize(QSize(80, 30));
-        toolButton->setStyleSheet(QLatin1String("border-image: url(:/image/back.png);\n"
+        toolButton->setStyleSheet(QString::fromUtf8("border-image: url(:/image/back.png);\n"
 "font: 20pt \"Microsoft YaHei\";\n"
 "color: rgb(255, 255, 255);"));
 
@@ -239,20 +238,20 @@ public:
 
     void retranslateUi(QWidget *FormCntCheck)
     {
-        FormCntCheck->setWindowTitle(QApplication::translate("FormCntCheck", "Form", 0));
-        label_3->setText(QApplication::translate("FormCntCheck", "\345\226\267\351\230\200\347\233\221\346\216\247", 0));
-        label->setText(QApplication::translate("FormCntCheck", "\345\267\245\344\275\234\346\254\241\346\225\260", 0));
-        lineEditCnt->setText(QApplication::translate("FormCntCheck", "1234567890", 0));
-        label_4->setText(QApplication::translate("FormCntCheck", "\347\254\254", 0));
-        label_5->setText(QApplication::translate("FormCntCheck", "\347\273\204", 0));
-        label_6->setText(QApplication::translate("FormCntCheck", "\344\270\252", 0));
-        toolButton_reset->setText(QApplication::translate("FormCntCheck", "\351\207\215\347\275\256", 0));
-        toolButton_query->setText(QApplication::translate("FormCntCheck", "\345\274\200\345\247\213\346\237\245\350\257\242", 0));
-        label_7->setText(QApplication::translate("FormCntCheck", "\347\254\254", 0));
-        label_8->setText(QApplication::translate("FormCntCheck", "\347\273\204", 0));
-        label_9->setText(QApplication::translate("FormCntCheck", "\347\254\254", 0));
-        label_10->setText(QApplication::translate("FormCntCheck", "\344\270\252", 0));
-        toolButton->setText(QApplication::translate("FormCntCheck", "    \350\277\224\345\233\236", 0));
+        FormCntCheck->setWindowTitle(QApplication::translate("FormCntCheck", "Form", 0, QApplication::UnicodeUTF8));
+        label_3->setText(QApplication::translate("FormCntCheck", "\345\226\267\351\230\200\347\233\221\346\216\247", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("FormCntCheck", "\345\267\245\344\275\234\346\254\241\346\225\260", 0, QApplication::UnicodeUTF8));
+        lineEditCnt->setText(QApplication::translate("FormCntCheck", "1234567890", 0, QApplication::UnicodeUTF8));
+        label_4->setText(QApplication::translate("FormCntCheck", "\347\254\254", 0, QApplication::UnicodeUTF8));
+        label_5->setText(QApplication::translate("FormCntCheck", "\347\273\204", 0, QApplication::UnicodeUTF8));
+        label_6->setText(QApplication::translate("FormCntCheck", "\344\270\252", 0, QApplication::UnicodeUTF8));
+        toolButton_reset->setText(QApplication::translate("FormCntCheck", "\351\207\215\347\275\256", 0, QApplication::UnicodeUTF8));
+        toolButton_query->setText(QApplication::translate("FormCntCheck", "\345\274\200\345\247\213\346\237\245\350\257\242", 0, QApplication::UnicodeUTF8));
+        label_7->setText(QApplication::translate("FormCntCheck", "\347\254\254", 0, QApplication::UnicodeUTF8));
+        label_8->setText(QApplication::translate("FormCntCheck", "\347\273\204", 0, QApplication::UnicodeUTF8));
+        label_9->setText(QApplication::translate("FormCntCheck", "\347\254\254", 0, QApplication::UnicodeUTF8));
+        label_10->setText(QApplication::translate("FormCntCheck", "\344\270\252", 0, QApplication::UnicodeUTF8));
+        toolButton->setText(QApplication::translate("FormCntCheck", "    \350\277\224\345\233\236", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

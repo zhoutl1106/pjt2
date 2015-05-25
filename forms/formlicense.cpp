@@ -15,7 +15,7 @@ FormLicense::FormLicense(QWidget *parent) :
     keyboard = new FormKeyboard;
     layout->addWidget(keyboard);
     ui->widget->setLayout(layout);
-    qsrand(QTime::currentTime().msecsSinceStartOfDay());
+    qsrand(QTime::currentTime().msecsTo(QTime(0,0,0)));
     int randomNum = qrand()*89999999.0/RAND_MAX + 10000000;
     ui->lineEdit->setText(QString::number(randomNum));
     connect(keyboard,SIGNAL(sendText(QString)),this,SLOT(getLicenseString(QString)));

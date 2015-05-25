@@ -96,13 +96,13 @@ void FormAccuracyAdjust::lbtnValue(int index, int value)
 
 void FormAccuracyAdjust::on_toolButton_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,0);
     emit switchToPage(2);
 }
 
 void FormAccuracyAdjust::onCameraClicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,1);
 }
 
 void FormAccuracyAdjust::checkDataRange(int &v, int min, int max)

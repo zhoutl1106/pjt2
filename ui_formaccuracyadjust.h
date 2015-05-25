@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formaccuracyadjust.ui'
 **
-** Created by: Qt User Interface Compiler version 5.4.1
+** Created by: Qt User Interface Compiler version 4.8.5
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,17 +10,17 @@
 #define UI_FORMACCURACYADJUST_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLCDNumber>
-#include <QtWidgets/QLabel>
-#include <QtWidgets/QSlider>
-#include <QtWidgets/QToolButton>
-#include <QtWidgets/QVBoxLayout>
-#include <QtWidgets/QWidget>
+#include <QtGui/QAction>
+#include <QtGui/QApplication>
+#include <QtGui/QButtonGroup>
+#include <QtGui/QGridLayout>
+#include <QtGui/QHeaderView>
+#include <QtGui/QLCDNumber>
+#include <QtGui/QLabel>
+#include <QtGui/QSlider>
+#include <QtGui/QToolButton>
+#include <QtGui/QVBoxLayout>
+#include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -89,19 +89,19 @@ public:
     void setupUi(QWidget *FormAccuracyAdjust)
     {
         if (FormAccuracyAdjust->objectName().isEmpty())
-            FormAccuracyAdjust->setObjectName(QStringLiteral("FormAccuracyAdjust"));
+            FormAccuracyAdjust->setObjectName(QString::fromUtf8("FormAccuracyAdjust"));
         FormAccuracyAdjust->resize(1024, 520);
         gridLayout_4 = new QGridLayout(FormAccuracyAdjust);
-        gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
         gridLayout_4->setHorizontalSpacing(30);
         gridLayout_4->setVerticalSpacing(20);
         gridLayout_4->setContentsMargins(50, 20, 50, 20);
         gridLayout = new QGridLayout();
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setHorizontalSpacing(0);
         gridLayout->setVerticalSpacing(10);
         label_6 = new QLabel(FormAccuracyAdjust);
-        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setObjectName(QString::fromUtf8("label_6"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -115,14 +115,14 @@ public:
         gridLayout->addWidget(label_6, 0, 1, 1, 1);
 
         verticalSlider12 = new QSlider(FormAccuracyAdjust);
-        verticalSlider12->setObjectName(QStringLiteral("verticalSlider12"));
+        verticalSlider12->setObjectName(QString::fromUtf8("verticalSlider12"));
         QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::MinimumExpanding);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(verticalSlider12->sizePolicy().hasHeightForWidth());
         verticalSlider12->setSizePolicy(sizePolicy1);
         verticalSlider12->setMinimumSize(QSize(25, 0));
-        verticalSlider12->setStyleSheet(QLatin1String("QSlider::groove {\n"
+        verticalSlider12->setStyleSheet(QString::fromUtf8("QSlider::groove {\n"
 "     /*border: 1px solid #999999;\n"
 "     height: 330px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */\n"
 "	width:15px;\n"
@@ -143,7 +143,7 @@ public:
         gridLayout->addWidget(verticalSlider12, 2, 3, 1, 1, Qt::AlignHCenter);
 
         lcdNumber13 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber13->setObjectName(QStringLiteral("lcdNumber13"));
+        lcdNumber13->setObjectName(QString::fromUtf8("lcdNumber13"));
         QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Fixed);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(0);
@@ -157,11 +157,11 @@ public:
         gridLayout->addWidget(lcdNumber13, 2, 6, 1, 1);
 
         verticalSlider13 = new QSlider(FormAccuracyAdjust);
-        verticalSlider13->setObjectName(QStringLiteral("verticalSlider13"));
+        verticalSlider13->setObjectName(QString::fromUtf8("verticalSlider13"));
         sizePolicy1.setHeightForWidth(verticalSlider13->sizePolicy().hasHeightForWidth());
         verticalSlider13->setSizePolicy(sizePolicy1);
         verticalSlider13->setMinimumSize(QSize(25, 0));
-        verticalSlider13->setStyleSheet(QLatin1String("QSlider::groove {\n"
+        verticalSlider13->setStyleSheet(QString::fromUtf8("QSlider::groove {\n"
 "     /*border: 1px solid #999999;\n"
 "     height: 330px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */\n"
 "	width:15px;\n"
@@ -182,7 +182,7 @@ public:
         gridLayout->addWidget(verticalSlider13, 2, 5, 1, 1, Qt::AlignHCenter);
 
         label_3 = new QLabel(FormAccuracyAdjust);
-        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setObjectName(QString::fromUtf8("label_3"));
         sizePolicy.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
         label_3->setSizePolicy(sizePolicy);
         label_3->setAlignment(Qt::AlignCenter);
@@ -190,7 +190,7 @@ public:
         gridLayout->addWidget(label_3, 4, 1, 1, 6);
 
         lcdNumber11 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber11->setObjectName(QStringLiteral("lcdNumber11"));
+        lcdNumber11->setObjectName(QString::fromUtf8("lcdNumber11"));
         sizePolicy2.setHeightForWidth(lcdNumber11->sizePolicy().hasHeightForWidth());
         lcdNumber11->setSizePolicy(sizePolicy2);
         lcdNumber11->setMinimumSize(QSize(0, 30));
@@ -201,7 +201,7 @@ public:
         gridLayout->addWidget(lcdNumber11, 2, 2, 1, 1);
 
         lcdNumber12 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber12->setObjectName(QStringLiteral("lcdNumber12"));
+        lcdNumber12->setObjectName(QString::fromUtf8("lcdNumber12"));
         sizePolicy2.setHeightForWidth(lcdNumber12->sizePolicy().hasHeightForWidth());
         lcdNumber12->setSizePolicy(sizePolicy2);
         lcdNumber12->setMinimumSize(QSize(0, 30));
@@ -212,7 +212,7 @@ public:
         gridLayout->addWidget(lcdNumber12, 2, 4, 1, 1);
 
         label_4 = new QLabel(FormAccuracyAdjust);
-        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setObjectName(QString::fromUtf8("label_4"));
         sizePolicy.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
         label_4->setSizePolicy(sizePolicy);
         label_4->setFont(font);
@@ -221,7 +221,7 @@ public:
         gridLayout->addWidget(label_4, 0, 3, 1, 1);
 
         label_5 = new QLabel(FormAccuracyAdjust);
-        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setObjectName(QString::fromUtf8("label_5"));
         sizePolicy.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
         label_5->setSizePolicy(sizePolicy);
         QFont font1;
@@ -237,11 +237,11 @@ public:
         gridLayout->addWidget(label_5, 0, 5, 1, 1);
 
         verticalSlider11 = new QSlider(FormAccuracyAdjust);
-        verticalSlider11->setObjectName(QStringLiteral("verticalSlider11"));
+        verticalSlider11->setObjectName(QString::fromUtf8("verticalSlider11"));
         sizePolicy1.setHeightForWidth(verticalSlider11->sizePolicy().hasHeightForWidth());
         verticalSlider11->setSizePolicy(sizePolicy1);
         verticalSlider11->setMinimumSize(QSize(25, 0));
-        verticalSlider11->setStyleSheet(QLatin1String("QSlider::groove {\n"
+        verticalSlider11->setStyleSheet(QString::fromUtf8("QSlider::groove {\n"
 "     /*border: 1px solid #999999;\n"
 "     height: 330px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */\n"
 "	width:15px;\n"
@@ -262,7 +262,7 @@ public:
         gridLayout->addWidget(verticalSlider11, 2, 1, 1, 1, Qt::AlignHCenter);
 
         widget_11u = new QWidget(FormAccuracyAdjust);
-        widget_11u->setObjectName(QStringLiteral("widget_11u"));
+        widget_11u->setObjectName(QString::fromUtf8("widget_11u"));
         QSizePolicy sizePolicy3(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy3.setHorizontalStretch(40);
         sizePolicy3.setVerticalStretch(40);
@@ -273,7 +273,7 @@ public:
         gridLayout->addWidget(widget_11u, 1, 0, 1, 2);
 
         widget_12u = new QWidget(FormAccuracyAdjust);
-        widget_12u->setObjectName(QStringLiteral("widget_12u"));
+        widget_12u->setObjectName(QString::fromUtf8("widget_12u"));
         sizePolicy3.setHeightForWidth(widget_12u->sizePolicy().hasHeightForWidth());
         widget_12u->setSizePolicy(sizePolicy3);
         widget_12u->setMinimumSize(QSize(40, 40));
@@ -281,7 +281,7 @@ public:
         gridLayout->addWidget(widget_12u, 1, 3, 1, 1);
 
         widget_13u = new QWidget(FormAccuracyAdjust);
-        widget_13u->setObjectName(QStringLiteral("widget_13u"));
+        widget_13u->setObjectName(QString::fromUtf8("widget_13u"));
         sizePolicy3.setHeightForWidth(widget_13u->sizePolicy().hasHeightForWidth());
         widget_13u->setSizePolicy(sizePolicy3);
         widget_13u->setMinimumSize(QSize(40, 40));
@@ -289,7 +289,7 @@ public:
         gridLayout->addWidget(widget_13u, 1, 5, 1, 1);
 
         widget_13d = new QWidget(FormAccuracyAdjust);
-        widget_13d->setObjectName(QStringLiteral("widget_13d"));
+        widget_13d->setObjectName(QString::fromUtf8("widget_13d"));
         sizePolicy3.setHeightForWidth(widget_13d->sizePolicy().hasHeightForWidth());
         widget_13d->setSizePolicy(sizePolicy3);
         widget_13d->setMinimumSize(QSize(40, 40));
@@ -297,7 +297,7 @@ public:
         gridLayout->addWidget(widget_13d, 3, 5, 1, 1);
 
         widget_12d = new QWidget(FormAccuracyAdjust);
-        widget_12d->setObjectName(QStringLiteral("widget_12d"));
+        widget_12d->setObjectName(QString::fromUtf8("widget_12d"));
         sizePolicy3.setHeightForWidth(widget_12d->sizePolicy().hasHeightForWidth());
         widget_12d->setSizePolicy(sizePolicy3);
         widget_12d->setMinimumSize(QSize(40, 40));
@@ -305,7 +305,7 @@ public:
         gridLayout->addWidget(widget_12d, 3, 3, 1, 1);
 
         widget_11d = new QWidget(FormAccuracyAdjust);
-        widget_11d->setObjectName(QStringLiteral("widget_11d"));
+        widget_11d->setObjectName(QString::fromUtf8("widget_11d"));
         sizePolicy3.setHeightForWidth(widget_11d->sizePolicy().hasHeightForWidth());
         widget_11d->setSizePolicy(sizePolicy3);
         widget_11d->setMinimumSize(QSize(40, 40));
@@ -316,15 +316,15 @@ public:
         gridLayout_4->addLayout(gridLayout, 1, 0, 1, 1);
 
         gridLayout_2 = new QGridLayout();
-        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setHorizontalSpacing(0);
         gridLayout_2->setVerticalSpacing(10);
         verticalSlider22 = new QSlider(FormAccuracyAdjust);
-        verticalSlider22->setObjectName(QStringLiteral("verticalSlider22"));
+        verticalSlider22->setObjectName(QString::fromUtf8("verticalSlider22"));
         sizePolicy1.setHeightForWidth(verticalSlider22->sizePolicy().hasHeightForWidth());
         verticalSlider22->setSizePolicy(sizePolicy1);
         verticalSlider22->setMinimumSize(QSize(25, 0));
-        verticalSlider22->setStyleSheet(QLatin1String("QSlider::groove {\n"
+        verticalSlider22->setStyleSheet(QString::fromUtf8("QSlider::groove {\n"
 "     /*border: 1px solid #999999;\n"
 "     height: 330px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */\n"
 "	width:15px;\n"
@@ -345,7 +345,7 @@ public:
         gridLayout_2->addWidget(verticalSlider22, 2, 2, 1, 1, Qt::AlignHCenter);
 
         lcdNumber23 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber23->setObjectName(QStringLiteral("lcdNumber23"));
+        lcdNumber23->setObjectName(QString::fromUtf8("lcdNumber23"));
         sizePolicy2.setHeightForWidth(lcdNumber23->sizePolicy().hasHeightForWidth());
         lcdNumber23->setSizePolicy(sizePolicy2);
         lcdNumber23->setMinimumSize(QSize(0, 30));
@@ -356,11 +356,11 @@ public:
         gridLayout_2->addWidget(lcdNumber23, 2, 5, 1, 1);
 
         verticalSlider23 = new QSlider(FormAccuracyAdjust);
-        verticalSlider23->setObjectName(QStringLiteral("verticalSlider23"));
+        verticalSlider23->setObjectName(QString::fromUtf8("verticalSlider23"));
         sizePolicy1.setHeightForWidth(verticalSlider23->sizePolicy().hasHeightForWidth());
         verticalSlider23->setSizePolicy(sizePolicy1);
         verticalSlider23->setMinimumSize(QSize(25, 0));
-        verticalSlider23->setStyleSheet(QLatin1String("QSlider::groove {\n"
+        verticalSlider23->setStyleSheet(QString::fromUtf8("QSlider::groove {\n"
 "     /*border: 1px solid #999999;\n"
 "     height: 330px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */\n"
 "	width:15px;\n"
@@ -381,7 +381,7 @@ public:
         gridLayout_2->addWidget(verticalSlider23, 2, 4, 1, 1, Qt::AlignHCenter);
 
         lcdNumber21 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber21->setObjectName(QStringLiteral("lcdNumber21"));
+        lcdNumber21->setObjectName(QString::fromUtf8("lcdNumber21"));
         sizePolicy2.setHeightForWidth(lcdNumber21->sizePolicy().hasHeightForWidth());
         lcdNumber21->setSizePolicy(sizePolicy2);
         lcdNumber21->setMinimumSize(QSize(0, 30));
@@ -392,7 +392,7 @@ public:
         gridLayout_2->addWidget(lcdNumber21, 2, 1, 1, 1);
 
         lcdNumber22 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber22->setObjectName(QStringLiteral("lcdNumber22"));
+        lcdNumber22->setObjectName(QString::fromUtf8("lcdNumber22"));
         sizePolicy2.setHeightForWidth(lcdNumber22->sizePolicy().hasHeightForWidth());
         lcdNumber22->setSizePolicy(sizePolicy2);
         lcdNumber22->setMinimumSize(QSize(0, 30));
@@ -403,7 +403,7 @@ public:
         gridLayout_2->addWidget(lcdNumber22, 2, 3, 1, 1);
 
         label_9 = new QLabel(FormAccuracyAdjust);
-        label_9->setObjectName(QStringLiteral("label_9"));
+        label_9->setObjectName(QString::fromUtf8("label_9"));
         sizePolicy.setHeightForWidth(label_9->sizePolicy().hasHeightForWidth());
         label_9->setSizePolicy(sizePolicy);
         label_9->setFont(font);
@@ -412,7 +412,7 @@ public:
         gridLayout_2->addWidget(label_9, 0, 0, 1, 1);
 
         label_10 = new QLabel(FormAccuracyAdjust);
-        label_10->setObjectName(QStringLiteral("label_10"));
+        label_10->setObjectName(QString::fromUtf8("label_10"));
         sizePolicy.setHeightForWidth(label_10->sizePolicy().hasHeightForWidth());
         label_10->setSizePolicy(sizePolicy);
         label_10->setAlignment(Qt::AlignCenter);
@@ -420,7 +420,7 @@ public:
         gridLayout_2->addWidget(label_10, 4, 0, 1, 6);
 
         label_7 = new QLabel(FormAccuracyAdjust);
-        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setObjectName(QString::fromUtf8("label_7"));
         sizePolicy.setHeightForWidth(label_7->sizePolicy().hasHeightForWidth());
         label_7->setSizePolicy(sizePolicy);
         label_7->setFont(font);
@@ -429,7 +429,7 @@ public:
         gridLayout_2->addWidget(label_7, 0, 2, 1, 1);
 
         label_8 = new QLabel(FormAccuracyAdjust);
-        label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setObjectName(QString::fromUtf8("label_8"));
         sizePolicy.setHeightForWidth(label_8->sizePolicy().hasHeightForWidth());
         label_8->setSizePolicy(sizePolicy);
         label_8->setFont(font1);
@@ -439,11 +439,11 @@ public:
         gridLayout_2->addWidget(label_8, 0, 4, 1, 1);
 
         verticalSlider21 = new QSlider(FormAccuracyAdjust);
-        verticalSlider21->setObjectName(QStringLiteral("verticalSlider21"));
+        verticalSlider21->setObjectName(QString::fromUtf8("verticalSlider21"));
         sizePolicy1.setHeightForWidth(verticalSlider21->sizePolicy().hasHeightForWidth());
         verticalSlider21->setSizePolicy(sizePolicy1);
         verticalSlider21->setMinimumSize(QSize(25, 0));
-        verticalSlider21->setStyleSheet(QLatin1String("QSlider::groove {\n"
+        verticalSlider21->setStyleSheet(QString::fromUtf8("QSlider::groove {\n"
 "     /*border: 1px solid #999999;\n"
 "     height: 330px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */\n"
 "	width:15px;\n"
@@ -464,7 +464,7 @@ public:
         gridLayout_2->addWidget(verticalSlider21, 2, 0, 1, 1, Qt::AlignHCenter);
 
         widget_21u = new QWidget(FormAccuracyAdjust);
-        widget_21u->setObjectName(QStringLiteral("widget_21u"));
+        widget_21u->setObjectName(QString::fromUtf8("widget_21u"));
         sizePolicy3.setHeightForWidth(widget_21u->sizePolicy().hasHeightForWidth());
         widget_21u->setSizePolicy(sizePolicy3);
         widget_21u->setMinimumSize(QSize(40, 40));
@@ -472,7 +472,7 @@ public:
         gridLayout_2->addWidget(widget_21u, 1, 0, 1, 1);
 
         widget_22u = new QWidget(FormAccuracyAdjust);
-        widget_22u->setObjectName(QStringLiteral("widget_22u"));
+        widget_22u->setObjectName(QString::fromUtf8("widget_22u"));
         sizePolicy3.setHeightForWidth(widget_22u->sizePolicy().hasHeightForWidth());
         widget_22u->setSizePolicy(sizePolicy3);
         widget_22u->setMinimumSize(QSize(40, 40));
@@ -480,7 +480,7 @@ public:
         gridLayout_2->addWidget(widget_22u, 1, 2, 1, 1);
 
         widget_23u = new QWidget(FormAccuracyAdjust);
-        widget_23u->setObjectName(QStringLiteral("widget_23u"));
+        widget_23u->setObjectName(QString::fromUtf8("widget_23u"));
         sizePolicy3.setHeightForWidth(widget_23u->sizePolicy().hasHeightForWidth());
         widget_23u->setSizePolicy(sizePolicy3);
         widget_23u->setMinimumSize(QSize(40, 40));
@@ -488,7 +488,7 @@ public:
         gridLayout_2->addWidget(widget_23u, 1, 4, 1, 1);
 
         widget_23d = new QWidget(FormAccuracyAdjust);
-        widget_23d->setObjectName(QStringLiteral("widget_23d"));
+        widget_23d->setObjectName(QString::fromUtf8("widget_23d"));
         sizePolicy3.setHeightForWidth(widget_23d->sizePolicy().hasHeightForWidth());
         widget_23d->setSizePolicy(sizePolicy3);
         widget_23d->setMinimumSize(QSize(40, 40));
@@ -496,12 +496,12 @@ public:
         gridLayout_2->addWidget(widget_23d, 3, 4, 1, 1);
 
         widget_15 = new QWidget(FormAccuracyAdjust);
-        widget_15->setObjectName(QStringLiteral("widget_15"));
+        widget_15->setObjectName(QString::fromUtf8("widget_15"));
         sizePolicy3.setHeightForWidth(widget_15->sizePolicy().hasHeightForWidth());
         widget_15->setSizePolicy(sizePolicy3);
         widget_15->setMinimumSize(QSize(40, 40));
         widget_22d = new QWidget(widget_15);
-        widget_22d->setObjectName(QStringLiteral("widget_22d"));
+        widget_22d->setObjectName(QString::fromUtf8("widget_22d"));
         widget_22d->setGeometry(QRect(0, 0, 40, 40));
         sizePolicy3.setHeightForWidth(widget_22d->sizePolicy().hasHeightForWidth());
         widget_22d->setSizePolicy(sizePolicy3);
@@ -510,7 +510,7 @@ public:
         gridLayout_2->addWidget(widget_15, 3, 2, 1, 1);
 
         widget_21d = new QWidget(FormAccuracyAdjust);
-        widget_21d->setObjectName(QStringLiteral("widget_21d"));
+        widget_21d->setObjectName(QString::fromUtf8("widget_21d"));
         sizePolicy3.setHeightForWidth(widget_21d->sizePolicy().hasHeightForWidth());
         widget_21d->setSizePolicy(sizePolicy3);
         widget_21d->setMinimumSize(QSize(40, 40));
@@ -521,15 +521,15 @@ public:
         gridLayout_4->addLayout(gridLayout_2, 1, 1, 1, 1);
 
         gridLayout_3 = new QGridLayout();
-        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         gridLayout_3->setHorizontalSpacing(0);
         gridLayout_3->setVerticalSpacing(10);
         verticalSlider32 = new QSlider(FormAccuracyAdjust);
-        verticalSlider32->setObjectName(QStringLiteral("verticalSlider32"));
+        verticalSlider32->setObjectName(QString::fromUtf8("verticalSlider32"));
         sizePolicy1.setHeightForWidth(verticalSlider32->sizePolicy().hasHeightForWidth());
         verticalSlider32->setSizePolicy(sizePolicy1);
         verticalSlider32->setMinimumSize(QSize(25, 0));
-        verticalSlider32->setStyleSheet(QLatin1String("QSlider::groove {\n"
+        verticalSlider32->setStyleSheet(QString::fromUtf8("QSlider::groove {\n"
 "     /*border: 1px solid #999999;\n"
 "     height: 330px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */\n"
 "	width:15px;\n"
@@ -550,7 +550,7 @@ public:
         gridLayout_3->addWidget(verticalSlider32, 2, 2, 1, 1, Qt::AlignHCenter);
 
         lcdNumber33 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber33->setObjectName(QStringLiteral("lcdNumber33"));
+        lcdNumber33->setObjectName(QString::fromUtf8("lcdNumber33"));
         sizePolicy2.setHeightForWidth(lcdNumber33->sizePolicy().hasHeightForWidth());
         lcdNumber33->setSizePolicy(sizePolicy2);
         lcdNumber33->setMinimumSize(QSize(0, 30));
@@ -561,11 +561,11 @@ public:
         gridLayout_3->addWidget(lcdNumber33, 2, 5, 1, 1);
 
         verticalSlider33 = new QSlider(FormAccuracyAdjust);
-        verticalSlider33->setObjectName(QStringLiteral("verticalSlider33"));
+        verticalSlider33->setObjectName(QString::fromUtf8("verticalSlider33"));
         sizePolicy1.setHeightForWidth(verticalSlider33->sizePolicy().hasHeightForWidth());
         verticalSlider33->setSizePolicy(sizePolicy1);
         verticalSlider33->setMinimumSize(QSize(25, 0));
-        verticalSlider33->setStyleSheet(QLatin1String("QSlider::groove {\n"
+        verticalSlider33->setStyleSheet(QString::fromUtf8("QSlider::groove {\n"
 "     /*border: 1px solid #999999;\n"
 "     height: 330px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */\n"
 "	width:15px;\n"
@@ -586,7 +586,7 @@ public:
         gridLayout_3->addWidget(verticalSlider33, 2, 4, 1, 1, Qt::AlignHCenter);
 
         lcdNumber31 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber31->setObjectName(QStringLiteral("lcdNumber31"));
+        lcdNumber31->setObjectName(QString::fromUtf8("lcdNumber31"));
         sizePolicy2.setHeightForWidth(lcdNumber31->sizePolicy().hasHeightForWidth());
         lcdNumber31->setSizePolicy(sizePolicy2);
         lcdNumber31->setMinimumSize(QSize(0, 30));
@@ -597,7 +597,7 @@ public:
         gridLayout_3->addWidget(lcdNumber31, 2, 1, 1, 1);
 
         lcdNumber32 = new QLCDNumber(FormAccuracyAdjust);
-        lcdNumber32->setObjectName(QStringLiteral("lcdNumber32"));
+        lcdNumber32->setObjectName(QString::fromUtf8("lcdNumber32"));
         sizePolicy2.setHeightForWidth(lcdNumber32->sizePolicy().hasHeightForWidth());
         lcdNumber32->setSizePolicy(sizePolicy2);
         lcdNumber32->setMinimumSize(QSize(0, 30));
@@ -608,7 +608,7 @@ public:
         gridLayout_3->addWidget(lcdNumber32, 2, 3, 1, 1);
 
         label_13 = new QLabel(FormAccuracyAdjust);
-        label_13->setObjectName(QStringLiteral("label_13"));
+        label_13->setObjectName(QString::fromUtf8("label_13"));
         sizePolicy.setHeightForWidth(label_13->sizePolicy().hasHeightForWidth());
         label_13->setSizePolicy(sizePolicy);
         label_13->setFont(font);
@@ -617,7 +617,7 @@ public:
         gridLayout_3->addWidget(label_13, 0, 0, 1, 1);
 
         label_14 = new QLabel(FormAccuracyAdjust);
-        label_14->setObjectName(QStringLiteral("label_14"));
+        label_14->setObjectName(QString::fromUtf8("label_14"));
         sizePolicy.setHeightForWidth(label_14->sizePolicy().hasHeightForWidth());
         label_14->setSizePolicy(sizePolicy);
         label_14->setAlignment(Qt::AlignCenter);
@@ -625,7 +625,7 @@ public:
         gridLayout_3->addWidget(label_14, 4, 0, 1, 6);
 
         label_11 = new QLabel(FormAccuracyAdjust);
-        label_11->setObjectName(QStringLiteral("label_11"));
+        label_11->setObjectName(QString::fromUtf8("label_11"));
         sizePolicy.setHeightForWidth(label_11->sizePolicy().hasHeightForWidth());
         label_11->setSizePolicy(sizePolicy);
         label_11->setFont(font);
@@ -634,7 +634,7 @@ public:
         gridLayout_3->addWidget(label_11, 0, 2, 1, 1);
 
         label_12 = new QLabel(FormAccuracyAdjust);
-        label_12->setObjectName(QStringLiteral("label_12"));
+        label_12->setObjectName(QString::fromUtf8("label_12"));
         sizePolicy.setHeightForWidth(label_12->sizePolicy().hasHeightForWidth());
         label_12->setSizePolicy(sizePolicy);
         label_12->setFont(font1);
@@ -644,11 +644,11 @@ public:
         gridLayout_3->addWidget(label_12, 0, 4, 1, 1);
 
         verticalSlider31 = new QSlider(FormAccuracyAdjust);
-        verticalSlider31->setObjectName(QStringLiteral("verticalSlider31"));
+        verticalSlider31->setObjectName(QString::fromUtf8("verticalSlider31"));
         sizePolicy1.setHeightForWidth(verticalSlider31->sizePolicy().hasHeightForWidth());
         verticalSlider31->setSizePolicy(sizePolicy1);
         verticalSlider31->setMinimumSize(QSize(25, 0));
-        verticalSlider31->setStyleSheet(QLatin1String("QSlider::groove {\n"
+        verticalSlider31->setStyleSheet(QString::fromUtf8("QSlider::groove {\n"
 "     /*border: 1px solid #999999;\n"
 "     height: 330px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */\n"
 "	width:15px;\n"
@@ -669,7 +669,7 @@ public:
         gridLayout_3->addWidget(verticalSlider31, 2, 0, 1, 1, Qt::AlignHCenter);
 
         widget_31u = new QWidget(FormAccuracyAdjust);
-        widget_31u->setObjectName(QStringLiteral("widget_31u"));
+        widget_31u->setObjectName(QString::fromUtf8("widget_31u"));
         sizePolicy3.setHeightForWidth(widget_31u->sizePolicy().hasHeightForWidth());
         widget_31u->setSizePolicy(sizePolicy3);
         widget_31u->setMinimumSize(QSize(40, 40));
@@ -677,7 +677,7 @@ public:
         gridLayout_3->addWidget(widget_31u, 1, 0, 1, 1);
 
         widget_32u = new QWidget(FormAccuracyAdjust);
-        widget_32u->setObjectName(QStringLiteral("widget_32u"));
+        widget_32u->setObjectName(QString::fromUtf8("widget_32u"));
         sizePolicy3.setHeightForWidth(widget_32u->sizePolicy().hasHeightForWidth());
         widget_32u->setSizePolicy(sizePolicy3);
         widget_32u->setMinimumSize(QSize(40, 40));
@@ -685,7 +685,7 @@ public:
         gridLayout_3->addWidget(widget_32u, 1, 2, 1, 1);
 
         widget_33u = new QWidget(FormAccuracyAdjust);
-        widget_33u->setObjectName(QStringLiteral("widget_33u"));
+        widget_33u->setObjectName(QString::fromUtf8("widget_33u"));
         sizePolicy3.setHeightForWidth(widget_33u->sizePolicy().hasHeightForWidth());
         widget_33u->setSizePolicy(sizePolicy3);
         widget_33u->setMinimumSize(QSize(40, 40));
@@ -693,7 +693,7 @@ public:
         gridLayout_3->addWidget(widget_33u, 1, 4, 1, 1);
 
         widget_33d = new QWidget(FormAccuracyAdjust);
-        widget_33d->setObjectName(QStringLiteral("widget_33d"));
+        widget_33d->setObjectName(QString::fromUtf8("widget_33d"));
         sizePolicy3.setHeightForWidth(widget_33d->sizePolicy().hasHeightForWidth());
         widget_33d->setSizePolicy(sizePolicy3);
         widget_33d->setMinimumSize(QSize(40, 40));
@@ -701,7 +701,7 @@ public:
         gridLayout_3->addWidget(widget_33d, 3, 4, 1, 1);
 
         widget_32d = new QWidget(FormAccuracyAdjust);
-        widget_32d->setObjectName(QStringLiteral("widget_32d"));
+        widget_32d->setObjectName(QString::fromUtf8("widget_32d"));
         sizePolicy3.setHeightForWidth(widget_32d->sizePolicy().hasHeightForWidth());
         widget_32d->setSizePolicy(sizePolicy3);
         widget_32d->setMinimumSize(QSize(40, 40));
@@ -709,7 +709,7 @@ public:
         gridLayout_3->addWidget(widget_32d, 3, 2, 1, 1);
 
         widget_31d = new QWidget(FormAccuracyAdjust);
-        widget_31d->setObjectName(QStringLiteral("widget_31d"));
+        widget_31d->setObjectName(QString::fromUtf8("widget_31d"));
         sizePolicy3.setHeightForWidth(widget_31d->sizePolicy().hasHeightForWidth());
         widget_31d->setSizePolicy(sizePolicy3);
         widget_31d->setMinimumSize(QSize(40, 40));
@@ -721,9 +721,9 @@ public:
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(100);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         widget = new QWidget(FormAccuracyAdjust);
-        widget->setObjectName(QStringLiteral("widget"));
+        widget->setObjectName(QString::fromUtf8("widget"));
         QSizePolicy sizePolicy4(QSizePolicy::Expanding, QSizePolicy::Preferred);
         sizePolicy4.setHorizontalStretch(0);
         sizePolicy4.setVerticalStretch(0);
@@ -733,14 +733,14 @@ public:
         verticalLayout->addWidget(widget);
 
         toolButton_2 = new QToolButton(FormAccuracyAdjust);
-        toolButton_2->setObjectName(QStringLiteral("toolButton_2"));
+        toolButton_2->setObjectName(QString::fromUtf8("toolButton_2"));
         sizePolicy.setHeightForWidth(toolButton_2->sizePolicy().hasHeightForWidth());
         toolButton_2->setSizePolicy(sizePolicy);
 
         verticalLayout->addWidget(toolButton_2);
 
         toolButton = new QToolButton(FormAccuracyAdjust);
-        toolButton->setObjectName(QStringLiteral("toolButton"));
+        toolButton->setObjectName(QString::fromUtf8("toolButton"));
         sizePolicy.setHeightForWidth(toolButton->sizePolicy().hasHeightForWidth());
         toolButton->setSizePolicy(sizePolicy);
 
@@ -750,7 +750,7 @@ public:
         gridLayout_4->addLayout(verticalLayout, 1, 3, 1, 1);
 
         label = new QLabel(FormAccuracyAdjust);
-        label->setObjectName(QStringLiteral("label"));
+        label->setObjectName(QString::fromUtf8("label"));
         label->setMinimumSize(QSize(0, 50));
         label->setAlignment(Qt::AlignCenter);
 
@@ -764,22 +764,22 @@ public:
 
     void retranslateUi(QWidget *FormAccuracyAdjust)
     {
-        FormAccuracyAdjust->setWindowTitle(QApplication::translate("FormAccuracyAdjust", "Form", 0));
-        label_6->setText(QApplication::translate("FormAccuracyAdjust", "\344\272\256", 0));
-        label_3->setText(QApplication::translate("FormAccuracyAdjust", "\344\270\200\346\254\241\351\200\211", 0));
-        label_4->setText(QApplication::translate("FormAccuracyAdjust", "\346\232\227", 0));
-        label_5->setText(QApplication::translate("FormAccuracyAdjust", "\346\226\221\347\202\271", 0));
-        label_9->setText(QApplication::translate("FormAccuracyAdjust", "\344\272\256", 0));
-        label_10->setText(QApplication::translate("FormAccuracyAdjust", "\344\272\214\346\254\241\351\200\211", 0));
-        label_7->setText(QApplication::translate("FormAccuracyAdjust", "\346\232\227", 0));
-        label_8->setText(QApplication::translate("FormAccuracyAdjust", "\346\226\221\347\202\271", 0));
-        label_13->setText(QApplication::translate("FormAccuracyAdjust", "\344\272\256", 0));
-        label_14->setText(QApplication::translate("FormAccuracyAdjust", "\344\270\211\346\254\241\351\200\211", 0));
-        label_11->setText(QApplication::translate("FormAccuracyAdjust", "\346\232\227", 0));
-        label_12->setText(QApplication::translate("FormAccuracyAdjust", "\346\226\221\347\202\271", 0));
-        toolButton_2->setText(QApplication::translate("FormAccuracyAdjust", "\347\241\256\345\256\232", 0));
-        toolButton->setText(QApplication::translate("FormAccuracyAdjust", "\350\277\224\345\233\236", 0));
-        label->setText(QApplication::translate("FormAccuracyAdjust", "\347\262\276\345\272\246\350\260\203\346\225\264", 0));
+        FormAccuracyAdjust->setWindowTitle(QApplication::translate("FormAccuracyAdjust", "Form", 0, QApplication::UnicodeUTF8));
+        label_6->setText(QApplication::translate("FormAccuracyAdjust", "\344\272\256", 0, QApplication::UnicodeUTF8));
+        label_3->setText(QApplication::translate("FormAccuracyAdjust", "\344\270\200\346\254\241\351\200\211", 0, QApplication::UnicodeUTF8));
+        label_4->setText(QApplication::translate("FormAccuracyAdjust", "\346\232\227", 0, QApplication::UnicodeUTF8));
+        label_5->setText(QApplication::translate("FormAccuracyAdjust", "\346\226\221\347\202\271", 0, QApplication::UnicodeUTF8));
+        label_9->setText(QApplication::translate("FormAccuracyAdjust", "\344\272\256", 0, QApplication::UnicodeUTF8));
+        label_10->setText(QApplication::translate("FormAccuracyAdjust", "\344\272\214\346\254\241\351\200\211", 0, QApplication::UnicodeUTF8));
+        label_7->setText(QApplication::translate("FormAccuracyAdjust", "\346\232\227", 0, QApplication::UnicodeUTF8));
+        label_8->setText(QApplication::translate("FormAccuracyAdjust", "\346\226\221\347\202\271", 0, QApplication::UnicodeUTF8));
+        label_13->setText(QApplication::translate("FormAccuracyAdjust", "\344\272\256", 0, QApplication::UnicodeUTF8));
+        label_14->setText(QApplication::translate("FormAccuracyAdjust", "\344\270\211\346\254\241\351\200\211", 0, QApplication::UnicodeUTF8));
+        label_11->setText(QApplication::translate("FormAccuracyAdjust", "\346\232\227", 0, QApplication::UnicodeUTF8));
+        label_12->setText(QApplication::translate("FormAccuracyAdjust", "\346\226\221\347\202\271", 0, QApplication::UnicodeUTF8));
+        toolButton_2->setText(QApplication::translate("FormAccuracyAdjust", "\347\241\256\345\256\232", 0, QApplication::UnicodeUTF8));
+        toolButton->setText(QApplication::translate("FormAccuracyAdjust", "\350\277\224\345\233\236", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("FormAccuracyAdjust", "\347\262\276\345\272\246\350\260\203\346\225\264", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

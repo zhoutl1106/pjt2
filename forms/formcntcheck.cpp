@@ -237,13 +237,13 @@ void FormCntCheck::resetSuccess()
 
 void FormCntCheck::on_toolButton_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,21);
     emit switchToPage(11);
 }
 
 void FormCntCheck::on_toolButton_reset_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,22);
     char tmp[6] = {0x00};
     QByteArray temp = QByteArray(tmp,6);
     singleRequestRetry = 0;
@@ -270,7 +270,7 @@ void FormCntCheck::on_toolButton_reset_clicked()
 
 void FormCntCheck::on_toolButton_query_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,23);
     lastQueryType = LAST_QUERY_ASK;
     currentChannel = 1;
     currentPos = 1;

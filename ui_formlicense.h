@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formlicense.ui'
 **
-** Created by: Qt User Interface Compiler version 5.4.1
+** Created by: Qt User Interface Compiler version 4.8.5
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,14 +10,14 @@
 #define UI_FORMLICENSE_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
-#include <QtWidgets/QWidget>
+#include <QtGui/QAction>
+#include <QtGui/QApplication>
+#include <QtGui/QButtonGroup>
+#include <QtGui/QGridLayout>
+#include <QtGui/QHeaderView>
+#include <QtGui/QLabel>
+#include <QtGui/QLineEdit>
+#include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -33,31 +33,31 @@ public:
     void setupUi(QWidget *FormLicense)
     {
         if (FormLicense->objectName().isEmpty())
-            FormLicense->setObjectName(QStringLiteral("FormLicense"));
+            FormLicense->setObjectName(QString::fromUtf8("FormLicense"));
         FormLicense->resize(1024, 520);
-        FormLicense->setStyleSheet(QStringLiteral("QWidget #FormLicense{border-image: url(:/image/licenseBkg.png);}"));
+        FormLicense->setStyleSheet(QString::fromUtf8("QWidget #FormLicense{border-image: url(:/image/licenseBkg.png);}"));
         gridLayout = new QGridLayout(FormLicense);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(320, 150, 320, 80);
         widget = new QWidget(FormLicense);
-        widget->setObjectName(QStringLiteral("widget"));
+        widget->setObjectName(QString::fromUtf8("widget"));
 
         gridLayout->addWidget(widget, 1, 1, 1, 1);
 
         lineEdit = new QLineEdit(FormLicense);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
         lineEdit->setMinimumSize(QSize(0, 40));
 
         gridLayout->addWidget(lineEdit, 0, 1, 1, 1);
 
         label = new QLabel(FormLicense);
-        label->setObjectName(QStringLiteral("label"));
+        label->setObjectName(QString::fromUtf8("label"));
         label->setMinimumSize(QSize(50, 0));
 
         gridLayout->addWidget(label, 0, 0, 1, 1);
 
         label_2 = new QLabel(FormLicense);
-        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setMinimumSize(QSize(50, 0));
         label_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
@@ -71,9 +71,9 @@ public:
 
     void retranslateUi(QWidget *FormLicense)
     {
-        FormLicense->setWindowTitle(QApplication::translate("FormLicense", "Form", 0));
-        label->setText(QApplication::translate("FormLicense", "\347\224\250\346\210\267", 0));
-        label_2->setText(QApplication::translate("FormLicense", "\350\264\246\345\217\267", 0));
+        FormLicense->setWindowTitle(QApplication::translate("FormLicense", "Form", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("FormLicense", "\347\224\250\346\210\267", 0, QApplication::UnicodeUTF8));
+        label_2->setText(QApplication::translate("FormLicense", "\350\264\246\345\217\267", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

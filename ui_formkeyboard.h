@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formkeyboard.ui'
 **
-** Created by: Qt User Interface Compiler version 5.4.1
+** Created by: Qt User Interface Compiler version 4.8.5
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,15 +10,15 @@
 #define UI_FORMKEYBOARD_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLineEdit>
-#include <QtWidgets/QPushButton>
-#include <QtWidgets/QVBoxLayout>
-#include <QtWidgets/QWidget>
+#include <QtGui/QAction>
+#include <QtGui/QApplication>
+#include <QtGui/QButtonGroup>
+#include <QtGui/QGridLayout>
+#include <QtGui/QHeaderView>
+#include <QtGui/QLineEdit>
+#include <QtGui/QPushButton>
+#include <QtGui/QVBoxLayout>
+#include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -44,10 +44,10 @@ public:
     void setupUi(QWidget *FormKeyboard)
     {
         if (FormKeyboard->objectName().isEmpty())
-            FormKeyboard->setObjectName(QStringLiteral("FormKeyboard"));
+            FormKeyboard->setObjectName(QString::fromUtf8("FormKeyboard"));
         FormKeyboard->setWindowModality(Qt::ApplicationModal);
         FormKeyboard->resize(403, 400);
-        FormKeyboard->setStyleSheet(QLatin1String("QWidget\n"
+        FormKeyboard->setStyleSheet(QString::fromUtf8("QWidget\n"
 "{\n"
 "	font-size: 30px;	\n"
 "	border-image: url(:/image/lowerBkg.png);\n"
@@ -64,9 +64,9 @@ public:
 "    border-image: url(:/image/btnR.png);\n"
 "}"));
         verticalLayout = new QVBoxLayout(FormKeyboard);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         lineEdit = new QLineEdit(FormKeyboard);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
         lineEdit->setMinimumSize(QSize(0, 40));
         lineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
 "color: rgb(255, 0, 0);\n"
@@ -77,9 +77,9 @@ public:
 
         gridLayout = new QGridLayout();
         gridLayout->setSpacing(10);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         pushButton_0 = new QPushButton(FormKeyboard);
-        pushButton_0->setObjectName(QStringLiteral("pushButton_0"));
+        pushButton_0->setObjectName(QString::fromUtf8("pushButton_0"));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -89,81 +89,81 @@ public:
         gridLayout->addWidget(pushButton_0, 4, 0, 1, 1);
 
         pushButton_4 = new QPushButton(FormKeyboard);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         sizePolicy.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
         pushButton_4->setSizePolicy(sizePolicy);
 
         gridLayout->addWidget(pushButton_4, 2, 0, 1, 1);
 
         pushButton_OK = new QPushButton(FormKeyboard);
-        pushButton_OK->setObjectName(QStringLiteral("pushButton_OK"));
+        pushButton_OK->setObjectName(QString::fromUtf8("pushButton_OK"));
         sizePolicy.setHeightForWidth(pushButton_OK->sizePolicy().hasHeightForWidth());
         pushButton_OK->setSizePolicy(sizePolicy);
-        pushButton_OK->setStyleSheet(QStringLiteral(""));
+        pushButton_OK->setStyleSheet(QString::fromUtf8(""));
 
         gridLayout->addWidget(pushButton_OK, 1, 4, 4, 1);
 
         pushButton_7 = new QPushButton(FormKeyboard);
-        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
+        pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
         sizePolicy.setHeightForWidth(pushButton_7->sizePolicy().hasHeightForWidth());
         pushButton_7->setSizePolicy(sizePolicy);
 
         gridLayout->addWidget(pushButton_7, 3, 0, 1, 1);
 
         pushButton_2 = new QPushButton(FormKeyboard);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         sizePolicy.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
         pushButton_2->setSizePolicy(sizePolicy);
 
         gridLayout->addWidget(pushButton_2, 1, 1, 1, 1);
 
         pushButton_9 = new QPushButton(FormKeyboard);
-        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
+        pushButton_9->setObjectName(QString::fromUtf8("pushButton_9"));
         sizePolicy.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
         pushButton_9->setSizePolicy(sizePolicy);
 
         gridLayout->addWidget(pushButton_9, 3, 2, 1, 1);
 
         pushButton_3 = new QPushButton(FormKeyboard);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         sizePolicy.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
         pushButton_3->setSizePolicy(sizePolicy);
 
         gridLayout->addWidget(pushButton_3, 1, 2, 1, 1);
 
         pushButton_8 = new QPushButton(FormKeyboard);
-        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
+        pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
         sizePolicy.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
         pushButton_8->setSizePolicy(sizePolicy);
 
         gridLayout->addWidget(pushButton_8, 3, 1, 1, 1);
 
         pushButton_1 = new QPushButton(FormKeyboard);
-        pushButton_1->setObjectName(QStringLiteral("pushButton_1"));
+        pushButton_1->setObjectName(QString::fromUtf8("pushButton_1"));
         sizePolicy.setHeightForWidth(pushButton_1->sizePolicy().hasHeightForWidth());
         pushButton_1->setSizePolicy(sizePolicy);
 
         gridLayout->addWidget(pushButton_1, 1, 0, 1, 1);
 
         pushButton_5 = new QPushButton(FormKeyboard);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
         sizePolicy.setHeightForWidth(pushButton_5->sizePolicy().hasHeightForWidth());
         pushButton_5->setSizePolicy(sizePolicy);
 
         gridLayout->addWidget(pushButton_5, 2, 1, 1, 1);
 
         pushButton_6 = new QPushButton(FormKeyboard);
-        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
         sizePolicy.setHeightForWidth(pushButton_6->sizePolicy().hasHeightForWidth());
         pushButton_6->setSizePolicy(sizePolicy);
 
         gridLayout->addWidget(pushButton_6, 2, 2, 1, 1);
 
         pushButton_C = new QPushButton(FormKeyboard);
-        pushButton_C->setObjectName(QStringLiteral("pushButton_C"));
+        pushButton_C->setObjectName(QString::fromUtf8("pushButton_C"));
         sizePolicy.setHeightForWidth(pushButton_C->sizePolicy().hasHeightForWidth());
         pushButton_C->setSizePolicy(sizePolicy);
-        pushButton_C->setStyleSheet(QStringLiteral("border-image: url(:/image/backspace.png);"));
+        pushButton_C->setStyleSheet(QString::fromUtf8("border-image: url(:/image/backspace.png);"));
 
         gridLayout->addWidget(pushButton_C, 4, 1, 1, 2);
 
@@ -178,18 +178,18 @@ public:
 
     void retranslateUi(QWidget *FormKeyboard)
     {
-        FormKeyboard->setWindowTitle(QApplication::translate("FormKeyboard", "Form", 0));
-        pushButton_0->setText(QApplication::translate("FormKeyboard", "0", 0));
-        pushButton_4->setText(QApplication::translate("FormKeyboard", "4", 0));
-        pushButton_OK->setText(QApplication::translate("FormKeyboard", "OK", 0));
-        pushButton_7->setText(QApplication::translate("FormKeyboard", "7", 0));
-        pushButton_2->setText(QApplication::translate("FormKeyboard", "2", 0));
-        pushButton_9->setText(QApplication::translate("FormKeyboard", "9", 0));
-        pushButton_3->setText(QApplication::translate("FormKeyboard", "3", 0));
-        pushButton_8->setText(QApplication::translate("FormKeyboard", "8", 0));
-        pushButton_1->setText(QApplication::translate("FormKeyboard", "1", 0));
-        pushButton_5->setText(QApplication::translate("FormKeyboard", "5", 0));
-        pushButton_6->setText(QApplication::translate("FormKeyboard", "6", 0));
+        FormKeyboard->setWindowTitle(QApplication::translate("FormKeyboard", "Form", 0, QApplication::UnicodeUTF8));
+        pushButton_0->setText(QApplication::translate("FormKeyboard", "0", 0, QApplication::UnicodeUTF8));
+        pushButton_4->setText(QApplication::translate("FormKeyboard", "4", 0, QApplication::UnicodeUTF8));
+        pushButton_OK->setText(QApplication::translate("FormKeyboard", "OK", 0, QApplication::UnicodeUTF8));
+        pushButton_7->setText(QApplication::translate("FormKeyboard", "7", 0, QApplication::UnicodeUTF8));
+        pushButton_2->setText(QApplication::translate("FormKeyboard", "2", 0, QApplication::UnicodeUTF8));
+        pushButton_9->setText(QApplication::translate("FormKeyboard", "9", 0, QApplication::UnicodeUTF8));
+        pushButton_3->setText(QApplication::translate("FormKeyboard", "3", 0, QApplication::UnicodeUTF8));
+        pushButton_8->setText(QApplication::translate("FormKeyboard", "8", 0, QApplication::UnicodeUTF8));
+        pushButton_1->setText(QApplication::translate("FormKeyboard", "1", 0, QApplication::UnicodeUTF8));
+        pushButton_5->setText(QApplication::translate("FormKeyboard", "5", 0, QApplication::UnicodeUTF8));
+        pushButton_6->setText(QApplication::translate("FormKeyboard", "6", 0, QApplication::UnicodeUTF8));
         pushButton_C->setText(QString());
     } // retranslateUi
 

@@ -167,13 +167,13 @@ void FormVibrationAdjust::updateData()
 
 void FormVibrationAdjust::on_toolButton_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,70);
     emit switchToPage(2);
 }
 
 void FormVibrationAdjust::on_verticalSlider1_valueChanged(int value)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,71);
     int delta = value - lastValue[0];
     ui->lcdNumber1->display(value);
     if(delta == 10 || delta == -10)
@@ -192,7 +192,7 @@ void FormVibrationAdjust::on_verticalSlider1_valueChanged(int value)
 
 void FormVibrationAdjust::on_verticalSlider2_valueChanged(int value)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,72);
     int delta = value - lastValue[1];
     ui->lcdNumber2->display(value);
     if(delta == 10 || delta == -10)
@@ -211,7 +211,7 @@ void FormVibrationAdjust::on_verticalSlider2_valueChanged(int value)
 
 void FormVibrationAdjust::on_verticalSlider3_valueChanged(int value)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,73);
     int delta = value - lastValue[2];
     ui->lcdNumber3->display(value);
     if(delta == 10 || delta == -10)
@@ -230,7 +230,7 @@ void FormVibrationAdjust::on_verticalSlider3_valueChanged(int value)
 
 void FormVibrationAdjust::on_verticalSlider4_valueChanged(int value)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,74);
     int delta = value - lastValue[3];
     ui->lcdNumber4->display(value);
     if(delta == 10 || delta == -10)
@@ -249,7 +249,7 @@ void FormVibrationAdjust::on_verticalSlider4_valueChanged(int value)
 
 void FormVibrationAdjust::on_verticalSlider5_valueChanged(int value)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,75);
     int delta = value - lastValue[4];
     ui->lcdNumber5->display(value);
     if(delta == 10 || delta == -10)
@@ -268,7 +268,7 @@ void FormVibrationAdjust::on_verticalSlider5_valueChanged(int value)
 
 void FormVibrationAdjust::on_verticalSlider6_valueChanged(int value)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,76);
     int delta = value - lastValue[5];
     ui->lcdNumber6->display(value);
     if(delta == 10 || delta == -10)
@@ -287,7 +287,7 @@ void FormVibrationAdjust::on_verticalSlider6_valueChanged(int value)
 
 void FormVibrationAdjust::on_verticalSlider7_valueChanged(int value)
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,77);
     int delta = value - lastValue[6];
     ui->lcdNumber7->display(value);
     if(delta == 10 || delta == -10)
@@ -307,97 +307,97 @@ void FormVibrationAdjust::on_verticalSlider7_valueChanged(int value)
 void FormVibrationAdjust::on_verticalSlider1_sliderReleased()
 {
     isBeep = true;
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,78);
     sendVibrationValue(0);
 }
 
 void FormVibrationAdjust::on_verticalSlider2_sliderReleased()
 {
     isBeep = true;
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,79);
     sendVibrationValue(1);
 }
 
 void FormVibrationAdjust::on_verticalSlider3_sliderReleased()
 {
     isBeep = true;
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,80);
     sendVibrationValue(2);
 }
 
 void FormVibrationAdjust::on_verticalSlider4_sliderReleased()
 {
     isBeep = true;
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,81);
     sendVibrationValue(3);
 }
 
 void FormVibrationAdjust::on_verticalSlider5_sliderReleased()
 {
     isBeep = true;
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,82);
     sendVibrationValue(4);
 }
 
 void FormVibrationAdjust::on_verticalSlider6_sliderReleased()
 {
     isBeep = true;
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,83);
     sendVibrationValue(5);
 }
 
 void FormVibrationAdjust::on_verticalSlider7_sliderReleased()
 {
     isBeep = true;
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,84);
     sendVibrationValue(6);
 }
 
 void FormVibrationAdjust::on_verticalSlider1_sliderPressed()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,85);
     isBeep = false;
 }
 
 void FormVibrationAdjust::on_verticalSlider2_sliderPressed()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,86);
     isBeep = false;
 }
 
 void FormVibrationAdjust::on_verticalSlider3_sliderPressed()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,87);
     isBeep = false;
 }
 
 void FormVibrationAdjust::on_verticalSlider4_sliderPressed()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,88);
     isBeep = false;
 }
 
 void FormVibrationAdjust::on_verticalSlider5_sliderPressed()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,89);
     isBeep = false;
 }
 
 void FormVibrationAdjust::on_verticalSlider6_sliderPressed()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,90);
     isBeep = false;
 }
 
 void FormVibrationAdjust::on_verticalSlider7_sliderPressed()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,91);
     isBeep = false;
 }
 
 void FormVibrationAdjust::on_pushButton_v1_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,92);
     isOpen[0] = !isOpen[0];
     if(isOpen[0])
     {
@@ -418,7 +418,7 @@ void FormVibrationAdjust::on_pushButton_v1_clicked()
 
 void FormVibrationAdjust::on_pushButton_v2_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,93);
     isOpen[1] = !isOpen[1];
     if(isOpen[1])
     {
@@ -438,7 +438,7 @@ void FormVibrationAdjust::on_pushButton_v2_clicked()
 
 void FormVibrationAdjust::on_pushButton_v3_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,94);
     isOpen[2] = !isOpen[2];
     if(isOpen[2])
     {
@@ -458,7 +458,7 @@ void FormVibrationAdjust::on_pushButton_v3_clicked()
 
 void FormVibrationAdjust::on_pushButton_v4_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,95);
     isOpen[3] = !isOpen[3];
     if(isOpen[3])
     {
@@ -478,7 +478,7 @@ void FormVibrationAdjust::on_pushButton_v4_clicked()
 
 void FormVibrationAdjust::on_pushButton_v5_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,96);
     isOpen[4] = !isOpen[4];
     if(isOpen[4])
     {
@@ -498,7 +498,7 @@ void FormVibrationAdjust::on_pushButton_v5_clicked()
 
 void FormVibrationAdjust::on_pushButton_v6_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,97);
     isOpen[5] = !isOpen[5];
     if(isOpen[5])
     {
@@ -518,7 +518,7 @@ void FormVibrationAdjust::on_pushButton_v6_clicked()
 
 void FormVibrationAdjust::on_pushButton_v7_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,98);
     isOpen[6] = !isOpen[6];
     if(isOpen[6])
     {
@@ -560,7 +560,7 @@ void FormVibrationAdjust::deltaSlider(int index, int delta)
 
 void FormVibrationAdjust::on_toolButton_Single_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,99);
     isAll = false;
     ui->toolButton_Single->setStyleSheet(styleSheet[1]);
     ui->toolButton_All->setStyleSheet(styleSheet[0]);
@@ -568,7 +568,7 @@ void FormVibrationAdjust::on_toolButton_Single_clicked()
 
 void FormVibrationAdjust::on_toolButton_All_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,100);
     isAll = true;
     ui->toolButton_Single->setStyleSheet(styleSheet[0]);
     ui->toolButton_All->setStyleSheet(styleSheet[1]);

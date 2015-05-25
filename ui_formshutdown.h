@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'formshutdown.ui'
 **
-** Created by: Qt User Interface Compiler version 5.4.1
+** Created by: Qt User Interface Compiler version 4.8.5
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,13 +10,13 @@
 #define UI_FORMSHUTDOWN_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
-#include <QtWidgets/QVBoxLayout>
-#include <QtWidgets/QWidget>
+#include <QtGui/QAction>
+#include <QtGui/QApplication>
+#include <QtGui/QButtonGroup>
+#include <QtGui/QHeaderView>
+#include <QtGui/QLabel>
+#include <QtGui/QVBoxLayout>
+#include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -29,15 +29,15 @@ public:
     void setupUi(QWidget *FormShutdown)
     {
         if (FormShutdown->objectName().isEmpty())
-            FormShutdown->setObjectName(QStringLiteral("FormShutdown"));
+            FormShutdown->setObjectName(QString::fromUtf8("FormShutdown"));
         FormShutdown->resize(400, 300);
         verticalLayout = new QVBoxLayout(FormShutdown);
         verticalLayout->setSpacing(0);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         label = new QLabel(FormShutdown);
-        label->setObjectName(QStringLiteral("label"));
-        label->setStyleSheet(QStringLiteral("border-image: url(:/image/shutdownBkg.png);"));
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setStyleSheet(QString::fromUtf8("border-image: url(:/image/shutdownBkg.png);"));
 
         verticalLayout->addWidget(label);
 
@@ -49,7 +49,7 @@ public:
 
     void retranslateUi(QWidget *FormShutdown)
     {
-        FormShutdown->setWindowTitle(QApplication::translate("FormShutdown", "Form", 0));
+        FormShutdown->setWindowTitle(QApplication::translate("FormShutdown", "Form", 0, QApplication::UnicodeUTF8));
         label->setText(QString());
     } // retranslateUi
 

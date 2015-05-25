@@ -65,7 +65,7 @@ void FormMain::onLongPressTimer()
 {
     longPressTimer->stop();
     //*** ask whether to save the parameters
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,24);
     DialogAutoCloseMessageBox box(NULL,"保存","是否保存模式参数","是","否",10,true);
     if(box.exec() == QDialog::Accepted)
     {
@@ -95,25 +95,25 @@ void FormMain::onLongPressTimer()
 
 void FormMain::on_toolButton_5_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,25);
     emit switchToPage(3);
 }
 
 void FormMain::on_toolButton_6_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,26);
     emit switchToPage(4);
 }
 
 void FormMain::on_toolButton_8_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,27);
     emit switchToPage(5);
 }
 
 void FormMain::on_toolButton_3_clicked()
 {
-    if(isBeep)beep(50000);
+    if(isBeep)beep(50000,28);
     emit switchToPage(8);
 }
 
