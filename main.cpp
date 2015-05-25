@@ -10,6 +10,7 @@ Dialog *g_dialog;
 QString stylesheet;
 DialogAutoCloseMessageBox *bkgMsgBoxF;
 DialogAutoCloseMessageBox *bkgMsgBoxE;
+DialogAutoCloseMessageBox *msgLowPressure;
 
 bool isBeep;
 
@@ -30,7 +31,7 @@ bool vibratorStatus = false;
 void g_setValve()
 {
     valveStatus = !valveStatus;
-    g_dialog->form2_main->setValve(valveStatus);
+    g_dialog->form2_main->setValve(va2lveStatus);
     g_dialog->form3_vibrationAdjust->setValve(valveStatus);
     char tmp[3] = {0x02,0x00};
     QByteArray tmp1(tmp,3);
@@ -96,6 +97,7 @@ int main(int argc, char *argv[])
     file.close();
     bkgMsgBoxF = new DialogAutoCloseMessageBox(NULL,"背景板","...","","",30,true);
     bkgMsgBoxE = new DialogAutoCloseMessageBox(NULL,"背景板","...","","",30,true);
+    msgLowPressure = new DialogAutoCloseMessageBox(NULL,"警报","气压过低\n请检查气源及气路","重试","确定",30,true);
     Dialog w;
     g_dialog = &w;
     w.setStyleSheet(stylesheet);

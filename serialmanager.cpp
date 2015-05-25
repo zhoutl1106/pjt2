@@ -1,6 +1,12 @@
 #include "serialmanager.h"
 #include <QMessageBox>
 #include <QDebug>
+#include "dialog.h"
+
+extern DialogAutoCloseMessageBox *msgLowPressure;
+extern Dialog* g_dialog;
+extern bool vibratorStatus;
+extern void g_setVibrator();
 
 SerialManager::SerialManager(QObject *parent) :
     QObject(parent)
@@ -118,6 +124,8 @@ void SerialManager::comTimeOut()
         {
             emit cleanAshRequire();
         }
+        //udp upload current data package
+
         temp0.remove(0,6);
     }
     if(temp1.size() > 0)
@@ -129,6 +137,7 @@ void SerialManager::comTimeOut()
                     && *(buf485_1.data()+1) == char(0xfa))
             {
                 emit updateCCD(buf485_1);
+                //udp upload current data package
                 qDebug()<<"ccd 4096";
             }
             buf485_1.clear();
@@ -149,11 +158,13 @@ void SerialManager::comTimeOut()
                 value += (p[5])<<16;
                 value += (p[4])<<24;
                 emit cntUpload(p[2],p[3],value);
+                //udp upload current data package
                 break;
             case 0x06:
                 QMessageBox::information(NULL, "通知",
                                          "通道 " + QString::number(p[2])
                         +" 孔位 " + QString::number(p[3]) + "\n工作次数设置\n命令执行完毕");
+                //udp upload current data package
                 break;
             }
         }
