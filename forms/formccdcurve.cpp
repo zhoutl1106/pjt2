@@ -263,7 +263,7 @@ void FormCCDCurve::on_toolButton_clockwise_clicked()
     char temp[3]={0x15,0x00};
     temp[1] = ui->spinBox_f->value();
     QByteArray cmd(temp,3);
-    if(btnCamera->currentIndex() == 0)
+    if(btnBkg->currentIndex() == 0)
     {
         g_dialog->serialManager->writeCmd(0,cmd);
         bkgMsgBoxF->setText("前背景板调整中");
@@ -312,13 +312,14 @@ void FormCCDCurve::on_toolButton_anticlockwise_clicked()
     char temp[3]={0x16,0x00};
     temp[1] = ui->spinBox_f->value();
     QByteArray cmd(temp,3);
-    if(btnCamera->currentIndex() == 0)
+    if(btnBkg->currentIndex() == 0)
     {
         g_dialog->serialManager->writeCmd(0,cmd);
         bkgMsgBoxF->setText("前背景板调整中");
         bkgMsgBoxF->setDelay(30);
         if(bkgMsgBoxF->exec() == QDialog::Accepted)
         {
+            msgQueryAngleF->setDelay(30);
             if(msgQueryAngleF->exec() == QDialog::Rejected)
             {
                 DialogAutoCloseMessageBox box(NULL,"警告","查询前电机角度失败","确定","",5,true);
@@ -340,6 +341,7 @@ void FormCCDCurve::on_toolButton_anticlockwise_clicked()
         bkgMsgBoxE->setDelay(30);
         if(bkgMsgBoxE->exec() == QDialog::Accepted)
         {
+            msgQueryAngleE->setDelay(30);
             if(msgQueryAngleE->exec() == QDialog::Rejected)
             {
                 DialogAutoCloseMessageBox box(NULL,"警告","查询后电机角度失败","确定","",5,true);

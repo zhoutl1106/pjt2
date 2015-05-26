@@ -17,7 +17,7 @@ public:
     explicit FormAshClean(QWidget *parent = 0);
     ~FormAshClean();
     DialogAutoCloseMessageBox *dlgAsh;
-    QTimer *autoTimer;
+    QTimer *timeAshTimer;
 
 public slots:
     void updateData();
@@ -43,7 +43,7 @@ private slots:
 
     void on_radioButtonAuto_clicked();
 
-    void autoAshClean();
+    void timeAshClean();
 
 private:
     Ui::FormAshClean *ui;

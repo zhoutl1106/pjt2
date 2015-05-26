@@ -173,7 +173,6 @@ void FormVibrationAdjust::on_toolButton_clicked()
 
 void FormVibrationAdjust::on_verticalSlider1_valueChanged(int value)
 {
-    if(isBeep)beep(50000,71);
     int delta = value - lastValue[0];
     ui->lcdNumber1->display(value);
     if(delta == 10 || delta == -10)
@@ -192,7 +191,6 @@ void FormVibrationAdjust::on_verticalSlider1_valueChanged(int value)
 
 void FormVibrationAdjust::on_verticalSlider2_valueChanged(int value)
 {
-    if(isBeep)beep(50000,72);
     int delta = value - lastValue[1];
     ui->lcdNumber2->display(value);
     if(delta == 10 || delta == -10)
@@ -211,7 +209,6 @@ void FormVibrationAdjust::on_verticalSlider2_valueChanged(int value)
 
 void FormVibrationAdjust::on_verticalSlider3_valueChanged(int value)
 {
-    if(isBeep)beep(50000,73);
     int delta = value - lastValue[2];
     ui->lcdNumber3->display(value);
     if(delta == 10 || delta == -10)
@@ -230,7 +227,6 @@ void FormVibrationAdjust::on_verticalSlider3_valueChanged(int value)
 
 void FormVibrationAdjust::on_verticalSlider4_valueChanged(int value)
 {
-    if(isBeep)beep(50000,74);
     int delta = value - lastValue[3];
     ui->lcdNumber4->display(value);
     if(delta == 10 || delta == -10)
@@ -249,7 +245,6 @@ void FormVibrationAdjust::on_verticalSlider4_valueChanged(int value)
 
 void FormVibrationAdjust::on_verticalSlider5_valueChanged(int value)
 {
-    if(isBeep)beep(50000,75);
     int delta = value - lastValue[4];
     ui->lcdNumber5->display(value);
     if(delta == 10 || delta == -10)
@@ -268,7 +263,6 @@ void FormVibrationAdjust::on_verticalSlider5_valueChanged(int value)
 
 void FormVibrationAdjust::on_verticalSlider6_valueChanged(int value)
 {
-    if(isBeep)beep(50000,76);
     int delta = value - lastValue[5];
     ui->lcdNumber6->display(value);
     if(delta == 10 || delta == -10)
@@ -287,7 +281,6 @@ void FormVibrationAdjust::on_verticalSlider6_valueChanged(int value)
 
 void FormVibrationAdjust::on_verticalSlider7_valueChanged(int value)
 {
-    if(isBeep)beep(50000,77);
     int delta = value - lastValue[6];
     ui->lcdNumber7->display(value);
     if(delta == 10 || delta == -10)

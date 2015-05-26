@@ -4,6 +4,8 @@
 #include "dialog.h"
 
 extern DialogAutoCloseMessageBox *msgLowPressure;
+extern DialogAutoCloseMessageBox *bkgMsgBoxF;
+extern DialogAutoCloseMessageBox *bkgMsgBoxE;
 extern Dialog* g_dialog;
 extern bool vibratorStatus;
 extern void g_setVibrator();
@@ -45,8 +47,6 @@ SerialManager::SerialManager(QObject *parent) :
     lowPresureMsg->setWindowTitle("警告");
     lowPresureMsg->setText("气压低，请检查气源");
     lowPresureMsg->addButton("退出", QMessageBox::ActionRole);
-
-    isAshAccept = false;
 }
 
 quint8 SerialManager::checkSum(char *data, int len)
@@ -120,23 +120,25 @@ void SerialManager::comTimeOut()
         }
         if(p[1] == 0x02 && p[2] == 0x00)
         {
-            emit finishBkg(0);
+            bkgMsgBoxF->accept();
         }
         if(p[1] == 0x03 && p[2] == 0x00)
         {
-            emit finishBkg(1);
+            bkgMsgBoxE->accept();
         }
-        if(p[1] == 0x04)
+        if(p[1] == 0x04 && p[5] == 0x0d)
         {
             qDebug()<<"front"<<*((short*)(p+2));
-            getMotor(0,*((short*)(p+2)));
+            g_dialog->fileManager->config.frontMotorVoltage = *((short*)(p+2));
+            g_dialog->form10_bkg->msgQueryAngleF->accept();
         }
-        if(p[1] == 0x05)
+        if(p[1] == 0x05 && p[5] == 0x0d)
         {
             qDebug()<<"back"<<*((short*)(p+2));
-            getMotor(1,*((short*)(p+2)));
+            g_dialog->fileManager->config.endMotorVoltage = *((short*)(p+2));
+            g_dialog->form10_bkg->msgQueryAngleE->accept();
         }
-        if(p[1] == 0x06 && p[2] == 0x00 && isAshAccept)
+        if(p[1] == 0x06 && p[2] == 0x00 && vibratorStatus)
         {
             emit cleanAshRequire();
         }

@@ -21,9 +21,9 @@ FormAshClean::FormAshClean(QWidget *parent) :
     singleTimer->setInterval(10000);
     singleTimer->setSingleShot(true);
     connect(singleTimer,SIGNAL(timeout()),dlgAsh,SLOT(setFinished()));
-    autoTimer = new QTimer;
-    autoTimer->setInterval(600000);
-    connect(autoTimer,SIGNAL(timeout()),this,SLOT(autoAshClean()));
+    timeAshTimer = new QTimer;
+    timeAshTimer->setInterval(600000);
+    connect(timeAshTimer,SIGNAL(timeout()),this,SLOT(timeAshClean()));
     setWindowModality(Qt::ApplicationModal);
 }
 
@@ -39,7 +39,7 @@ void FormAshClean::updateData()
 
     ui->spinBox_delay->setValue(g_dialog->fileManager->config.ash_delay);
     ui->spinBox_interval->setValue(g_dialog->fileManager->config.ash_interval);
-    autoTimer->setInterval(g_dialog->fileManager->config.ash_interval * 1000 * 60);
+    timeAshTimer->setInterval(g_dialog->fileManager->config.ash_interval * 1000 * 60);
     ui->spinBox_thresholdFront->setValue(g_dialog->fileManager->config.frontLuminanceThreshold);
     ui->spinBox_thresholdEnd->setValue(g_dialog->fileManager->config.endLuminanceThreshold);
     if(g_dialog->fileManager->config.ash_mode == ASH_MODE_TIME)
@@ -50,7 +50,7 @@ void FormAshClean::updateData()
     isBeep = temp;
 }
 
-void FormAshClean::autoAshClean()
+void FormAshClean::timeAshClean()
 {
     if(vibratorStatus && g_dialog->fileManager->config.ash_mode == ASH_MODE_TIME)
         cleanAsh();
@@ -59,13 +59,15 @@ void FormAshClean::autoAshClean()
 void FormAshClean::on_toolButton_clicked()
 {
     if(isBeep)beep(50000,3);
-    autoTimer->setInterval(g_dialog->fileManager->config.ash_interval * 1000 * 60);
+    timeAshTimer->setInterval(g_dialog->fileManager->config.ash_interval * 1000 * 60);
     emit switchToPage(6);
 }
 
 void FormAshClean::cleanAsh()
 {
     qDebug()<<"clean ash";
+    if(g_dialog->fileManager->config.ash_mode != ASH_MODE_AUTO)
+        return;
 
     char tmp[3] = {0x0c,0x00};
     QByteArray tmp1(tmp,3);

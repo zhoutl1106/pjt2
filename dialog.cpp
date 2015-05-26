@@ -165,7 +165,7 @@ void Dialog::onUpdateUdpRead()
                 file.write(dat+6,len);
                 file.close();
                 m_lastIndex = index;
-                qDebug()<<"get "<<m_lastIndex;
+                //qDebug()<<"get "<<m_lastIndex;
             }
             else if(len != 1024 && datagram.length() == len + 6)
             {

@@ -16,15 +16,12 @@ public:
     explicit SerialManager(QObject *parent = 0);
     QByteArray buf485_1;
     quint8 checkSum(char* data, int len);
-    bool isAshAccept;
 
 signals:
     void updateCCD(QByteArray array);
-    void finishBkg(int);
     void cleanAshRequire();
     void cntUpload(int channel, int pos, int value);
     void resetSuccess();
-    void getMotor(int motor, int angle);
 
 public slots:
     void comTimeOut();

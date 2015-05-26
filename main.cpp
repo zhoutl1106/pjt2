@@ -30,6 +30,15 @@ void beep(int length_us, int index = 0)
 bool valveStatus = false;
 bool vibratorStatus = false;
 
+void Sleep(int ms)
+{
+    QTime time = QTime::currentTime().addMSecs(ms);
+    while(QTime::currentTime() < time)
+    {
+        QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+    }
+}
+
 void g_setValve()
 {
     valveStatus = !valveStatus;
@@ -68,29 +77,23 @@ void g_setVibrator()
         g_dialog->serialManager->writeCmd(0,tmp1);
         tmp2.data()[0] = 0x06;
         g_dialog->serialManager->writeCmd(1,tmp2);
-        g_dialog->form9_ash->autoTimer->start();
+        g_dialog->form9_ash->timeAshTimer->start();
     }
     else
     {
         tmp1.data()[0] = 0x0e;
         g_dialog->serialManager->writeCmd(0,tmp1);
+        Sleep(10000);
         tmp2.data()[0] = 0x07;
         g_dialog->serialManager->writeCmd(1,tmp2);
-        g_dialog->form9_ash->autoTimer->stop();
-    }
-}
-
-void Sleep(int ms)
-{
-    QTime time = QTime::currentTime().addMSecs(ms);
-    while(QTime::currentTime() < time)
-    {
-        QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+        g_dialog->form9_ash->timeAshTimer->stop();
     }
 }
 
 int main(int argc, char *argv[])
 {
+    system("echo 0 > /sys/bus/i2c/devices/0-0038/buzopen");
+    system("echo 0 > /sys/bus/i2c/devices/1-0038/buzopen");
     QApplication a(argc, argv);
     QTextCodec *codec = QTextCodec::codecForName("UTF-8");
     QTextCodec::setCodecForLocale(codec);
