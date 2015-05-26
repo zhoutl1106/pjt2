@@ -179,9 +179,7 @@ void SerialManager::comTimeOut()
                 //udp upload current data package
                 break;
             case 0x06:
-                QMessageBox::information(NULL, "通知",
-                                         "通道 " + QString::number(p[2])
-                        +" 孔位 " + QString::number(p[3]) + "\n工作次数设置\n命令执行完毕");
+                emit resetSuccess();
                 //udp upload current data package
                 break;
             }

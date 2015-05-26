@@ -73,6 +73,9 @@ Dialog::Dialog(QWidget *parent) :
     connect(fileManager,SIGNAL(sigConfigChanged()),form13_whole,SLOT(updateData()));
 
     connect(serialManager,SIGNAL(cleanAshRequire()),form9_ash,SLOT(cleanAsh()));
+    connect(serialManager,SIGNAL(updateCCD(QByteArray)),form10_bkg,SLOT(updateCCD(QByteArray)));
+    connect(serialManager,SIGNAL(cntUpload(int,int,int)),form14_monitor,SLOT(cntUpload(int,int,int)));
+    connect(serialManager,SIGNAL(resetSuccess()),form14_monitor,SLOT(resetSuccess()));
 
     ui->stackedWidget->insertWidget(0,form14_monitor);
     ui->stackedWidget->insertWidget(0,form13_whole);
