@@ -116,6 +116,7 @@ public:
 
         verticalSlider12 = new QSlider(FormAccuracyAdjust);
         verticalSlider12->setObjectName(QString::fromUtf8("verticalSlider12"));
+        verticalSlider12->setEnabled(false);
         QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::MinimumExpanding);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
@@ -138,6 +139,7 @@ public:
 " }"));
         verticalSlider12->setMinimum(-255);
         verticalSlider12->setMaximum(255);
+        verticalSlider12->setTracking(true);
         verticalSlider12->setOrientation(Qt::Vertical);
 
         gridLayout->addWidget(verticalSlider12, 2, 3, 1, 1, Qt::AlignHCenter);
@@ -158,6 +160,7 @@ public:
 
         verticalSlider13 = new QSlider(FormAccuracyAdjust);
         verticalSlider13->setObjectName(QString::fromUtf8("verticalSlider13"));
+        verticalSlider13->setEnabled(false);
         sizePolicy1.setHeightForWidth(verticalSlider13->sizePolicy().hasHeightForWidth());
         verticalSlider13->setSizePolicy(sizePolicy1);
         verticalSlider13->setMinimumSize(QSize(25, 0));
@@ -177,6 +180,7 @@ public:
 " }"));
         verticalSlider13->setMinimum(-5);
         verticalSlider13->setMaximum(5);
+        verticalSlider13->setTracking(true);
         verticalSlider13->setOrientation(Qt::Vertical);
 
         gridLayout->addWidget(verticalSlider13, 2, 5, 1, 1, Qt::AlignHCenter);
@@ -238,6 +242,7 @@ public:
 
         verticalSlider11 = new QSlider(FormAccuracyAdjust);
         verticalSlider11->setObjectName(QString::fromUtf8("verticalSlider11"));
+        verticalSlider11->setEnabled(false);
         sizePolicy1.setHeightForWidth(verticalSlider11->sizePolicy().hasHeightForWidth());
         verticalSlider11->setSizePolicy(sizePolicy1);
         verticalSlider11->setMinimumSize(QSize(25, 0));
@@ -257,6 +262,7 @@ public:
 " }"));
         verticalSlider11->setMinimum(-255);
         verticalSlider11->setMaximum(255);
+        verticalSlider11->setTracking(true);
         verticalSlider11->setOrientation(Qt::Vertical);
 
         gridLayout->addWidget(verticalSlider11, 2, 1, 1, 1, Qt::AlignHCenter);
@@ -321,6 +327,7 @@ public:
         gridLayout_2->setVerticalSpacing(10);
         verticalSlider22 = new QSlider(FormAccuracyAdjust);
         verticalSlider22->setObjectName(QString::fromUtf8("verticalSlider22"));
+        verticalSlider22->setEnabled(false);
         sizePolicy1.setHeightForWidth(verticalSlider22->sizePolicy().hasHeightForWidth());
         verticalSlider22->setSizePolicy(sizePolicy1);
         verticalSlider22->setMinimumSize(QSize(25, 0));
@@ -340,6 +347,7 @@ public:
 " }"));
         verticalSlider22->setMinimum(-255);
         verticalSlider22->setMaximum(255);
+        verticalSlider22->setTracking(true);
         verticalSlider22->setOrientation(Qt::Vertical);
 
         gridLayout_2->addWidget(verticalSlider22, 2, 2, 1, 1, Qt::AlignHCenter);
@@ -357,6 +365,7 @@ public:
 
         verticalSlider23 = new QSlider(FormAccuracyAdjust);
         verticalSlider23->setObjectName(QString::fromUtf8("verticalSlider23"));
+        verticalSlider23->setEnabled(false);
         sizePolicy1.setHeightForWidth(verticalSlider23->sizePolicy().hasHeightForWidth());
         verticalSlider23->setSizePolicy(sizePolicy1);
         verticalSlider23->setMinimumSize(QSize(25, 0));
@@ -376,6 +385,7 @@ public:
 " }"));
         verticalSlider23->setMinimum(-5);
         verticalSlider23->setMaximum(5);
+        verticalSlider23->setTracking(true);
         verticalSlider23->setOrientation(Qt::Vertical);
 
         gridLayout_2->addWidget(verticalSlider23, 2, 4, 1, 1, Qt::AlignHCenter);
@@ -440,6 +450,7 @@ public:
 
         verticalSlider21 = new QSlider(FormAccuracyAdjust);
         verticalSlider21->setObjectName(QString::fromUtf8("verticalSlider21"));
+        verticalSlider21->setEnabled(false);
         sizePolicy1.setHeightForWidth(verticalSlider21->sizePolicy().hasHeightForWidth());
         verticalSlider21->setSizePolicy(sizePolicy1);
         verticalSlider21->setMinimumSize(QSize(25, 0));
@@ -459,6 +470,7 @@ public:
 " }"));
         verticalSlider21->setMinimum(-255);
         verticalSlider21->setMaximum(255);
+        verticalSlider21->setTracking(true);
         verticalSlider21->setOrientation(Qt::Vertical);
 
         gridLayout_2->addWidget(verticalSlider21, 2, 0, 1, 1, Qt::AlignHCenter);
@@ -526,6 +538,7 @@ public:
         gridLayout_3->setVerticalSpacing(10);
         verticalSlider32 = new QSlider(FormAccuracyAdjust);
         verticalSlider32->setObjectName(QString::fromUtf8("verticalSlider32"));
+        verticalSlider32->setEnabled(false);
         sizePolicy1.setHeightForWidth(verticalSlider32->sizePolicy().hasHeightForWidth());
         verticalSlider32->setSizePolicy(sizePolicy1);
         verticalSlider32->setMinimumSize(QSize(25, 0));
@@ -545,6 +558,7 @@ public:
 " }"));
         verticalSlider32->setMinimum(-255);
         verticalSlider32->setMaximum(255);
+        verticalSlider32->setTracking(true);
         verticalSlider32->setOrientation(Qt::Vertical);
 
         gridLayout_3->addWidget(verticalSlider32, 2, 2, 1, 1, Qt::AlignHCenter);
@@ -562,6 +576,7 @@ public:
 
         verticalSlider33 = new QSlider(FormAccuracyAdjust);
         verticalSlider33->setObjectName(QString::fromUtf8("verticalSlider33"));
+        verticalSlider33->setEnabled(false);
         sizePolicy1.setHeightForWidth(verticalSlider33->sizePolicy().hasHeightForWidth());
         verticalSlider33->setSizePolicy(sizePolicy1);
         verticalSlider33->setMinimumSize(QSize(25, 0));
@@ -581,6 +596,7 @@ public:
 " }"));
         verticalSlider33->setMinimum(-5);
         verticalSlider33->setMaximum(5);
+        verticalSlider33->setTracking(true);
         verticalSlider33->setOrientation(Qt::Vertical);
 
         gridLayout_3->addWidget(verticalSlider33, 2, 4, 1, 1, Qt::AlignHCenter);
@@ -645,6 +661,7 @@ public:
 
         verticalSlider31 = new QSlider(FormAccuracyAdjust);
         verticalSlider31->setObjectName(QString::fromUtf8("verticalSlider31"));
+        verticalSlider31->setEnabled(false);
         sizePolicy1.setHeightForWidth(verticalSlider31->sizePolicy().hasHeightForWidth());
         verticalSlider31->setSizePolicy(sizePolicy1);
         verticalSlider31->setMinimumSize(QSize(25, 0));
@@ -664,6 +681,7 @@ public:
 " }"));
         verticalSlider31->setMinimum(-255);
         verticalSlider31->setMaximum(255);
+        verticalSlider31->setTracking(true);
         verticalSlider31->setOrientation(Qt::Vertical);
 
         gridLayout_3->addWidget(verticalSlider31, 2, 0, 1, 1, Qt::AlignHCenter);

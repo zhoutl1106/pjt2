@@ -60,6 +60,7 @@ void FormAshClean::on_toolButton_clicked()
 {
     if(isBeep)beep(50000,3);
     timeAshTimer->setInterval(g_dialog->fileManager->config.ash_interval * 1000 * 60);
+
     emit switchToPage(6);
 }
 
@@ -89,6 +90,8 @@ void FormAshClean::cleanAsh()
 
     tmp1.data()[0] = 0x0a;
     g_dialog->serialManager->writeCmd(0,tmp1);
+    dlgAsh->setDelay(ui->spinBox_delay->value());
+    dlgAsh->exec();
     tmp1.data()[0] = 0x0b;
     g_dialog->serialManager->writeCmd(0,tmp1);
     tmp1.data()[0] = 0x11;

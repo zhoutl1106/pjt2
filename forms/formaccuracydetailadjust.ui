@@ -63,6 +63,9 @@
      </item>
      <item row="2" column="5" alignment="Qt::AlignHCenter">
       <widget class="QSlider" name="verticalSlider13">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -92,7 +95,7 @@ QSlider::handle {
  }</string>
        </property>
        <property name="minimum">
-        <number>-5</number>
+        <number>1</number>
        </property>
        <property name="maximum">
         <number>5</number>
@@ -104,6 +107,9 @@ QSlider::handle {
      </item>
      <item row="2" column="3" alignment="Qt::AlignHCenter">
       <widget class="QSlider" name="verticalSlider12">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -133,7 +139,7 @@ QSlider::handle {
  }</string>
        </property>
        <property name="minimum">
-        <number>-255</number>
+        <number>0</number>
        </property>
        <property name="maximum">
         <number>255</number>
@@ -262,6 +268,9 @@ QSlider::handle {
      </item>
      <item row="2" column="1" alignment="Qt::AlignHCenter">
       <widget class="QSlider" name="verticalSlider11">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -291,7 +300,7 @@ QSlider::handle {
  }</string>
        </property>
        <property name="minimum">
-        <number>-255</number>
+        <number>0</number>
        </property>
        <property name="maximum">
         <number>255</number>
@@ -528,7 +537,7 @@ QComboBox::down-arrow {
       </size>
      </property>
      <property name="text">
-      <string>精细调整</string>
+      <string>精度细调</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

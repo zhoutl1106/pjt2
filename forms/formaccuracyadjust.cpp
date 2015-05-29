@@ -76,6 +76,7 @@ FormAccuracyAdjust::FormAccuracyAdjust(QWidget *parent) :
     {
         lbtn[i] = new LongClickToolButton(NULL,i/2,i%2==0?1:-1);
         connect(lbtn[i],SIGNAL(longClick(int,int)),this,SLOT(lbtnValue(int,int)));
+        connect(lbtn[i],SIGNAL(released(int,int)),this,SLOT(lbtnValue(int,int)));
         QVBoxLayout *layout = new QVBoxLayout;
         layout->setMargin(0);
         layout->addWidget(lbtn[i]);
@@ -153,22 +154,22 @@ void FormAccuracyAdjust::on_toolButton_2_clicked()
     ui->verticalSlider32->setValue(0);
     ui->verticalSlider33->setValue(0);
     g_dialog->fileManager->configChange();
-    for(int i = 0;i<14;i++)
+    /*for(int i = 0;i<14;i++)
     {
         qDebug()<<i<<g_dialog->fileManager->config.times[i]
                   <<g_dialog->fileManager->config.accuracy[i][0]
                  <<g_dialog->fileManager->config.accuracy[i][1]
                 <<g_dialog->fileManager->config.accuracy[i][2];
-    }
-    char tmp[6] = {0x01,0};
+    }*/
+    char tmp[6] = {0x02,0};
     QByteArray temp = QByteArray(tmp,6);
     char *p = temp.data();
     for(int i = 0;i<7;i++)
     {
         p[1] = btn->currentIndex()*7 + i + 1;
-        p[2] = g_dialog->fileManager->config.accuracy[i][0];
-        p[3] = g_dialog->fileManager->config.accuracy[i][1];
-        p[4] = g_dialog->fileManager->config.accuracy[i][2];
+        p[2] = g_dialog->fileManager->config.accuracy[btn->currentIndex()*7 +i][0];
+        p[3] = g_dialog->fileManager->config.accuracy[btn->currentIndex()*7 +i][1];
+        p[4] = g_dialog->fileManager->config.accuracy[btn->currentIndex()*7 +i][2];
         g_dialog->serialManager->writeCmd(1,temp);
     }
 }

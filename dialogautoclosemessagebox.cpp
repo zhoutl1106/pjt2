@@ -33,8 +33,6 @@ DialogAutoCloseMessageBox::DialogAutoCloseMessageBox(QWidget *parent, QString ti
     timer = new QTimer;
     timer->setInterval(1000);
     connect(timer,SIGNAL(timeout()),this,SLOT(onTimer()));
-    if(delay_s > 0)
-        timer->start();
     if(!isTimeShow)
     {
         ui->labelCntDown->setVisible(false);
@@ -68,14 +66,14 @@ void DialogAutoCloseMessageBox::onTimer()
 
 void DialogAutoCloseMessageBox::on_pushButtonOK_clicked()
 {
-    beep(50000,103);
+    //beep(50000,103);
     accept();
     timer->stop();
 }
 
 void DialogAutoCloseMessageBox::on_pushButtonCancel_clicked()
 {
-    beep(50000,104);
+    //beep(50000,104);
     reject();
     timer->stop();
 }

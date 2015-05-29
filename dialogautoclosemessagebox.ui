@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>500</width>
-    <height>300</height>
+    <height>302</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -138,6 +138,11 @@ QPushButton:pressed
          <height>60</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>25</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>TextLabel</string>
        </property>
@@ -162,6 +167,11 @@ QPushButton:pressed
            <height>40</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>确定</string>
          </property>
@@ -180,6 +190,11 @@ QPushButton:pressed
            <width>0</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>20</pointsize>
+          </font>
          </property>
          <property name="text">
           <string>取消</string>

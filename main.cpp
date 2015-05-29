@@ -21,9 +21,9 @@ void beep(int length_us, int index = 0)
     qDebug()<<"beep"<<index;
 
 #ifdef linux
-    system("echo 1 > /sys/class/gpio/gpio117/value");
+    /*system("echo 1 > /sys/class/gpio/gpio117/value");
     usleep(length_us);
-    system("echo 0 > /sys/class/gpio/gpio117/value");
+    system("echo 0 > /sys/class/gpio/gpio117/value");*/
 #endif
 }
 
@@ -109,6 +109,7 @@ int main(int argc, char *argv[])
     bkgMsgBoxF = new DialogAutoCloseMessageBox(NULL,"背景板","...","","",30,true);
     bkgMsgBoxE = new DialogAutoCloseMessageBox(NULL,"背景板","...","","",30,true);
     msgLowPressure = new DialogAutoCloseMessageBox(NULL,"警报","气压过低\n请检查气源及气路","重试","确定",30,true);
+    isBeep = true;
     Dialog w;
     g_dialog = &w;
     w.setStyleSheet(stylesheet);

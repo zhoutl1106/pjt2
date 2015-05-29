@@ -37,14 +37,14 @@ void DialogDisplayRange::setRange(int upper, int lower)
 
 void DialogDisplayRange::on_toolButton_clicked()
 {
-    FormKeyboard kbd;
+    FormKeyboard kbd(NULL,true);
     kbd.exec();
     ui->spinBoxUpper->setValue(kbd.getString().toInt());
 }
 
 void DialogDisplayRange::on_toolButton_2_clicked()
 {
-    FormKeyboard kbd;
+    FormKeyboard kbd(NULL,true);
     kbd.exec();
     ui->spinBoxLower->setValue(kbd.getString().toInt());
 }

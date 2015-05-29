@@ -569,10 +569,12 @@ void FormVibrationAdjust::on_toolButton_All_clicked()
 
 void FormVibrationAdjust::on_toolButtonVibrator_clicked()
 {
+    beep(50000,2100);
     g_setVibrator();
 }
 
 void FormVibrationAdjust::on_toolButtonValve_clicked()
 {
+    beep(50000,2101);
     g_setValve();
 }

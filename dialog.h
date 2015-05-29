@@ -1,8 +1,8 @@
 #ifndef DIALOG_H
 #define DIALOG_H
 
-#define VERSION 0
-#define SUBVERSION 9
+#define VERSION 1
+#define SUBVERSION 1
 
 #define UDP_CMD_LINSTEN_PORT    8000
 #define UDP_CMD_WRITE_PORT    8001

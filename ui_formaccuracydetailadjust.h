@@ -81,6 +81,7 @@ public:
 
         verticalSlider13 = new QSlider(FormAccuracyDetailAdjust);
         verticalSlider13->setObjectName(QString::fromUtf8("verticalSlider13"));
+        verticalSlider13->setEnabled(false);
         QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::MinimumExpanding);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
@@ -101,7 +102,7 @@ public:
 "     margin: -15px -25px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */\n"
 "     border-radius: 3px;\n"
 " }"));
-        verticalSlider13->setMinimum(-5);
+        verticalSlider13->setMinimum(1);
         verticalSlider13->setMaximum(5);
         verticalSlider13->setOrientation(Qt::Vertical);
 
@@ -109,6 +110,7 @@ public:
 
         verticalSlider12 = new QSlider(FormAccuracyDetailAdjust);
         verticalSlider12->setObjectName(QString::fromUtf8("verticalSlider12"));
+        verticalSlider12->setEnabled(false);
         sizePolicy1.setHeightForWidth(verticalSlider12->sizePolicy().hasHeightForWidth());
         verticalSlider12->setSizePolicy(sizePolicy1);
         verticalSlider12->setMinimumSize(QSize(25, 0));
@@ -126,7 +128,7 @@ public:
 "     margin: -15px -25px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */\n"
 "     border-radius: 3px;\n"
 " }"));
-        verticalSlider12->setMinimum(-255);
+        verticalSlider12->setMinimum(0);
         verticalSlider12->setMaximum(255);
         verticalSlider12->setOrientation(Qt::Vertical);
 
@@ -188,6 +190,7 @@ public:
 
         verticalSlider11 = new QSlider(FormAccuracyDetailAdjust);
         verticalSlider11->setObjectName(QString::fromUtf8("verticalSlider11"));
+        verticalSlider11->setEnabled(false);
         sizePolicy1.setHeightForWidth(verticalSlider11->sizePolicy().hasHeightForWidth());
         verticalSlider11->setSizePolicy(sizePolicy1);
         verticalSlider11->setMinimumSize(QSize(25, 0));
@@ -205,7 +208,7 @@ public:
 "     margin: -15px -25px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */\n"
 "     border-radius: 3px;\n"
 " }"));
-        verticalSlider11->setMinimum(-255);
+        verticalSlider11->setMinimum(0);
         verticalSlider11->setMaximum(255);
         verticalSlider11->setOrientation(Qt::Vertical);
 
@@ -354,7 +357,7 @@ public:
          << QApplication::translate("FormAccuracyDetailAdjust", "\346\225\264\344\275\223", 0, QApplication::UnicodeUTF8)
         );
         toolButton_2->setText(QApplication::translate("FormAccuracyDetailAdjust", "\347\241\256\345\256\232", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("FormAccuracyDetailAdjust", "\347\262\276\347\273\206\350\260\203\346\225\264", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("FormAccuracyDetailAdjust", "\347\262\276\345\272\246\347\273\206\350\260\203", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

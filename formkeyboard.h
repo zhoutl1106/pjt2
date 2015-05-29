@@ -12,7 +12,7 @@ class FormKeyboard : public QDialog
     Q_OBJECT
 
 public:
-    explicit FormKeyboard(QWidget *parent = 0);
+    explicit FormKeyboard(QWidget *parent = 0, bool isClose = false);
     ~FormKeyboard();
     QString getString();
 signals:
@@ -37,6 +37,7 @@ private slots:
 private:
     Ui::FormKeyboard *ui;
     QString str;
+    bool m_isClose;
 };
 
 #endif // FORMKEYBOARD_H

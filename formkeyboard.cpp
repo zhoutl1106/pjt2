@@ -6,13 +6,15 @@ void beep(int length_us, int index = 0);
 extern bool isBeep;
 extern QString stylesheet;
 
-FormKeyboard::FormKeyboard(QWidget *parent) :
+FormKeyboard::FormKeyboard(QWidget *parent,bool isClose) :
     QDialog(parent),
     ui(new Ui::FormKeyboard)
 {
     ui->setupUi(this);
     str.clear();
     setStyleSheet(stylesheet);
+    m_isClose = isClose;
+    setWindowFlags(Qt::FramelessWindowHint);
 }
 
 FormKeyboard::~FormKeyboard()
@@ -37,8 +39,13 @@ void FormKeyboard::on_pushButton_OK_clicked()
 {
     if(isBeep)beep(50000,1010);
     emit sendText(ui->lineEdit->text());
-    str.clear();
-    ui->lineEdit->setText(str);
+    if(m_isClose)
+        close();
+    else
+    {
+        str.clear();
+        ui->lineEdit->setText(str);
+    }
 }
 
 void FormKeyboard::on_pushButton_0_clicked()

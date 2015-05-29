@@ -38,7 +38,7 @@ public:
     {
         if (DialogAutoCloseMessageBox->objectName().isEmpty())
             DialogAutoCloseMessageBox->setObjectName(QString::fromUtf8("DialogAutoCloseMessageBox"));
-        DialogAutoCloseMessageBox->resize(500, 300);
+        DialogAutoCloseMessageBox->resize(500, 302);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -96,6 +96,9 @@ public:
         sizePolicy1.setHeightForWidth(labelCntDown->sizePolicy().hasHeightForWidth());
         labelCntDown->setSizePolicy(sizePolicy1);
         labelCntDown->setMinimumSize(QSize(60, 60));
+        QFont font1;
+        font1.setPointSize(25);
+        labelCntDown->setFont(font1);
         labelCntDown->setAlignment(Qt::AlignCenter);
 
         verticalLayout_2->addWidget(labelCntDown);
@@ -110,6 +113,9 @@ public:
         sizePolicy2.setHeightForWidth(pushButtonOK->sizePolicy().hasHeightForWidth());
         pushButtonOK->setSizePolicy(sizePolicy2);
         pushButtonOK->setMinimumSize(QSize(0, 40));
+        QFont font2;
+        font2.setPointSize(20);
+        pushButtonOK->setFont(font2);
 
         horizontalLayout->addWidget(pushButtonOK);
 
@@ -118,6 +124,7 @@ public:
         sizePolicy2.setHeightForWidth(pushButtonCancel->sizePolicy().hasHeightForWidth());
         pushButtonCancel->setSizePolicy(sizePolicy2);
         pushButtonCancel->setMinimumSize(QSize(0, 40));
+        pushButtonCancel->setFont(font2);
 
         horizontalLayout->addWidget(pushButtonCancel);
 

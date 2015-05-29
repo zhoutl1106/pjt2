@@ -21,7 +21,7 @@ FormModeSelect::FormModeSelect(QWidget *parent) :
     buttonBkgUnchecked = "font-size:50px;border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);";
     memBkgChecked = "font-size:20px;border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);";
     memBkgUnChecked = "font-size:20px;border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);";
-    setStyleSheet(stylesheet);
+    //setStyleSheet(stylesheet);
     ui->mode_1->setStyleSheet(buttonBkgUnchecked);
     ui->mode_2->setStyleSheet(buttonBkgUnchecked);
     ui->mode_3->setStyleSheet(buttonBkgUnchecked);
@@ -44,7 +44,7 @@ FormModeSelect::FormModeSelect(QWidget *parent) :
     list.append(ui->mem_52);
     list.append(ui->mem_53);
 
-//    on_mode_1_clicked();
+    on_mode_1_clicked();
 }
 
 FormModeSelect::~FormModeSelect()
@@ -93,13 +93,13 @@ void FormModeSelect::setSelect(int mode, int mem)
 
 void FormModeSelect::on_toolButton_clicked()
 {
-    if(isBeep)beep(50000,29);
+    beep(50000,29);
     emit switchToPage(2);
 }
 
 void FormModeSelect::on_toolButton_2_clicked()
 {
-    if(isBeep)beep(50000,30);
+    beep(50000,30);
     DialogAutoCloseMessageBox box(NULL,"保存","是否保存模式参数","是","否",10,true);
     if(box.exec() == QDialog::Accepted)
     {

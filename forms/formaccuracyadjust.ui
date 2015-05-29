@@ -63,6 +63,9 @@
      </item>
      <item row="2" column="3" alignment="Qt::AlignHCenter">
       <widget class="QSlider" name="verticalSlider12">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -97,6 +100,9 @@ QSlider::handle {
        <property name="maximum">
         <number>255</number>
        </property>
+       <property name="tracking">
+        <bool>true</bool>
+       </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
@@ -129,6 +135,9 @@ QSlider::handle {
      </item>
      <item row="2" column="5" alignment="Qt::AlignHCenter">
       <widget class="QSlider" name="verticalSlider13">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -162,6 +171,9 @@ QSlider::handle {
        </property>
        <property name="maximum">
         <number>5</number>
+       </property>
+       <property name="tracking">
+        <bool>true</bool>
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -285,6 +297,9 @@ QSlider::handle {
      </item>
      <item row="2" column="1" alignment="Qt::AlignHCenter">
       <widget class="QSlider" name="verticalSlider11">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -318,6 +333,9 @@ QSlider::handle {
        </property>
        <property name="maximum">
         <number>255</number>
+       </property>
+       <property name="tracking">
+        <bool>true</bool>
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -432,6 +450,9 @@ QSlider::handle {
      </property>
      <item row="2" column="2" alignment="Qt::AlignHCenter">
       <widget class="QSlider" name="verticalSlider22">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -466,6 +487,9 @@ QSlider::handle {
        <property name="maximum">
         <number>255</number>
        </property>
+       <property name="tracking">
+        <bool>true</bool>
+       </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
@@ -498,6 +522,9 @@ QSlider::handle {
      </item>
      <item row="2" column="4" alignment="Qt::AlignHCenter">
       <widget class="QSlider" name="verticalSlider23">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -531,6 +558,9 @@ QSlider::handle {
        </property>
        <property name="maximum">
         <number>5</number>
+       </property>
+       <property name="tracking">
+        <bool>true</bool>
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -675,6 +705,9 @@ QSlider::handle {
      </item>
      <item row="2" column="0" alignment="Qt::AlignHCenter">
       <widget class="QSlider" name="verticalSlider21">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -708,6 +741,9 @@ QSlider::handle {
        </property>
        <property name="maximum">
         <number>255</number>
+       </property>
+       <property name="tracking">
+        <bool>true</bool>
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -844,6 +880,9 @@ QSlider::handle {
      </property>
      <item row="2" column="2" alignment="Qt::AlignHCenter">
       <widget class="QSlider" name="verticalSlider32">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -878,6 +917,9 @@ QSlider::handle {
        <property name="maximum">
         <number>255</number>
        </property>
+       <property name="tracking">
+        <bool>true</bool>
+       </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
@@ -910,6 +952,9 @@ QSlider::handle {
      </item>
      <item row="2" column="4" alignment="Qt::AlignHCenter">
       <widget class="QSlider" name="verticalSlider33">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -943,6 +988,9 @@ QSlider::handle {
        </property>
        <property name="maximum">
         <number>5</number>
+       </property>
+       <property name="tracking">
+        <bool>true</bool>
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -1087,6 +1135,9 @@ QSlider::handle {
      </item>
      <item row="2" column="0" alignment="Qt::AlignHCenter">
       <widget class="QSlider" name="verticalSlider31">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -1120,6 +1171,9 @@ QSlider::handle {
        </property>
        <property name="maximum">
         <number>255</number>
+       </property>
+       <property name="tracking">
+        <bool>true</bool>
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>

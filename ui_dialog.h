@@ -38,7 +38,7 @@ public:
         label = new QLabel(Dialog);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(30, 20, 381, 51));
-        label->setStyleSheet(QString::fromUtf8("font: 14pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
+        label->setStyleSheet(QString::fromUtf8("font: 22pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         labelDate = new QLabel(Dialog);
         labelDate->setObjectName(QString::fromUtf8("labelDate"));
         labelDate->setGeometry(QRect(560, 40, 171, 31));
@@ -50,16 +50,19 @@ public:
         labelHour->setGeometry(QRect(433, 25, 49, 41));
         QFont font1;
         font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font1.setPointSize(31);
+        font1.setPointSize(43);
+        font1.setBold(false);
+        font1.setItalic(false);
+        font1.setWeight(50);
         labelHour->setFont(font1);
         labelHour->setStyleSheet(QString::fromUtf8("border-image: url(:/image/timebkg.png);\n"
-"font: 31pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
+"font: 43pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         labelMinute = new QLabel(Dialog);
         labelMinute->setObjectName(QString::fromUtf8("labelMinute"));
         labelMinute->setGeometry(QRect(500, 25, 49, 41));
         labelMinute->setFont(font1);
         labelMinute->setStyleSheet(QString::fromUtf8("border-image: url(:/image/timebkg.png);\n"
-"font: 31pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
+"font: 43pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         stackedWidget = new QStackedWidget(Dialog);
         stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
         stackedWidget->setGeometry(QRect(0, 80, 1024, 520));

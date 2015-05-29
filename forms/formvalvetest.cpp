@@ -125,6 +125,12 @@ void FormValveTest::on_toolButton_OK_clicked()
     char temp[6]={0x09,0x00};
     short tempDelay = g_dialog->fileManager->config.delay[btn->currentIndex()*7 + ui->spinBoxChannel->value()-1]*20.0;
     short tempPulseWidth = g_dialog->fileManager->config.pulse_width[btn->currentIndex()*7 + ui->spinBoxChannel->value()-1]*20.0;
+    if(tempDelay % 2 != 0)
+        tempDelay ++;
+    if(tempPulseWidth % 2 != 0)
+        tempPulseWidth ++;
+    qDebug()<<"formValveTest"<<g_dialog->fileManager->config.delay[btn->currentIndex()*7 + ui->spinBoxChannel->value()-1]<<tempDelay
+           <<g_dialog->fileManager->config.pulse_width[btn->currentIndex()*7 + ui->spinBoxChannel->value()-1]<<tempPulseWidth;
     temp[1] = btn->currentIndex()*7 + ui->spinBoxChannel->value();
     *((short*)(temp+2)) = tempDelay;
     *((short*)(temp+4)) = tempPulseWidth;

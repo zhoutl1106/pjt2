@@ -12,6 +12,7 @@ extern Dialog* g_dialog;
 extern void Sleep(int);
 extern DialogAutoCloseMessageBox *bkgMsgBoxF;
 extern DialogAutoCloseMessageBox *bkgMsgBoxE;
+extern bool isBeep;
 
 FileManager::FileManager(QObject *parent) :
     QObject(parent)
@@ -239,7 +240,7 @@ void FileManager::sendCmds()
     QByteArray cmd485 = QByteArray(buf485,6);
     char* p232 = cmd232.data();
     char* p485 = cmd485.data();
-
+    isBeep = false;
     //front bkg borad
     dlg->close();
     bkgMsgBoxF->setText("前背景板调整中");
@@ -306,10 +307,10 @@ void FileManager::sendCmds()
     //send accuracy
     dlg->setText("正在设定精度");
     dlg->show();
-    p485[0] = 0x02;
     for(int i = 0;i<14;i++)
     {
         memset(p485,0,6);
+        p485[0] = 0x02;
         p485[1] = i+1;
         p485[2] = config.accuracy[i][0];
         p485[3] = config.accuracy[i][1];
@@ -334,10 +335,10 @@ void FileManager::sendCmds()
 
     //valve delay and pulse width
     dlg->setText("正在设定通道延时和开阀时间");
-    p485[0] = 0x09;
     for(int i = 0;i<14;i++)
     {
         memset(p485,0,6);
+        p485[0] = 0x09;
         p485[1] = i+1;
         *((short*)(p485+2)) = short(config.delay[i]);
         *((short*)(p485+4)) = short(config.pulse_width[i]);
@@ -368,6 +369,7 @@ void FileManager::sendCmds()
     Sleep(2000);
     dlg->accept();
     qDebug()<<"finish send commands";
+    isBeep = true;
 }
 
 void FileManager::setLights()
