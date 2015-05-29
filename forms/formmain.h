@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QTimer>
+#include <QShowEvent>
 
 namespace Ui {
 class FormMain;
@@ -17,6 +18,7 @@ public:
     ~FormMain();
     void setValve(bool value);
     void setVibrator(bool value);
+    void showEvent(QShowEvent *e);
 
 signals:
     void switchToPage(int index);

@@ -46,8 +46,8 @@ void FormWelcome::checkLicense()
             emit switchToPage(4);
             return;
         }
-        DialogAutoCloseMessageBox box(NULL,"是否使用该模式",str,"否","是",10,true);
-        if(box.exec() == QDialog::Rejected)
+        DialogAutoCloseMessageBox box(NULL,"是否使用该模式",str,"是","否",10,true,true);
+        if(box.exec() == QDialog::Accepted)
         {
             //******send cmds
             g_dialog->fileManager->readConfig(g_dialog->fileManager->m_lastMode,g_dialog->fileManager->m_lastIndex);

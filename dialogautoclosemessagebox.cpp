@@ -5,7 +5,7 @@ extern bool isBeep;
 void beep(int length_us, int index = 0);
 
 DialogAutoCloseMessageBox::DialogAutoCloseMessageBox(QWidget *parent, QString title, QString text,
-                                                     QString acceptText, QString rejectText, int delay_s, bool isTimeShow) :
+                                                     QString acceptText, QString rejectText, int delay_s, bool isTimeShow, bool isDefaultAccept) :
 
     QDialog(parent),
     ui(new Ui::DialogAutoCloseMessageBox)
@@ -40,6 +40,7 @@ DialogAutoCloseMessageBox::DialogAutoCloseMessageBox(QWidget *parent, QString ti
         ui->pushButtonCancel->setVisible(false);
     }
     setWindowModality(Qt::ApplicationModal);
+    m_isDefaultAccept = isDefaultAccept;
 }
 
 void DialogAutoCloseMessageBox::setText(QString text)
@@ -61,7 +62,12 @@ void DialogAutoCloseMessageBox::onTimer()
     if(m_delay_s >= 0)
         ui->labelCntDown->setText(QString::number(m_delay_s) + " s");
     else
-        on_pushButtonCancel_clicked();
+    {
+        if(m_isDefaultAccept)
+            on_pushButtonOK_clicked();
+        else
+            on_pushButtonCancel_clicked();
+    }
 }
 
 void DialogAutoCloseMessageBox::on_pushButtonOK_clicked()

@@ -335,13 +335,21 @@ void FileManager::sendCmds()
 
     //valve delay and pulse width
     dlg->setText("正在设定通道延时和开阀时间");
+
     for(int i = 0;i<14;i++)
     {
         memset(p485,0,6);
         p485[0] = 0x09;
         p485[1] = i+1;
-        *((short*)(p485+2)) = short(config.delay[i]);
-        *((short*)(p485+4)) = short(config.pulse_width[i]);
+
+        short tempDelay = config.delay[i]*20.0;
+        short tempPulseWidth = config.pulse_width[i]*20.0;
+        if(tempDelay % 2 != 0)
+            tempDelay ++;
+        if(tempPulseWidth % 2 != 0)
+            tempPulseWidth ++;
+        *((short*)(p485+2)) = tempDelay;
+        *((short*)(p485+4)) = tempPulseWidth;
         g_dialog->serialManager->writeCmd(1,cmd485);
     }
     Sleep(2000);
@@ -360,7 +368,7 @@ void FileManager::sendCmds()
     {
         memset(p232,0,3);
         p232[0] = 0x82 + i;
-        p485[1] = config.vibration[i];
+        p232[1] = config.vibration[i];
         g_dialog->serialManager->writeCmd(0,cmd232);
     }
     Sleep(2000);

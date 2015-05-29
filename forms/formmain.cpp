@@ -1,6 +1,7 @@
 #include "formmain.h"
 #include "ui_formmain.h"
 #include "../dialog.h"
+#include <QDebug>
 
 extern bool isBeep;
 void beep(int length_us, int index = 0);
@@ -21,6 +22,12 @@ FormMain::FormMain(QWidget *parent) :
 FormMain::~FormMain()
 {
     delete ui;
+}
+
+void FormMain::showEvent(QShowEvent *e)
+{
+    qDebug()<<"main show";
+    isBeep = true;
 }
 
 void FormMain::setValve(bool value)

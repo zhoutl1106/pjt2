@@ -14,7 +14,7 @@ class DialogAutoCloseMessageBox : public QDialog
 
 public:
     DialogAutoCloseMessageBox(QWidget *parent, QString title, QString text,
-                              QString acceptText, QString rejectText, int delay_s, bool isTimeShow);
+                              QString acceptText, QString rejectText, int delay_s, bool isTimeShow, bool isDefaultAccept = false);
     ~DialogAutoCloseMessageBox();
     void setDelay(int s);
     int exec();
@@ -33,6 +33,7 @@ private:
     Ui::DialogAutoCloseMessageBox *ui;
     QTimer *timer;
     int m_delay_s;
+    bool m_isDefaultAccept;
 };
 
 #endif // DIALOGAUTOCLOSEMESSAGEBOX_H

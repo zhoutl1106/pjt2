@@ -23,8 +23,8 @@ FormValveTest::FormValveTest(QWidget *parent) :
     box->setMargin(0);
     box->addWidget(btn);
     ui->widgetCamera->setLayout(box);
-    ui->spinBoxGroup->setMaximum(MAX_GROUP_CNT);
-    ui->spinBoxPos->setMaximum(MAX_NUMBER_CNT);
+    ui->spinBoxGroup->setMaximum(14);
+    ui->spinBoxPos->setMaximum(64);
     timer = new QTimer;
     timer->setInterval(300);
     connect(timer,SIGNAL(timeout()),this,SLOT(onTimer()));
@@ -129,8 +129,8 @@ void FormValveTest::on_toolButton_OK_clicked()
         tempDelay ++;
     if(tempPulseWidth % 2 != 0)
         tempPulseWidth ++;
-    qDebug()<<"formValveTest"<<g_dialog->fileManager->config.delay[btn->currentIndex()*7 + ui->spinBoxChannel->value()-1]<<tempDelay
-           <<g_dialog->fileManager->config.pulse_width[btn->currentIndex()*7 + ui->spinBoxChannel->value()-1]<<tempPulseWidth;
+    /*qDebug()<<"formValveTest"<<g_dialog->fileManager->config.delay[btn->currentIndex()*7 + ui->spinBoxChannel->value()-1]<<tempDelay
+           <<g_dialog->fileManager->config.pulse_width[btn->currentIndex()*7 + ui->spinBoxChannel->value()-1]<<tempPulseWidth;*/
     temp[1] = btn->currentIndex()*7 + ui->spinBoxChannel->value();
     *((short*)(temp+2)) = tempDelay;
     *((short*)(temp+4)) = tempPulseWidth;
