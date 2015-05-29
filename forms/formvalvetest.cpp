@@ -77,11 +77,11 @@ void FormValveTest::onTimer()
     isBeep = false;
     on_toolButton_singleTest_clicked();
     int group = ui->spinBoxGroup->value();
-    if(ui->spinBoxPos->value() == MAX_NUMBER_CNT)
+    if(ui->spinBoxPos->value() == 64)
     {
         ui->spinBoxPos->setValue(1);
         group ++;
-        if(group > MAX_GROUP_CNT)
+        if(group > 14)
         {
             on_toolButton_autoTest_clicked();
             return;
