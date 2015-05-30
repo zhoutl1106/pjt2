@@ -71,6 +71,8 @@ void FormCCDCurve::updateData()
 {
     bool temp = isBeep;
     isBeep = false;
+    upperbound = g_dialog->fileManager->config.showUpper;
+    lowerbound = g_dialog->fileManager->config.showLower;
     isBeep = temp;
 }
 
@@ -135,17 +137,23 @@ void FormCCDCurve::paintEvent(QPaintEvent *e)
             painter.drawPath(pathUpper);
         }
     }
-    int channel = btnCamera->currentIndex()*7 + ui->spinBox_channel->value() - 1;
-    int drawUppder = subHeight + startY - (
-                (255 - g_dialog->fileManager->config.accuracy[channel][0]) * 16 + 15
+    if(upperbound != lowerbound)
+    {
+        int channel = btnCamera->currentIndex()*7 + ui->spinBox_channel->value() - 1;
+        int drawUppder = subHeight + startY - (
+                    (255 - g_dialog->fileManager->config.accuracy[channel][0]) * 16 + 15
                 - lowerbound) * subHeight / (upperbound-lowerbound);
-    int drawLower = subHeight + startY - (
-                g_dialog->fileManager->config.accuracy[channel][1] * 16
+        int drawLower = subHeight + startY - (
+                    g_dialog->fileManager->config.accuracy[channel][1] * 16
                 - lowerbound) * subHeight / (upperbound-lowerbound);
-    painter.setPen(QPen(QBrush(Qt::red),3));
-    painter.drawLine(0,drawUppder,width(),drawUppder);
-    painter.setPen(QPen(QBrush(Qt::blue),3));
-    painter.drawLine(0,drawLower,width(),drawLower);
+        qDebug()<< (255 - g_dialog->fileManager->config.accuracy[channel][0]) * 16 + 15
+                <<g_dialog->fileManager->config.accuracy[channel][1] * 16
+                <<drawUppder<<drawLower;
+        painter.setPen(QPen(QBrush(Qt::red),3));
+        painter.drawLine(0,drawUppder,width(),drawUppder);
+        painter.setPen(QPen(QBrush(Qt::blue),3));
+        painter.drawLine(0,drawLower,width(),drawLower);
+    }
 }
 
 void FormCCDCurve::mousePressEvent(QMouseEvent *e)
@@ -364,6 +372,7 @@ void FormCCDCurve::on_toolButton_transmit_clicked()
     temp[1] = ui->spinBox_channel->value() + btnCamera->currentIndex() * 7;
     QByteArray cmd(temp,6);
     g_dialog->serialManager->writeCmd(1,cmd);
+    timer->start();
 }
 
 void FormCCDCurve::on_toolButton_continue_clicked()
@@ -372,13 +381,13 @@ void FormCCDCurve::on_toolButton_continue_clicked()
     if(periodTimer->isActive())
     {
         ui->toolButton_continue->setText("连续传输");
-        ui->toolButton_all->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
+        ui->toolButton_continue->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
         periodTimer->stop();
     }
     else
     {
         ui->toolButton_continue->setText("停止传输");
-        ui->toolButton_all->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
+        ui->toolButton_continue->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
         periodTimer->start();
     }
 }
