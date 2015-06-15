@@ -96,6 +96,9 @@ void FormMain::onLongPressTimer()
         tmp1.data()[0] = 0x12;
         g_dialog->serialManager->writeCmd(0,tmp1);
 
+        char tmp2[6]={0x07,0xaa,0x00};
+        g_dialog->serialManager->writeCmd(1,QByteArray(tmp2,6));
+
         DialogAutoCloseMessageBox box(NULL,"保存","是否保存模式参数","是","否",10,true);
         if(box.exec() == QDialog::Accepted)
         {

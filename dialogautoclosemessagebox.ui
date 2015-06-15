@@ -64,7 +64,8 @@ QPushButton:pressed
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);</string>
+      <string notr="true">color: rgb(255, 255, 255);
+font: 12pt &quot;文泉驿微米黑&quot;;</string>
      </property>
      <property name="text">
       <string>TextLabel</string>
@@ -79,16 +80,7 @@ QPushButton:pressed
      <property name="spacing">
       <number>20</number>
      </property>
-     <property name="leftMargin">
-      <number>6</number>
-     </property>
-     <property name="topMargin">
-      <number>6</number>
-     </property>
-     <property name="rightMargin">
-      <number>6</number>
-     </property>
-     <property name="bottomMargin">
+     <property name="margin">
       <number>6</number>
      </property>
      <item>

@@ -25,7 +25,7 @@ void DialogDisplayRange::on_pushButton_2_clicked()
 void DialogDisplayRange::on_pushButton_clicked()
 {
     if(ui->spinBoxLower->value() < ui->spinBoxUpper->value())
-        emit displayRange(ui->spinBoxLower->value(),ui->spinBoxUpper->value());
+        emit displayRange(ui->spinBoxUpper->value(),ui->spinBoxLower->value());
     accept();
 }
 

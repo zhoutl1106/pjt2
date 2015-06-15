@@ -47,6 +47,7 @@ void FormWholeSetting::updateData()
 
     for(int i = 0;i<7;i++)
     {
+        //qDebug()<<"select times"<<i<<g_dialog->fileManager->config.times[i] - 1;
         btn[i]->setCurrentIndex(g_dialog->fileManager->config.times[i] - 1);
     }
 

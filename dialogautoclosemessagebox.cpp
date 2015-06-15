@@ -1,5 +1,6 @@
 #include "dialogautoclosemessagebox.h"
 #include "ui_dialogautoclosemessagebox.h"
+#include <QDebug>
 
 extern bool isBeep;
 void beep(int length_us, int index = 0);
@@ -72,14 +73,16 @@ void DialogAutoCloseMessageBox::onTimer()
 
 void DialogAutoCloseMessageBox::on_pushButtonOK_clicked()
 {
-    //beep(50000,103);
+    beep(50000,103);
+    qDebug()<<"autocloseMsg 103"<<ui->label->text();
     accept();
     timer->stop();
 }
 
 void DialogAutoCloseMessageBox::on_pushButtonCancel_clicked()
 {
-    //beep(50000,104);
+    beep(50000,104);
+    qDebug()<<"autocloseMsg 104"<<ui->label->text();
     reject();
     timer->stop();
 }

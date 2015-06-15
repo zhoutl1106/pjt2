@@ -68,15 +68,16 @@ public:
         sizePolicy1.setHeightForWidth(labelTitle->sizePolicy().hasHeightForWidth());
         labelTitle->setSizePolicy(sizePolicy1);
         labelTitle->setMinimumSize(QSize(0, 52));
-        labelTitle->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        labelTitle->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"font: 12pt \"\346\226\207\346\263\211\351\251\277\345\276\256\347\261\263\351\273\221\";"));
         labelTitle->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         verticalLayout->addWidget(labelTitle);
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(20);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(6, 6, 6, 6);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         label = new QLabel(DialogAutoCloseMessageBox);
         label->setObjectName(QString::fromUtf8("label"));
         sizePolicy.setHeightForWidth(label->sizePolicy().hasHeightForWidth());

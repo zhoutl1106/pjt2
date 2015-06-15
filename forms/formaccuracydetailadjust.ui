@@ -64,7 +64,7 @@
      <item row="2" column="5" alignment="Qt::AlignHCenter">
       <widget class="QSlider" name="verticalSlider13">
        <property name="enabled">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
@@ -108,7 +108,7 @@ QSlider::handle {
      <item row="2" column="3" alignment="Qt::AlignHCenter">
       <widget class="QSlider" name="verticalSlider12">
        <property name="enabled">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
@@ -269,7 +269,7 @@ QSlider::handle {
      <item row="2" column="1" alignment="Qt::AlignHCenter">
       <widget class="QSlider" name="verticalSlider11">
        <property name="enabled">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
@@ -442,12 +442,12 @@ QSlider::handle {
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
-         <pointsize>20</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QComboBox {
+	font-size:25px;
 	color : rgb(255,255,255);
     margin-right: 0px;
 	border-image: url(:/image/btnR.png);
@@ -467,42 +467,42 @@ QComboBox::down-arrow {
        </property>
        <item>
         <property name="text">
-         <string>通道1</string>
+         <string>    通道1</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>通道2</string>
+         <string>    通道2</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>通道3</string>
+         <string>    通道3</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>通道4</string>
+         <string>    通道4</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>通道5</string>
+         <string>    通道5</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>通道6</string>
+         <string>    通道6</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>通道7</string>
+         <string>    通道7</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>整体</string>
+         <string>     整体</string>
         </property>
        </item>
       </widget>

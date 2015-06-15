@@ -81,7 +81,7 @@ public:
 
         verticalSlider13 = new QSlider(FormAccuracyDetailAdjust);
         verticalSlider13->setObjectName(QString::fromUtf8("verticalSlider13"));
-        verticalSlider13->setEnabled(false);
+        verticalSlider13->setEnabled(true);
         QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::MinimumExpanding);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
@@ -110,7 +110,7 @@ public:
 
         verticalSlider12 = new QSlider(FormAccuracyDetailAdjust);
         verticalSlider12->setObjectName(QString::fromUtf8("verticalSlider12"));
-        verticalSlider12->setEnabled(false);
+        verticalSlider12->setEnabled(true);
         sizePolicy1.setHeightForWidth(verticalSlider12->sizePolicy().hasHeightForWidth());
         verticalSlider12->setSizePolicy(sizePolicy1);
         verticalSlider12->setMinimumSize(QSize(25, 0));
@@ -190,7 +190,7 @@ public:
 
         verticalSlider11 = new QSlider(FormAccuracyDetailAdjust);
         verticalSlider11->setObjectName(QString::fromUtf8("verticalSlider11"));
-        verticalSlider11->setEnabled(false);
+        verticalSlider11->setEnabled(true);
         sizePolicy1.setHeightForWidth(verticalSlider11->sizePolicy().hasHeightForWidth());
         verticalSlider11->setSizePolicy(sizePolicy1);
         verticalSlider11->setMinimumSize(QSize(25, 0));
@@ -289,10 +289,9 @@ public:
         sizePolicy.setHeightForWidth(comboBox->sizePolicy().hasHeightForWidth());
         comboBox->setSizePolicy(sizePolicy);
         QFont font1;
-        font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font1.setPointSize(20);
         comboBox->setFont(font1);
         comboBox->setStyleSheet(QString::fromUtf8("QComboBox {\n"
+"	font-size:25px;\n"
 "	color : rgb(255,255,255);\n"
 "    margin-right: 0px;\n"
 "	border-image: url(:/image/btnR.png);\n"
@@ -347,14 +346,14 @@ public:
         toolButton->setText(QApplication::translate("FormAccuracyDetailAdjust", "\350\277\224\345\233\236", 0, QApplication::UnicodeUTF8));
         comboBox->clear();
         comboBox->insertItems(0, QStringList()
-         << QApplication::translate("FormAccuracyDetailAdjust", "\351\200\232\351\201\2231", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("FormAccuracyDetailAdjust", "\351\200\232\351\201\2232", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("FormAccuracyDetailAdjust", "\351\200\232\351\201\2233", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("FormAccuracyDetailAdjust", "\351\200\232\351\201\2234", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("FormAccuracyDetailAdjust", "\351\200\232\351\201\2235", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("FormAccuracyDetailAdjust", "\351\200\232\351\201\2236", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("FormAccuracyDetailAdjust", "\351\200\232\351\201\2237", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("FormAccuracyDetailAdjust", "\346\225\264\344\275\223", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("FormAccuracyDetailAdjust", "    \351\200\232\351\201\2231", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("FormAccuracyDetailAdjust", "    \351\200\232\351\201\2232", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("FormAccuracyDetailAdjust", "    \351\200\232\351\201\2233", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("FormAccuracyDetailAdjust", "    \351\200\232\351\201\2234", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("FormAccuracyDetailAdjust", "    \351\200\232\351\201\2235", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("FormAccuracyDetailAdjust", "    \351\200\232\351\201\2236", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("FormAccuracyDetailAdjust", "    \351\200\232\351\201\2237", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("FormAccuracyDetailAdjust", "     \346\225\264\344\275\223", 0, QApplication::UnicodeUTF8)
         );
         toolButton_2->setText(QApplication::translate("FormAccuracyDetailAdjust", "\347\241\256\345\256\232", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("FormAccuracyDetailAdjust", "\347\262\276\345\272\246\347\273\206\350\260\203", 0, QApplication::UnicodeUTF8));

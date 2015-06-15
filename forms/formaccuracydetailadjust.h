@@ -41,6 +41,7 @@ private:
     MultiStatusToolButton *btn;
     LongClickToolButton *lbtn[6];
     QList<QWidget*> list;
+    int lastValue[3];
 };
 
 #endif // FORMVIBRATIONADJUST_H

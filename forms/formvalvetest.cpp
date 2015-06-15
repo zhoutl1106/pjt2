@@ -160,10 +160,12 @@ void FormValveTest::on_doubleSpinBox_pulseWidth_valueChanged(double arg1)
 void FormValveTest::on_spinBoxChannel_valueChanged(int arg1)
 {
     if(isBeep)beep(50000,67);
+    isBeep = false;
     ui->doubleSpinBox_delay->setValue(g_dialog->fileManager->
                                       config.delay[btn->currentIndex()*7+ui->spinBoxChannel->value()-1]);
     ui->doubleSpinBox_pulseWidth->setValue(g_dialog->fileManager->
                                            config.pulse_width[btn->currentIndex()*7+ui->spinBoxChannel->value()-1]);
+    isBeep = true;
 }
 
 void FormValveTest::on_spinBoxGroup_valueChanged(int arg1)

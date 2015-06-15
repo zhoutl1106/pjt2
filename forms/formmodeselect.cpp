@@ -89,6 +89,7 @@ void FormModeSelect::setSelect(int mode, int mem)
     ui->mem_52->setStyleSheet(memBkgUnChecked);
     ui->mem_53->setStyleSheet(memBkgUnChecked);
     list.at((mode-1)*3 + mem - 1)->setStyleSheet(memBkgChecked);
+    qDebug()<<"set select"<<mode<<mem;
 }
 
 void FormModeSelect::on_toolButton_clicked()
@@ -103,6 +104,7 @@ void FormModeSelect::on_toolButton_2_clicked()
     DialogAutoCloseMessageBox box(NULL,"保存","是否保存模式参数","是","否",10,true);
     if(box.exec() == QDialog::Accepted)
     {
+        qDebug()<<"ready to save"<<mode<<mem;
         g_dialog->fileManager->writeConfig(mode,mem);
         //g_dialog->fileManager->configChange();
     }
@@ -176,7 +178,7 @@ void FormModeSelect::on_mode_5_clicked()
 void FormModeSelect::on_toolButton_3_clicked()
 {
     if(isBeep)beep(50000,36);
-    DialogAutoCloseMessageBox box(NULL,"保存","是否读取模式参数","是","否",10,true);
+    DialogAutoCloseMessageBox box(NULL,"读取","是否读取模式参数","是","否",10,true);
     if(box.exec() == QDialog::Accepted)
     {
         g_dialog->fileManager->readConfig(mode,mem);

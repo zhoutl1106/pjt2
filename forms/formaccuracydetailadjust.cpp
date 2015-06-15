@@ -15,8 +15,8 @@ FormAccuracyDetailAdjust::FormAccuracyDetailAdjust(QWidget *parent) :
     ui(new Ui::FormAccuracyDetailAdjust)
 {
     ui->setupUi(this);
-    btn = new MultiStatusToolButton(NULL,2,"前相机","font-size:20px;border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);"
-                                    ,"后相机","font-size:20px;border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
+    btn = new MultiStatusToolButton(NULL,2,"前相机","font-size:25px;border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);"
+                                    ,"后相机","font-size:25px;border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
     connect(btn,SIGNAL(clicked()),this,SLOT(onCamera()));
     QVBoxLayout *box = new QVBoxLayout;
     box->setMargin(0);
@@ -42,6 +42,9 @@ FormAccuracyDetailAdjust::FormAccuracyDetailAdjust(QWidget *parent) :
         connect(lbtn[i],SIGNAL(longClick(int,int)),this,SLOT(lbtnValue(int,int)));
         connect(lbtn[i],SIGNAL(released(int,int)),this,SLOT(lbtnValue(int,int)));
     }
+    lastValue[0] = ui->verticalSlider11->value();
+    lastValue[1] = ui->verticalSlider12->value();
+    lastValue[2] = ui->verticalSlider13->value();
 }
 
 FormAccuracyDetailAdjust::~FormAccuracyDetailAdjust()
@@ -52,6 +55,7 @@ FormAccuracyDetailAdjust::~FormAccuracyDetailAdjust()
 void FormAccuracyDetailAdjust::lbtnValue(int index, int value)
 {
 //    qDebug()<<index<<value;
+    if(isBeep)beep(50000);
     switch(index)
     {
     case 0:ui->verticalSlider11->setValue(ui->verticalSlider11->value()+value);break;
@@ -67,6 +71,12 @@ void FormAccuracyDetailAdjust::updateData()
     ui->verticalSlider11->setValue(g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][0]);
     ui->verticalSlider12->setValue(g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][1]);
     ui->verticalSlider13->setValue(g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][2]);
+    ui->lcdNumber11->display(ui->verticalSlider11->value());
+    ui->lcdNumber12->display(ui->verticalSlider12->value());
+    ui->lcdNumber13->display(ui->verticalSlider13->value());
+    lastValue[0] = ui->verticalSlider11->value();
+    lastValue[1] = ui->verticalSlider12->value();
+    lastValue[2] = ui->verticalSlider13->value();
     isBeep = temp;
 }
 
@@ -90,10 +100,14 @@ void FormAccuracyDetailAdjust::on_comboBox_currentIndexChanged(int index)
         ui->verticalSlider12->setValue(g_dialog->fileManager->config.accuracy[btn->currentIndex()*7][1]);
         ui->verticalSlider13->setValue(g_dialog->fileManager->config.accuracy[btn->currentIndex()*7][2]);
     }
+    lastValue[0] = ui->verticalSlider11->value();
+    lastValue[1] = ui->verticalSlider12->value();
+    lastValue[2] = ui->verticalSlider13->value();
 }
 
 void FormAccuracyDetailAdjust::onCamera()
 {
+    if(isBeep)beep(50000,2);
     if(ui->comboBox->currentIndex() != 7)
     {
         ui->verticalSlider11->setValue(g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][0]);
@@ -106,10 +120,14 @@ void FormAccuracyDetailAdjust::onCamera()
         ui->verticalSlider12->setValue(g_dialog->fileManager->config.accuracy[btn->currentIndex()*7][1]);
         ui->verticalSlider13->setValue(g_dialog->fileManager->config.accuracy[btn->currentIndex()*7][2]);
     }
+    lastValue[0] = ui->verticalSlider11->value();
+    lastValue[1] = ui->verticalSlider12->value();
+    lastValue[2] = ui->verticalSlider13->value();
 }
 
 void FormAccuracyDetailAdjust::on_toolButton_2_clicked()
 {
+    if(isBeep)beep(50000,2);
     //g_dialog->fileManager->configChange();
     char tmp[6] = {0x00};
     QByteArray temp = QByteArray(tmp,6);
@@ -140,6 +158,18 @@ void FormAccuracyDetailAdjust::on_toolButton_2_clicked()
 
 void FormAccuracyDetailAdjust::on_verticalSlider11_valueChanged(int value)
 {
+    int delta = value - lastValue[0];
+    ui->lcdNumber11->display(value);
+    if(delta == 10 || delta == -10)
+    {
+        ui->verticalSlider11->setValue(lastValue[0]);
+        ui->lcdNumber11->display(lastValue[0]);
+        return;
+    }
+    lastValue[0] = ui->verticalSlider11->value();
+    lastValue[1] = ui->verticalSlider12->value();
+    lastValue[2] = ui->verticalSlider13->value();
+
     if(ui->comboBox->currentIndex() != 7)
         g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][0] = value;
     else
@@ -151,6 +181,18 @@ void FormAccuracyDetailAdjust::on_verticalSlider11_valueChanged(int value)
 
 void FormAccuracyDetailAdjust::on_verticalSlider12_valueChanged(int value)
 {
+    int delta = value - lastValue[1];
+    ui->lcdNumber12->display(value);
+    if(delta == 10 || delta == -10)
+    {
+        ui->verticalSlider12->setValue(lastValue[1]);
+        ui->lcdNumber12->display(lastValue[1]);
+        return;
+    }
+    lastValue[0] = ui->verticalSlider11->value();
+    lastValue[1] = ui->verticalSlider12->value();
+    lastValue[2] = ui->verticalSlider13->value();
+
     if(ui->comboBox->currentIndex() != 7)
         g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][1] = value;
     else
@@ -162,6 +204,18 @@ void FormAccuracyDetailAdjust::on_verticalSlider12_valueChanged(int value)
 
 void FormAccuracyDetailAdjust::on_verticalSlider13_valueChanged(int value)
 {
+    int delta = value - lastValue[2];
+    ui->lcdNumber13->display(value);
+    if(delta == 10 || delta == -10)
+    {
+        ui->verticalSlider13->setValue(lastValue[2]);
+        ui->lcdNumber13->display(lastValue[2]);
+        return;
+    }
+    lastValue[0] = ui->verticalSlider11->value();
+    lastValue[1] = ui->verticalSlider12->value();
+    lastValue[2] = ui->verticalSlider13->value();
+
     if(ui->comboBox->currentIndex() != 7)
         g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][2] = value;
     else

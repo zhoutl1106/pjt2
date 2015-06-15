@@ -14,6 +14,28 @@ extern DialogAutoCloseMessageBox *bkgMsgBoxF;
 extern DialogAutoCloseMessageBox *bkgMsgBoxE;
 extern bool isBeep;
 
+bool isUnstandardAshNeed = true;
+
+void unstandardAsh()
+{
+    //unstandard ash clean;
+    char tmp[3] = {0};
+    QByteArray cmd232 = QByteArray(tmp,3);
+    char* p232 = cmd232.data();
+    memset(p232,0,3);
+    DialogAutoCloseMessageBox dlg(NULL,"清灰","...","","",0,false);
+    dlg.setText("正在清灰");
+    dlg.show();
+    cmd232.data()[0] = 0x09;
+    g_dialog->serialManager->writeCmd(0,cmd232);
+    Sleep(15000);
+    memset(p232,0,3);
+    cmd232.data()[0] = 0x0a;
+    g_dialog->serialManager->writeCmd(0,cmd232);
+    Sleep(15000);
+    dlg.close();
+}
+
 FileManager::FileManager(QObject *parent) :
     QObject(parent)
 {
@@ -211,6 +233,12 @@ void FileManager::readConfig(int mode1, int index)
 
     qDebug()<<"read config, mode:" << mode << mem;
     g_dialog->setModeAndMem(mode, mem);
+
+    if(isUnstandardAshNeed)
+    {
+        isUnstandardAshNeed = false;
+        unstandardAsh();
+    }
 }
 
 void FileManager::getLastConfigIndex()
@@ -244,14 +272,14 @@ void FileManager::sendCmds()
     //front bkg borad
     dlg->close();
     bkgMsgBoxF->setText("前背景板调整中");
-    bkgMsgBoxF->setDelay(30);
+    bkgMsgBoxF->setDelay(60);
     memset(p232,0,3);
     cmd232.data()[0] = 0x1b;
     *((short*)(cmd232.data() + 1)) = (short)(config.frontMotorVoltage);
     g_dialog->serialManager->writeCmd(0,cmd232);
     if(bkgMsgBoxF->exec() == QDialog::Rejected)
     {
-        DialogAutoCloseMessageBox box(NULL,"警告","前背景板通信失败，请关机检查","确定","",10,true);
+        DialogAutoCloseMessageBox box(NULL,"警告","前背景板通信失败\n请关机检查","确定","",10,true);
         box.exec();
         char tmp[3] = {0x02,0x00};
         QByteArray tmp1(tmp,3);
@@ -274,14 +302,14 @@ void FileManager::sendCmds()
         return;
     }
     bkgMsgBoxE->setText("后背景板调整中");
-    bkgMsgBoxE->setDelay(30);
+    bkgMsgBoxE->setDelay(60);
     memset(p232,0,3);
     cmd232.data()[0] = 0x1c;
     *((short*)(cmd232.data() + 1)) = (short)(config.endMotorVoltage);
     g_dialog->serialManager->writeCmd(0,cmd232);
     if(bkgMsgBoxE->exec() == QDialog::Rejected)
     {
-        DialogAutoCloseMessageBox box(NULL,"警告","后背景板通信失败，请关机检查","确定","",10,true);
+        DialogAutoCloseMessageBox box(NULL,"警告","后背景板通信失败\n请关机检查","确定","",10,true);
         box.exec();
         char tmp[3] = {0x02,0x00};
         QByteArray tmp1(tmp,3);

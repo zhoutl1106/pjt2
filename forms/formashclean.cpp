@@ -76,12 +76,15 @@ void FormAshClean::cleanAsh()
     char tmp3[6] = {0x07,0xaa,0x00};
     QByteArray tmp2(tmp3,6);
 
+    tmp1.data()[0] = 0x0e;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    sleep(10);
+    tmp1.data()[0] = 0x0c;
     g_dialog->serialManager->writeCmd(0,tmp1);
     tmp1.data()[0] = 0x12;
     g_dialog->serialManager->writeCmd(0,tmp1);
-    tmp1.data()[0] = 0x0e;
-    g_dialog->serialManager->writeCmd(0,tmp1);
     g_dialog->serialManager->writeCmd(1,tmp2);
+
     tmp1.data()[0] = 0x09;
     g_dialog->serialManager->writeCmd(0,tmp1);
 
@@ -92,14 +95,17 @@ void FormAshClean::cleanAsh()
     g_dialog->serialManager->writeCmd(0,tmp1);
     dlgAsh->setDelay(ui->spinBox_delay->value());
     dlgAsh->exec();
-    tmp1.data()[0] = 0x0b;
-    g_dialog->serialManager->writeCmd(0,tmp1);
-    tmp1.data()[0] = 0x11;
-    g_dialog->serialManager->writeCmd(0,tmp1);
-    tmp1.data()[0] = 0x0d;
-    g_dialog->serialManager->writeCmd(0,tmp1);
-    tmp2.data()[0] = 0x06;
-    g_dialog->serialManager->writeCmd(1,tmp2);
+    if(vibratorStatus)
+    {
+        tmp1.data()[0] = 0x0b;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x11;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp1.data()[0] = 0x0d;
+        g_dialog->serialManager->writeCmd(0,tmp1);
+        tmp2.data()[0] = 0x06;
+        g_dialog->serialManager->writeCmd(1,tmp2);
+    }
 }
 
 void FormAshClean::on_toolButton_manual_clicked()

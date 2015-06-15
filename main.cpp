@@ -21,9 +21,9 @@ void beep(int length_us, int index = 0)
     qDebug()<<"beep"<<index;
 
 #ifdef linux
-    /*system("echo 1 > /sys/class/gpio/gpio117/value");
+    system("echo 1 > /sys/class/gpio/gpio117/value");
     usleep(length_us);
-    system("echo 0 > /sys/class/gpio/gpio117/value");*/
+    system("echo 0 > /sys/class/gpio/gpio117/value");
 #endif
 }
 
@@ -83,7 +83,7 @@ void g_setVibrator()
     {
         tmp1.data()[0] = 0x0e;
         g_dialog->serialManager->writeCmd(0,tmp1);
-        Sleep(10000);
+        sleep(10);
         tmp2.data()[0] = 0x07;
         g_dialog->serialManager->writeCmd(1,tmp2);
         g_dialog->form9_ash->timeAshTimer->stop();

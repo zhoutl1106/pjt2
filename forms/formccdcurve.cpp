@@ -43,7 +43,7 @@ FormCCDCurve::FormCCDCurve(QWidget *parent) :
     isMousePressed = false;
     delta = 0;
     timer = new QTimer(this);
-    timer->setInterval(2000);
+    timer->setInterval(1500);
     connect(timer,SIGNAL(timeout()),this,SLOT(onTimer()));
     periodTimer = new QTimer(this);
     periodTimer->setInterval(2000);
@@ -73,6 +73,7 @@ void FormCCDCurve::updateData()
     isBeep = false;
     upperbound = g_dialog->fileManager->config.showUpper;
     lowerbound = g_dialog->fileManager->config.showLower;
+    range->setRange(upperbound,lowerbound);
     isBeep = temp;
 }
 
@@ -146,9 +147,9 @@ void FormCCDCurve::paintEvent(QPaintEvent *e)
         int drawLower = subHeight + startY - (
                     g_dialog->fileManager->config.accuracy[channel][1] * 16
                 - lowerbound) * subHeight / (upperbound-lowerbound);
-        qDebug()<< (255 - g_dialog->fileManager->config.accuracy[channel][0]) * 16 + 15
+        /*qDebug()<< (255 - g_dialog->fileManager->config.accuracy[channel][0]) * 16 + 15
                 <<g_dialog->fileManager->config.accuracy[channel][1] * 16
-                <<drawUppder<<drawLower;
+                <<drawUppder<<drawLower;*/
         painter.setPen(QPen(QBrush(Qt::red),3));
         painter.drawLine(0,drawUppder,width(),drawUppder);
         painter.setPen(QPen(QBrush(Qt::blue),3));
@@ -275,9 +276,12 @@ void FormCCDCurve::on_toolButton_clockwise_clicked()
     {
         g_dialog->serialManager->writeCmd(0,cmd);
         bkgMsgBoxF->setText("前背景板调整中");
-        bkgMsgBoxF->setDelay(30);
+        bkgMsgBoxF->setDelay(60);
         if(bkgMsgBoxF->exec() == QDialog::Accepted)
         {
+            msgQueryAngleF->setDelay(10);
+            cmd.data()[0]=0x19;
+            g_dialog->serialManager->writeCmd(0,cmd);
             if(msgQueryAngleF->exec() == QDialog::Rejected)
             {
                 DialogAutoCloseMessageBox box(NULL,"警告","查询前电机角度失败","确定","",5,true);
@@ -296,9 +300,12 @@ void FormCCDCurve::on_toolButton_clockwise_clicked()
         cmd.data()[0] = 0x17;
         g_dialog->serialManager->writeCmd(0,cmd);
         bkgMsgBoxE->setText("后背景板调整中");
-        bkgMsgBoxE->setDelay(30);
+        bkgMsgBoxE->setDelay(60);
         if(bkgMsgBoxE->exec() == QDialog::Accepted)
         {
+            msgQueryAngleE->setDelay(10);
+            cmd.data()[0]=0x1a;
+            g_dialog->serialManager->writeCmd(0,cmd);
             if(msgQueryAngleE->exec() == QDialog::Rejected)
             {
                 DialogAutoCloseMessageBox box(NULL,"警告","查询后电机角度失败","确定","",5,true);
@@ -324,10 +331,12 @@ void FormCCDCurve::on_toolButton_anticlockwise_clicked()
     {
         g_dialog->serialManager->writeCmd(0,cmd);
         bkgMsgBoxF->setText("前背景板调整中");
-        bkgMsgBoxF->setDelay(30);
+        bkgMsgBoxF->setDelay(60);
         if(bkgMsgBoxF->exec() == QDialog::Accepted)
         {
-            msgQueryAngleF->setDelay(30);
+            msgQueryAngleF->setDelay(10);
+            cmd.data()[0]=0x19;
+            g_dialog->serialManager->writeCmd(0,cmd);
             if(msgQueryAngleF->exec() == QDialog::Rejected)
             {
                 DialogAutoCloseMessageBox box(NULL,"警告","查询前电机角度失败","确定","",5,true);
@@ -346,10 +355,12 @@ void FormCCDCurve::on_toolButton_anticlockwise_clicked()
         cmd.data()[0] = 0x18;
         g_dialog->serialManager->writeCmd(0,cmd);
         bkgMsgBoxE->setText("后背景板调整中");
-        bkgMsgBoxE->setDelay(30);
+        bkgMsgBoxE->setDelay(60);
         if(bkgMsgBoxE->exec() == QDialog::Accepted)
         {
-            msgQueryAngleE->setDelay(30);
+            msgQueryAngleE->setDelay(10);
+            cmd.data()[0]=0x1a;
+            g_dialog->serialManager->writeCmd(0,cmd);
             if(msgQueryAngleE->exec() == QDialog::Rejected)
             {
                 DialogAutoCloseMessageBox box(NULL,"警告","查询后电机角度失败","确定","",5,true);
@@ -381,13 +392,13 @@ void FormCCDCurve::on_toolButton_continue_clicked()
     if(periodTimer->isActive())
     {
         ui->toolButton_continue->setText("连续传输");
-        ui->toolButton_continue->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
+        ui->toolButton_continue->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
         periodTimer->stop();
     }
     else
     {
         ui->toolButton_continue->setText("停止传输");
-        ui->toolButton_continue->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
+        ui->toolButton_continue->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
         periodTimer->start();
     }
 }
