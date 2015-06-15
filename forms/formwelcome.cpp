@@ -50,8 +50,10 @@ void FormWelcome::checkLicense()
         if(box.exec() == QDialog::Accepted)
         {
             //******send cmds
-            g_dialog->fileManager->readConfig(g_dialog->fileManager->m_lastMode,g_dialog->fileManager->m_lastIndex);
-            emit switchToPage(2);
+            if(g_dialog->fileManager->readConfig(g_dialog->fileManager->m_lastMode,g_dialog->fileManager->m_lastIndex) < 0)
+                ;
+            else
+                emit switchToPage(2);
         }
         else
             emit switchToPage(4);

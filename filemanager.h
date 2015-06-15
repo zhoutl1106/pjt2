@@ -27,9 +27,9 @@ public:
     explicit FileManager(QObject *parent = 0);
     void writeConfig(int mode, int index);
     void writeLastConfig();
-    void readConfig(int mode, int index);
+    int readConfig(int mode, int index);
     void getLastConfigIndex();
-    void sendCmds();
+    int sendCmds();
     void setLights();
     void configChange();
 

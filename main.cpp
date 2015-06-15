@@ -83,7 +83,8 @@ void g_setVibrator()
     {
         tmp1.data()[0] = 0x0e;
         g_dialog->serialManager->writeCmd(0,tmp1);
-        sleep(10);
+        DialogAutoCloseMessageBox box(NULL,"警告","供料关闭中……","","",10,false);
+        box.exec();
         tmp2.data()[0] = 0x07;
         g_dialog->serialManager->writeCmd(1,tmp2);
         g_dialog->form9_ash->timeAshTimer->stop();

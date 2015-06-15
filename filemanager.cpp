@@ -199,8 +199,9 @@ void FileManager::writeConfig(int mode1, int index)
     g_dialog->setModeAndMem(mode, mem);
 }
 
-void FileManager::readConfig(int mode1, int index)
+int FileManager::readConfig(int mode1, int index)
 {
+    int ret;
     int i = mode1;
     mode = mode1;
     mem = index;
@@ -221,13 +222,15 @@ void FileManager::readConfig(int mode1, int index)
         dlg->setText("正在设置灯光");
         setLights();
         Sleep(2000);
-        sendCmds();
+        ret = sendCmds();
+        if(ret < 0)
+            return -1;
         emit sigConfigChanged();
     }
     else
     {
         qDebug()<<"no such config";
-        return;
+        return 0;
         memset(&config,0,sizeof(config_t));
     }
 
@@ -239,6 +242,7 @@ void FileManager::readConfig(int mode1, int index)
         isUnstandardAshNeed = false;
         unstandardAsh();
     }
+    return 0;
 }
 
 void FileManager::getLastConfigIndex()
@@ -260,7 +264,7 @@ void FileManager::getLastConfigIndex()
     }
 }
 
-void FileManager::sendCmds()
+int FileManager::sendCmds()
 {
     char buf232[3] = {0x00};
     char buf485[6] = {0x00};
@@ -299,7 +303,7 @@ void FileManager::sendCmds()
         tmp1.data()[0] = 0x12;
         g_dialog->serialManager->writeCmd(0,tmp1);
         emit switchToPage(7);
-        return;
+        return -1;
     }
     bkgMsgBoxE->setText("后背景板调整中");
     bkgMsgBoxE->setDelay(60);
@@ -329,7 +333,7 @@ void FileManager::sendCmds()
         tmp1.data()[0] = 0x12;
         g_dialog->serialManager->writeCmd(0,tmp1);
         emit switchToPage(7);
-        return;
+        return -1;
     }
 
     //send accuracy
@@ -406,6 +410,7 @@ void FileManager::sendCmds()
     dlg->accept();
     qDebug()<<"finish send commands";
     isBeep = true;
+    return 0;
 }
 
 void FileManager::setLights()
