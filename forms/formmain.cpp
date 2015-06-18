@@ -144,3 +144,8 @@ void FormMain::on_toolButtonVibrator_clicked()
     if(isBeep)beep(50000,28);
     g_setVibrator();
 }
+
+void FormMain::setVibratorEnable(bool value)
+{
+    ui->toolButtonVibrator->setEnabled(value);
+}

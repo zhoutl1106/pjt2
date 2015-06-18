@@ -18,6 +18,7 @@ public:
     ~FormMain();
     void setValve(bool value);
     void setVibrator(bool value);
+    void setVibratorEnable(bool value);
     void showEvent(QShowEvent *e);
 
 signals:
@@ -43,8 +44,8 @@ private slots:
     void on_toolButtonVibrator_clicked();
 
 private:
-    Ui::FormMain *ui;
     QTimer *longPressTimer;
+    Ui::FormMain *ui;
 };
 
 #endif // FORMMAIN_H

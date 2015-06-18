@@ -578,3 +578,8 @@ void FormVibrationAdjust::on_toolButtonValve_clicked()
     beep(50000,2101);
     g_setValve();
 }
+
+void FormVibrationAdjust::setVibratorEnable(bool value)
+{
+    ui->toolButtonVibrator->setEnabled(value);
+}

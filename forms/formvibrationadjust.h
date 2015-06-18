@@ -27,6 +27,7 @@ public:
     ~FormVibrationAdjust();
     void setValve(bool value);
     void setVibrator(bool value);
+    void setVibratorEnable(bool value);
 
 public slots:
     void updateData();
