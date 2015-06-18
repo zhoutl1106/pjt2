@@ -2,7 +2,7 @@
 #define DIALOG_H
 
 #define VERSION 1
-#define SUBVERSION 6
+#define SUBVERSION 7
 
 #define UDP_CMD_LINSTEN_PORT    8000
 #define UDP_CMD_WRITE_PORT    8001

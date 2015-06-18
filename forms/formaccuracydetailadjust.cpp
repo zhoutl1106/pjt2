@@ -105,6 +105,7 @@ void FormAccuracyDetailAdjust::on_comboBox_currentIndexChanged(int index)
     lastValue[0] = ui->verticalSlider11->value();
     lastValue[1] = ui->verticalSlider12->value();
     lastValue[2] = ui->verticalSlider13->value();
+    isSaveValue = true;
 }
 
 void FormAccuracyDetailAdjust::onCamera()
@@ -126,6 +127,7 @@ void FormAccuracyDetailAdjust::onCamera()
     lastValue[0] = ui->verticalSlider11->value();
     lastValue[1] = ui->verticalSlider12->value();
     lastValue[2] = ui->verticalSlider13->value();
+    isSaveValue = true;
 }
 
 void FormAccuracyDetailAdjust::on_toolButton_2_clicked()
@@ -163,7 +165,6 @@ void FormAccuracyDetailAdjust::on_verticalSlider11_valueChanged(int value)
 {
     if(isSaveValue == false)
     {
-        isSaveValue = true;
         return;
     }
     int delta = value - lastValue[0];
@@ -194,7 +195,6 @@ void FormAccuracyDetailAdjust::on_verticalSlider12_valueChanged(int value)
 {
     if(isSaveValue == false)
     {
-        isSaveValue = true;
         return;
     }
     int delta = value - lastValue[1];
@@ -222,7 +222,6 @@ void FormAccuracyDetailAdjust::on_verticalSlider13_valueChanged(int value)
 {
     if(isSaveValue == false)
     {
-        isSaveValue = true;
         return;
     }
     int delta = value - lastValue[2];
