@@ -71,6 +71,8 @@ void FormModeSelect::updateData()
 
 void FormModeSelect::setSelect(int mode, int mem)
 {
+    this->mode = mode;
+    this->mem = mem;
     if(mode > 5 || mode < 1 || mem > 3 || mem < 1)
         return;
     ui->mem_11->setStyleSheet(memBkgUnChecked);

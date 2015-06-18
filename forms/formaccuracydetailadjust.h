@@ -42,6 +42,7 @@ private:
     LongClickToolButton *lbtn[6];
     QList<QWidget*> list;
     int lastValue[3];
+    bool isSaveValue;
 };
 
 #endif // FORMVIBRATIONADJUST_H

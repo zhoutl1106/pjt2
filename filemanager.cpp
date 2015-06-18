@@ -180,6 +180,7 @@ void FileManager::writeLastConfig()
 
 void FileManager::writeConfig(int mode1, int index)
 {
+    qDebug()<<"writeConfig "<<mode1<<index;
     int i = mode1;
     QFile lastIndexFile(LAST_INDEX_FILENAME);
     lastIndexFile.open(QFile::WriteOnly);

@@ -45,6 +45,7 @@ FormAccuracyDetailAdjust::FormAccuracyDetailAdjust(QWidget *parent) :
     lastValue[0] = ui->verticalSlider11->value();
     lastValue[1] = ui->verticalSlider12->value();
     lastValue[2] = ui->verticalSlider13->value();
+    isSaveValue = true;
 }
 
 FormAccuracyDetailAdjust::~FormAccuracyDetailAdjust()
@@ -88,6 +89,7 @@ void FormAccuracyDetailAdjust::on_toolButton_clicked()
 
 void FormAccuracyDetailAdjust::on_comboBox_currentIndexChanged(int index)
 {
+    isSaveValue = false;
     if(index != 7)
     {
         ui->verticalSlider11->setValue(g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][0]);
@@ -107,6 +109,7 @@ void FormAccuracyDetailAdjust::on_comboBox_currentIndexChanged(int index)
 
 void FormAccuracyDetailAdjust::onCamera()
 {
+    isSaveValue = false;
     if(isBeep)beep(50000,2);
     if(ui->comboBox->currentIndex() != 7)
     {
@@ -148,16 +151,21 @@ void FormAccuracyDetailAdjust::on_toolButton_2_clicked()
         temp.data()[4] = ui->verticalSlider13->value();
     }
     g_dialog->serialManager->writeCmd(1,temp);
-//    for(int i = 0;i<7;i++)
-//    {
-//        qDebug()<<i<<g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][0]
-//                <<g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][1]
-//                <<g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][2];
-//    }
+    for(int i = 0;i<14;i++)
+    {
+        qDebug()<<i<<g_dialog->fileManager->config.accuracy[i][0]
+                <<g_dialog->fileManager->config.accuracy[i][1]
+                <<g_dialog->fileManager->config.accuracy[i][2];
+    }
 }
 
 void FormAccuracyDetailAdjust::on_verticalSlider11_valueChanged(int value)
 {
+    if(isSaveValue == false)
+    {
+        isSaveValue = true;
+        return;
+    }
     int delta = value - lastValue[0];
     ui->lcdNumber11->display(value);
     if(delta == 10 || delta == -10)
@@ -171,7 +179,10 @@ void FormAccuracyDetailAdjust::on_verticalSlider11_valueChanged(int value)
     lastValue[2] = ui->verticalSlider13->value();
 
     if(ui->comboBox->currentIndex() != 7)
+    {
+        qDebug()<<"accuracy"<<btn->currentIndex()*7+ui->comboBox->currentIndex()<<value;
         g_dialog->fileManager->config.accuracy[btn->currentIndex()*7+ui->comboBox->currentIndex()][0] = value;
+    }
     else
     {
         for(int i = 0;i<7;i++)
@@ -181,6 +192,11 @@ void FormAccuracyDetailAdjust::on_verticalSlider11_valueChanged(int value)
 
 void FormAccuracyDetailAdjust::on_verticalSlider12_valueChanged(int value)
 {
+    if(isSaveValue == false)
+    {
+        isSaveValue = true;
+        return;
+    }
     int delta = value - lastValue[1];
     ui->lcdNumber12->display(value);
     if(delta == 10 || delta == -10)
@@ -204,6 +220,11 @@ void FormAccuracyDetailAdjust::on_verticalSlider12_valueChanged(int value)
 
 void FormAccuracyDetailAdjust::on_verticalSlider13_valueChanged(int value)
 {
+    if(isSaveValue == false)
+    {
+        isSaveValue = true;
+        return;
+    }
     int delta = value - lastValue[2];
     ui->lcdNumber13->display(value);
     if(delta == 10 || delta == -10)

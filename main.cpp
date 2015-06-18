@@ -21,7 +21,7 @@ void beep(int length_us, int index = 0)
     qDebug()<<"beep"<<index;
 
 #ifdef linux
-    system("echo 1 > /sys/class/gpio/gpio117/value");
+    //system("echo 1 > /sys/class/gpio/gpio117/value");
     usleep(length_us);
     system("echo 0 > /sys/class/gpio/gpio117/value");
 #endif
