@@ -98,7 +98,7 @@ QSlider::handle {
         <number>1</number>
        </property>
        <property name="maximum">
-        <number>5</number>
+        <number>15</number>
        </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -410,16 +410,13 @@ QSlider::handle {
    </item>
    <item row="1" column="1">
     <layout class="QGridLayout" name="gridLayout_2">
-     <property name="horizontalSpacing">
+     <property name="spacing">
       <number>50</number>
-     </property>
-     <property name="verticalSpacing">
-      <number>200</number>
      </property>
      <item row="0" column="0">
       <widget class="QWidget" name="widget" native="true"/>
      </item>
-     <item row="1" column="0">
+     <item row="2" column="0">
       <widget class="QToolButton" name="toolButton">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -507,7 +504,7 @@ QComboBox::down-arrow {
        </item>
       </widget>
      </item>
-     <item row="1" column="1">
+     <item row="2" column="1">
       <widget class="QToolButton" name="toolButton_2">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -517,6 +514,19 @@ QComboBox::down-arrow {
        </property>
        <property name="text">
         <string>确定</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QToolButton" name="toolButton_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>归一化</string>
        </property>
       </widget>
      </item>

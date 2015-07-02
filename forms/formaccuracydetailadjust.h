@@ -36,6 +36,8 @@ private slots:
     void on_verticalSlider12_valueChanged(int value);
     void on_verticalSlider13_valueChanged(int value);
 
+    void on_toolButton_3_clicked();
+
 private:
     Ui::FormAccuracyDetailAdjust *ui;
     MultiStatusToolButton *btn;

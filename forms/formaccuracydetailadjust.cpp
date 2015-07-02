@@ -244,3 +244,11 @@ void FormAccuracyDetailAdjust::on_verticalSlider13_valueChanged(int value)
             g_dialog->fileManager->config.accuracy[btn->currentIndex()*7 + i][2] = value;
     }
 }
+
+void FormAccuracyDetailAdjust::on_toolButton_3_clicked()
+{
+    if(isBeep)beep(50000,2);
+    char temp[6]={0x03,0x00};
+    QByteArray tmp = QByteArray(temp,6);
+    g_dialog->serialManager->writeCmd(1,tmp);
+}

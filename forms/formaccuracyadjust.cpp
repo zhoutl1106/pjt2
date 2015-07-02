@@ -123,7 +123,7 @@ void FormAccuracyAdjust::on_toolButton_2_clicked()
             g_dialog->fileManager->config.accuracy[i][1] += ui->verticalSlider12->value();
             checkDataRange(g_dialog->fileManager->config.accuracy[i][1],0,255);
             g_dialog->fileManager->config.accuracy[i][2] += ui->verticalSlider13->value();
-            checkDataRange(g_dialog->fileManager->config.accuracy[i][2],1,5);
+            checkDataRange(g_dialog->fileManager->config.accuracy[i][2],1,15);
         }
         if(g_dialog->fileManager->config.times[i] == 2)
         {
@@ -132,7 +132,7 @@ void FormAccuracyAdjust::on_toolButton_2_clicked()
             g_dialog->fileManager->config.accuracy[i][1] += ui->verticalSlider22->value();
             checkDataRange(g_dialog->fileManager->config.accuracy[i][1],0,255);
             g_dialog->fileManager->config.accuracy[i][2] += ui->verticalSlider23->value();
-            checkDataRange(g_dialog->fileManager->config.accuracy[i][2],1,5);
+            checkDataRange(g_dialog->fileManager->config.accuracy[i][2],1,15);
         }
         if(g_dialog->fileManager->config.times[i] == 3)
         {
@@ -141,7 +141,7 @@ void FormAccuracyAdjust::on_toolButton_2_clicked()
             g_dialog->fileManager->config.accuracy[i][1] += ui->verticalSlider32->value();
             checkDataRange(g_dialog->fileManager->config.accuracy[i][1],0,255);
             g_dialog->fileManager->config.accuracy[i][2] += ui->verticalSlider33->value();
-            checkDataRange(g_dialog->fileManager->config.accuracy[i][2],1,5);
+            checkDataRange(g_dialog->fileManager->config.accuracy[i][2],1,15);
         }
     }
     ui->verticalSlider11->setValue(0);
