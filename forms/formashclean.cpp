@@ -67,7 +67,7 @@ void FormAshClean::on_toolButton_clicked()
 void FormAshClean::cleanAsh()
 {
     qDebug()<<"clean ash";
-    if(g_dialog->fileManager->config.ash_mode != ASH_MODE_AUTO)
+    if(g_dialog->fileManager->config.ash_mode != ASH_MODE_TIME)
         return;
 
     char tmp[3] = {0x0c,0x00};
