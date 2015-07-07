@@ -192,7 +192,7 @@ void FileManager::writeConfig(int mode1, int index)
     mem = index;
     m_lastMode = mode;
     m_lastIndex = index;
-    qDebug()<<"write last config "<<mode<<index;
+    qDebug()<<"write last config "<<mode<<index<<", ash delay "<<config.ash_delay;
     QFile configFile(CONFIG_FILENAME_HEAD+QString::number(mode) + QString::number(index));
     configFile.open(QFile::WriteOnly);
     configFile.write((char*)&config,sizeof(config_t));

@@ -21,7 +21,7 @@ public:
 
 public slots:
     void updateData();
-    void cleanAsh();
+    void autoCleanAsh();
 
 signals:
     void switchToPage(int index);
@@ -48,6 +48,7 @@ private slots:
 private:
     Ui::FormAshClean *ui;
     QTimer *singleTimer;
+    void cleanAsh();
 };
 
 #endif // FORMASHCLEAN_H

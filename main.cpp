@@ -78,6 +78,7 @@ void g_setVibrator()
         tmp2.data()[0] = 0x06;
         g_dialog->serialManager->writeCmd(1,tmp2);
         g_dialog->form9_ash->timeAshTimer->start();
+        qDebug()<<"ash timer start";
     }
     else
     {
@@ -93,6 +94,7 @@ void g_setVibrator()
         tmp2.data()[0] = 0x07;
         g_dialog->serialManager->writeCmd(1,tmp2);
         g_dialog->form9_ash->timeAshTimer->stop();
+        qDebug()<<"ash timer stop";
     }
 }
 

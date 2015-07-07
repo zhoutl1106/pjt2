@@ -52,6 +52,7 @@ void FormAshClean::updateData()
 
 void FormAshClean::timeAshClean()
 {
+    qDebug()<<"ash timer timeout"<<vibratorStatus<<g_dialog->fileManager->config.ash_mode;
     if(vibratorStatus && g_dialog->fileManager->config.ash_mode == ASH_MODE_TIME)
         cleanAsh();
 }
@@ -60,15 +61,23 @@ void FormAshClean::on_toolButton_clicked()
 {
     if(isBeep)beep(50000,3);
     timeAshTimer->setInterval(g_dialog->fileManager->config.ash_interval * 1000 * 60);
+    qDebug()<<"set ash timer to "<<timeAshTimer->interval()<<" ms";
 
     emit switchToPage(6);
+}
+
+void FormAshClean::autoCleanAsh()
+{
+    if(g_dialog->fileManager->config.ash_mode == ASH_MODE_AUTO)
+    {
+        qDebug()<<"auto clean ash";
+        cleanAsh();
+    }
 }
 
 void FormAshClean::cleanAsh()
 {
     qDebug()<<"clean ash";
-    if(g_dialog->fileManager->config.ash_mode != ASH_MODE_AUTO)
-        return;
 
     char tmp[3] = {0x0c,0x00};
     QByteArray tmp1(tmp,3);
@@ -142,10 +151,12 @@ void FormAshClean::on_radioButtonTiming_clicked()
 {
     if(isBeep)beep(50000,9);
     g_dialog->fileManager->config.ash_mode = ASH_MODE_TIME;
+    qDebug()<<"set ash mode to TIME";
 }
 
 void FormAshClean::on_radioButtonAuto_clicked()
 {
     if(isBeep)beep(50000,10);
     g_dialog->fileManager->config.ash_mode = ASH_MODE_AUTO;
+    qDebug()<<"set ash mode to AUTO";
 }
