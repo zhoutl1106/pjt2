@@ -25,6 +25,7 @@ FormAshClean::FormAshClean(QWidget *parent) :
     timeAshTimer->setInterval(600000);
     connect(timeAshTimer,SIGNAL(timeout()),this,SLOT(timeAshClean()));
     setWindowModality(Qt::ApplicationModal);
+    g_dialog->fileManager->config.ash_mode = ASH_MODE_TIME;
 }
 
 FormAshClean::~FormAshClean()
