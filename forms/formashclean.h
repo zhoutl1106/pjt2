@@ -47,7 +47,6 @@ private slots:
 
 private:
     Ui::FormAshClean *ui;
-    QTimer *singleTimer;
     void cleanAsh();
 };
 

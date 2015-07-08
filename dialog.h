@@ -1,13 +1,14 @@
 #ifndef DIALOG_H
 #define DIALOG_H
 
-#define VERSION 1
-#define SUBVERSION 9
+#define VERSION 2
+#define SUBVERSION 0
 
 #define UDP_CMD_LINSTEN_PORT    8000
 #define UDP_CMD_WRITE_PORT    8001
 #define UDP_UPDATE_LINSTEN_PORT    9000
 #define UDP_UPDATE_WRITE_PORT    9001
+#define UDP_CMD_HOST_ADDRESS    "192.168.1.66"
 
 #define UPDATE_TEMP_FILE_NAME   "/2"
 
@@ -48,6 +49,7 @@ public:
     FileManager *fileManager;
     SerialManager *serialManager;
     void setModeAndMem(int mode, int mem);
+    QUdpSocket *cmdSocket;
 
 
     FormWelcome                 *form0_welcome;
@@ -76,7 +78,9 @@ private:
     QTimer *displayTimer;
     QFile file;
     QUdpSocket *updateSocket;
-    QUdpSocket *cmdSocket;
+    QByteArray cmdBuf;
+    void processUdpCmd(QByteArray& buf, QHostAddress sender);
+    bool isAnotherCmd(QByteArray buf);
     int m_lastIndex;
 };
 

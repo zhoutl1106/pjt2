@@ -144,6 +144,11 @@ void SerialManager::comTimeOut()
         }
         //udp upload current data package
 
+        QByteArray answer;
+        answer.append(char(0x04));
+        answer.append(char(0x01));
+        answer.append(temp0.mid(0,6));
+        g_dialog->cmdSocket->writeDatagram(answer,QHostAddress(UDP_CMD_HOST_ADDRESS),UDP_CMD_WRITE_PORT);
         temp0.remove(0,6);
     }
     if(temp1.size() > 0)
@@ -157,6 +162,15 @@ void SerialManager::comTimeOut()
                 emit updateCCD(buf485_1);
                 //udp upload current data package
                 qDebug()<<"ccd 4096";
+                QByteArray answer;
+                for(int i = 0;i<4;i++)
+                {
+                    answer.clear();
+                    answer.append(char(0x03));
+                    answer.append(char(i+1));
+                    answer.append(buf485_1.mid(1024*i,1024));
+                    g_dialog->cmdSocket->writeDatagram(answer,QHostAddress(UDP_CMD_HOST_ADDRESS),UDP_CMD_WRITE_PORT);
+                }
             }
             buf485_1.clear();
         }
@@ -184,6 +198,11 @@ void SerialManager::comTimeOut()
                 break;
             }
         }
+        QByteArray answer;
+        answer.append(char(0x04));
+        answer.append(char(0x03));
+        answer.append(temp2);
+        g_dialog->cmdSocket->writeDatagram(answer,QHostAddress(UDP_CMD_HOST_ADDRESS),UDP_CMD_WRITE_PORT);
     }
 #endif
 }

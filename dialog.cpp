@@ -93,6 +93,7 @@ Dialog::Dialog(QWidget *parent) :
     ui->stackedWidget->insertWidget(0,form1_account);
     ui->stackedWidget->insertWidget(0,form0_welcome);
     ui->stackedWidget->setCurrentIndex(0);
+    cmdBuf.clear();
 }
 
 Dialog::~Dialog()
@@ -196,24 +197,83 @@ void Dialog::onCmdUdpRead()
             datagram.resize(cmdSocket->pendingDatagramSize());
             QHostAddress sender;
             quint16 senderPort;
-            QByteArray answer;
 
             cmdSocket->readDatagram(datagram.data(), datagram.size(),
                                     &sender, &senderPort);
 
             qDebug()<<datagram.toHex();
-            char* p = datagram.data();
-            switch (p[0]) {
-            case (char)0x01:
-                answer.append((char)0x01);
-                answer.append((char)0x02);
-                answer.append((char)VERSION);
-                answer.append((char)SUBVERSION);
-                break;
-            default:
-                break;
-            }
-            qDebug()<<answer.toHex()<<sender.toString();
+            cmdBuf.append(datagram);
+            processUdpCmd(cmdBuf,sender);
+    }
+}
+
+bool Dialog::isAnotherCmd(QByteArray buf)
+{
+    char *p = buf.data();
+    int len = buf.length();
+    if(p[0]  == char(0x01) && len >= 2)
+        return true;
+    if(p[0]  == char(0x02) && p[1] == char(0x01) && len >= 8)
+        return true;
+    if(p[0]  == char(0x02) && p[1] == char(0x02) && len >= 9)
+        return true;
+    if(p[0]  == char(0x02) && p[1] == char(0x03) && len >= 10)
+        return true;
+    if(p[0]  == char(0x05) && len >= 2)
+        return true;
+    //qDebug()<<"no more cmd";
+    return false;
+}
+
+void Dialog::processUdpCmd(QByteArray& buf, QHostAddress sender)
+{
+    QByteArray answer;
+    while(isAnotherCmd(buf))
+    {
+        qDebug()<<"process cmd";
+        answer.clear();
+        char* p = buf.data();
+        qDebug()<<int(p[0])<<int(p[1]);
+        switch (p[0]) {
+        case (char)0x01:
+            answer.append((char)0x01);
+            answer.append((char)0x02);
+            answer.append((char)VERSION);
+            answer.append((char)SUBVERSION);
             cmdSocket->writeDatagram(answer,sender,UDP_CMD_WRITE_PORT);
+            buf.remove(0,2);
+            break;
+        case (char)0x02:
+            if(p[1] == char(0x01))
+            {
+                qDebug()<<"udp got 232 cmd";
+                serialManager->writeCmd(0,buf.mid(3,3));
+                buf.remove(0,8);
+            }
+            if(p[1] == char(0x02))
+            {
+                qDebug()<<"udp got 1#485 cmd";
+                serialManager->writeCmd(1,buf.mid(3,6));
+                buf.remove(0,9);
+            }
+            if(p[1] == char(0x03))
+            {
+                qDebug()<<"udp got 2#485 cmd";
+                serialManager->writeCmd(2,buf.mid(3,6));
+                buf.remove(0,10);
+            }
+            break;
+        case (char)0x05:
+            answer.append((char)0x05);
+            answer.append((sizeof(fileManager->config))&0xff);
+            answer.append((sizeof(fileManager->config)>>8)&0xff);
+            answer.append(QByteArray((const char*)&fileManager->config,sizeof(fileManager->config)));
+            cmdSocket->writeDatagram(answer,sender,UDP_CMD_WRITE_PORT);
+            buf.remove(0,2);
+            qDebug()<<"answer synchronize config , len = "<<sizeof(fileManager->config);
+        default:
+            break;
+        }
+        //qDebug()<<answer.toHex()<<sender.toString();
     }
 }

@@ -17,15 +17,10 @@ FormAshClean::FormAshClean(QWidget *parent) :
     ui->setupUi(this);
     setStyleSheet(stylesheet);
     dlgAsh = new DialogAutoCloseMessageBox(NULL,"清灰","清灰工作中……","","",10,false);
-    singleTimer = new QTimer;
-    singleTimer->setInterval(10000);
-    singleTimer->setSingleShot(true);
-    connect(singleTimer,SIGNAL(timeout()),dlgAsh,SLOT(setFinished()));
     timeAshTimer = new QTimer;
     timeAshTimer->setInterval(600000);
     connect(timeAshTimer,SIGNAL(timeout()),this,SLOT(timeAshClean()));
     setWindowModality(Qt::ApplicationModal);
-    g_dialog->fileManager->config.ash_mode = ASH_MODE_TIME;
 }
 
 FormAshClean::~FormAshClean()
@@ -54,6 +49,13 @@ void FormAshClean::updateData()
 void FormAshClean::timeAshClean()
 {
     qDebug()<<"ash timer timeout"<<vibratorStatus<<g_dialog->fileManager->config.ash_mode;
+    if(g_dialog->fileManager->config.ash_mode != ASH_MODE_AUTO && g_dialog->fileManager->config.ash_mode != ASH_MODE_TIME)
+    {
+        if(ui->radioButtonTiming->isChecked())
+            g_dialog->fileManager->config.ash_mode = ASH_MODE_TIME;
+        else
+            g_dialog->fileManager->config.ash_mode = ASH_MODE_AUTO;
+    }
     if(vibratorStatus && g_dialog->fileManager->config.ash_mode == ASH_MODE_TIME)
         cleanAsh();
 }
