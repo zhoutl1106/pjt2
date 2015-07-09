@@ -233,8 +233,6 @@ bool Dialog::isAnotherCmd(QByteArray buf)
         return true;
     if(p[0]  == char(0x07) && len >= 2)
         return true;
-    if(p[0]  == char(0x08) && len >= 2)
-        return true;
     if(p[0]  == char(0x09) && len >= 2)
         return true;
     if(p[0]  == char(0x0a) && len >= 2)
@@ -290,6 +288,8 @@ void Dialog::processUdpCmd(QByteArray& buf, QHostAddress sender)
             answer.append((char)fileManager->mem);
             answer.append((sizeof(fileManager->config))&0xff);
             answer.append((sizeof(fileManager->config)>>8)&0xff);
+            answer.append(valveStatus);
+            answer.append(vibratorStatus);
             answer.append(QByteArray((const char*)&fileManager->config,sizeof(fileManager->config)));
             cmdSocket->writeDatagram(answer,sender,UDP_CMD_WRITE_PORT);
             buf.remove(0,2);
@@ -306,13 +306,6 @@ void Dialog::processUdpCmd(QByteArray& buf, QHostAddress sender)
             ui->stackedWidget->setCurrentIndex(7);
             qDebug()<<"shut down";
             exit(0);
-            buf.remove(0,2);
-            break;
-        case (char)0x08:
-            answer.append((char)0x05);
-            answer.append(valveStatus);
-            answer.append(vibratorStatus);
-            cmdSocket->writeDatagram(answer,sender,UDP_CMD_WRITE_PORT);
             buf.remove(0,2);
             break;
         case (char)0x09:
