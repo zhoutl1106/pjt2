@@ -68,6 +68,31 @@ void FormMain::on_toolButtonExit_released()
     longPressTimer->stop();
 }
 
+void FormMain::closeAllDevices()
+{
+    //*** send cmd to close all devices
+    char tmp[3] = {0x02,0x00};
+    QByteArray tmp1(tmp,3);
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x04;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x06;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x08;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x0a;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x0c;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x0e;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+    tmp1.data()[0] = 0x12;
+    g_dialog->serialManager->writeCmd(0,tmp1);
+
+    char tmp2[6]={0x07,0xaa,0x00};
+    g_dialog->serialManager->writeCmd(1,QByteArray(tmp2,6));
+}
+
 void FormMain::onLongPressTimer()
 {
     longPressTimer->stop();
@@ -77,27 +102,7 @@ void FormMain::onLongPressTimer()
     DialogAutoCloseMessageBox box1(NULL,"关机","是否关机","是","否",10,true);
     if(box1.exec() == QDialog::Accepted)
     {
-        //*** send cmd to close all devices
-        char tmp[3] = {0x02,0x00};
-        QByteArray tmp1(tmp,3);
-        g_dialog->serialManager->writeCmd(0,tmp1);
-        tmp1.data()[0] = 0x04;
-        g_dialog->serialManager->writeCmd(0,tmp1);
-        tmp1.data()[0] = 0x06;
-        g_dialog->serialManager->writeCmd(0,tmp1);
-        tmp1.data()[0] = 0x08;
-        g_dialog->serialManager->writeCmd(0,tmp1);
-        tmp1.data()[0] = 0x0a;
-        g_dialog->serialManager->writeCmd(0,tmp1);
-        tmp1.data()[0] = 0x0c;
-        g_dialog->serialManager->writeCmd(0,tmp1);
-        tmp1.data()[0] = 0x0e;
-        g_dialog->serialManager->writeCmd(0,tmp1);
-        tmp1.data()[0] = 0x12;
-        g_dialog->serialManager->writeCmd(0,tmp1);
-
-        char tmp2[6]={0x07,0xaa,0x00};
-        g_dialog->serialManager->writeCmd(1,QByteArray(tmp2,6));
+        closeAllDevices();
 
         DialogAutoCloseMessageBox box(NULL,"保存","是否保存模式参数","是","否",10,true);
         if(box.exec() == QDialog::Accepted)

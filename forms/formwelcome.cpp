@@ -29,9 +29,10 @@ void FormWelcome::showEvent(QShowEvent *e)
 
 void FormWelcome::checkLicense()
 {
-    bool ret = g_dialog->fileManager->checkDate();;    //*****check from file
+    bool ret = g_dialog->fileManager->checkDate();    //*****check from file
     if(ret)
     {
+        g_dialog->enableUdp();
         g_dialog->fileManager->getLastConfigIndex();
         QString str;
         qDebug()<<"in welcome"<<g_dialog->fileManager->m_lastMode;

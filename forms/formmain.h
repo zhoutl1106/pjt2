@@ -20,6 +20,7 @@ public:
     void setVibrator(bool value);
     void setVibratorEnable(bool value);
     void showEvent(QShowEvent *e);
+    void closeAllDevices();
 
 signals:
     void switchToPage(int index);

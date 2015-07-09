@@ -2,7 +2,7 @@
 #define DIALOG_H
 
 #define VERSION 2
-#define SUBVERSION 0
+#define SUBVERSION 1
 
 #define UDP_CMD_LINSTEN_PORT    8000
 #define UDP_CMD_WRITE_PORT    8001
@@ -50,6 +50,7 @@ public:
     SerialManager *serialManager;
     void setModeAndMem(int mode, int mem);
     QUdpSocket *cmdSocket;
+    void enableUdp();
 
 
     FormWelcome                 *form0_welcome;

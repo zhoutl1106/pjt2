@@ -35,21 +35,22 @@ public:
 
     struct config_t
     {
-        int accuracy[14][3];
         double delay[14];
         double pulse_width[14];
-        quint8 vibratorStatusU8;
-        int vibration[7];
-        int ash_delay;
-        int ash_mode;
-        int ash_interval;
         double frontLuminanceThreshold;
         double endLuminanceThreshold;
         double frontMotorVoltage;
         double endMotorVoltage;
+        int accuracy[14][3];
+        int vibration[7];
+        int ash_delay;
+        int ash_mode;
+        int ash_interval;
         int times[14];
         int showUpper;
         int showLower;
+        quint8 vibratorStatusU8;
+        quint8 nop[7];
     }config;
     int mode;
     int mem;
