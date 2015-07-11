@@ -237,6 +237,8 @@ bool Dialog::isAnotherCmd(QByteArray buf)
         return true;
     if(p[0]  == char(0x0a) && len >= 2)
         return true;
+    if(p[0]  == char(0x0c) && len >= 3)
+        return true;
     //qDebug()<<"no more cmd";
     return false;
 }
@@ -282,6 +284,15 @@ void Dialog::processUdpCmd(QByteArray& buf, QHostAddress sender)
                 buf.remove(0,9);
             }
             break;
+        case (char)0x0c:
+            if(fileManager->readConfig(p[1],p[2] < 0))
+            {
+                answer.append((char)0x0c);
+                answer.append((char)0x00);
+                cmdSocket->writeDatagram(answer,sender,UDP_CMD_WRITE_PORT); // it means read config failed
+                break;
+            }
+            buf.remove(0,3);
         case (char)0x05:
             answer.append((char)0x05);
             answer.append((char)fileManager->mode);
