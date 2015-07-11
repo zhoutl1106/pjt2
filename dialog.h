@@ -83,6 +83,7 @@ private:
     void processUdpCmd(QByteArray& buf, QHostAddress sender);
     bool isAnotherCmd(QByteArray buf);
     int m_lastIndex;
+    void checkDataRange(int &v, int min, int max);
 };
 
 #endif // DIALOG_H

@@ -239,6 +239,8 @@ bool Dialog::isAnotherCmd(QByteArray buf)
         return true;
     if(p[0]  == char(0x0c) && len >= 3)
         return true;
+    if(p[0]  == char(0x0d) && len >= 2)
+        return true;
     //qDebug()<<"no more cmd";
     return false;
 }
@@ -335,10 +337,31 @@ void Dialog::processUdpCmd(QByteArray& buf, QHostAddress sender)
         }
             buf.remove(0,2);
             break;
+        case (char)0x0d:
+        {
+            for(int i = 0;i<7;i++)
+            {
+                fileManager->config.vibration[i] += p[1];
+                checkDataRange(fileManager->config.vibration[i],0,100);
+                fileManager->configChange();
+                char tmp[3] = {0x82,0x00};
+                QByteArray temp = QByteArray(tmp,3);
+                temp.data()[0] = 0x82 + i;
+                temp.data()[1] = fileManager->config.vibration[i];
+                g_dialog->serialManager->writeCmd(0,temp);
+            }
+        }
+            break;
         default:
             break;
         }
         qDebug()<<"after cmd"<<buf.toHex();
         //qDebug()<<answer.toHex()<<sender.toString();
     }
+}
+
+void Dialog::checkDataRange(int &v, int min, int max)
+{
+    if(v > max)v = max;
+    if(v < min)v = min;
 }
