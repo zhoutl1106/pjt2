@@ -343,13 +343,13 @@ void Dialog::processUdpCmd(QByteArray& buf, QHostAddress sender)
             {
                 fileManager->config.vibration[i] += p[1];
                 checkDataRange(fileManager->config.vibration[i],0,100);
-                fileManager->configChange();
                 char tmp[3] = {0x82,0x00};
                 QByteArray temp = QByteArray(tmp,3);
                 temp.data()[0] = 0x82 + i;
                 temp.data()[1] = fileManager->config.vibration[i];
-                g_dialog->serialManager->writeCmd(0,temp);
+                serialManager->writeCmd(0,temp);
             }
+            fileManager->configChange();
         }
             break;
         default:
