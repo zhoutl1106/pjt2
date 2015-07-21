@@ -44,6 +44,7 @@ FileManager::FileManager(QObject *parent) :
     connect(timer,SIGNAL(timeout()),this,SLOT(checkDate()));
     timer->start();
     dlg = new DialogAutoCloseMessageBox(NULL,"读取","...","","",0,false);
+    memset(&config,0,sizeof(config));
 }
 
 void FileManager::configChange()
@@ -356,13 +357,9 @@ int FileManager::sendCmds()
     dlg->setText("正在设定亮度阈值");
     memset(p485,0,6);
     p485[0] = 0x08;
-    p485[1] = 0xf0;
+    p485[1] = 0xaa;
     *((short*)(p485+2)) = short(config.frontLuminanceThreshold);
-    g_dialog->serialManager->writeCmd(1,cmd485);
-    memset(p485,0,6);
-    p485[0] = 0x08;
-    p485[1] = 0xff;
-    *((short*)(p485+2)) = short(config.endLuminanceThreshold);
+    *((short*)(p485+4)) = short(config.endLuminanceThreshold);
     g_dialog->serialManager->writeCmd(1,cmd485);
     Sleep(2000);
 

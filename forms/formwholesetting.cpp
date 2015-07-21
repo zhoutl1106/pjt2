@@ -61,6 +61,7 @@ void FormWholeSetting::on_toolButton_clicked()
     for(int i = 0;i<7;i++)
     {
         g_dialog->fileManager->config.times[i] = g_dialog->fileManager->config.times[i + 7] = btn[i]->currentIndex() + 1;
+        //qDebug()<<"times"<<i<<g_dialog->fileManager->config.times[i];
     }
 
     emit switchToPage(6);

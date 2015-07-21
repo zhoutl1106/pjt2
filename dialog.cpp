@@ -287,7 +287,7 @@ void Dialog::processUdpCmd(QByteArray& buf, QHostAddress sender)
             }
             break;
         case (char)0x0c:
-            if(fileManager->readConfig(p[1],p[2] < 0))
+            if(fileManager->readConfig(p[1],p[2]) < 0)
             {
                 answer.append((char)0x0c);
                 answer.append((char)0x00);
@@ -295,6 +295,16 @@ void Dialog::processUdpCmd(QByteArray& buf, QHostAddress sender)
                 break;
             }
             buf.remove(0,3);
+            answer.append((char)0x05);
+            answer.append((char)fileManager->mode);
+            answer.append((char)fileManager->mem);
+            answer.append((sizeof(fileManager->config))&0xff);
+            answer.append((sizeof(fileManager->config)>>8)&0xff);
+            answer.append(valveStatus);
+            answer.append(vibratorStatus);
+            answer.append(QByteArray((const char*)&fileManager->config,sizeof(fileManager->config)));
+            cmdSocket->writeDatagram(answer,sender,UDP_CMD_WRITE_PORT);
+            break;
         case (char)0x05:
             answer.append((char)0x05);
             answer.append((char)fileManager->mode);
@@ -313,6 +323,13 @@ void Dialog::processUdpCmd(QByteArray& buf, QHostAddress sender)
             fileManager->writeConfig(p[1],p[2]);
             buf.remove(0,(unsigned char)p[3] + (unsigned char)p[4] * 256+5);
             fileManager->configChange();
+            for(int i = 0;i<14;i++)
+            {
+                qDebug()<<i<<fileManager->config.times[i]
+                          <<fileManager->config.accuracy[i][0]
+                         <<fileManager->config.accuracy[i][1]
+                        <<fileManager->config.accuracy[i][2];
+            }
             break;
         case (char)0x07:
             form2_main->closeAllDevices();
@@ -341,7 +358,16 @@ void Dialog::processUdpCmd(QByteArray& buf, QHostAddress sender)
         {
             for(int i = 0;i<7;i++)
             {
-                fileManager->config.vibration[i] += p[1];
+                if(p[1] > 0 && p[1] < 127)
+                {
+                    //qDebug()<<">0"<<(int)p[1];
+                    fileManager->config.vibration[i] += p[1];
+                }
+                else
+                {
+                    //qDebug()<<"<0"<<(int)(p[1]);
+                    fileManager->config.vibration[i] -= (255 - p[1] + 1);
+                }
                 checkDataRange(fileManager->config.vibration[i],0,100);
                 char tmp[3] = {0x82,0x00};
                 QByteArray temp = QByteArray(tmp,3);
@@ -350,6 +376,7 @@ void Dialog::processUdpCmd(QByteArray& buf, QHostAddress sender)
                 serialManager->writeCmd(0,temp);
             }
             fileManager->configChange();
+            buf.remove(0,2);
         }
             break;
         default:

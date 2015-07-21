@@ -66,6 +66,14 @@ void FormAshClean::on_toolButton_clicked()
     timeAshTimer->setInterval(g_dialog->fileManager->config.ash_interval * 1000 * 60);
     qDebug()<<"set ash timer to "<<timeAshTimer->interval()<<" ms";
 
+    char p485[6];
+    p485[0] = 0x08;
+    p485[1] = 0xaa;
+    *((short*)(p485+2)) = short(g_dialog->fileManager->config.frontLuminanceThreshold);
+    *((short*)(p485+4)) = short(g_dialog->fileManager->config.endLuminanceThreshold);
+    QByteArray cmd485(p485,6);
+    g_dialog->serialManager->writeCmd(1,cmd485);
+
     emit switchToPage(6);
 }
 
