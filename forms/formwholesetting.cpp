@@ -2,6 +2,8 @@
 #include "ui_formwholesetting.h"
 #include <QVBoxLayout>
 #include "../dialog.h"
+#include <QFileDialog>
+#include <QNetworkInterface>
 
 extern bool isBeep;
 void beep(int length_us, int index = 0);
@@ -51,6 +53,17 @@ void FormWholeSetting::updateData()
         btn[i]->setCurrentIndex(g_dialog->fileManager->config.times[i] - 1);
     }
 
+    QList<QHostAddress> address =
+            QNetworkInterface::allAddresses();
+    foreach (QHostAddress addr, address) {
+        if(addr.toString().startsWith("192"))
+        {
+            ui->spinBox->setValue(addr.toString().right(3).toInt());
+            break;
+        }
+    }
+    //qDebug()<<"ip"<<info.addresses().first().toString();
+
     isBeep = temp;
 }
 
@@ -63,6 +76,53 @@ void FormWholeSetting::on_toolButton_clicked()
         g_dialog->fileManager->config.times[i] = g_dialog->fileManager->config.times[i + 7] = btn[i]->currentIndex() + 1;
         //qDebug()<<"times"<<i<<g_dialog->fileManager->config.times[i];
     }
-
+    updateData();
     emit switchToPage(6);
+}
+
+void FormWholeSetting::on_toolButtonMain_clicked()
+{
+    if(isBeep)beep(50000,101);
+    QString str = QFileDialog::getOpenFileName();
+    if(str.isEmpty())
+        return;
+    QString str1("cp ");
+    str1 += str + " /pjt2";
+    system(str1.toStdString().c_str());
+    DialogAutoCloseMessageBox box1(NULL,"关机","主程序更新成功\n请重启工控机","是","",10,true);
+    box1.exec();
+    emit switchToPage(7);
+}
+
+void FormWholeSetting::on_toolButtonCfg_clicked()
+{
+    if(isBeep)beep(50000,101);
+    QString str = QFileDialog::getExistingDirectory();
+    if(str.isEmpty())
+        return;
+    system("rm -rf /dat/zt_config*");
+    QString str1("cp ");
+    if(!str.endsWith('/'))
+        str.append('/');
+    str1 += str + "* /dat";
+    system(str1.toStdString().c_str());
+    DialogAutoCloseMessageBox box1(NULL,"关机","配置文件更新成功\n请重启工控机","是","",10,true);
+    box1.exec();
+    emit switchToPage(7);
+}
+
+void FormWholeSetting::on_toolButtonIP_clicked()
+{
+    if(isBeep)beep(50000,101);
+    QString str("source /dat/writeIp ");
+    str += QString::number(ui->spinBox->value());
+    system(str.toStdString().c_str());
+    DialogAutoCloseMessageBox box1(NULL,"关机","IP地址更新成功\n请重启工控机","是","",10,true);
+    box1.exec();
+    emit switchToPage(7);
+}
+
+void FormWholeSetting::on_spinBox_valueChanged(int arg1)
+{
+    if(isBeep)beep(50000,101);
 }

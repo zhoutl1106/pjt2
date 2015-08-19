@@ -27,32 +27,32 @@ FormCCDCurve::FormCCDCurve(QWidget *parent) :
     box->addWidget(btnBkg);
     ui->widgetBkg->setLayout(box);
 
-    btnCamera = new MultiStatusToolButton(NULL,2,"前相机","font-size:20px;border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);"
-                                          ,"后相机","font-size:20px;border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
-
+    btnCamera = new MultiStatusToolButton(NULL,2,"前相机","font-size:20px;border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);"
+                                          ,"后相机","font-size:20px;border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
+    connect(btnCamera,SIGNAL(released()),this,SLOT(on_toolButton_Clear_clicked()));
     QVBoxLayout *box1 = new QVBoxLayout;
     box1->setMargin(0);
     box1->addWidget(btnCamera);
     ui->widgetCamera->setLayout(box1);
     mode = DRAW_MODE_INTERVAL;
-    ui->horizontalScrollBar->setVisible(false);
-    ui->toolButton_seperate->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
-    ui->toolButton_all->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
+    //ui->horizontalScrollBar->setVisible(false);
+    //ui->toolButton_seperate->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
+    //ui->toolButton_all->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
 
     setMouseTracking(true);
-    isMousePressed = false;
-    delta = 0;
+    //isMousePressed = false;
+    //delta = 0;
     timer = new QTimer(this);
     timer->setInterval(1500);
     connect(timer,SIGNAL(timeout()),this,SLOT(onTimer()));
-    periodTimer = new QTimer(this);
-    periodTimer->setInterval(2000);
-    connect(periodTimer,SIGNAL(timeout()),this,SLOT(onPeriod()));
+    //periodTimer = new QTimer(this);
+    //periodTimer->setInterval(2000);
+    //connect(periodTimer,SIGNAL(timeout()),this,SLOT(onPeriod()));
 
-    upperbound = 2100;
+    upperbound = 4095;
     lowerbound = 0;
-    range = new DialogDisplayRange;
-    connect(range,SIGNAL(displayRange(int,int)),this,SLOT(updateRange(int,int)));
+    //range = new DialogDisplayRange;
+    //connect(range,SIGNAL(displayRange(int,int)),this,SLOT(updateRange(int,int)));
 
     msgQueryAngleF = new DialogAutoCloseMessageBox(NULL,"背景板","正在查询前电机角度","","",30,false);
     msgQueryAngleE = new DialogAutoCloseMessageBox(NULL,"背景板","正在查询后电机角度","","",30,false);
@@ -71,17 +71,17 @@ void FormCCDCurve::updateData()
 {
     bool temp = isBeep;
     isBeep = false;
-    upperbound = g_dialog->fileManager->config.showUpper;
-    lowerbound = g_dialog->fileManager->config.showLower;
-    range->setRange(upperbound,lowerbound);
+    //upperbound = g_dialog->fileManager->config.showUpper;
+    //lowerbound = g_dialog->fileManager->config.showLower;
+    //range->setRange(upperbound,lowerbound);
     isBeep = temp;
 }
 
 void FormCCDCurve::onTimer()
 {
     timer->stop();
-    if(periodTimer->isActive())
-        on_toolButton_continue_clicked();
+//    if(periodTimer->isActive())
+//        on_toolButton_continue_clicked();
     on_toolButton_Clear_clicked();
 }
 
@@ -128,14 +128,14 @@ void FormCCDCurve::paintEvent(QPaintEvent *e)
         }
         else
         {
-            pathUpper.moveTo(0,startY + subHeight);
-            for(int i = 0;i<1024;i++)
-            {
-                tempV = p[i + ui->horizontalScrollBar->value()]>upperbound?upperbound:p[i + ui->horizontalScrollBar->value()];
-                tempV = tempV<lowerbound?lowerbound:tempV;
-                pathUpper.lineTo(i,subHeight + startY - (tempV - lowerbound) * subHeight / (upperbound-lowerbound));
-            }
-            painter.drawPath(pathUpper);
+//            pathUpper.moveTo(0,startY + subHeight);
+//            for(int i = 0;i<1024;i++)
+//            {
+//                tempV = p[i + ui->horizontalScrollBar->value()]>upperbound?upperbound:p[i + ui->horizontalScrollBar->value()];
+//                tempV = tempV<lowerbound?lowerbound:tempV;
+//                pathUpper.lineTo(i,subHeight + startY - (tempV - lowerbound) * subHeight / (upperbound-lowerbound));
+//            }
+//            painter.drawPath(pathUpper);
         }
     }
     if(upperbound != lowerbound)
@@ -157,26 +157,26 @@ void FormCCDCurve::paintEvent(QPaintEvent *e)
     }
 }
 
-void FormCCDCurve::mousePressEvent(QMouseEvent *e)
-{
-    if(isBeep && e->y() > 61 && e->y() < 421)beep(50000);
-    isMousePressed = true;
-    lastPos = e->pos();
-    //    qDebug()<<lastPos;
-}
+//void FormCCDCurve::mousePressEvent(QMouseEvent *e)
+//{
+//    if(isBeep && e->y() > 61 && e->y() < 421)beep(50000);
+//    isMousePressed = true;
+//    lastPos = e->pos();
+//    //    qDebug()<<lastPos;
+//}
 
-void FormCCDCurve::mouseReleaseEvent(QMouseEvent *e)
-{
-    if(isBeep && e->y() > drawStartY && e->y() < drawEndY)beep(50000);
-    isMousePressed = false;
-    //    delta += e->pos().y() - lastPos.y();
-    //    if(delta > 4096)
-    //        delta = 4096;
-    //    if(delta < -4096)
-    //        delta = -4096;
-    //    qDebug()<<e->pos().y() - lastPos.y()<<delta;
-    update();
-}
+//void FormCCDCurve::mouseReleaseEvent(QMouseEvent *e)
+//{
+//    if(isBeep && e->y() > drawStartY && e->y() < drawEndY)beep(50000);
+//    isMousePressed = false;
+//    //    delta += e->pos().y() - lastPos.y();
+//    //    if(delta > 4096)
+//    //        delta = 4096;
+//    //    if(delta < -4096)
+//    //        delta = -4096;
+//    //    qDebug()<<e->pos().y() - lastPos.y()<<delta;
+//    update();
+//}
 
 void FormCCDCurve::mouseMoveEvent(QMouseEvent *e)
 {
@@ -188,9 +188,9 @@ void FormCCDCurve::mouseMoveEvent(QMouseEvent *e)
     if(mode == DRAW_MODE_INTERVAL)
         str =QString::number(e->pos().x()*2+1) + " : "
                 + QString::number(p[e->pos().x()*2]);
-    else
-        str = QString::number(e->pos().x()+ui->horizontalScrollBar->value()+1) + " : "
-                + QString::number(p[e->pos().x()+ui->horizontalScrollBar->value()]);
+//    else
+//        str = QString::number(e->pos().x()+ui->horizontalScrollBar->value()+1) + " : "
+//                + QString::number(p[e->pos().x()+ui->horizontalScrollBar->value()]);
     ui->labelPos->setText(str);
 }
 
@@ -202,10 +202,10 @@ void FormCCDCurve::on_toolButton_Clear_clicked()
     update();
 }
 
-void FormCCDCurve::on_horizontalScrollBar_valueChanged(int value)
-{
-    update();
-}
+//void FormCCDCurve::on_horizontalScrollBar_valueChanged(int value)
+//{
+//    update();
+//}
 
 void FormCCDCurve::on_spinBox_f_valueChanged(int arg1)
 {
@@ -219,26 +219,26 @@ void FormCCDCurve::on_spinBox_channel_valueChanged(int arg1)
     isBeep = true;
 }
 
-void FormCCDCurve::onPeriod()
-{
-    on_toolButton_transmit_clicked();
-}
+//void FormCCDCurve::onPeriod()
+//{
+//    on_toolButton_transmit_clicked();
+//}
 
-void FormCCDCurve::on_toolButton_SetRange_clicked()
-{
-    if(isBeep)beep(50000,13);
-    range->show();
-}
+//void FormCCDCurve::on_toolButton_SetRange_clicked()
+//{
+//    if(isBeep)beep(50000,13);
+//    range->show();
+//}
 
-void FormCCDCurve::updateRange(int upper, int lower)
-{
-    upperbound = upper;
-    lowerbound = lower;
-    //qDebug()<<upperbound<<lowerbound;
-    update();
-    g_dialog->fileManager->config.showUpper = upper;
-    g_dialog->fileManager->config.showLower = lower;
-}
+//void FormCCDCurve::updateRange(int upper, int lower)
+//{
+//    upperbound = upper;
+//    lowerbound = lower;
+//    //qDebug()<<upperbound<<lowerbound;
+//    update();
+//    g_dialog->fileManager->config.showUpper = upper;
+//    g_dialog->fileManager->config.showLower = lower;
+//}
 
 void FormCCDCurve::on_toolButton_clicked()
 {
@@ -246,25 +246,25 @@ void FormCCDCurve::on_toolButton_clicked()
     emit switchToPage(6);
 }
 
-void FormCCDCurve::on_toolButton_seperate_clicked()
-{
-    if(isBeep)beep(50000,15);
-    mode = 2;
-    ui->toolButton_seperate->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
-    ui->toolButton_all->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
-    ui->horizontalScrollBar->setVisible(false);
-    update();
-}
+//void FormCCDCurve::on_toolButton_seperate_clicked()
+//{
+//    if(isBeep)beep(50000,15);
+//    mode = 2;
+//    ui->toolButton_seperate->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
+//    ui->toolButton_all->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
+//    ui->horizontalScrollBar->setVisible(false);
+//    update();
+//}
 
-void FormCCDCurve::on_toolButton_all_clicked()
-{
-    if(isBeep)beep(50000,16);
-    mode = 0;
-    ui->toolButton_seperate->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
-    ui->toolButton_all->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
-    ui->horizontalScrollBar->setVisible(true);
-    update();
-}
+//void FormCCDCurve::on_toolButton_all_clicked()
+//{
+//    if(isBeep)beep(50000,16);
+//    mode = 0;
+//    ui->toolButton_seperate->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
+//    ui->toolButton_all->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
+//    ui->horizontalScrollBar->setVisible(true);
+//    update();
+//}
 
 void FormCCDCurve::on_toolButton_clockwise_clicked()
 {
@@ -386,19 +386,19 @@ void FormCCDCurve::on_toolButton_transmit_clicked()
     timer->start();
 }
 
-void FormCCDCurve::on_toolButton_continue_clicked()
-{
-    if(isBeep)beep(50000,20);
-    if(periodTimer->isActive())
-    {
-        ui->toolButton_continue->setText("连续传输");
-        ui->toolButton_continue->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
-        periodTimer->stop();
-    }
-    else
-    {
-        ui->toolButton_continue->setText("停止传输");
-        ui->toolButton_continue->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
-        periodTimer->start();
-    }
-}
+//void FormCCDCurve::on_toolButton_continue_clicked()
+//{
+//    if(isBeep)beep(50000,20);
+//    if(periodTimer->isActive())
+//    {
+//        ui->toolButton_continue->setText("连续传输");
+//        ui->toolButton_continue->setStyleSheet("border-image: url(:/image/btnG.png);color: rgb(255, 255, 255);");
+//        periodTimer->stop();
+//    }
+//    else
+//    {
+//        ui->toolButton_continue->setText("停止传输");
+//        ui->toolButton_continue->setStyleSheet("border-image: url(:/image/btnR.png);color: rgb(255, 255, 255);");
+//        periodTimer->start();
+//    }
+//}

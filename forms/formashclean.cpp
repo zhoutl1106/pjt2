@@ -9,6 +9,9 @@ void beep(int length_us, int index = 0);
 extern bool isBeep;
 extern QString stylesheet;
 extern bool vibratorStatus;
+extern bool valveStatus;
+void g_setValve();
+void g_setVibrator();
 
 FormAshClean::FormAshClean(QWidget *parent) :
     QWidget(parent),
@@ -49,7 +52,8 @@ void FormAshClean::updateData()
 void FormAshClean::timeAshClean()
 {
     qDebug()<<"ash timer timeout"<<vibratorStatus<<g_dialog->fileManager->config.ash_mode;
-    if(g_dialog->fileManager->config.ash_mode != ASH_MODE_AUTO && g_dialog->fileManager->config.ash_mode != ASH_MODE_TIME)
+    if(g_dialog->fileManager->config.ash_mode != ASH_MODE_AUTO
+            && g_dialog->fileManager->config.ash_mode != ASH_MODE_TIME)
     {
         if(ui->radioButtonTiming->isChecked())
             g_dialog->fileManager->config.ash_mode = ASH_MODE_TIME;
@@ -63,17 +67,7 @@ void FormAshClean::timeAshClean()
 void FormAshClean::on_toolButton_clicked()
 {
     if(isBeep)beep(50000,3);
-    timeAshTimer->setInterval(g_dialog->fileManager->config.ash_interval * 1000 * 60);
-    qDebug()<<"set ash timer to "<<timeAshTimer->interval()<<" ms";
-
-    char p485[6];
-    p485[0] = 0x08;
-    p485[1] = 0xaa;
-    *((short*)(p485+2)) = short(g_dialog->fileManager->config.frontLuminanceThreshold);
-    *((short*)(p485+4)) = short(g_dialog->fileManager->config.endLuminanceThreshold);
-    QByteArray cmd485(p485,6);
-    g_dialog->serialManager->writeCmd(1,cmd485);
-
+    updateData();
     emit switchToPage(6);
 }
 
@@ -89,6 +83,10 @@ void FormAshClean::autoCleanAsh()
 void FormAshClean::cleanAsh()
 {
     qDebug()<<"clean ash";
+    bool tempValve = valveStatus;
+    bool tempVibrator = vibratorStatus;
+    bool tempBeep = isBeep;
+    isBeep = false;
 
     char tmp[3] = {0x0c,0x00};
     QByteArray tmp1(tmp,3);
@@ -96,18 +94,17 @@ void FormAshClean::cleanAsh()
     char tmp3[6] = {0x07,0xaa,0x00};
     QByteArray tmp2(tmp3,6);
 
-    tmp1.data()[0] = 0x0e;
-    g_dialog->serialManager->writeCmd(0,tmp1);
-    sleep(10);
-    tmp1.data()[0] = 0x0c;
-    g_dialog->serialManager->writeCmd(0,tmp1);
-    tmp1.data()[0] = 0x12;
-    g_dialog->serialManager->writeCmd(0,tmp1);
+    if(vibratorStatus)
+        g_setVibrator();
+    dlgAsh->setDelay(10);
+    dlgAsh->show();
+    if(valveStatus)
+        g_setValve();
     g_dialog->serialManager->writeCmd(1,tmp2);
-
     tmp1.data()[0] = 0x09;
     g_dialog->serialManager->writeCmd(0,tmp1);
 
+    dlgAsh->close();
     dlgAsh->setDelay(ui->spinBox_delay->value());
     dlgAsh->exec();
 
@@ -115,17 +112,22 @@ void FormAshClean::cleanAsh()
     g_dialog->serialManager->writeCmd(0,tmp1);
     dlgAsh->setDelay(ui->spinBox_delay->value());
     dlgAsh->exec();
-    if(vibratorStatus)
-    {
-        tmp1.data()[0] = 0x0b;
-        g_dialog->serialManager->writeCmd(0,tmp1);
-        tmp1.data()[0] = 0x11;
-        g_dialog->serialManager->writeCmd(0,tmp1);
-        tmp1.data()[0] = 0x0d;
-        g_dialog->serialManager->writeCmd(0,tmp1);
-        tmp2.data()[0] = 0x06;
-        g_dialog->serialManager->writeCmd(1,tmp2);
-    }
+
+
+    tmp2.data()[0] = 0x06;
+    g_dialog->serialManager->writeCmd(1,tmp2);
+
+    dlgAsh->setDelay(1);
+    dlgAsh->exec();
+
+    tmp2.data()[0] = 0x03;
+    g_dialog->serialManager->writeCmd(1,tmp2);
+
+    if(tempValve)
+        g_setValve();
+    if(tempVibrator)
+        g_setVibrator();
+    isBeep = tempBeep;
 }
 
 void FormAshClean::on_toolButton_manual_clicked()
@@ -137,37 +139,57 @@ void FormAshClean::on_toolButton_manual_clicked()
 void FormAshClean::on_spinBox_thresholdFront_valueChanged(int arg1)
 {
     if(isBeep)beep(50000,5);
-    g_dialog->fileManager->config.frontLuminanceThreshold = arg1;
 }
 
 void FormAshClean::on_spinBox_thresholdEnd_valueChanged(int arg1)
 {
     if(isBeep)beep(50000,6);
-    g_dialog->fileManager->config.endLuminanceThreshold = arg1;
 }
 
 void FormAshClean::on_spinBox_delay_valueChanged(int arg1)
 {
     if(isBeep)beep(50000,7);
-    g_dialog->fileManager->config.ash_delay = arg1;
 }
 
 void FormAshClean::on_spinBox_interval_valueChanged(int arg1)
 {
     if(isBeep)beep(50000,8);
-    g_dialog->fileManager->config.ash_interval = arg1;
 }
 
 void FormAshClean::on_radioButtonTiming_clicked()
 {
     if(isBeep)beep(50000,9);
-    g_dialog->fileManager->config.ash_mode = ASH_MODE_TIME;
-    qDebug()<<"set ash mode to TIME";
 }
 
 void FormAshClean::on_radioButtonAuto_clicked()
 {
     if(isBeep)beep(50000,10);
-    g_dialog->fileManager->config.ash_mode = ASH_MODE_AUTO;
-    qDebug()<<"set ash mode to AUTO";
+}
+
+void FormAshClean::on_toolButton_2_clicked()
+{
+    if(isBeep)beep(50000,10);
+    g_dialog->fileManager->config.ash_delay = ui->spinBox_delay->value();
+    g_dialog->fileManager->config.ash_interval = ui->spinBox_interval->value();
+    timeAshTimer->setInterval(g_dialog->fileManager->config.ash_interval * 1000 * 60);
+    g_dialog->fileManager->config.frontLuminanceThreshold = ui->spinBox_thresholdFront->value();
+    g_dialog->fileManager->config.endLuminanceThreshold = ui->spinBox_thresholdEnd->value();
+    qDebug()<<"set ash timer to "<<timeAshTimer->interval()<<" ms";
+
+    if(ui->radioButtonAuto->isChecked())
+        g_dialog->fileManager->config.ash_mode = ASH_MODE_AUTO;
+    else
+        g_dialog->fileManager->config.ash_mode = ASH_MODE_TIME;
+
+    char p485[6];
+    p485[0] = 0x08;
+    p485[1] = 0xaa;
+    *((short*)(p485+2)) = short(g_dialog->fileManager->config.frontLuminanceThreshold);
+    *((short*)(p485+4)) = short(g_dialog->fileManager->config.endLuminanceThreshold);
+    QByteArray cmd485(p485,6);
+    g_dialog->serialManager->writeCmd(1,cmd485);
+    memset(p485,0,6);
+
+
+    emit switchToPage(6);
 }

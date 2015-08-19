@@ -103,8 +103,20 @@ void FormMain::onLongPressTimer()
     if(box1.exec() == QDialog::Accepted)
     {
         closeAllDevices();
+        QString str = "是否保存当前参数到";
+        switch(g_dialog->fileManager->mode)
+        {
+        case 1:str += "选异色";break;
+        case 3:str += "黄白同选";break;
+        case 5:str += "选黑米";break;
+        case 2:str += "选腹白";break;
+        case 4:str += "选糯米";break;
+        default:;
+        }
 
-        DialogAutoCloseMessageBox box(NULL,"保存","是否保存模式参数","是","否",10,true);
+        str += "模式记忆" + QString::number(g_dialog->fileManager->mem) + "中";
+
+        DialogAutoCloseMessageBox box(NULL,"保存",str,"是","否",10,true);
         if(box.exec() == QDialog::Accepted)
         {
             g_dialog->fileManager->writeConfig(g_dialog->fileManager->mode, g_dialog->fileManager->mem);

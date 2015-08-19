@@ -45,6 +45,8 @@ private slots:
 
     void timeAshClean();
 
+    void on_toolButton_2_clicked();
+
 private:
     Ui::FormAshClean *ui;
     void cleanAsh();

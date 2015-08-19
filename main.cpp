@@ -75,10 +75,10 @@ void g_setVibrator()
     {
         tmp1.data()[0] = 0x0d;
         g_dialog->serialManager->writeCmd(0,tmp1);
-        tmp2.data()[0] = 0x06;
-        g_dialog->serialManager->writeCmd(1,tmp2);
+        //tmp2.data()[0] = 0x06;
+        //g_dialog->serialManager->writeCmd(1,tmp2);
         g_dialog->form9_ash->timeAshTimer->start();
-        qDebug()<<"ash timer start";
+        //qDebug()<<"ash timer start";
     }
     else
     {
@@ -86,15 +86,15 @@ void g_setVibrator()
         g_dialog->serialManager->writeCmd(0,tmp1);
         //DialogAutoCloseMessageBox box(NULL,"警告","供料关闭中……","","",10,false);
         //box.exec();
-        g_dialog->form2_main->setVibratorEnable(false);
-        g_dialog->form3_vibrationAdjust->setVibratorEnable(false);
-        Sleep(10000);
-        g_dialog->form2_main->setVibratorEnable(true);
-        g_dialog->form3_vibrationAdjust->setVibratorEnable(true);
-        tmp2.data()[0] = 0x07;
-        g_dialog->serialManager->writeCmd(1,tmp2);
+//        g_dialog->form2_main->setVibratorEnable(false);
+//        g_dialog->form3_vibrationAdjust->setVibratorEnable(false);
+//        Sleep(10000);
+//        g_dialog->form2_main->setVibratorEnable(true);
+//        g_dialog->form3_vibrationAdjust->setVibratorEnable(true);
+        //tmp2.data()[0] = 0x07;
+        //g_dialog->serialManager->writeCmd(1,tmp2);
         g_dialog->form9_ash->timeAshTimer->stop();
-        qDebug()<<"ash timer stop";
+        //qDebug()<<"ash timer stop";
     }
 }
 

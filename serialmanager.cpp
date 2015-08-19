@@ -138,7 +138,7 @@ void SerialManager::comTimeOut()
             g_dialog->fileManager->config.endMotorVoltage = *((short*)(p+2));
             g_dialog->form10_bkg->msgQueryAngleE->accept();
         }
-        if(p[1] == 0x06 && p[2] == 0x00 && vibratorStatus)
+        if(p[1] == 0x06 && p[2] == 0x00)// && vibratorStatus)
         {
             emit cleanAshRequire();
         }

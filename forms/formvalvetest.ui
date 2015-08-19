@@ -14,20 +14,14 @@
    <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
-   <property name="spacing">
-    <number>20</number>
-   </property>
    <property name="leftMargin">
-    <number>50</number>
-   </property>
-   <property name="topMargin">
-    <number>20</number>
+    <number>100</number>
    </property>
    <property name="rightMargin">
-    <number>50</number>
+    <number>100</number>
    </property>
    <property name="bottomMargin">
-    <number>20</number>
+    <number>50</number>
    </property>
    <item>
     <widget class="QLabel" name="label">
@@ -55,8 +49,262 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
+         <widget class="QRadioButton" name="radioButton_1">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+QRadioButton:checked
+{
+color: rgb(255, 255, 255);
+	border-image: url(:/image/btnR.png);
+}
+
+QRadioButton:unchecked
+{
+color: rgb(255, 255, 255);
+	border-image: url(:/image/btnG.png);
+}</string>
+          </property>
+          <property name="text">
+           <string>记忆1</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="radioButton_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+QRadioButton:checked
+{
+color: rgb(255, 255, 255);
+	border-image: url(:/image/btnR.png);
+}
+
+QRadioButton:unchecked
+{
+color: rgb(255, 255, 255);
+	border-image: url(:/image/btnG.png);
+}</string>
+          </property>
+          <property name="text">
+           <string>记忆2</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="radioButton_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+QRadioButton:checked
+{
+color: rgb(255, 255, 255);
+	border-image: url(:/image/btnR.png);
+}
+
+QRadioButton:unchecked
+{
+color: rgb(255, 255, 255);
+	border-image: url(:/image/btnG.png);
+}</string>
+          </property>
+          <property name="text">
+           <string>记忆3</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="radioButton_4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+QRadioButton:checked
+{
+color: rgb(255, 255, 255);
+	border-image: url(:/image/btnR.png);
+}
+
+QRadioButton:unchecked
+{
+color: rgb(255, 255, 255);
+	border-image: url(:/image/btnG.png);
+}</string>
+          </property>
+          <property name="text">
+           <string>记忆4</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="radioButton_5">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+QRadioButton:checked
+{
+color: rgb(255, 255, 255);
+	border-image: url(:/image/btnR.png);
+}
+
+QRadioButton:unchecked
+{
+color: rgb(255, 255, 255);
+	border-image: url(:/image/btnG.png);
+}</string>
+          </property>
+          <property name="text">
+           <string>记忆5</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="radioButton_6">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+QRadioButton:checked
+{
+color: rgb(255, 255, 255);
+	border-image: url(:/image/btnR.png);
+}
+
+QRadioButton:unchecked
+{
+color: rgb(255, 255, 255);
+	border-image: url(:/image/btnG.png);
+}</string>
+          </property>
+          <property name="text">
+           <string>记忆6</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="radioButton_7">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+QRadioButton:checked
+{
+color: rgb(255, 255, 255);
+	border-image: url(:/image/btnR.png);
+}
+
+QRadioButton:unchecked
+{
+color: rgb(255, 255, 255);
+	border-image: url(:/image/btnG.png);
+}</string>
+          </property>
+          <property name="text">
+           <string>记忆7</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="5">
+         <widget class="QToolButton" name="toolButton_OK">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>确定</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
          <widget class="QLabel" name="label_6">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
@@ -65,12 +313,11 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>吹嘴
-延时</string>
+           <string>吹嘴延时</string>
           </property>
          </widget>
         </item>
-        <item>
+        <item row="0" column="1">
          <widget class="QDoubleSpinBox" name="doubleSpinBox_delay">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -90,6 +337,9 @@
           <property name="decimals">
            <number>1</number>
           </property>
+          <property name="minimum">
+           <double>0.100000000000000</double>
+          </property>
           <property name="maximum">
            <double>99.900000000000006</double>
           </property>
@@ -101,10 +351,10 @@
           </property>
          </widget>
         </item>
-        <item>
+        <item row="0" column="2">
          <widget class="QLabel" name="label_9">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -114,7 +364,7 @@
           </property>
          </widget>
         </item>
-        <item>
+        <item row="1" column="0">
          <widget class="QLabel" name="label_11">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
@@ -123,12 +373,11 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>开阀
-时间</string>
+           <string>开阀时间</string>
           </property>
          </widget>
         </item>
-        <item>
+        <item row="1" column="1">
          <widget class="QDoubleSpinBox" name="doubleSpinBox_pulseWidth">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -162,10 +411,10 @@
           </property>
          </widget>
         </item>
-        <item>
+        <item row="1" column="2">
          <widget class="QLabel" name="label_12">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -175,8 +424,34 @@
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QToolButton" name="toolButton_OK">
+        <item row="0" column="3">
+         <widget class="QWidget" name="widgetCamera" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="5">
+         <widget class="QToolButton" name="toolButton_OK_2">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -196,64 +471,6 @@
         </item>
        </layout>
       </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QWidget" name="widgetCamera" native="true">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_2">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>通道</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QSpinBox" name="spinBoxChannel">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="minimum">
-           <number>1</number>
-          </property>
-          <property name="maximum">
-           <number>7</number>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
      </layout>
     </widget>
    </item>
@@ -266,25 +483,6 @@
       <string>清灰模式</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <widget class="QToolButton" name="toolButton_singleTest">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>40</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>手动测试</string>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="1">
        <widget class="QLabel" name="label_3">
         <property name="sizePolicy">
@@ -319,10 +517,10 @@
          <string notr="true"/>
         </property>
         <property name="minimum">
-         <number>1</number>
+         <number>0</number>
         </property>
         <property name="maximum">
-         <number>14</number>
+         <number>15</number>
         </property>
        </widget>
       </item>
@@ -360,10 +558,10 @@
          <string notr="true"/>
         </property>
         <property name="minimum">
-         <number>1</number>
+         <number>0</number>
         </property>
         <property name="maximum">
-         <number>64</number>
+         <number>65</number>
         </property>
        </widget>
       </item>
@@ -380,7 +578,26 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
+      <item row="1" column="2">
+       <widget class="QToolButton" name="toolButton_singleTest">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>单个测试</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
        <widget class="QToolButton" name="toolButton_autoTest">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -399,25 +616,6 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="4">
-       <widget class="QToolButton" name="toolButton_reset">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>40</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>复位</string>
-        </property>
-       </widget>
-      </item>
      </layout>
     </widget>
    </item>
@@ -426,19 +624,12 @@
      <property name="spacing">
       <number>200</number>
      </property>
-     <item>
-      <widget class="QToolButton" name="toolButton_valveOn">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>喷阀监控</string>
-       </property>
-      </widget>
-     </item>
+     <property name="leftMargin">
+      <number>200</number>
+     </property>
+     <property name="rightMargin">
+      <number>200</number>
+     </property>
      <item>
       <widget class="QToolButton" name="toolButton">
        <property name="sizePolicy">

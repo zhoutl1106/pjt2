@@ -52,6 +52,14 @@ void DialogAutoCloseMessageBox::setText(QString text)
     ui->label->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
 }
 
+void DialogAutoCloseMessageBox::setTitle(QString text)
+{
+    ui->labelTitle->setText(text);
+    ui->labelTitle->adjustSize();
+    ui->labelTitle->setWordWrap(true);
+    ui->labelTitle->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+}
+
 DialogAutoCloseMessageBox::~DialogAutoCloseMessageBox()
 {
     delete ui;
@@ -73,7 +81,7 @@ void DialogAutoCloseMessageBox::onTimer()
 
 void DialogAutoCloseMessageBox::on_pushButtonOK_clicked()
 {
-    beep(50000,103);
+    if(isBeep)beep(50000,103);
     qDebug()<<"autocloseMsg 103"<<ui->label->text();
     accept();
     timer->stop();
@@ -81,7 +89,7 @@ void DialogAutoCloseMessageBox::on_pushButtonOK_clicked()
 
 void DialogAutoCloseMessageBox::on_pushButtonCancel_clicked()
 {
-    beep(50000,104);
+    if(isBeep)beep(50000,104);
     qDebug()<<"autocloseMsg 104"<<ui->label->text();
     reject();
     timer->stop();
@@ -97,4 +105,16 @@ int DialogAutoCloseMessageBox::exec()
 {
     timer->start();
     return QDialog::exec();
+}
+
+void DialogAutoCloseMessageBox::accept()
+{
+    timer->stop();
+    QDialog::accept();
+}
+
+void DialogAutoCloseMessageBox::reject()
+{
+    timer->stop();
+    QDialog::reject();
 }

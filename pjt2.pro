@@ -38,7 +38,8 @@ SOURCES += main.cpp\
     multistatustoolbutton.cpp \
     posix_qextserialport.cpp \
     qextserialbase.cpp \
-    serialmanager.cpp
+    serialmanager.cpp \
+    forms/dialogmodemem.cpp
 
 HEADERS  += \
     dialogautoclosemessagebox.h \
@@ -66,7 +67,8 @@ HEADERS  += \
     multistatustoolbutton.h \
     posix_qextserialport.h \
     qextserialbase.h \
-    serialmanager.h
+    serialmanager.h \
+    forms/dialogmodemem.h
 
 FORMS    += \
     dialogautoclosemessagebox.ui \
@@ -87,7 +89,8 @@ FORMS    += \
     forms/formvalvetest.ui \
     forms/formwholesetting.ui \
     forms/formcntcheck.ui \
-    forms/formadmin.ui
+    forms/formadmin.ui \
+    forms/dialogmodemem.ui
 
 RESOURCES += \
     resource.qrc

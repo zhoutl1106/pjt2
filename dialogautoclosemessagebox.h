@@ -18,9 +18,12 @@ public:
     ~DialogAutoCloseMessageBox();
     void setDelay(int s);
     int exec();
+    void accept();
+    void reject();
 
 public slots:
     void setText(QString text);
+    void setTitle(QString str);
 
 private slots:
     void on_pushButtonOK_clicked();

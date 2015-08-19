@@ -25,6 +25,14 @@ signals:
 private slots:
     void on_toolButton_clicked();
     
+    void on_toolButtonMain_clicked();
+
+    void on_toolButtonCfg_clicked();
+
+    void on_toolButtonIP_clicked();
+
+    void on_spinBox_valueChanged(int arg1);
+
 private:
     Ui::FormWholeSetting *ui;
     MultiStatusToolButton *btn[7];
