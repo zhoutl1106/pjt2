@@ -16,6 +16,8 @@ class FormAccuracyDetailAdjust : public QWidget
 public:
     explicit FormAccuracyDetailAdjust(QWidget *parent = 0);
     ~FormAccuracyDetailAdjust();
+    void setVibrator(bool value);
+    void setValve(bool value);
 
 public slots:
     void updateData();
@@ -26,25 +28,25 @@ signals:
 
 private slots:
     void on_toolButton_clicked();
-    void onCamera();
-
-    void on_comboBox_currentIndexChanged(int index);
 
     void on_toolButton_2_clicked();
 
-    void on_verticalSlider11_valueChanged(int value);
-    void on_verticalSlider12_valueChanged(int value);
-    void on_verticalSlider13_valueChanged(int value);
+    void on_toolButtonValve_clicked();
 
-    void on_toolButton_3_clicked();
+    void on_toolButtonVibrator_clicked();
+
+    void on_radioButton_1_clicked();
+    void on_radioButton_2_clicked();
+    void on_radioButton_3_clicked();
+    void on_radioButton_4_clicked();
+    void on_radioButton_5_clicked();
+    void on_radioButton_6_clicked();
+    void on_radioButton_7_clicked();
 
 private:
     Ui::FormAccuracyDetailAdjust *ui;
-    MultiStatusToolButton *btn;
-    LongClickToolButton *lbtn[6];
+    LongClickToolButton *lbtn[12];
     QList<QWidget*> list;
-    int lastValue[3];
-    bool isSaveValue;
 };
 
 #endif // FORMVIBRATIONADJUST_H

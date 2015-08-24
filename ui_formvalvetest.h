@@ -100,7 +100,11 @@ public:
         sizePolicy1.setHeightForWidth(radioButton_1->sizePolicy().hasHeightForWidth());
         radioButton_1->setSizePolicy(sizePolicy1);
         radioButton_1->setMinimumSize(QSize(0, 30));
-        radioButton_1->setStyleSheet(QString::fromUtf8("\n"
+        radioButton_1->setStyleSheet(QString::fromUtf8("QRadioButton::indicator\n"
+"{\n"
+"	width:0 px;\n"
+"	height: 0 px;\n"
+"}\n"
 "QRadioButton:checked\n"
 "{\n"
 "color: rgb(255, 255, 255);\n"
@@ -120,7 +124,11 @@ public:
         sizePolicy1.setHeightForWidth(radioButton_2->sizePolicy().hasHeightForWidth());
         radioButton_2->setSizePolicy(sizePolicy1);
         radioButton_2->setMinimumSize(QSize(0, 30));
-        radioButton_2->setStyleSheet(QString::fromUtf8("\n"
+        radioButton_2->setStyleSheet(QString::fromUtf8("QRadioButton::indicator\n"
+"{\n"
+"	width:0 px;\n"
+"	height: 0 px;\n"
+"}\n"
 "QRadioButton:checked\n"
 "{\n"
 "color: rgb(255, 255, 255);\n"
@@ -140,7 +148,11 @@ public:
         sizePolicy1.setHeightForWidth(radioButton_3->sizePolicy().hasHeightForWidth());
         radioButton_3->setSizePolicy(sizePolicy1);
         radioButton_3->setMinimumSize(QSize(0, 30));
-        radioButton_3->setStyleSheet(QString::fromUtf8("\n"
+        radioButton_3->setStyleSheet(QString::fromUtf8("QRadioButton::indicator\n"
+"{\n"
+"	width:0 px;\n"
+"	height: 0 px;\n"
+"}\n"
 "QRadioButton:checked\n"
 "{\n"
 "color: rgb(255, 255, 255);\n"
@@ -160,7 +172,11 @@ public:
         sizePolicy1.setHeightForWidth(radioButton_4->sizePolicy().hasHeightForWidth());
         radioButton_4->setSizePolicy(sizePolicy1);
         radioButton_4->setMinimumSize(QSize(0, 30));
-        radioButton_4->setStyleSheet(QString::fromUtf8("\n"
+        radioButton_4->setStyleSheet(QString::fromUtf8("QRadioButton::indicator\n"
+"{\n"
+"	width:0 px;\n"
+"	height: 0 px;\n"
+"}\n"
 "QRadioButton:checked\n"
 "{\n"
 "color: rgb(255, 255, 255);\n"
@@ -180,7 +196,11 @@ public:
         sizePolicy1.setHeightForWidth(radioButton_5->sizePolicy().hasHeightForWidth());
         radioButton_5->setSizePolicy(sizePolicy1);
         radioButton_5->setMinimumSize(QSize(0, 30));
-        radioButton_5->setStyleSheet(QString::fromUtf8("\n"
+        radioButton_5->setStyleSheet(QString::fromUtf8("QRadioButton::indicator\n"
+"{\n"
+"	width:0 px;\n"
+"	height: 0 px;\n"
+"}\n"
 "QRadioButton:checked\n"
 "{\n"
 "color: rgb(255, 255, 255);\n"
@@ -200,7 +220,11 @@ public:
         sizePolicy1.setHeightForWidth(radioButton_6->sizePolicy().hasHeightForWidth());
         radioButton_6->setSizePolicy(sizePolicy1);
         radioButton_6->setMinimumSize(QSize(0, 30));
-        radioButton_6->setStyleSheet(QString::fromUtf8("\n"
+        radioButton_6->setStyleSheet(QString::fromUtf8("QRadioButton::indicator\n"
+"{\n"
+"	width:0 px;\n"
+"	height: 0 px;\n"
+"}\n"
 "QRadioButton:checked\n"
 "{\n"
 "color: rgb(255, 255, 255);\n"
@@ -220,7 +244,11 @@ public:
         sizePolicy1.setHeightForWidth(radioButton_7->sizePolicy().hasHeightForWidth());
         radioButton_7->setSizePolicy(sizePolicy1);
         radioButton_7->setMinimumSize(QSize(0, 30));
-        radioButton_7->setStyleSheet(QString::fromUtf8("\n"
+        radioButton_7->setStyleSheet(QString::fromUtf8("QRadioButton::indicator\n"
+"{\n"
+"	width:0 px;\n"
+"	height: 0 px;\n"
+"}\n"
 "QRadioButton:checked\n"
 "{\n"
 "color: rgb(255, 255, 255);\n"
@@ -433,13 +461,13 @@ public:
         FormValveTest->setWindowTitle(QApplication::translate("FormValveTest", "Form", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("FormValveTest", "\345\226\267\351\230\200\350\256\276\347\275\256", 0, QApplication::UnicodeUTF8));
         groupBox_2->setTitle(QApplication::translate("FormValveTest", "\345\237\272\346\234\254\345\217\202\346\225\260", 0, QApplication::UnicodeUTF8));
-        radioButton_1->setText(QApplication::translate("FormValveTest", "\350\256\260\345\277\2061", 0, QApplication::UnicodeUTF8));
-        radioButton_2->setText(QApplication::translate("FormValveTest", "\350\256\260\345\277\2062", 0, QApplication::UnicodeUTF8));
-        radioButton_3->setText(QApplication::translate("FormValveTest", "\350\256\260\345\277\2063", 0, QApplication::UnicodeUTF8));
-        radioButton_4->setText(QApplication::translate("FormValveTest", "\350\256\260\345\277\2064", 0, QApplication::UnicodeUTF8));
-        radioButton_5->setText(QApplication::translate("FormValveTest", "\350\256\260\345\277\2065", 0, QApplication::UnicodeUTF8));
-        radioButton_6->setText(QApplication::translate("FormValveTest", "\350\256\260\345\277\2066", 0, QApplication::UnicodeUTF8));
-        radioButton_7->setText(QApplication::translate("FormValveTest", "\350\256\260\345\277\2067", 0, QApplication::UnicodeUTF8));
+        radioButton_1->setText(QApplication::translate("FormValveTest", "\351\200\232\351\201\2231", 0, QApplication::UnicodeUTF8));
+        radioButton_2->setText(QApplication::translate("FormValveTest", "\351\200\232\351\201\2232", 0, QApplication::UnicodeUTF8));
+        radioButton_3->setText(QApplication::translate("FormValveTest", "\351\200\232\351\201\2233", 0, QApplication::UnicodeUTF8));
+        radioButton_4->setText(QApplication::translate("FormValveTest", "\351\200\232\351\201\2234", 0, QApplication::UnicodeUTF8));
+        radioButton_5->setText(QApplication::translate("FormValveTest", "\351\200\232\351\201\2235", 0, QApplication::UnicodeUTF8));
+        radioButton_6->setText(QApplication::translate("FormValveTest", "\351\200\232\351\201\2236", 0, QApplication::UnicodeUTF8));
+        radioButton_7->setText(QApplication::translate("FormValveTest", "\351\200\232\351\201\2237", 0, QApplication::UnicodeUTF8));
         toolButton_OK->setText(QApplication::translate("FormValveTest", "\347\241\256\345\256\232", 0, QApplication::UnicodeUTF8));
         label_6->setText(QApplication::translate("FormValveTest", "\345\220\271\345\230\264\345\273\266\346\227\266", 0, QApplication::UnicodeUTF8));
         label_9->setText(QApplication::translate("FormValveTest", "\357\274\210\346\257\253\347\247\222\357\274\211", 0, QApplication::UnicodeUTF8));

@@ -78,10 +78,35 @@
    <item>
     <layout class="QGridLayout" name="gridLayout">
      <item row="1" column="0">
-      <widget class="QWidget" name="widgetCamera" native="true"/>
+      <widget class="QWidget" name="widgetCamera" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="1" column="1">
       <widget class="QLabel" name="label_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
        <property name="text">
         <string>通道</string>
        </property>
@@ -89,6 +114,18 @@
      </item>
      <item row="0" column="1">
       <widget class="QLabel" name="label_4">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
        <property name="text">
         <string>角度</string>
        </property>
@@ -97,10 +134,16 @@
      <item row="1" column="3">
       <widget class="QToolButton" name="toolButton_transmit">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
@@ -111,15 +154,34 @@
       </widget>
      </item>
      <item row="0" column="0">
-      <widget class="QWidget" name="widgetBkg" native="true"/>
+      <widget class="QWidget" name="widgetBkg" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="1" column="4">
       <widget class="QToolButton" name="toolButton">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">font: 16pt &quot;文泉驿微米黑&quot;;</string>
@@ -140,7 +202,7 @@
        <property name="minimumSize">
         <size>
          <width>150</width>
-         <height>50</height>
+         <height>40</height>
         </size>
        </property>
        <property name="styleSheet">
@@ -160,10 +222,16 @@
      <item row="0" column="4">
       <widget class="QToolButton" name="toolButton_anticlockwise">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
        </property>
        <property name="font">
         <font>
@@ -193,7 +261,7 @@
        <property name="minimumSize">
         <size>
          <width>150</width>
-         <height>50</height>
+         <height>40</height>
         </size>
        </property>
        <property name="styleSheet">
@@ -207,10 +275,16 @@
      <item row="0" column="3">
       <widget class="QToolButton" name="toolButton_clockwise">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
        </property>
        <property name="font">
         <font>

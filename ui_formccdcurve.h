@@ -89,32 +89,45 @@ public:
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         widgetCamera = new QWidget(FormCCDCurve);
         widgetCamera->setObjectName(QString::fromUtf8("widgetCamera"));
+        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(widgetCamera->sizePolicy().hasHeightForWidth());
+        widgetCamera->setSizePolicy(sizePolicy2);
+        widgetCamera->setMinimumSize(QSize(0, 40));
 
         gridLayout->addWidget(widgetCamera, 1, 0, 1, 1);
 
         label_3 = new QLabel(FormCCDCurve);
         label_3->setObjectName(QString::fromUtf8("label_3"));
+        sizePolicy2.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
+        label_3->setSizePolicy(sizePolicy2);
+        label_3->setMinimumSize(QSize(0, 40));
 
         gridLayout->addWidget(label_3, 1, 1, 1, 1);
 
         label_4 = new QLabel(FormCCDCurve);
         label_4->setObjectName(QString::fromUtf8("label_4"));
+        sizePolicy2.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
+        label_4->setSizePolicy(sizePolicy2);
+        label_4->setMinimumSize(QSize(0, 40));
 
         gridLayout->addWidget(label_4, 0, 1, 1, 1);
 
         toolButton_transmit = new QToolButton(FormCCDCurve);
         toolButton_transmit->setObjectName(QString::fromUtf8("toolButton_transmit"));
-        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(toolButton_transmit->sizePolicy().hasHeightForWidth());
         toolButton_transmit->setSizePolicy(sizePolicy2);
+        toolButton_transmit->setMinimumSize(QSize(0, 40));
         toolButton_transmit->setStyleSheet(QString::fromUtf8("font: 16pt \"\346\226\207\346\263\211\351\251\277\345\276\256\347\261\263\351\273\221\";"));
 
         gridLayout->addWidget(toolButton_transmit, 1, 3, 1, 1);
 
         widgetBkg = new QWidget(FormCCDCurve);
         widgetBkg->setObjectName(QString::fromUtf8("widgetBkg"));
+        sizePolicy2.setHeightForWidth(widgetBkg->sizePolicy().hasHeightForWidth());
+        widgetBkg->setSizePolicy(sizePolicy2);
+        widgetBkg->setMinimumSize(QSize(0, 40));
 
         gridLayout->addWidget(widgetBkg, 0, 0, 1, 1);
 
@@ -122,6 +135,7 @@ public:
         toolButton->setObjectName(QString::fromUtf8("toolButton"));
         sizePolicy2.setHeightForWidth(toolButton->sizePolicy().hasHeightForWidth());
         toolButton->setSizePolicy(sizePolicy2);
+        toolButton->setMinimumSize(QSize(0, 40));
         toolButton->setStyleSheet(QString::fromUtf8("font: 16pt \"\346\226\207\346\263\211\351\251\277\345\276\256\347\261\263\351\273\221\";"));
 
         gridLayout->addWidget(toolButton, 1, 4, 1, 1);
@@ -133,7 +147,7 @@ public:
         sizePolicy3.setVerticalStretch(0);
         sizePolicy3.setHeightForWidth(spinBox_channel->sizePolicy().hasHeightForWidth());
         spinBox_channel->setSizePolicy(sizePolicy3);
-        spinBox_channel->setMinimumSize(QSize(150, 50));
+        spinBox_channel->setMinimumSize(QSize(150, 40));
         spinBox_channel->setStyleSheet(QString::fromUtf8(""));
         spinBox_channel->setMinimum(1);
         spinBox_channel->setMaximum(7);
@@ -145,6 +159,7 @@ public:
         toolButton_anticlockwise->setObjectName(QString::fromUtf8("toolButton_anticlockwise"));
         sizePolicy2.setHeightForWidth(toolButton_anticlockwise->sizePolicy().hasHeightForWidth());
         toolButton_anticlockwise->setSizePolicy(sizePolicy2);
+        toolButton_anticlockwise->setMinimumSize(QSize(0, 40));
         QFont font;
         font.setFamily(QString::fromUtf8("\346\226\207\346\263\211\351\251\277\345\276\256\347\261\263\351\273\221"));
         font.setPointSize(16);
@@ -160,7 +175,7 @@ public:
         spinBox_f->setObjectName(QString::fromUtf8("spinBox_f"));
         sizePolicy3.setHeightForWidth(spinBox_f->sizePolicy().hasHeightForWidth());
         spinBox_f->setSizePolicy(sizePolicy3);
-        spinBox_f->setMinimumSize(QSize(150, 50));
+        spinBox_f->setMinimumSize(QSize(150, 40));
         spinBox_f->setStyleSheet(QString::fromUtf8(""));
         spinBox_f->setMaximum(180);
 
@@ -170,6 +185,7 @@ public:
         toolButton_clockwise->setObjectName(QString::fromUtf8("toolButton_clockwise"));
         sizePolicy2.setHeightForWidth(toolButton_clockwise->sizePolicy().hasHeightForWidth());
         toolButton_clockwise->setSizePolicy(sizePolicy2);
+        toolButton_clockwise->setMinimumSize(QSize(0, 40));
         toolButton_clockwise->setFont(font);
         toolButton_clockwise->setStyleSheet(QString::fromUtf8("font: 16pt \"\346\226\207\346\263\211\351\251\277\345\276\256\347\261\263\351\273\221\";"));
 

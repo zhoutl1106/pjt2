@@ -177,6 +177,7 @@ void FileManager::writeConfig(int mode1, int index)
     configFile.write((char*)&config,sizeof(config_t));
     configFile.close();
     g_dialog->setModeAndMem(mode, mem);
+    emit sigConfigChanged();
 }
 
 int FileManager::readConfig(int mode1, int index)
@@ -218,6 +219,7 @@ int FileManager::readConfig(int mode1, int index)
         ret = sendCmds();
         if(ret < 0)
             return -1;
+        g_dialog->form5_accuracy->reset();
         emit sigConfigChanged();
     }
     else

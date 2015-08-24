@@ -65,7 +65,7 @@ public:
             FormWholeSetting->setObjectName(QString::fromUtf8("FormWholeSetting"));
         FormWholeSetting->resize(1024, 600);
         verticalLayout = new QVBoxLayout(FormWholeSetting);
-        verticalLayout->setSpacing(30);
+        verticalLayout->setSpacing(10);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(150, -1, 150, -1);
         label = new QLabel(FormWholeSetting);
@@ -139,7 +139,7 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(toolButton_2->sizePolicy().hasHeightForWidth());
         toolButton_2->setSizePolicy(sizePolicy1);
-        toolButton_2->setMinimumSize(QSize(0, 0));
+        toolButton_2->setMinimumSize(QSize(0, 50));
 
         gridLayout->addWidget(toolButton_2, 0, 0, 1, 1);
 
@@ -147,7 +147,7 @@ public:
         toolButton_3->setObjectName(QString::fromUtf8("toolButton_3"));
         sizePolicy1.setHeightForWidth(toolButton_3->sizePolicy().hasHeightForWidth());
         toolButton_3->setSizePolicy(sizePolicy1);
-        toolButton_3->setMinimumSize(QSize(0, 0));
+        toolButton_3->setMinimumSize(QSize(0, 50));
 
         gridLayout->addWidget(toolButton_3, 0, 1, 1, 1);
 
@@ -155,7 +155,7 @@ public:
         toolButton_4->setObjectName(QString::fromUtf8("toolButton_4"));
         sizePolicy1.setHeightForWidth(toolButton_4->sizePolicy().hasHeightForWidth());
         toolButton_4->setSizePolicy(sizePolicy1);
-        toolButton_4->setMinimumSize(QSize(0, 0));
+        toolButton_4->setMinimumSize(QSize(0, 50));
 
         gridLayout->addWidget(toolButton_4, 0, 2, 1, 1);
 
@@ -163,7 +163,7 @@ public:
         toolButton_5->setObjectName(QString::fromUtf8("toolButton_5"));
         sizePolicy1.setHeightForWidth(toolButton_5->sizePolicy().hasHeightForWidth());
         toolButton_5->setSizePolicy(sizePolicy1);
-        toolButton_5->setMinimumSize(QSize(0, 0));
+        toolButton_5->setMinimumSize(QSize(0, 50));
 
         gridLayout->addWidget(toolButton_5, 0, 3, 1, 1);
 
@@ -171,7 +171,7 @@ public:
         toolButton_6->setObjectName(QString::fromUtf8("toolButton_6"));
         sizePolicy1.setHeightForWidth(toolButton_6->sizePolicy().hasHeightForWidth());
         toolButton_6->setSizePolicy(sizePolicy1);
-        toolButton_6->setMinimumSize(QSize(0, 0));
+        toolButton_6->setMinimumSize(QSize(0, 50));
 
         gridLayout->addWidget(toolButton_6, 0, 4, 1, 1);
 
@@ -179,7 +179,7 @@ public:
         toolButton_7->setObjectName(QString::fromUtf8("toolButton_7"));
         sizePolicy1.setHeightForWidth(toolButton_7->sizePolicy().hasHeightForWidth());
         toolButton_7->setSizePolicy(sizePolicy1);
-        toolButton_7->setMinimumSize(QSize(0, 0));
+        toolButton_7->setMinimumSize(QSize(0, 50));
 
         gridLayout->addWidget(toolButton_7, 0, 5, 1, 1);
 
@@ -187,42 +187,49 @@ public:
         toolButton_8->setObjectName(QString::fromUtf8("toolButton_8"));
         sizePolicy1.setHeightForWidth(toolButton_8->sizePolicy().hasHeightForWidth());
         toolButton_8->setSizePolicy(sizePolicy1);
-        toolButton_8->setMinimumSize(QSize(0, 0));
+        toolButton_8->setMinimumSize(QSize(0, 50));
 
         gridLayout->addWidget(toolButton_8, 0, 6, 1, 1);
 
         widget_1 = new QWidget(groupBox);
         widget_1->setObjectName(QString::fromUtf8("widget_1"));
+        widget_1->setMinimumSize(QSize(0, 50));
 
         gridLayout->addWidget(widget_1, 1, 0, 1, 1);
 
         widget_2 = new QWidget(groupBox);
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
+        widget_2->setMinimumSize(QSize(0, 50));
 
         gridLayout->addWidget(widget_2, 1, 1, 1, 1);
 
         widget_3 = new QWidget(groupBox);
         widget_3->setObjectName(QString::fromUtf8("widget_3"));
+        widget_3->setMinimumSize(QSize(0, 50));
 
         gridLayout->addWidget(widget_3, 1, 2, 1, 1);
 
         widget_4 = new QWidget(groupBox);
         widget_4->setObjectName(QString::fromUtf8("widget_4"));
+        widget_4->setMinimumSize(QSize(0, 50));
 
         gridLayout->addWidget(widget_4, 1, 3, 1, 1);
 
         widget_5 = new QWidget(groupBox);
         widget_5->setObjectName(QString::fromUtf8("widget_5"));
+        widget_5->setMinimumSize(QSize(0, 50));
 
         gridLayout->addWidget(widget_5, 1, 4, 1, 1);
 
         widget_6 = new QWidget(groupBox);
         widget_6->setObjectName(QString::fromUtf8("widget_6"));
+        widget_6->setMinimumSize(QSize(0, 50));
 
         gridLayout->addWidget(widget_6, 1, 5, 1, 1);
 
         widget_7 = new QWidget(groupBox);
         widget_7->setObjectName(QString::fromUtf8("widget_7"));
+        widget_7->setMinimumSize(QSize(0, 50));
 
         gridLayout->addWidget(widget_7, 1, 6, 1, 1);
 

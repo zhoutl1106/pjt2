@@ -44,6 +44,8 @@ void g_setValve()
     valveStatus = !valveStatus;
     g_dialog->form2_main->setValve(valveStatus);
     g_dialog->form3_vibrationAdjust->setValve(valveStatus);
+    g_dialog->form5_accuracy->setValve(valveStatus);
+    g_dialog->form12_accuracyDetail->setValve(valveStatus);
     char tmp[3] = {0x02,0x00};
     QByteArray tmp1(tmp,3);
     if(valveStatus)
@@ -67,6 +69,8 @@ void g_setVibrator()
     vibratorStatus = !vibratorStatus;
     g_dialog->form2_main->setVibrator(vibratorStatus);
     g_dialog->form3_vibrationAdjust->setVibrator(vibratorStatus);
+    g_dialog->form5_accuracy->setVibrator(vibratorStatus);
+    g_dialog->form12_accuracyDetail->setVibrator(vibratorStatus);
     char tmp[3] = {0x02,0x00};
     QByteArray tmp1(tmp,3);
     char tmp3[6] = {0x06,0xaa};

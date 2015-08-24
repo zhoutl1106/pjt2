@@ -83,7 +83,11 @@ QSpinBox::down-button
    <item row="1" column="4">
     <widget class="QRadioButton" name="radioButton_3">
      <property name="styleSheet">
-      <string notr="true">
+      <string notr="true">QRadioButton::indicator
+{
+	width:0 px;
+	height: 0 px;
+}
 QRadioButton:checked
 {
 color: rgb(255, 255, 255);
@@ -104,7 +108,11 @@ color: rgb(255, 255, 255);
    <item row="1" column="3">
     <widget class="QRadioButton" name="radioButton_2">
      <property name="styleSheet">
-      <string notr="true">
+      <string notr="true">QRadioButton::indicator
+{
+	width:0 px;
+	height: 0 px;
+}
 QRadioButton:checked
 {
 color: rgb(255, 255, 255);
@@ -125,7 +133,11 @@ color: rgb(255, 255, 255);
    <item row="2" column="2">
     <widget class="QRadioButton" name="radioButton_5">
      <property name="styleSheet">
-      <string notr="true">
+      <string notr="true">QRadioButton::indicator
+{
+	width:0 px;
+	height: 0 px;
+}
 QRadioButton:checked
 {
 color: rgb(255, 255, 255);
@@ -146,7 +158,11 @@ color: rgb(255, 255, 255);
    <item row="2" column="3">
     <widget class="QRadioButton" name="radioButton_6">
      <property name="styleSheet">
-      <string notr="true">
+      <string notr="true">QRadioButton::indicator
+{
+	width:0 px;
+	height: 0 px;
+}
 QRadioButton:checked
 {
 color: rgb(255, 255, 255);
@@ -167,7 +183,11 @@ color: rgb(255, 255, 255);
    <item row="1" column="2">
     <widget class="QRadioButton" name="radioButton_1">
      <property name="styleSheet">
-      <string notr="true">
+      <string notr="true">QRadioButton::indicator
+{
+	width:0 px;
+	height: 0 px;
+}
 QRadioButton:checked
 {
 color: rgb(255, 255, 255);
@@ -188,7 +208,11 @@ color: rgb(255, 255, 255);
    <item row="2" column="4">
     <widget class="QRadioButton" name="radioButton_7">
      <property name="styleSheet">
-      <string notr="true">
+      <string notr="true">QRadioButton::indicator
+{
+	width:0 px;
+	height: 0 px;
+}
 QRadioButton:checked
 {
 color: rgb(255, 255, 255);
@@ -209,7 +233,11 @@ color: rgb(255, 255, 255);
    <item row="1" column="5">
     <widget class="QRadioButton" name="radioButton_4">
      <property name="styleSheet">
-      <string notr="true">
+      <string notr="true">QRadioButton::indicator
+{
+	width:0 px;
+	height: 0 px;
+}
 QRadioButton:checked
 {
 color: rgb(255, 255, 255);
@@ -230,7 +258,11 @@ color: rgb(255, 255, 255);
    <item row="2" column="5">
     <widget class="QRadioButton" name="radioButton_8">
      <property name="styleSheet">
-      <string notr="true">
+      <string notr="true">QRadioButton::indicator
+{
+	width:0 px;
+	height: 0 px;
+}
 QRadioButton:checked
 {
 color: rgb(255, 255, 255);
